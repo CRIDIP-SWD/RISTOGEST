@@ -39,10 +39,10 @@
                                 <span class="sidebar-header-title">COMMANDE</span>
                             </li>
                             <li>
-                                <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i>Les Commandes en cours</a>
+                                <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i>Commandes en cours</a>
                             </li>
                             <li>
-                                <a href="page_widgets_social.html"><i class="gi gi-share_alt sidebar-nav-icon"></i>Les commandes à transférer</a>
+                                <a href="page_widgets_social.html"><i class="gi gi-share_alt sidebar-nav-icon"></i>Commandes à transférer</a>
                             </li>
 
                             <li class="sidebar-header">
