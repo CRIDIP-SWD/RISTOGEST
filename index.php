@@ -87,7 +87,10 @@
                             <div class="row">
                                 <!-- Main Title (hidden on small devices for the statistics to fit) -->
                                 <div class="col-md-4 col-lg-6 hidden-xs hidden-sm">
-                                    <h1>Welcome <strong>Admin</strong><br><small>You Look Awesome!</small></h1>
+                                    <h1><?php 
+                                    if($date_systeme > "18:00"){echo "Bonsoir";}else{echo "Bonjour";}
+                                        ?>
+                                     <strong>Maxime Mockelyn</strong><br><small>Groupe: Administrateur</small></h1>
                                 </div>
                                 <!-- END Main Title -->
 
