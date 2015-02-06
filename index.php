@@ -202,9 +202,7 @@
                                     </div>
                                     <div class="pull-right">
                                         <!-- Jquery Sparkline (initialized in js/pages/index.js), for more examples you can check out http://omnipotent.net/jquery.sparkline/#s-about -->
-                                        <div class="progress progress-striped active">
-                                            <div style="width: 80%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" role="progressbar" class="progress-bar progress-bar-success">80%</div>
-                                        </div>
+                                        <span id="mini-chart-sales"></span>
                                     </div>
                                     <h3 class="widget-content animation-pullDown visible-lg">
                                         Latest <strong>Sales</strong>
