@@ -39,10 +39,10 @@
                                 <span class="sidebar-header-title">COMMANDE</span>
                             </li>
                             <li>
-                                <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i>Commandes en cours</a>
+                                <a href="page_widgets_stats.html"><i class="hi hi-time sidebar-nav-icon"></i>Commandes en cours</a>
                             </li>
                             <li>
-                                <a href="page_widgets_social.html"><i class="gi gi-share_alt sidebar-nav-icon"></i>Commandes à transférer</a>
+                                <a href="page_widgets_social.html"><i class="gi gi-transfer sidebar-nav-icon"></i>Commandes à transférer</a>
                             </li>
 
                             <li class="sidebar-header">
@@ -51,10 +51,10 @@
                                 <span class="sidebar-header-title">MENUS</span>
                             </li>
                             <li>
-                                <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i>Liste des Menus</a>
+                                <a href="page_widgets_stats.html"><i class="hi hi-list-alt sidebar-nav-icon"></i>Liste des Menus</a>
                             </li>
                             <li>
-                                <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i>Nouveau Menu</a>
+                                <a href="page_widgets_stats.html"><i class="gi gi-circle_plus sidebar-nav-icon"></i>Nouveau Menu</a>
                             </li>
 
                             <li class="sidebar-header">
@@ -63,13 +63,13 @@
                                 <span class="sidebar-header-title">SALARIES</span>
                             </li>
                             <li>
-                                <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i>Liste des Salariés</a>
+                                <a href="page_widgets_stats.html"><i class="hi hi-list-alt sidebar-nav-icon"></i>Liste des Salariés</a>
                             </li>
                             <li>
-                                <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i>Nouveau salarié</a>
+                                <a href="page_widgets_stats.html"><i class="gi gi-circle_plus sidebar-nav-icon"></i>Nouveau salarié</a>
                             </li>
                             <li>
-                                <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i>Définition des absences</a>
+                                <a href="page_widgets_stats.html"><i class="hi hi-exclamation-sign sidebar-nav-icon"></i>Définition des absences</a>
                             </li>
 
                             <li class="sidebar-header">
@@ -78,10 +78,10 @@
                                 <span class="sidebar-header-title">FOURNISSEURS & PRESTATAIRE</span>
                             </li>
                             <li>
-                                <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i>Liste des Fournisseurs</a>
+                                <a href="page_widgets_stats.html"><i class="hi hi-list-alt sidebar-nav-icon"></i>Liste des Fournisseurs</a>
                             </li>
                             <li>
-                                <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i>Nouveau fournisseurs</a>
+                                <a href="page_widgets_stats.html"><i class="gi gi-circle_plus sidebar-nav-icon"></i>Nouveau fournisseurs</a>
                             </li>
 
                             <li class="sidebar-header">
@@ -90,13 +90,13 @@
                                 <span class="sidebar-header-title">PRODUIT</span>
                             </li>
                             <li>
-                                <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i>Liste des Produits</a>
+                                <a href="page_widgets_stats.html"><i class="hi hi-list-alt sidebar-nav-icon"></i>Liste des Produits</a>
                             </li>
                             <li>
-                                <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i>Nouveau produits</a>
+                                <a href="page_widgets_stats.html"><i class="gi gi-circle_plus sidebar-nav-icon"></i>Nouveau produits</a>
                             </li>
                             <li>
-                                <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i>Famille de Produit</a>
+                                <a href="page_widgets_stats.html"><i class="hi hi-folder-open sidebar-nav-icon"></i>Famille de Produit</a>
                             </li>
 
                             <li class="sidebar-header">
@@ -105,13 +105,10 @@
                                 <span class="sidebar-header-title">PARAMETRAGE</span>
                             </li>
                             <li>
-                                <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i>Gestion des Utilisateurs</a>
+                                <a href="page_widgets_stats.html"><i class="gi gi-group sidebar-nav-icon"></i>Gestion des Utilisateurs</a>
                             </li>
                             <li>
-                                <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i>Gestion de la société</a>
-                            </li>
-                            <li>
-                                <a href="page_widgets_stats.html"><i class="gi gi-charts sidebar-nav-icon"></i>Gestion des Utilisateurs</a>
+                                <a href="page_widgets_stats.html"><i class="gi gi-factory sidebar-nav-icon"></i>Gestion de la société</a>
                             </li>
 
 
