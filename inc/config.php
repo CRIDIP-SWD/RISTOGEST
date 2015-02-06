@@ -6,7 +6,7 @@
 	define('SITE', 'http://vps116895.ovh.net/');
 	define('FOLDER', 'ristogest/');
 	define('ASSETS', 'assets/');
-	$theme = 'night';
+	$theme = 'fire';
 
 //Paramétrage date & Heure
 	date_default_timezone_set("EUROPE/PARIS");
