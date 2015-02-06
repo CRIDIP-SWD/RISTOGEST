@@ -4,8 +4,8 @@
 	$logiciel = 'RISTOGEST';
 	$description = '';
 	define('SITE', 'http://vps116895.ovh.net/');
-	define('FOLDER', 'ristogest');
-	define('ASSETS', 'assets');
+	define('FOLDER', 'ristogest/');
+	define('ASSETS', 'assets/');
 	$theme = 'night';
 
 //Paramétrage date & Heure

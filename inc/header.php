@@ -45,7 +45,7 @@ include ('config.php');
         <!-- END Stylesheets -->
 
         <!-- Modernizr (browser feature detection library) & Respond.js (Enable responsive CSS code on browsers that don't support it, eg IE8) -->
-        <script src="js/vendor/modernizr-2.7.1-respond-1.4.2.min.js"></script>
+        <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/vendor/modernizr-2.7.1-respond-1.4.2.min.js"></script>
     </head>
     <!-- In the PHP version you can set the following options from inc/config file -->
     <!--
