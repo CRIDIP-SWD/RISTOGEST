@@ -1,4 +1,4 @@
-<!-- Main Sidebar -->
+Main Sidebar -->
             <div id="sidebar">
                 <!-- Wrapper for scrolling functionality -->
                 <div class="sidebar-scroll">
@@ -116,7 +116,7 @@
                         <!-- END Sidebar Navigation -->
 
                         <!-- Sidebar Notifications -->
-                        <div class="sidebar-header">
+<!--                         <div class="sidebar-header">
                             <span class="sidebar-header-options clearfix">
                                 <a href="javascript:void(0)" data-toggle="tooltip" title="Refresh"><i class="gi gi-refresh"></i></a>
                             </span>
@@ -139,11 +139,11 @@
                                 <small>Yesterday</small><br>
                                 <i class="fa fa-bug fa-fw"></i> <a href="javascript:void(0)"><strong>New bug submitted</strong></a>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- END Sidebar Notifications -->
                     </div>
                     <!-- END Sidebar Content -->
                 </div>
                 <!-- END Wrapper for scrolling functionality -->
             </div>
-            <!-- END Main Sidebar -->
+            <!-- END Main Sidebar
