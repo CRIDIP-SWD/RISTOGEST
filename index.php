@@ -88,7 +88,7 @@
                                 <!-- Main Title (hidden on small devices for the statistics to fit) -->
                                 <div class="col-md-4 col-lg-6 hidden-xs hidden-sm">
                                     <h1><?php 
-                                    if($heure_systeme < "18:00"){echo "Bonsoir";}else{echo "Bonjour";}
+                                    if($heure_systeme > "18:00"){echo "Bonsoir";}else{echo "Bonjour";}
                                         ?>
                                      <strong>Maxime Mockelyn</strong><br><small>Groupe: Administrateur</small></h1>
                                 </div>
@@ -202,7 +202,9 @@
                                     </div>
                                     <div class="pull-right">
                                         <!-- Jquery Sparkline (initialized in js/pages/index.js), for more examples you can check out http://omnipotent.net/jquery.sparkline/#s-about -->
-                                        <span id="mini-chart-sales"></span>
+                                        <div class="progress progress-striped active">
+                                            <div style="width: 80%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" role="progressbar" class="progress-bar progress-bar-success">80%</div>
+                                        </div>
                                     </div>
                                     <h3 class="widget-content animation-pullDown visible-lg">
                                         Latest <strong>Sales</strong>
