@@ -292,7 +292,7 @@
                                         <div class="row text-center">
                                             <div class="col-xs-6 col-lg-3">
                                                 <h3>
-                                                    <strong><?php echo $xml->current_condition->temp_C; ?></strong> <small>C</small><br>
+                                                    <strong><?php echo $xml->current_condition->temp_C; ?>&deg;</strong> <small>C</small><br>
                                                     <small>Température</small>
                                                 </h3>
                                             </div>
