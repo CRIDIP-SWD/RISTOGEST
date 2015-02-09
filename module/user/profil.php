@@ -100,6 +100,35 @@ $donnee_user = mysql_fetch_array($sql_user);
                     <!-- User Profile Content -->
                     <div class="row">
                         <div class="col-md-6">
+                            <div class="block">
+                                <!-- Block with Options Title -->
+                                <div class="block-title">
+                                    <div class="block-options pull-right">
+                                        <a title="" data-toggle="tooltip" class="btn btn-alt btn-sm btn-default" href="javascript:void(0)" data-original-title="Post on Twitter"><i class="fa fa-twitter"></i></a>
+                                        <a title="" data-toggle="tooltip" class="btn btn-alt btn-sm btn-default" href="javascript:void(0)" data-original-title="Settings"><i class="fa fa-cog"></i></a>
+                                        <a title="" data-toggle="tooltip" class="btn btn-alt btn-sm btn-default" href="javascript:void(0)" data-original-title="Delete"><i class="fa fa-times"></i></a>
+                                        <div class="btn-group btn-group-sm">
+                                            <a title="" data-toggle="dropdown" class="btn btn-alt btn-sm btn-default dropdown-toggle enable-tooltip" href="javascript:void(0)" data-original-title="Options"><span class="caret"></span></a>
+                                            <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
+                                                <li>
+                                                    <a href="javascript:void(0)"><i class="gi gi-cloud pull-right"></i>Simple Action</a>
+                                                    <a href="javascript:void(0)"><i class="gi gi-airplane pull-right"></i>Another Action</a>
+                                                </li>
+                                                <li class="divider"></li>
+                                                <li>
+                                                    <a href="javascript:void(0)"><i class="fa fa-wrench fa-fw pull-right"></i>Separated Action</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <h2><strong>Example</strong> Title</h2>
+                                </div>
+                                <!-- END Block with Options Title -->
+
+                                <!-- Block with Options Content -->
+                                <p>You can have a block with options to the top right..</p>
+                                <!-- END Block with Options Content -->
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <div class="col-md-6">
