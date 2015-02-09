@@ -7,6 +7,8 @@ if (!isset($_SESSION['login'])) {
 header ("Location: ".SITE."".FOLDER."login.php");
 exit();
 }
+$sql_user = mysql_query("SELECT idsalarie, login, nom, prenom, last_connect, connect FROM salarie WHERE login = ".$_SESSION['login'])or die(mysql_error());
+$donnee_user = mysql_fetch_array($sql_user);
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
