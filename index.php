@@ -131,7 +131,7 @@
                             <a class="widget widget-hover-effect1" href="<?php echo SITE,FOLDER; ?>module/commande/new.php?">
                                 <div class="widget-simple">
                                     <div class="widget-icon pull-left themed-background-fire animation-fadeIn">
-                                        <i class="fa fa-file-text"></i>
+                                        <i class="gi gi-circle_plus"></i>
                                     </div>
                                     <h3 class="widget-content text-right animation-pullDown">
                                         Nouvelle <strong>Commande</strong><br>
@@ -143,7 +143,7 @@
                             <a class="widget widget-hover-effect1" href="<?php echo SITE,FOLDER; ?>module/reception/new.php?">
                                 <div class="widget-simple">
                                     <div class="widget-icon pull-left themed-background-fire animation-fadeIn">
-                                        <i class="fa fa-file-text"></i>
+                                        <i class="gi gi-circle_plus"></i>
                                     </div>
                                     <h3 class="widget-content text-right animation-pullDown">
                                         Nouvelle <strong>Reception</strong><br>
