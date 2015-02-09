@@ -12,7 +12,7 @@
                                     $sql = 'SELECT count(*) FROM salarie WHERE login="'.mysql_escape_string($_POST['login']).'"  AND pass_md5="'.mysql_escape_string(md5($_POST['pass'])).'"';
                                     $req = mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
                                     $data = mysql_fetch_array($req);
-                                    echo $data;
+                                    echo $sql;
                                 }
                                 else {
                                 header("Location: ../../login.php?error_champs=true&error=1&alert_fail=false&error_base=false");
