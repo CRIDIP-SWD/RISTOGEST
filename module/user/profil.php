@@ -100,26 +100,31 @@ $donnee_user = mysql_fetch_array($sql_user);
                     <!-- User Profile Content -->
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="widget">
-                                <div class="widget-simple">
-                                    <a class="widget-icon pull-left themed-background" href="javascript:void(0)">
-                                        <i class="gi gi-package"></i>
-                                    </a>
-                                    <h3 class="text-right animation-stretchRight">5 <strong>Menus Commander</strong></h3>
-                                </div>
-                            </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="widget">
-                                <div class="widget-simple">
-                                    <a class="widget-icon pull-left themed-background" href="javascript:void(0)">
-                                        <i class="gi gi-package"></i>
-                                    </a>
-                                    <h3 class="text-right animation-stretchRight">5 <strong>Menus Récéptionner</strong></h3>
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <div class="widget-simple">
+                                        <a class="widget-icon pull-left themed-background" href="javascript:void(0)">
+                                            <i class="gi gi-package"></i>
+                                        </a>
+                                        <h3 class="text-right animation-stretchRight">5 <strong>Menus Commander</strong></h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <div class="widget-simple">
+                                        <a class="widget-icon pull-left themed-background" href="javascript:void(0)">
+                                            <i class="gi gi-package"></i>
+                                        </a>
+                                        <h3 class="text-right animation-stretchRight">5 <strong>Menus Récéptionner</strong></h3>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <!-- END User Profile Content -->
                 </div>
                 <!-- END Page Content -->
