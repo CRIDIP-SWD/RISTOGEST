@@ -131,15 +131,9 @@
                             <!-- Timeline Widget -->
                             <div class="widget">
                                 <div class="widget-extra themed-background-dark">
-                                    <div class="widget-options">
-                                        <div class="btn-group btn-group-xs">
-                                            <a href="javascript:void(0)" class="btn btn-default" data-toggle="tooltip" title="Edit Widget"><i class="fa fa-pencil"></i></a>
-                                            <a href="javascript:void(0)" class="btn btn-default" data-toggle="tooltip" title="Quick Settings"><i class="fa fa-cog"></i></a>
-                                        </div>
-                                    </div>
                                     <h3 class="widget-content-light">
-                                        Latest <strong>News</strong>
-                                        <small><a href="page_ready_timeline.html"><strong>View all</strong></a></small>
+                                        Nouvelle <strong>Comité</strong>
+                                        <small><a href="<?php echo SITE,FOLDER; ?>module/blog/news.php"><strong>Voir tout...</strong></a></small>
                                     </h3>
                                 </div>
                                 <div class="widget-extra">
