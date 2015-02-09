@@ -8,7 +8,7 @@ include ('inc/config.php');
     <head>
         <meta charset="utf-8">
 
-        <title><?php echo LOGICIEL; ?></title>
+        <title><?php echo $logiciel; ?></title>
 
         <meta name="description" content="ProUI is a Responsive Bootstrap Admin Template created by pixelcave and published on Themeforest.">
         <meta name="author" content="pixelcave">
@@ -57,7 +57,7 @@ include ('inc/config.php');
         <div id="login-container" class="animation-fadeIn">
             <!-- Login Title -->
             <div class="login-title text-center">
-                <h1><i class="gi gi-flash"></i> <strong><?php echo LOGICIEL; ?></strong><br><small>Connecter vous à <?php echo LOGICIEL; ?></small></h1>
+                <h1><i class="gi gi-flash"></i> <strong><?php echo $logiciel; ?></strong><br><small>Connecter vous à <?php echo $logiciel; ?></small></h1>
             </div>
             <!-- END Login Title -->
 
@@ -83,7 +83,7 @@ include ('inc/config.php');
                     </div>
                     <div class="form-group form-actions">
                         <div class="col-xs-8 text-right">
-                            <button type="submit" class="btn btn-sm btn-primary" name="connexion" value="Connexion"><i class="fa fa-angle-right"></i> Connexion à <?php echo LOGICIEL; ?></button>
+                            <button type="submit" class="btn btn-sm btn-primary" name="connexion" value="Connexion"><i class="fa fa-angle-right"></i> Connexion à <?php echo $logiciel; ?></button>
                         </div>
                     </div>
                     <div class="form-group">
