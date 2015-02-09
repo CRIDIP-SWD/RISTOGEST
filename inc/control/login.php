@@ -1,4 +1,7 @@
-<?php
+							<?php
+							include('../bd.conf.php');
+							BaseConnect();
+
 							date_default_timezone_set("UTC");
                             $date = date('d/m/y');
                             $heure = date('H:i');
