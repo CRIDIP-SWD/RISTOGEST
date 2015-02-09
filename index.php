@@ -90,7 +90,7 @@
                                     <h1><?php 
                                     if($heure_systeme > "18:00"){echo "Bonsoir";}else{echo "Bonjour";}
                                         ?>
-                                     <strong>Client</strong><br><small>Groupe: SOCIETE CDT GESTION</small></h1>
+                                     <strong><?php echo $donnee_user['nom']; ?> <?php echo $donnee_user['prenom']; ?></strong><br><small>Dernière connexion: <?php echo $donnee_user['last_connect']; ?></small><br><small>Groupe: CRIDIP SAS</small></h1>
                                 </div>
                                 <!-- END Main Title -->
 
