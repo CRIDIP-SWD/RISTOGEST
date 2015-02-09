@@ -1,6 +1,7 @@
 <?php
 include ('db.conf.php');
 include ('config.php');
+include ('control/meteo-api.php');
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
