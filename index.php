@@ -256,8 +256,8 @@
                                         <!-- For best results use an image with at least 150 pixels in height (with the width relative to how big your widget will be!) - Here I'm using a 1200x150 pixels image -->
                                         <img src="<?php echo SITE,FOLDER,ASSETS; ?>img/placeholders/headers/widget5_header.jpg" alt="background" class="widget-background animation-pulseSlow">
                                         <h3 class="widget-content widget-content-image widget-content-light clearfix">
-                                            <span class="widget-icon pull-right">
-                                                <i class="wi wi-day-lightning animation-pulse"></i>
+                                            <span class="widget-image pull-right">
+                                                <img src="<?php echo $xml->current_condition->weatherIconUrl; ?>" />
                                             </span>
                                             Station <strong>Météo</strong><br>
                                             <small><i class="fa fa-location-arrow"></i> Les Sables d'Olonne</small>
@@ -270,25 +270,25 @@
                                         <div class="row text-center">
                                             <div class="col-xs-6 col-lg-3">
                                                 <h3>
-                                                    <strong>8&deg;</strong> <small>C</small><br>
+                                                    <strong><?php echo $xml->current_condition->temp_C; ?></strong> <small>C</small><br>
                                                     <small>Température</small>
                                                 </h3>
                                             </div>
                                             <div class="col-xs-6 col-lg-3">
                                                 <h3>
-                                                    <strong>80</strong> <small>%</small><br>
+                                                    <strong><?php echo $xml->current_condition->humidity; ?></strong> <small>%</small><br>
                                                     <small>Humidité</small>
                                                 </h3>
                                             </div>
                                             <div class="col-xs-6 col-lg-3">
                                                 <h3>
-                                                    <strong><?php echo $xml->current_condition->windspeedMiles; ?></strong> <small>km/h</small><br>
+                                                    <strong><?php echo $xml->current_condition->windspeedKmph; ?></strong> <small>km/h</small><br>
                                                     <small>Vent</small>
                                                 </h3>
                                             </div>
                                             <div class="col-xs-6 col-lg-3">
                                                 <h3>
-                                                    <strong>5</strong> <small>km</small><br>
+                                                    <strong><?php echo $xml->current_condition->visibility; ?></strong> <small>km</small><br>
                                                     <small>Visibilité</small>
                                                 </h3>
                                             </div>
