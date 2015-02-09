@@ -270,8 +270,8 @@
                                         <div class="row text-center">
                                             <div class="col-xs-6 col-lg-3">
                                                 <h3>
-                                                    <strong>10&deg;</strong> <small>C</small><br>
-                                                    <small>Soleil</small>
+                                                    <strong>8&deg;</strong> <small>C</small><br>
+                                                    <small>Température</small>
                                                 </h3>
                                             </div>
                                             <div class="col-xs-6 col-lg-3">
