@@ -25,7 +25,5 @@ $premiumurl=sprintf('http://api.worldweatheronline.com/premium/v1/premium-weathe
 
 $xml_response = file_get_contents($basicurl);
 $xml = simplexml_load_string($xml_response);
-printf("<p>Current wind speed is %s mph blowing to %s</p>", 
-	$xml->current_condition->windspeedMiles, $xml->current_condition->winddir16Point );
 
  ?>

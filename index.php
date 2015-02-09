@@ -282,7 +282,7 @@
                                             </div>
                                             <div class="col-xs-6 col-lg-3">
                                                 <h3>
-                                                    <strong><?php print_r($xml); ?></strong> <small>km/h</small><br>
+                                                    <strong><?php echo $xml->current_condition->windspeedMiles; ?></strong> <small>km/h</small><br>
                                                     <small>Vent</small>
                                                 </h3>
                                             </div>
