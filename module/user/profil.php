@@ -118,7 +118,7 @@ $donnee_user = mysql_fetch_array($sql_user);
                                         <tbody>
                                             <tr>
                                                 <td style="width: 20%;"><strong>Identité</strong></td>
-                                                <td><?php echo $donnee_user['prenon']; ?> <?php echo $donnee_user['nom']; ?></td>
+                                                <td><?php echo $donnee_user['prenom']; ?> <?php echo $donnee_user['nom']; ?><br><strong>Nom d'utilisateur:</strong> <?php echo $donnee_user['login']; ?></td>
                                             </tr>
                                             <tr>
                                                 <td><strong>Adresse</strong></td>
