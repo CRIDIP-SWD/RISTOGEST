@@ -280,7 +280,6 @@
                                                         break;
                                                 }
                                             ?>
-                                                <img src="<?php echo $xml->current_condition->weatherIconUrl; ?>" />
                                             </span>
                                             Station <strong>Météo</strong><br>
                                             <small><i class="fa fa-location-arrow"></i> Les Sables d'Olonne</small>
