@@ -128,6 +128,32 @@
                     <!-- Widgets Row -->
                     <div class="row">
                         <div class="col-md-6">
+                            <a class="widget widget-hover-effect1" href="<?php echo SITE,FOLDER; ?>module/commande/new.php?">
+                                <div class="widget-simple">
+                                    <div class="widget-icon pull-left themed-background-fire animation-fadeIn">
+                                        <i class="fa fa-file-text"></i>
+                                    </div>
+                                    <h3 class="widget-content text-right animation-pullDown">
+                                        Nouvelle <strong>Commande</strong><br>
+                                    </h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a class="widget widget-hover-effect1" href="<?php echo SITE,FOLDER; ?>module/reception/new.php?">
+                                <div class="widget-simple">
+                                    <div class="widget-icon pull-left themed-background-fire animation-fadeIn">
+                                        <i class="fa fa-file-text"></i>
+                                    </div>
+                                    <h3 class="widget-content text-right animation-pullDown">
+                                        Nouvelle <strong>Reception</strong><br>
+                                    </h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
                             <!-- Timeline Widget -->
                             <div class="widget">
                                 <div class="widget-extra themed-background-dark">
@@ -274,6 +300,7 @@
                             <!-- END Weather Widget-->
                         </div>
                     </div>
+
                     <!-- END Widgets Row -->
                 </div>
                 <!-- END Page Content -->
