@@ -39,7 +39,7 @@ include ('config.php');
         <!-- The main stylesheet of this template. All Bootstrap overwrites are defined in here -->
         <link rel="stylesheet" href="<?php echo SITE,FOLDER,ASSETS; ?>css/main.css">
 
-        <link rel="stylesheet" type="text/css" href="<?php echo SITE,FOLDER,ASSETS; ?>css/fonts/meteocons/meteocons.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo SITE,FOLDER,ASSETS; ?>css/fonts/meteocons/weather-icons.min.css">
 
         <!-- Include a specific file here from css/themes/ folder to alter the default theme of the template -->
 

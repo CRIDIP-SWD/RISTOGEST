@@ -257,7 +257,7 @@
                                         <img src="<?php echo SITE,FOLDER,ASSETS; ?>img/placeholders/headers/widget5_header.jpg" alt="background" class="widget-background animation-pulseSlow">
                                         <h3 class="widget-content widget-content-image widget-content-light clearfix">
                                             <span class="widget-icon pull-right">
-                                                <i class="fa fa-sun-o animation-pulse"></i>
+                                                <i class="wi wi-day-lightning animation-pulse"></i>
                                             </span>
                                             Station <strong>Météo</strong><br>
                                             <small><i class="fa fa-location-arrow"></i> Les Sables d'Olonne</small>
