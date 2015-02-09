@@ -105,23 +105,16 @@ $donnee_user = mysql_fetch_array($sql_user);
                                 <div class="block-title">
                                     <!-- Interactive block controls (initialized in js/app.js -> interactiveBlocks()) -->
                                     <div class="block-options pull-right">
-                                        <a href="javascript:void(0)" class="btn btn-alt btn-sm btn-primary" data-toggle="block-toggle-content"><i class="fa fa-arrows-v"></i></a>
-                                        <a href="javascript:void(0)" class="btn btn-alt btn-sm btn-primary" data-toggle="block-toggle-fullscreen"><i class="fa fa-desktop"></i></a>
-                                        <a href="javascript:void(0)" class="btn btn-alt btn-sm btn-primary" data-toggle="block-hide"><i class="fa fa-times"></i></a>
+                                        <a href="#modal-user-settings" class="btn btn-alt btn-sm btn-primary" data-toggle="modal"><i class="fa fa-cog"></i></a>
                                     </div>
-                                    <h2><strong>Interactive</strong> Block</h2>
+                                    <h2>Vos Informations</h2>
                                 </div>
                                 <!-- END Interactive Title -->
 
                                 <!-- Interactive Content -->
                                 <!-- The content you will put inside div.block-content, will be toggled -->
                                 <div class="block-content">
-                                    <p>You can add controls to a block and make it interactive (test the functionality from the top right block buttons):</p>
-                                    <ul class="fa-ul list-li-push">
-                                        <li><i class="fa fa-li fa-check text-success"></i> Toggle block's content</li>
-                                        <li><i class="fa fa-li fa-check text-success"></i> Toggle it fullscreen</li>
-                                        <li><i class="fa fa-li fa-check text-success"></i> or Hide it!</li>
-                                    </ul>
+                                    
                                 </div>
                                 <p class="text-muted">You can also have content that ignores toggling..</p>
                                 <!-- END Interactive Content -->
