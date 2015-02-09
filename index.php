@@ -275,6 +275,10 @@
                                                         echo "<i class='wi wi-rain'></i>";
                                                         break;
                                                     
+                                                    case 'Clear':
+                                                        echo "<i class='wi wi-night-clear'></i>";
+                                                        break;
+
                                                     default:
                                                         # code...
                                                         break;
