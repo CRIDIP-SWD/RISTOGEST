@@ -21,7 +21,7 @@
                                         $login = $_POST['login'];
                                         $sql_user_up = mysql_query("UPDATE salarie SET last_connect = '$date - $heure', connect = '1' WHERE login = '$login'")or die(mysql_error());
                                         $_SESSION['login'] = $_POST['login'];
-                                        header('Location: index.php');
+                                        header('Location: ../../index.php');
                                         exit();
                                     }
                                     // si on ne trouve aucune réponse, le visiteur s'est trompé soit dans son login, soit dans son mot de passe
