@@ -57,6 +57,7 @@ include ('inc/config.php');
         <div id="login-container" class="animation-fadeIn">
             <!-- Login Title -->
             <?php
+                if(isset($_GET['error']) && $_GET['error'] == 1){
                 if($_GET['alert_fail'] == 'true'){
                 ?>
                     <div class="alert alert-danger alert-dismissable">
@@ -81,10 +82,12 @@ include ('inc/config.php');
                     </div>
                 <?php
                 }
+            }else{
             ?>
             <div class="login-title text-center">
                 <h1><i class="gi gi-flash"></i> <strong><?php echo $logiciel; ?></strong><br><small>Connecter vous à <?php echo $logiciel; ?></small></h1>
             </div>
+            <?php } ?>
             <!-- END Login Title -->
             <!-- Login Block -->
             <div class="block push-bit">
