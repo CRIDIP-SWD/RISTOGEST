@@ -18,8 +18,6 @@
                                     // si on obtient une réponse, alors l'utilisateur est un membre
                                     if ($data[0] == 1) {
                                         session_start();
-                                        $login = $_POST['login'];
-                                        $sql_user_up = mysql_query("UPDATE salarie SET last_connect = '$date - $heure', connect = '1' WHERE login = '$login'")or die(mysql_error());
                                         $_SESSION['login'] = $_POST['login'];
                                         header('Location: index.php');
                                         exit();
@@ -34,7 +32,7 @@
                                     }
                                 }
                                 else {
-                                header("Location: ../../login.php?error_champs=true&error=1&alert_fail=falseerror_base=false");
+                                header("Location: ../../login.php?error_champs=true&error=1&alert_fail=false&error_base=false");
                                 }
                             }
                             ?>
