@@ -101,54 +101,30 @@ $donnee_user = mysql_fetch_array($sql_user);
                     <div class="row">
                         <div class="col-md-6">
                             <div class="block">
-                                <!-- Block with Options Title -->
+                                <!-- Interactive Title -->
                                 <div class="block-title">
+                                    <!-- Interactive block controls (initialized in js/app.js -> interactiveBlocks()) -->
                                     <div class="block-options pull-right">
-                                        <a title="" data-toggle="tooltip" class="btn btn-alt btn-sm btn-default" href="javascript:void(0)" data-original-title="Post on Twitter"><i class="fa fa-twitter"></i></a>
-                                        <a title="" data-toggle="tooltip" class="btn btn-alt btn-sm btn-default" href="javascript:void(0)" data-original-title="Settings"><i class="fa fa-cog"></i></a>
-                                        <a title="" data-toggle="tooltip" class="btn btn-alt btn-sm btn-default" href="javascript:void(0)" data-original-title="Delete"><i class="fa fa-times"></i></a>
-                                        <div class="btn-group btn-group-sm">
-                                            <a title="" data-toggle="dropdown" class="btn btn-alt btn-sm btn-default dropdown-toggle enable-tooltip" href="javascript:void(0)" data-original-title="Options"><span class="caret"></span></a>
-                                            <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
-                                                <li>
-                                                    <a href="javascript:void(0)"><i class="gi gi-cloud pull-right"></i>Simple Action</a>
-                                                    <a href="javascript:void(0)"><i class="gi gi-airplane pull-right"></i>Another Action</a>
-                                                </li>
-                                                <li class="divider"></li>
-                                                <li>
-                                                    <a href="javascript:void(0)"><i class="fa fa-wrench fa-fw pull-right"></i>Separated Action</a>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                        <a href="javascript:void(0)" class="btn btn-alt btn-sm btn-primary" data-toggle="block-toggle-content"><i class="fa fa-arrows-v"></i></a>
+                                        <a href="javascript:void(0)" class="btn btn-alt btn-sm btn-primary" data-toggle="block-toggle-fullscreen"><i class="fa fa-desktop"></i></a>
+                                        <a href="javascript:void(0)" class="btn btn-alt btn-sm btn-primary" data-toggle="block-hide"><i class="fa fa-times"></i></a>
                                     </div>
-                                    <h2>Vos Informations</
+                                    <h2><strong>Interactive</strong> Block</h2>
                                 </div>
-                                <!-- END Block with Options Title -->
+                                <!-- END Interactive Title -->
 
-                                <!-- Block with Options Content -->
-                                <table class="table table-borderless table-striped">
-                                        <tbody>
-                                            <tr>
-                                                <td style="width: 20%;"><strong>Nom & Prénom</strong></td>
-                                                <td><?php echo $donnee_user['nom']; ?> <?php echo $donnee_user['prenom']; ?></td>
-                                            </tr>
-                                            <tr>
-                                                <td><strong>Adresse</strong></td>
-                                                <td>
-                                                    <?php echo $donnee_user['adresse']; ?><br>
-                                                    <?php echo $donnee_user['code_postal']; ?> <?php echo $donnee_user['ville']; ?>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><strong>Coordonnée</strong></td>
-                                                <td>
-                                                    Téléphone: <?php echo $donnee_user['telephone']; ?><br>
-                                                    Email: <?php echo $donnee_user['email']; ?>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                <!-- END Block with Options Content -->
+                                <!-- Interactive Content -->
+                                <!-- The content you will put inside div.block-content, will be toggled -->
+                                <div class="block-content">
+                                    <p>You can add controls to a block and make it interactive (test the functionality from the top right block buttons):</p>
+                                    <ul class="fa-ul list-li-push">
+                                        <li><i class="fa fa-li fa-check text-success"></i> Toggle block's content</li>
+                                        <li><i class="fa fa-li fa-check text-success"></i> Toggle it fullscreen</li>
+                                        <li><i class="fa fa-li fa-check text-success"></i> or Hide it!</li>
+                                    </ul>
+                                </div>
+                                <p class="text-muted">You can also have content that ignores toggling..</p>
+                                <!-- END Interactive Content -->
                             </div>
                         </div>
                         <div class="col-md-6">
