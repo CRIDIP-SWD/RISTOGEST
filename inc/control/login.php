@@ -9,7 +9,7 @@
                                 if ((isset($_POST['login']) && !empty($_POST['login'])) && (isset($_POST['pass']) && !empty($_POST['pass']))) {
 
                                     // on teste si une entrée de la base contient ce couple login / pass
-                                    $sql = 'SELECT count(*) FROM salarie WHERE email="'.mysql_escape_string($_POST['login']).'"  AND pass="'.mysql_escape_string(md5($_POST['pass'])).'"';
+                                    $sql = 'SELECT count(*) FROM salarie WHERE login="'.mysql_escape_string($_POST['login']).'"  AND pass="'.mysql_escape_string(md5($_POST['pass'])).'"';
                                     $req = mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
                                     $data = mysql_fetch_array($req);
 
@@ -19,7 +19,7 @@
                                     if ($data[0] == 1) {
                                         session_start();
                                         $login = $_POST['login'];
-                                        $sql_user_up = mysql_query("UPDATE salarie SET last_connect = '$date - $heure', connect = '1' WHERE email = '$login'")or die(mysql_error());
+                                        $sql_user_up = mysql_query("UPDATE salarie SET last_connect = '$date - $heure', connect = '1' WHERE login = '$login'")or die(mysql_error());
                                         $_SESSION['login'] = $_POST['login'];
                                         header('Location: index.php');
                                         exit();
