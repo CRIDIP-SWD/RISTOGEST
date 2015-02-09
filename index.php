@@ -130,8 +130,8 @@
                         <div class="col-md-6">
                             <a class="widget widget-hover-effect1" href="page_ready_article.php">
                                 <div class="widget-simple">
-                                    <div class="widget-icon pull-left themed-background-autumn animation-fadeIn">
-                                        <i class="fa fa-file-text"></i>
+                                    <div class="widget-icon pull-left themed-background animation-fadeIn">
+                                        <i class="gi gi-wallet"></i>
                                     </div>
                                     <h3 class="widget-content text-right animation-pullDown">
                                         Nouvelle <strong>Commande</strong><br>
