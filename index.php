@@ -90,7 +90,7 @@
                                     <h1><?php 
                                     if($heure_systeme > "18:00"){echo "Bonsoir";}else{echo "Bonjour";}
                                         ?>
-                                     <strong>Client</strong><br><small>Groupe: SOCIETE CDT GESTION</small></h1>
+                                     <strong>Client</strong><br><small>Groupe: SOCIETE CDT GESTION | <?php echo $donnee['libelle']; ?></small></h1>
                                 </div>
                                 <!-- END Main Title -->
 

@@ -1,5 +1,9 @@
 <?php
+include ('db.conf.php');
 include ('config.php');
+BaseConnect();
+$sql = mysql_query("SELECT * FROM test WHERE idtest = '1'");
+$donnee = mysql_fetch_array($sql);
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
