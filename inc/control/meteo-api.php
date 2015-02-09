@@ -17,8 +17,6 @@ $loc_string=implode(",", $loc_safe);
 $basicurl=sprintf('http://api.worldweatheronline.com/free/v2/weather.ashx?key=%s&q=%s&num_of_days=%s', 
 	$api_key, $loc_string, intval($num_of_days));
 
-print $basicurl . "<br />";
-
 //Premium API
 $premiumurl=sprintf('http://api.worldweatheronline.com/premium/v1/premium-weather-V2.ashx?key=%s&q=%s&num_of_days=%s', 
 	$api_key, $loc_string, intval($num_of_days));
