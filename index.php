@@ -108,12 +108,6 @@
                                                 
                                             </h2>
                                         </div>
-                                        <div class="col-xs-4 col-sm-3">
-                                            <h2 class="animation-hatch">
-                                                <strong>101</strong><br>
-                                                <small><i class="fa fa-calendar-o"></i> Events</small>
-                                            </h2>
-                                        </div>
                                         <!-- We hide the last stat to fit the other 3 on small devices -->
                                         <div class="col-sm-3 hidden-xs">
                                             <h2 class="animation-hatch">
