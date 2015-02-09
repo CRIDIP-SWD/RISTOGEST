@@ -97,7 +97,7 @@ include ('inc/config.php');
                         <div class="col-xs-12">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
-                                <input type="text" id="login-email" name="email" class="form-control input-lg" placeholder="Email">
+                                <input type="text" id="login-email" name="login" class="form-control input-lg" placeholder="Email">
                             </div>
                         </div>
                     </div>
