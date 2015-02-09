@@ -259,8 +259,8 @@
                                             <span class="widget-icon pull-right">
                                                 <i class="fa fa-sun-o animation-pulse"></i>
                                             </span>
-                                            Weather <strong>Station</strong><br>
-                                            <small><i class="fa fa-location-arrow"></i> The Mountain</small>
+                                            Station <strong>Météo</strong><br>
+                                            <small><i class="fa fa-location-arrow"></i> Les Sables d'Olonne</small>
                                         </h3>
                                     </div>
                                     <!-- END Widget Header -->
@@ -271,25 +271,25 @@
                                             <div class="col-xs-6 col-lg-3">
                                                 <h3>
                                                     <strong>10&deg;</strong> <small>C</small><br>
-                                                    <small>Sunny</small>
+                                                    <small>Soleil</small>
                                                 </h3>
                                             </div>
                                             <div class="col-xs-6 col-lg-3">
                                                 <h3>
                                                     <strong>80</strong> <small>%</small><br>
-                                                    <small>Humidity</small>
+                                                    <small>Humidité</small>
                                                 </h3>
                                             </div>
                                             <div class="col-xs-6 col-lg-3">
                                                 <h3>
                                                     <strong>60</strong> <small>km/h</small><br>
-                                                    <small>Wind</small>
+                                                    <small>Vent</small>
                                                 </h3>
                                             </div>
                                             <div class="col-xs-6 col-lg-3">
                                                 <h3>
                                                     <strong>5</strong> <small>km</small><br>
-                                                    <small>Visibility</small>
+                                                    <small>Visibilité</small>
                                                 </h3>
                                             </div>
                                         </div>
