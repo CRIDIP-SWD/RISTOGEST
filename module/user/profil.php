@@ -121,7 +121,12 @@ $donnee_user = mysql_fetch_array($sql_user);
                                             </ul>
                                         </div>
                                     </div>
-                                    <table class="table table-borderless table-striped">
+                                    <h2>Vos Informations</
+                                </div>
+                                <!-- END Block with Options Title -->
+
+                                <!-- Block with Options Content -->
+                                <table class="table table-borderless table-striped">
                                         <tbody>
                                             <tr>
                                                 <td style="width: 20%;"><strong>Nom & Prénom</strong></td>
@@ -143,11 +148,6 @@ $donnee_user = mysql_fetch_array($sql_user);
                                             </tr>
                                         </tbody>
                                     </table>
-                                </div>
-                                <!-- END Block with Options Title -->
-
-                                <!-- Block with Options Content -->
-                                <p>You can have a block with options to the top right..</p>
                                 <!-- END Block with Options Content -->
                             </div>
                         </div>
