@@ -56,11 +56,39 @@ include ('inc/config.php');
         <!-- Login Container -->
         <div id="login-container" class="animation-fadeIn">
             <!-- Login Title -->
+            <?php
+            if(isset($_POST['connexion']) && $_POST['connexion'] == 'Connexion'){
+                if($_GET['alert_fail'] == 'true'){
+                ?>
+                    <div class="alert alert-danger alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <h4><i class="fa fa-times-circle"></i> Erreur</h4> L'adresse mail ou le mot de passe est invalide !
+                    </div>
+                <?php
+                }
+                if($_GET['error_base'] == 'true'){
+                ?>
+                    <div class="alert alert-danger alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur à été détécter sur la base de donnée !<br>Contacter l'administrateur.
+                    </div>
+                <?php
+                }
+                if($_GET['error_champs'] == 'true'){
+                ?>
+                    <div class="alert alert-danger alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <h4><i class="fa fa-times-circle"></i> Erreur</h4> Au moins un des champs requis est vide !
+                    </div>
+                <?php
+                }
+            }else{
+            ?>
             <div class="login-title text-center">
                 <h1><i class="gi gi-flash"></i> <strong><?php echo $logiciel; ?></strong><br><small>Connecter vous à <?php echo $logiciel; ?></small></h1>
             </div>
             <!-- END Login Title -->
-
+            <?php } ?>
             <!-- Login Block -->
             <div class="block push-bit">
                 <!-- Login Form -->

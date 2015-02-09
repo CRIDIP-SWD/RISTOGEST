@@ -1,5 +1,5 @@
 							<?php
-							include('../bd.conf.php');
+							include('../db.conf.php');
 							BaseConnect();
 
 							date_default_timezone_set("UTC");
@@ -26,22 +26,16 @@
                                     }
                                     // si on ne trouve aucune réponse, le visiteur s'est trompé soit dans son login, soit dans son mot de passe
                                     elseif ($data[0] == 0) {
-                                        $erreur = '<div class="alert alert-danger"><button class="close" data-dismiss="alert" type="button">X</button><strong>Attention !</strong>Compte non reconnu par le système.</div>';
+                                        header("Location: ".SITE."".FOLDER."login.php?alert_fail=true");
                                     }
                                     // sinon, alors la, il y a un gros problème :)
                                     else {
-                                        $erreur = '<div class="alert alert-danger"><button class="close" data-dismiss="alert" type="button">X</button><strong>Attention !</strong>Problème dans la base de donnée, plusieurs membre sont enregistrer avec le même nom d\'utilisateur.<br>Veuillez contacter l\'administrateur système.</div>';
+                                        header("Location: ".SITE."".FOLDER."login.php?error_base=true");
                                     }
                                 }
                                 else {
-                                $erreur = '<div class="alert alert-danger"><button class="close" data-dismiss="alert" type="button">X</button><strong>Attention !</strong>Au moins un des champs est vide.</div>';
+                                header("Location: ".SITE."".FOLDER."login.php?error_champs=true");
                                 }
                             }
                             ?>
-                            <?php
-                            if(isset($_POST['connexion']) && $_POST['connexion'] == 'Connexion'){
-                                echo $erreur;
-                            }else{
-                                echo '<h4 class="innerAll margin-none border-bottom text-center"><i class="fa fa-lock"></i> Connectez-Vous !</h4>';
-                            }
-                            ?>
+                   
