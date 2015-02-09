@@ -34,7 +34,7 @@
                                 <a href="<?php echo SITE,FOLDER; ?>index.php" class=" active"><i class="gi gi-stopwatch sidebar-nav-icon"></i>Accueil</a>
                             </li>
                             <li>
-                                <a href="<?php echo SITE,FOLDER; ?>module/user/profil.php?"><i class="gi gi-stopwatch sidebar-nav-icon"></i>Mon Profil</a>
+                                <a href="<?php echo SITE,FOLDER; ?>module/user/profil.php?iduser=<?php echo $donnee_user['iduser']; ?>"><i class="gi gi-stopwatch sidebar-nav-icon"></i>Mon Profil</a>
                             </li>
                             <li class="sidebar-header">
                                 <span class="sidebar-header-options clearfix">
@@ -42,10 +42,10 @@
                                 <span class="sidebar-header-title">MES COMMANDES</span>
                             </li>
                             <li>
-                                <a href="<?php echo SITE,FOLDER; ?>module/commande/liste.php?"><i class="gi gi-stopwatch sidebar-nav-icon"></i>Liste des Commandes</a>
+                                <a href="<?php echo SITE,FOLDER; ?>module/commande/liste.php?iduser=<?php echo $donnee_user['iduser']; ?>"><i class="gi gi-stopwatch sidebar-nav-icon"></i>Liste des Commandes</a>
                             </li>
                             <li>
-                                <a href="<?php echo SITE,FOLDER; ?>module/commande/new.php?"><i class="gi gi-stopwatch sidebar-nav-icon"></i>Nouvelle commande</a>
+                                <a href="<?php echo SITE,FOLDER; ?>module/commande/new.php?iduser=<?php echo $donnee_user['iduser']; ?>"><i class="gi gi-stopwatch sidebar-nav-icon"></i>Nouvelle commande</a>
                             </li>
                             <li class="sidebar-header">
                                 <span class="sidebar-header-options clearfix">
@@ -53,10 +53,10 @@
                                 <span class="sidebar-header-title">MES RECEPTIONS</span>
                             </li>
                             <li>
-                                <a href="<?php echo SITE,FOLDER; ?>module/reception/liste.php?"><i class="gi gi-stopwatch sidebar-nav-icon"></i>Liste des Récéptions</a>
+                                <a href="<?php echo SITE,FOLDER; ?>module/reception/liste.php?iduser=<?php echo $donnee_user['iduser']; ?>"><i class="gi gi-stopwatch sidebar-nav-icon"></i>Liste des Récéptions</a>
                             </li>
                             <li>
-                                <a href="<?php echo SITE,FOLDER; ?>module/reception/new.php?"><i class="gi gi-stopwatch sidebar-nav-icon"></i>Nouvelle reception</a>
+                                <a href="<?php echo SITE,FOLDER; ?>module/reception/new.php?iduser=<?php echo $donnee_user['iduser']; ?>"><i class="gi gi-stopwatch sidebar-nav-icon"></i>Nouvelle reception</a>
                             </li>
                         </ul>
                         <!-- END Sidebar Navigation -->
