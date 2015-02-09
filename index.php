@@ -46,7 +46,7 @@
                 <div class="sidebar-scroll">
                     <!-- Sidebar Content -->
                     <div class="sidebar-content">
-                        <?php include ('inc/chat.php'); ?>
+                        <?php //include ('inc/chat.php'); ?>
 
                         <?php include ('inc/activity.php'); ?>
 
