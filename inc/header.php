@@ -1,7 +1,12 @@
 <?php
+session_start();
 include ('db.conf.php');
 include ('config.php');
 include ('control/meteo-api.php');
+if (!isset($_SESSION['login'])) {
+header ('Location: '.SITE.''.FOLDER.'/login.php');
+exit();
+}
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
