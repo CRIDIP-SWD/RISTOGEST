@@ -26,15 +26,15 @@
                                     }
                                     // si on ne trouve aucune réponse, le visiteur s'est trompé soit dans son login, soit dans son mot de passe
                                     elseif ($data[0] == 0) {
-                                        header("Location: ../../login.php?alert_fail=true&error=1");
+                                        header("Location: ../../login.php?alert_fail=true&error=1&error_base=false&error_champs=false");
                                     }
                                     // sinon, alors la, il y a un gros problème :)
                                     else {
-                                        header("Location: ../../login.php?error_base=true&error=1");
+                                        header("Location: ../../login.php?error_base=true&error=1&alert_fail=false&error_champs=false");
                                     }
                                 }
                                 else {
-                                header("Location: ../../login.php?error_champs=true&error=1");
+                                header("Location: ../../login.php?error_champs=true&error=1&alert_fail=falseerror_base=false");
                                 }
                             }
                             ?>
