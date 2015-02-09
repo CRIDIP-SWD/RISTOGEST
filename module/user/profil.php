@@ -121,7 +121,28 @@ $donnee_user = mysql_fetch_array($sql_user);
                                             </ul>
                                         </div>
                                     </div>
-                                    <h2><strong>Example</strong> Title</h2>
+                                    <table class="table table-borderless table-striped">
+                                        <tbody>
+                                            <tr>
+                                                <td style="width: 20%;"><strong>Nom & Prénom</strong></td>
+                                                <td><?php echo $donnee_user['nom']; ?> <?php echo $donnee_user['prenom']; ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Adresse</strong></td>
+                                                <td>
+                                                    <?php echo $donnee_user['adresse']; ?><br>
+                                                    <?php echo $donnee_user['code_postal']; ?> <?php echo $donnee_user['ville']; ?>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Coordonnée</strong></td>
+                                                <td>
+                                                    Téléphone: <?php echo $donnee_user['telephone']; ?><br>
+                                                    Email: <?php echo $donnee_user['email']; ?>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                                 <!-- END Block with Options Title -->
 
