@@ -114,9 +114,29 @@ $donnee_user = mysql_fetch_array($sql_user);
                                 <!-- Interactive Content -->
                                 <!-- The content you will put inside div.block-content, will be toggled -->
                                 <div class="block-content">
-                                    
+                                    <table class="table table-borderless table-striped">
+                                        <tbody>
+                                            <tr>
+                                                <td style="width: 20%;"><strong>Identité</strong></td>
+                                                <td><?php echo $donnee_user['prenon']; ?> <?php echo $donnee_user['nom']; ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Adresse</strong></td>
+                                                <td>
+                                                    <?php echo $donnee_user['adresse']; ?>
+                                                    <?php echo $donnee_user['code_postal']; ?> <?php echo $donnee_user['ville']; ?>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Coordonnée</strong></td>
+                                                <td>
+                                                    Téléphone: <?php echo $donnee_user['telephone']; ?><br>
+                                                    E-Mail: <?php echo $donnee_user['email']; ?>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <p class="text-muted">You can also have content that ignores toggling..</p>
                                 <!-- END Interactive Content -->
                             </div>
                         </div>
