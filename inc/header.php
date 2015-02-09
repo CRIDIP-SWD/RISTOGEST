@@ -4,7 +4,7 @@ include ('db.conf.php');
 include ('config.php');
 include ('control/meteo-api.php');
 if (!isset($_SESSION['login'])) {
-header ('Location: '.SITE.''.FOLDER.'/login.php');
+header ("Location: ".SITE."".FOLDER."/login.php");
 exit();
 }
 ?>
