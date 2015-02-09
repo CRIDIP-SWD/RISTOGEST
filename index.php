@@ -228,7 +228,7 @@
                                     <!-- Widget Header -->
                                     <div class="widget-header text-left">
                                         <!-- For best results use an image with at least 150 pixels in height (with the width relative to how big your widget will be!) - Here I'm using a 1200x150 pixels image -->
-                                        <img src="img/placeholders/headers/widget5_header.jpg" alt="background" class="widget-background animation-pulseSlow">
+                                        <img src="<?php echo SITE,FOLDER,ASSETS; ?>img/placeholders/headers/widget5_header.jpg" alt="background" class="widget-background animation-pulseSlow">
                                         <h3 class="widget-content widget-content-image widget-content-light clearfix">
                                             <span class="widget-icon pull-right">
                                                 <i class="fa fa-sun-o animation-pulse"></i>
