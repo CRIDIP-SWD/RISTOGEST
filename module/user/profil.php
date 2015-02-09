@@ -1,7 +1,7 @@
 <?php
 include ('../../inc/header.php');
-$iduser = $_GET['iduser'];
-$sql_user = mysql_query("SELECT * FROM salarie WHERE iduser = '$iduser'");
+$idsalarie = $_GET['idsalarie'];
+$sql_user = mysql_query("SELECT * FROM salarie WHERE idsalarie = '$idsalarie'");
 $donnee_user = mysql_fetch_array($sql_user);
 ?>
     <body>
