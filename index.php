@@ -256,7 +256,30 @@
                                         <!-- For best results use an image with at least 150 pixels in height (with the width relative to how big your widget will be!) - Here I'm using a 1200x150 pixels image -->
                                         <img src="<?php echo SITE,FOLDER,ASSETS; ?>img/placeholders/headers/widget5_header.jpg" alt="background" class="widget-background animation-pulseSlow">
                                         <h3 class="widget-content widget-content-image widget-content-light clearfix">
-                                            <span class="widget-image pull-right">
+                                            <span class="widget-icon pull-right">
+                                            <?php
+                                                switch ($xml->current_condition->weatherDesc) {
+                                                    case 'Sunny':
+                                                        echo "<i class='wi wi-day-sunny'></i>";
+                                                        break;
+
+                                                    case 'Overcast':
+                                                        echo "<i class='wi wi-day-sunny-overcast'></i>";
+                                                        break;
+
+                                                    case 'Cloudy':
+                                                        echo "<i class='wi wi-cloudy'></i>";
+                                                        break;
+
+                                                    case 'Light freezing rain':
+                                                        echo "<i class='wi wi-rain'></i>";
+                                                        break;
+                                                    
+                                                    default:
+                                                        # code...
+                                                        break;
+                                                }
+                                            ?>
                                                 <img src="<?php echo $xml->current_condition->weatherIconUrl; ?>" />
                                             </span>
                                             Station <strong>Météo</strong><br>
