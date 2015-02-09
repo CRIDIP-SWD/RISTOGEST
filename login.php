@@ -86,7 +86,6 @@ include ('inc/config.php');
                 <h1><i class="gi gi-flash"></i> <strong><?php echo $logiciel; ?></strong><br><small>Connecter vous à <?php echo $logiciel; ?></small></h1>
             </div>
             <!-- END Login Title -->
-            <?php } ?>
             <!-- Login Block -->
             <div class="block push-bit">
                 <!-- Login Form -->
