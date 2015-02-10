@@ -1,8 +1,14 @@
+<?php include ('inc/header.php'); ?>
 <?php
-include ('../../inc/header.php');
-$idsalarie = $_GET['idsalarie'];
-$sql_user = mysql_query("SELECT * FROM salarie WHERE idsalarie = '$idsalarie'");
-$donnee_user = mysql_fetch_array($sql_user);
+define("TITLE_PAGE", "");
+define("SUBTITLE_PAGE", "");
+//Breadcumb
+$li_start = "<li>".LOGICIEL."</li>";
+$li1 = "<li>MENU</li>";
+$li2 = "";
+$li3 = "";
+$li4 = "";
+$li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
 ?>
     <body>
         <!-- Preloader -->
@@ -53,9 +59,9 @@ $donnee_user = mysql_fetch_array($sql_user);
                     <div class="sidebar-content">
                         <?php //include ('inc/chat.php'); ?>
 
-                        <?php include ('../../inc/activity.php'); ?>
+                        <?php include ('inc/activity.php'); ?>
 
-                        <?php include ('../../inc/message_ui.php'); ?>
+                        <?php include ('inc/message_ui.php'); ?>
                     </div>
                     <!-- END Sidebar Content -->
                 </div>
@@ -63,7 +69,7 @@ $donnee_user = mysql_fetch_array($sql_user);
             </div>
             <!-- END Alternative Sidebar -->
 
-            <?php include ('../../inc/sidebar.php'); ?>
+            <?php include ('inc/sidebar.php'); ?>
 
             <!-- Main Container -->
             <div id="main-container">
@@ -81,76 +87,47 @@ $donnee_user = mysql_fetch_array($sql_user);
                     'navbar-fixed-bottom'       for a bottom fixed header (fixed sidebars with scroll will be auto initialized, functionality can be found in js/app.js - handleSidebar()))
                         'header-fixed-bottom'   has to be added on #page-container only if the class 'navbar-fixed-bottom' was added
                 -->
-                <?php include ('../../inc/headerbar.php'); ?>
+                <?php include ('inc/headerbar.php'); ?>
 
                 <!-- Page content -->
                 <div id="page-content">
-                    <!-- User Profile Header -->
-                    <!-- For an image header add the class 'content-header-media' and an image as in the following example -->
-                    <div class="content-header content-header-media">
+                    <!-- Blank Header -->
+                    <div class="content-header">
                         <div class="header-section">
-                            <img src="<?php echo SITE,FOLDER,ASSETS; ?>img/placeholders/avatars/avatar2.jpg" alt="Avatar" class="pull-right img-circle">
-                            <h1><?php echo $donnee_user['prenom']; ?> <?php echo $donnee_user['nom']; ?> <br><small>Connexion par: <?php echo $donnee_user['login']; ?></small></h1>
-                        </div>
-                        <!-- For best results use an image with a resolution of 2560x248 pixels (You can also use a blurred image with ratio 10:1 - eg: 1000x100 pixels - it will adjust and look great!) -->
-                        <img src="<?php echo SITE,FOLDER,ASSETS; ?>img/placeholders/headers/profile_header.jpg" alt="header image" class="animation-pulseSlow">
-                    </div>
-                    <!-- END User Profile Header -->
-
-                    <!-- User Profile Content -->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="block">
-                                <!-- Interactive Title -->
-                                <div class="block-title">
-                                    <!-- Interactive block controls (initialized in js/app.js -> interactiveBlocks()) -->
-                                    <div class="block-options pull-right">
-                                        <a href="#modal-user-settings" class="btn btn-alt btn-sm btn-primary" data-toggle="modal"><i class="fa fa-cog"></i></a>
-                                    </div>
-                                    <h2>Vos Informations</h2>
-                                </div>
-                                <!-- END Interactive Title -->
-
-                                <!-- Interactive Content -->
-                                <!-- The content you will put inside div.block-content, will be toggled -->
-                                <div class="block-content">
-                                    
-                                </div>
-                                <p class="text-muted">You can also have content that ignores toggling..</p>
-                                <!-- END Interactive Content -->
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="col-md-6">
-                                <div class="widget">
-                                    <div class="widget-simple">
-                                        <a class="widget-icon pull-left themed-background" href="javascript:void(0)">
-                                            <i class="gi gi-package"></i>
-                                        </a>
-                                        <h3 class="text-right animation-stretchRight">5 <strong>Menus Commander</strong></h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="widget">
-                                    <div class="widget-simple">
-                                        <a class="widget-icon pull-left themed-background" href="javascript:void(0)">
-                                            <i class="gi gi-package"></i>
-                                        </a>
-                                        <h3 class="text-right animation-stretchRight">5 <strong>Menus Récéptionner</strong></h3>
-                                    </div>
-                                </div>
-                            </div>
+                            <h1>
+                                <i class="gi gi-brush"></i>Blank<br><small>A clean page to help you start!</small>
+                            </h1>
                         </div>
                     </div>
+                    <ul class="breadcrumb breadcrumb-top">
+                        <?php
+                        if(empty($li_start)){echo "";}else{echo $li_start;}
+                        if(empty($li1)){echo "";}else{echo $li1;}
+                        if(empty($li2)){echo "";}else{echo $li2;}
+                        if(empty($li3)){echo "";}else{echo $li3;}
+                        if(empty($li4)){echo "";}else{echo $li4;}
+                        if(empty($li_end)){echo "";}else{echo $li_end;}
+                        ?>
+                    </ul>
+                    <!-- END Blank Header -->
 
-                    <!-- END User Profile Content -->
+                    <!-- Example Block -->
+                    <div class="block">
+                        <!-- Example Title -->
+                        <div class="block-title">
+                            <h2>Block Title</h2>
+                        </div>
+                        <!-- END Example Title -->
+
+                        <!-- Example Content -->
+                        <p>Your content..</p>
+                        <!-- END Example Content -->
+                    </div>
+                    <!-- END Example Block -->
                 </div>
                 <!-- END Page Content -->
 
-                <!-- Footer -->
-                <?php include ('../../inc/footer.php'); ?>
-                <!-- END Footer -->
+                <?php include ('inc/footer.php'); ?>
             </div>
             <!-- END Main Container -->
         </div>
@@ -159,87 +136,13 @@ $donnee_user = mysql_fetch_array($sql_user);
         <!-- Scroll to top link, initialized in js/app.js - scrollToTop() -->
         <a href="#" id="to-top"><i class="fa fa-angle-double-up"></i></a>
 
-        <!-- User Settings, modal which opens from Settings link (found in top right user menu) and the Cog link (found in sidebar user info) -->
-        <div id="modal-user-settings" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <!-- Modal Header -->
-                    <div class="modal-header text-center">
-                        <h2 class="modal-title"><i class="fa fa-pencil"></i> Settings</h2>
-                    </div>
-                    <!-- END Modal Header -->
-
-                    <!-- Modal Body -->
-                    <div class="modal-body">
-                        <form action="index.html" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered" onsubmit="return false;">
-                            <fieldset>
-                                <legend>Vital Info</legend>
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">Username</label>
-                                    <div class="col-md-8">
-                                        <p class="form-control-static">Admin</p>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="user-settings-email">Email</label>
-                                    <div class="col-md-8">
-                                        <input type="email" id="user-settings-email" name="user-settings-email" class="form-control" value="admin@example.com">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="user-settings-notifications">Email Notifications</label>
-                                    <div class="col-md-8">
-                                        <label class="switch switch-primary">
-                                            <input type="checkbox" id="user-settings-notifications" name="user-settings-notifications" value="1" checked>
-                                            <span></span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </fieldset>
-                            <fieldset>
-                                <legend>Password Update</legend>
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="user-settings-password">New Password</label>
-                                    <div class="col-md-8">
-                                        <input type="password" id="user-settings-password" name="user-settings-password" class="form-control" placeholder="Please choose a complex one..">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="user-settings-repassword">Confirm New Password</label>
-                                    <div class="col-md-8">
-                                        <input type="password" id="user-settings-repassword" name="user-settings-repassword" class="form-control" placeholder="..and confirm it!">
-                                    </div>
-                                </div>
-                            </fieldset>
-                            <div class="form-group form-actions">
-                                <div class="col-xs-12 text-right">
-                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-sm btn-primary">Save Changes</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- END Modal Body -->
-                </div>
-            </div>
-        </div>
-        <!-- END User Settings -->
-
         <!-- Include Jquery library from Google's CDN but if something goes wrong get Jquery from local file (Remove 'http:' if you have SSL) -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script>!window.jQuery && document.write(decodeURI('%3Cscript src="js/vendor/jquery-1.11.1.min.js"%3E%3C/script%3E'));</script>
 
         <!-- Bootstrap.js, Jquery plugins and Custom JS code -->
-        <script src="<?php echo SITE, FOLDER,ASSETS; ?>js/vendor/bootstrap.min.js"></script>
-        <script src="<?php echo SITE, FOLDER,ASSETS; ?>js/plugins.js"></script>
-        <script src="<?php echo SITE, FOLDER,ASSETS; ?>js/app.js"></script>
-
-        <!-- Google Maps API + Gmaps Plugin, must be loaded in the page you would like to use maps (Remove 'http:' if you have SSL) -->
-        <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-        <script src="<?php echo SITE, FOLDER,ASSETS; ?>js/helpers/gmaps.min.js"></script>
-
-        <!-- Load and execute javascript code used only in this page -->
-        <script src="<?php echo SITE, FOLDER,ASSETS; ?>js/pages/readyProfile.js"></script>
-        <script>$(function(){ ReadyProfile.init(); });</script>
+        <script src="<?php SITE,FOLDER,ASSETS; ?>js/vendor/bootstrap.min.js"></script>
+        <script src="<?php SITE,FOLDER,ASSETS; ?>js/plugins.js"></script>
+        <script src="<?php SITE,FOLDER,ASSETS; ?>js/app.js"></script>
     </body>
 </html>
