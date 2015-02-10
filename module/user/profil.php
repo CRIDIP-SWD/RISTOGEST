@@ -191,30 +191,44 @@ $donnee_user = mysql_fetch_array($sql_user);
 
                     <!-- Modal Body -->
                     <div class="modal-body">
-                        <form action="index.html" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered" onsubmit="return false;">
+                        <form action="<?php echo SITE, FOLDER; ?>inc/control/profil.php" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered">
                             <fieldset>
-                                <legend>Vital Info</legend>
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">Username</label>
-                                    <div class="col-md-8">
-                                        <p class="form-control-static">Admin</p>
-                                    </div>
-                                </div>
+                                <legend>Modification des Informations du salarié</legend>
+
+                                <input type="hidden" name="idsalarie" value="<?php echo $donnee_user['idsalarie']; ?>" />
+
                                 <div class="form-group">
                                     <label class="col-md-4 control-label" for="user-settings-email">Email</label>
                                     <div class="col-md-8">
-                                        <input type="email" id="user-settings-email" name="user-settings-email" class="form-control" value="admin@example.com">
+                                        <input type="email" id="user-settings-email" name="email" class="form-control" value="<?php echo $donnee_user['email']; ?>">
                                     </div>
                                 </div>
+
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label" for="user-settings-notifications">Email Notifications</label>
+                                    <label class="col-md-4 control-label" for="user-settings-email">Adresse postal</label>
                                     <div class="col-md-8">
-                                        <label class="switch switch-primary">
-                                            <input type="checkbox" id="user-settings-notifications" name="user-settings-notifications" value="1" checked>
-                                            <span></span>
-                                        </label>
+                                        <textarea placeholder="Votre adresse postal (numéro de rue, rue, batiment, etc...)" class="form-control" rows="9" name="adresse" id="example-textarea-input"><?php echo $donnee_user['adresse']; ?></textarea>
                                     </div>
                                 </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="user-settings-email">Code Postal</label>
+                                    <div class="col-md-3">
+                                        <input type="text" id="user-settings-email" name="code_postal" class="form-control" value="<?php echo $donnee_user['code_postal']; ?>">
+                                    </div>
+                                    <label class="col-md-2 control-label" for="user-settings-email">Ville</label>
+                                    <div class="col-md-5">
+                                        <input type="text" id="user-settings-email" name="ville" class="form-control" value="<?php echo $donnee_user['ville']; ?>">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="user-settings-email">Numéro de téléphone</label>
+                                    <div class="col-md-8">
+                                        <input type="text" id="masked_phone" name="telephone" class="form-control" value="<?php echo $donnee_user['telephone']; ?>">
+                                    </div>
+                                </div>
+
                             </fieldset>
                             <fieldset>
                                 <legend>Password Update</legend>
