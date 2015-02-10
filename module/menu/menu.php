@@ -162,6 +162,28 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 </table>
                             </div>
                         </div>
+                        <div class="col-md-3">
+                            <div class="block">
+                                <div class="block-title">
+                                <h2>LES DESSERTS</h2>
+                                </div>
+                                <table style="width: 100%">
+                                    <?php
+                                    $sql_dessert_menu = mysql_query("SELECT * FROM dessert_menu WHERE idmenu = '$idmenu'")or die(mysql_error());
+                                    while($donnee_dessert_menu = mysql_fetch_array($sql_dessert_menu))
+                                    {
+                                    ?>
+                                    <tr>
+                                        <td>
+                                            <strong><?php echo html_entity_decode($donnee_dessert_menu['libelle_dessert']); ?></strong><br>
+                                            <h5 style="color: grey; font-style: italic;"><?php echo html_entity_decode($donnee_dessert_menu['descriptif_dessert']); ?></h5>
+                                        </td>
+                                        <td style="text-align: right;"><?php echo number_format($donnee_dessert_menu['prix_dessert'], 2, ',', ' ')." &euro;"; ?></td>
+                                    </tr>
+                                    <?php } ?>
+                                </table>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
