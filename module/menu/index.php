@@ -112,61 +112,106 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     </ul>
                     <!-- END Blank Header -->
 
-                    <div class="row">
-                            <div class="col-md-6">
-                                <!-- Block Tabs -->
-                                <div class="block full">
-                                    <!-- Block Tabs Title -->
-                                    <div class="block-title">
-                                        <div class="block-options pull-right">
-                                            <div class="btn-group">
-                                                <a class="btn btn-alt btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)"><i class="fa fa-angle-down"></i></a>
-                                                <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
-                                                    <li>
-                                                        <a href="javascript:void(0)">Action</a>
-                                                        <a href="javascript:void(0)">Action 2</a>
-                                                    </li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="javascript:void(0)">Another Action</a></li>
-                                                </ul>
+                    <div class="table-responsive">
+                            <table class="table table-vcenter table-striped">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 150px;" class="text-center"><i class="gi gi-user"></i></th>
+                                        <th>Client</th>
+                                        <th>Email</th>
+                                        <th>Subscription</th>
+                                        <th style="width: 150px;" class="text-center">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center"><img src="img/placeholders/avatars/avatar4.jpg" alt="avatar" class="img-circle"></td>
+                                        <td><a href="page_ready_user_profile.html">client1</a></td>
+                                        <td>client1@example.com</td>
+                                        <td><a href="javascript:void(0)" class="label label-warning">Trial</a></td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-xs">
+                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Edit" class="btn btn-default"><i class="fa fa-pencil"></i></a>
+                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Delete" class="btn btn-danger"><i class="fa fa-times"></i></a>
                                             </div>
-                                        </div>
-                                        <ul class="nav nav-tabs" data-toggle="tabs">
-                                            <li class="active"><a href="#example-tabs2-activity">Activity</a></li>
-                                            <li><a href="#example-tabs2-profile">Profile</a></li>
-                                            <li><a href="#example-tabs2-options" data-toggle="tooltip" title="Settings"><i class="fa fa-cogs"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- END Block Tabs Title -->
-
-                                    <!-- Tabs Content -->
-                                    <div class="tab-content">
-                                        <div class="tab-pane active" id="example-tabs2-activity">Block tabs..</div>
-                                        <div class="tab-pane" id="example-tabs2-profile">Profile..</div>
-                                        <div class="tab-pane" id="example-tabs2-options">Settings..</div>
-                                    </div>
-                                    <!-- END Tabs Content -->
-                                </div>
-                                <!-- END Block Tabs -->
-                            </div>
-                            <div class="col-md-6">
-                                <!-- Default Tabs -->
-                                <ul class="nav nav-tabs push" data-toggle="tabs">
-                                    <li class="active"><a href="#example-tabs-news">Activity</a></li>
-                                    <li><a href="#example-tabs-profile">Profile</a></li>
-                                    <li><a href="#example-tabs-messages" data-toggle="tooltip" title="Messages"><i class="fa fa-envelope-o"></i></a></li>
-                                    <li><a href="#example-tabs-settings" data-toggle="tooltip" title="Settings"><i class="fa fa-cog"></i></a></li>
-                                </ul>
-                                <div class="tab-content">
-                                    <div class="tab-pane active" id="example-tabs-news">News..</div>
-                                    <div class="tab-pane" id="example-tabs-profile">Profile..</div>
-                                    <div class="tab-pane" id="example-tabs-messages">Messages..</div>
-                                    <div class="tab-pane" id="example-tabs-settings">Settings..</div>
-                                </div>
-                                <!-- END Default Tabs -->
-                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"><img src="img/placeholders/avatars/avatar14.jpg" alt="avatar" class="img-circle"></td>
+                                        <td><a href="page_ready_user_profile.html">client2</a></td>
+                                        <td>client2@example.com</td>
+                                        <td><a href="javascript:void(0)" class="label label-success">VIP</a></td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-xs">
+                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Edit" class="btn btn-default"><i class="fa fa-pencil"></i></a>
+                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Delete" class="btn btn-danger"><i class="fa fa-times"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"><img src="img/placeholders/avatars/avatar16.jpg" alt="avatar" class="img-circle"></td>
+                                        <td><a href="page_ready_user_profile.html">client3</a></td>
+                                        <td>client3@example.com</td>
+                                        <td><a href="javascript:void(0)" class="label label-info">Business</a></td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-xs">
+                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Edit" class="btn btn-default"><i class="fa fa-pencil"></i></a>
+                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Delete" class="btn btn-danger"><i class="fa fa-times"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"><img src="img/placeholders/avatars/avatar8.jpg" alt="avatar" class="img-circle"></td>
+                                        <td><a href="page_ready_user_profile.html">client4</a></td>
+                                        <td>client4@example.com</td>
+                                        <td><a href="javascript:void(0)" class="label label-success">VIP</a></td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-xs">
+                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Edit" class="btn btn-default"><i class="fa fa-pencil"></i></a>
+                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Delete" class="btn btn-danger"><i class="fa fa-times"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"><img src="img/placeholders/avatars/avatar1.jpg" alt="avatar" class="img-circle"></td>
+                                        <td><a href="page_ready_user_profile.html">client5</a></td>
+                                        <td>client5@example.com</td>
+                                        <td><a href="javascript:void(0)" class="label label-primary">Personal</a></td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-xs">
+                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Edit" class="btn btn-default"><i class="fa fa-pencil"></i></a>
+                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Delete" class="btn btn-danger"><i class="fa fa-times"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"><img src="img/placeholders/avatars/avatar5.jpg" alt="avatar" class="img-circle"></td>
+                                        <td><a href="page_ready_user_profile.html">client6</a></td>
+                                        <td>client6@example.com</td>
+                                        <td><a href="javascript:void(0)" class="label label-info">Business</a></td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-xs">
+                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Edit" class="btn btn-default"><i class="fa fa-pencil"></i></a>
+                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Delete" class="btn btn-danger"><i class="fa fa-times"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"><img src="img/placeholders/avatars/avatar10.jpg" alt="avatar" class="img-circle"></td>
+                                        <td><a href="page_ready_user_profile.html">client7</a></td>
+                                        <td>client7@example.com</td>
+                                        <td><a href="javascript:void(0)" class="label label-primary">Personal</a></td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-xs">
+                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Edit" class="btn btn-default"><i class="fa fa-pencil"></i></a>
+                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Delete" class="btn btn-danger"><i class="fa fa-times"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        
+
                 </div>
                 <!-- END Page Content -->
 
