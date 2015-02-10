@@ -5,7 +5,7 @@ define("SUBTITLE_PAGE", "");
 define("TITLE_ICON", "gi gi-cutlery");
 //Breadcumb
 $li_start = "<li>".LOGICIEL."</li>";
-$li1 = "<li>MENU</li>";
+$li1 = "";
 $li2 = "";
 $li3 = "";
 $li4 = "";
@@ -112,19 +112,61 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     </ul>
                     <!-- END Blank Header -->
 
-                    <!-- Example Block -->
-                    <div class="block">
-                        <!-- Example Title -->
-                        <div class="block-title">
-                            <h2>Block Title</h2>
-                        </div>
-                        <!-- END Example Title -->
+                    <div class="row">
+                            <div class="col-md-6">
+                                <!-- Block Tabs -->
+                                <div class="block full">
+                                    <!-- Block Tabs Title -->
+                                    <div class="block-title">
+                                        <div class="block-options pull-right">
+                                            <div class="btn-group">
+                                                <a class="btn btn-alt btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)"><i class="fa fa-angle-down"></i></a>
+                                                <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
+                                                    <li>
+                                                        <a href="javascript:void(0)">Action</a>
+                                                        <a href="javascript:void(0)">Action 2</a>
+                                                    </li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="javascript:void(0)">Another Action</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <ul class="nav nav-tabs" data-toggle="tabs">
+                                            <li class="active"><a href="#example-tabs2-activity">Activity</a></li>
+                                            <li><a href="#example-tabs2-profile">Profile</a></li>
+                                            <li><a href="#example-tabs2-options" data-toggle="tooltip" title="Settings"><i class="fa fa-cogs"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- END Block Tabs Title -->
 
-                        <!-- Example Content -->
-                        <p>Your content..</p>
-                        <!-- END Example Content -->
-                    </div>
-                    <!-- END Example Block -->
+                                    <!-- Tabs Content -->
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="example-tabs2-activity">Block tabs..</div>
+                                        <div class="tab-pane" id="example-tabs2-profile">Profile..</div>
+                                        <div class="tab-pane" id="example-tabs2-options">Settings..</div>
+                                    </div>
+                                    <!-- END Tabs Content -->
+                                </div>
+                                <!-- END Block Tabs -->
+                            </div>
+                            <div class="col-md-6">
+                                <!-- Default Tabs -->
+                                <ul class="nav nav-tabs push" data-toggle="tabs">
+                                    <li class="active"><a href="#example-tabs-news">Activity</a></li>
+                                    <li><a href="#example-tabs-profile">Profile</a></li>
+                                    <li><a href="#example-tabs-messages" data-toggle="tooltip" title="Messages"><i class="fa fa-envelope-o"></i></a></li>
+                                    <li><a href="#example-tabs-settings" data-toggle="tooltip" title="Settings"><i class="fa fa-cog"></i></a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="example-tabs-news">News..</div>
+                                    <div class="tab-pane" id="example-tabs-profile">Profile..</div>
+                                    <div class="tab-pane" id="example-tabs-messages">Messages..</div>
+                                    <div class="tab-pane" id="example-tabs-settings">Settings..</div>
+                                </div>
+                                <!-- END Default Tabs -->
+                            </div>
+                        </div>
+                        
                 </div>
                 <!-- END Page Content -->
 
