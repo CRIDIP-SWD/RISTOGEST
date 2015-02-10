@@ -6,7 +6,7 @@ $donnee_menu = mysql_fetch_array($sql_menu);
 ?>
 <?php
 define("TITLE_PAGE", "FICHE DU MENU du ".$donnee_menu['date_menu']);
-define("SUBTITLE_PAGE", "");
+define("SUBTITLE_PAGE", "Semaine ".$donnee_menu['semaine']);
 define("TITLE_ICON", "gi gi-cutlery");
 //Breadcumb
 $li_start = "<li>".$logiciel."</li>";
