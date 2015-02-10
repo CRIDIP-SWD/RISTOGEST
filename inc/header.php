@@ -17,7 +17,7 @@ $donnee_user = mysql_fetch_array($sql_user);
 <!--[if IE 9]>         <html class="no-js lt-ie10"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
-        <meta charset="utf-8">
+        <meta charset="iso-8859-1">
 
         <title><?php echo $title; ?></title>
 

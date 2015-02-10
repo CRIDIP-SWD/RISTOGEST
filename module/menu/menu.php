@@ -4,7 +4,7 @@ define("TITLE_PAGE", "FICHE DU MENU");
 define("SUBTITLE_PAGE", "");
 define("TITLE_ICON", "gi gi-cutlery");
 //Breadcumb
-$li_start = "<li>".LOGICIEL."</li>";
+$li_start = "<li>".$logiciel."</li>";
 $li1 = "MENU";
 $li2 = "";
 $li3 = "";
