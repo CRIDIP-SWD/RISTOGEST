@@ -36,7 +36,7 @@ if(isset($_POST['modif-info-profil']) && $_POST['modif-info-profil'] = 'Valider'
 	{
 		header("Location: ../../module/user/profil.php?idsalarie=$idsalarie&succes_modif_info=true");
 	}else{
-		header("Location: ../../module/user/profil.php?idsalarie=$idsalarie&error_modif_info=true");
+		header("Location: ../../module/user/profil.php?idsalarie=$idsalarie&error_modif_info=true&error_sql=$sql_maj_salarie");
 	}
 
 

@@ -99,6 +99,58 @@ $donnee_user = mysql_fetch_array($sql_user);
 
                     <!-- User Profile Content -->
                     <div class="row">
+                        <div class="col-md-12">
+                            <?php
+                                if(isset($_GET['error_file_extension']) && $_GET['error_file_extension'] == 'true'){
+                            ?>
+                                <div class="alert alert-warning alert-dismissable">
+                                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                    <h4><i class="fa fa-exclamation-circle"></i> Attention</h4>Vous ne pouvez choisir une avatar que si l'extension de l'image est de type <strong>JPG, JPEG, GIF ou PNG</strong> !<br>
+                                    Veuillez recommencer
+                                </div>
+                            <?php
+                                }
+                            ?>
+
+                            <?php
+                                if(isset($_GET['error_file_size']) && $_GET['error_file_size'] == 'true'){
+                            ?>
+                                <div class="alert alert-warning alert-dismissable">
+                                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                    <h4><i class="fa fa-exclamation-circle"></i> Attention</h4>Votre image dépasse la taille autorisé qui est de <strong>7 Mo</strong> !<br>
+                                    Veuillez recommencer
+                                </div>
+                            <?php
+                                }
+                            ?>
+
+                            <?php
+                                if(isset($_GET['succes_modif_info']) && $_GET['succes_modif_info'] == 'true'){
+                            ?>
+                                <div class="alert alert-success alert-dismissable">
+                                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                    <h4><i class="fa fa-check-circle"></i> Succès</h4> Vos Informations ont bien été modifiés !
+                                </div>
+                            <?php
+                                }
+                            ?>
+
+                            <?php
+                                if(isset($_GET['error_modif_info']) && $_GET['error_modif_info'] == 'true'){
+                            ?>
+                                <div class="alert alert-danger alert-dismissable">
+                                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                    <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur innatendue c'est produit.<br>
+                                    Information sql: <i><?php echo $_GET['error_sql']; ?></i><br>
+                                    Debug: <i><?php echo mysql_error(); ?></i><br>
+                                    <strong>Veuillez contactez l'administrateur.</strong>
+                                </div>
+                            <?php
+                                }
+                            ?>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="block">
                                 <!-- Interactive Title -->
