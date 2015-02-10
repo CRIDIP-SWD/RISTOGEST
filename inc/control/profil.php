@@ -30,13 +30,13 @@ if(isset($_POST['modif-info-profil']) && $_POST['modif-info-profil'] = 'Valider'
 
 
 	$sql_maj_salarie = mysql_query("UPDATE salarie SET email = '$idsalarie', adresse = '$adresse', code_postal = '$code_postal', ville = '$ville', telephone = '$telephone', avatar = '$avatar' WHERE idsalarie = '$idsalarie'");
-
+	$view_sql = echo $sql_maj_salarie;
 
 	if($sql_maj_salarie == TRUE)
 	{
 		header("Location: ../../module/user/profil.php?idsalarie=$idsalarie&succes_modif_info=true");
 	}else{
-		header("Location: ../../module/user/profil.php?idsalarie=$idsalarie&error_modif_info=true&error_sql=$sql_maj_salarie");
+		header("Location: ../../module/user/profil.php?idsalarie=$idsalarie&error_modif_info=true&error_sql=$view_sql");
 	}
 
 
