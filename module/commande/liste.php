@@ -205,7 +205,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                     ?>
                                                 </td>
                                                 <td class="text-center">
-                                                    <a class="btn btn-info" href=""><i class="gi gi-eye_open"></i> Voir la commande</a>
+                                                    <a class="btn btn-info" href="view.php?idcommande=<?php echo $donnee_commande['idcommande']; ?>"><i class="gi gi-eye_open"></i> Voir la commande</a>
                                                 </td> 
                                             </tr>
                                             <?php } ?>
