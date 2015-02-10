@@ -3,6 +3,7 @@ session_start();
 include ('db.conf.php');
 include ('config.php');
 include ('control/meteo-api.php');
+include ('control/charge.php');
 if (!isset($_SESSION['login'])) {
 header ("Location: ".SITE."".FOLDER."login.php");
 exit();

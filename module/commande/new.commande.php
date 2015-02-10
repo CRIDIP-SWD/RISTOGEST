@@ -1,13 +1,12 @@
 <?php include ('../../inc/header.php'); ?>
 <?php
-$idsalarie = $_GET['idsalarie'];
-?>
+$idsalarie = $_GET['idsalarie']; ?>
 <?php
-define("TITLE_PAGE", "COMMANDE");
-define("SUBTITLE_PAGE", "LISTE DES COMMANDES");
+define("TITLE_PAGE", "NOUVELLE COMMANDE DE REPAS");
+define("SUBTITLE_PAGE", "");
 //Breadcumb
 $li_start = "<li>".$logiciel."</li>";
-$li1 = "";
+$li1 = "COMMANDE";
 $li2 = "";
 $li3 = "";
 $li4 = "";
@@ -119,74 +118,35 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         <div class="col-md-12">
                             <div class="block">
                                 <div class="block-title">
-                                    <h2><strong>LISTE DES</strong> COMMANDES</h2>
-                                    <div class="block-options pull-right">
-                                        <a class="btn btn-sm btn-success" href="new.commande.php?idsalarie=<?php echo $idsalarie; ?>"><i class="fa fa-plus"></i> Nouvelle Commande de repas</a>
-                                    </div>
+                                    <h2>CHOISISSEZ LA DATE DE VOTRE MENU</h2>
                                 </div>
                                 <div class="table-responsive">
                                     <table id="table-menu" class="table table-vcenter table-condensed table-bordered">
                                         <thead>
                                             <tr>
-                                                <th class="text-center">DATE DE LA COMMANDE</th>
-                                                <th>DATE DU MENU</th>
-                                                <th>MONTANT A PAYER</th>
-                                                <th>ETAT DE LA COMMANDE</th>
-                                                <th>ACTION</th>
+                                                <th class="text-center">SEMAINE</th>
+                                                <th>DATE</th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $sql_commande = mysql_query("SELECT * FROM commande, menu, salarie WHERE commande.idmenu = menu.idmenu
-                                                AND salarie.idsalarie = '$idsalarie'")or die(mysql_error());
-                                            while($donnee_commande = mysql_fetch_array($sql_commande))
+                                            $sql_menu = mysql_query("SELECT * FROM menu WHERE etat_menu = '0'");
+                                            while($donnee_menu = mysql_fetch_array($sql_menu))
                                             {
                                             ?>
                                             <tr>
-                                                <td class="text-center"><?php echo $donnee_commande['date_commande']; ?></td>
-                                                <td class="text-center">
-                                                    <strong><?php echo $donnee_commande['date_menu']; ?></strong><br>
-                                                    <h5 style="color: grey; font-style: italic;">Semaine <?php echo $donnee_commande['semaine']; ?></h5>
+                                                <td class="text-center">Semaine <?php echo $donnee_menu['semaine']; ?></td>
+                                                <td class="text-center"><?php echo $donnee_menu['date_menu']; ?></td>
+                                                <td>
+                                                    <a class="btn btn-primary btn-xs" href="menu.php?idmenu=<?php echo $donnee_menu['idmenu']; ?>"><i class="gi gi-eye_open"></i> Voir le menu du jour</a>
                                                 </td>
-                                                <td class="text-right"><?php echo number_format($donnee_commande['montant_total'], 2, ',', ' '). " €"; ?></td>
-                                                <td class="text-center">
-                                                    <?php
-                                                        switch ($donnee_commande['etat_commande']) {
-                                                            case '1':
-                                                                echo '<div class="progress progress-striped active" data-placement="top" data-toggle="tooltip" data-original-title="Votre commande est transmis !"><div style="width: 20%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="20" role="progressbar" class="progress-bar progress-bar-danger">20%</div></div>';
-                                                                break;
-
-                                                            case '2':
-                                                                echo '<div class="progress progress-striped active" data-placement="top" data-toggle="tooltip" data-original-title="Pris en compte par la société !"><div style="width: 40%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">40%</div></div>';
-                                                                break;
-
-                                                            case '3':
-                                                                echo '<div class="progress progress-striped active" data-placement="top" data-toggle="tooltip" data-original-title="Commande passer chez le prestataire !"><div style="width: 60%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="60" role="progressbar" class="progress-bar progress-bar-warning">60%</div></div>';
-                                                                break;
-
-                                                            case '4':
-                                                                echo '<div class="progress progress-striped active" data-placement="top" data-toggle="tooltip" data-original-title="En attente de livraison !"><div style="width: 80%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" role="progressbar" class="progress-bar progress-bar-info">80%</div></div>';
-                                                                break;
-
-                                                            case '5':
-                                                                echo '<div class="progress progress-striped active" data-placement="top" data-toggle="tooltip" data-original-title="Votre repas est disponible dans sur le lieu de livraison !"><div style="width: 100%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" role="progressbar" class="progress-bar progress-bar-info">100%</div></div>';
-                                                                break;
-                                                            
-                                                            default:
-                                                                # code...
-                                                                break;
-                                                        }
-                                                    ?>
-                                                </td>
-                                                <td class="text-center">
-                                                    <a class="btn btn-info" href=""><i class="gi gi-eye_open"></i> Voir la commande</a>
-                                                </td> 
                                             </tr>
                                             <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>   
+                            </div>
                         </div>
                     </div>
                     <!-- END Example Block -->
@@ -210,8 +170,5 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
         <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/vendor/bootstrap.min.js"></script>
         <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/plugins.js"></script>
         <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/app.js"></script>
-        
-        <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/pages/tablesDatatables.js"></script>
-        <script>$(function(){ TablesDatatables.init(); });</script>
     </body>
 </html>
