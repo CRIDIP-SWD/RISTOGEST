@@ -150,16 +150,19 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 </div>
                                 <table style="width: 100%">
                                     <?php
-                                    $sql_plat_menu = mysql_query("SELECT * FROM plat_menu WHERE idmenu = '$idmenu'")or die(mysql_error());
+                                    $sql_plat_menu = mysql_query("SELECT * FROM menu_produit, produit, famille_produit WHERE produit.idfamilleproduit = famille_produit.idfamilleproduit
+                                        AND menu_produit.idfamilleproduit = famille_produit.idfamilleproduit
+                                        AND menu_produit.idproduit = produit.idproduit
+                                        AND famille_produit.idfamilleproduit = '2'")or die(mysql_error());
                                     while($donnee_plat_menu = mysql_fetch_array($sql_plat_menu))
                                     {
                                     ?>
                                     <tr>
                                         <td>
-                                            <strong><?php echo html_entity_decode($donnee_plat_menu['libelle_plat']); ?></strong><br>
-                                            <h5 style="color: grey; font-style: italic;"><?php echo html_entity_decode($donnee_plat_menu['descriptif_plat']); ?></h5>
+                                            <strong><?php echo html_entity_decode($donnee_plat_menu['designation_produit']); ?></strong><br>
+                                            <h5 style="color: grey; font-style: italic;"><?php echo html_entity_decode($donnee_plat_menu['description_produit']); ?></h5>
                                         </td>
-                                        <td style="text-align: right;"><?php echo number_format($donnee_plat_menu['prix_plat'], 2, ',', ' ')." &euro;"; ?></td>
+                                        <td style="text-align: right;"><?php echo number_format($donnee_plat_menu['prix_unitaire'], 2, ',', ' ')." &euro;"; ?></td>
                                     </tr>
                                     <?php } ?>
                                 </table>
@@ -172,16 +175,19 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 </div>
                                 <table style="width: 100%">
                                     <?php
-                                    $sql_dessert_menu = mysql_query("SELECT * FROM dessert_menu WHERE idmenu = '$idmenu'")or die(mysql_error());
+                                    $sql_dessert_menu = mysql_query("SELECT * FROM menu_produit, produit, famille_produit WHERE produit.idfamilleproduit = famille_produit.idfamilleproduit
+                                        AND menu_produit.idfamilleproduit = famille_produit.idfamilleproduit
+                                        AND menu_produit.idproduit = produit.idproduit
+                                        AND famille_produit.idfamilleproduit = '3'")or die(mysql_error());
                                     while($donnee_dessert_menu = mysql_fetch_array($sql_dessert_menu))
                                     {
                                     ?>
                                     <tr>
                                         <td>
-                                            <strong><?php echo html_entity_decode($donnee_dessert_menu['libelle_dessert']); ?></strong><br>
-                                            <h5 style="color: grey; font-style: italic;"><?php echo html_entity_decode($donnee_dessert_menu['descriptif_dessert']); ?></h5>
+                                            <strong><?php echo html_entity_decode($donnee_dessert_menu['designation_produit']); ?></strong><br>
+                                            <h5 style="color: grey; font-style: italic;"><?php echo html_entity_decode($donnee_dessert_menu['description_produit']); ?></h5>
                                         </td>
-                                        <td style="text-align: right;"><?php echo number_format($donnee_dessert_menu['prix_dessert'], 2, ',', ' ')." &euro;"; ?></td>
+                                        <td style="text-align: right;"><?php echo number_format($donnee_dessert_menu['prix_unitaire'], 2, ',', ' ')." &euro;"; ?></td>
                                     </tr>
                                     <?php } ?>
                                 </table>
@@ -194,16 +200,19 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 </div>
                                 <table style="width: 100%">
                                     <?php
-                                    $sql_boisson_menu = mysql_query("SELECT * FROM boisson_menu WHERE idmenu = '$idmenu'")or die(mysql_error());
+                                    $sql_boisson_menu = mysql_query("SELECT * FROM menu_produit, produit, famille_produit WHERE produit.idfamilleproduit = famille_produit.idfamilleproduit
+                                        AND menu_produit.idfamilleproduit = famille_produit.idfamilleproduit
+                                        AND menu_produit.idproduit = produit.idproduit
+                                        AND famille_produit.idfamilleproduit = '4'")or die(mysql_error());
                                     while($donnee_boisson_menu = mysql_fetch_array($sql_boisson_menu))
                                     {
                                     ?>
                                     <tr>
                                         <td>
-                                            <strong><?php echo html_entity_decode($donnee_boisson_menu['libelle_boisson']); ?></strong><br>
-                                            <h5 style="color: grey; font-style: italic;"><?php echo html_entity_decode($donnee_boisson_menu['descriptif_boisson']); ?></h5>
+                                            <strong><?php echo html_entity_decode($donnee_boisson_menu['designation_produit']); ?></strong><br>
+                                            <h5 style="color: grey; font-style: italic;"><?php echo html_entity_decode($donnee_boisson_menu['description_produit']); ?></h5>
                                         </td>
-                                        <td style="text-align: right;"><?php echo number_format($donnee_boisson_menu['prix_boisson'], 2, ',', ' ')." &euro;"; ?></td>
+                                        <td style="text-align: right;"><?php echo number_format($donnee_boisson_menu['prix_unitaire'], 2, ',', ' ')." &euro;"; ?></td>
                                     </tr>
                                     <?php } ?>
                                 </table>
