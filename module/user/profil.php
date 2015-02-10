@@ -252,7 +252,7 @@ $donnee_user = mysql_fetch_array($sql_user);
                                 <div class="form-group">
                                     <label class="col-md-4 control-label" for="user-settings-email">Email</label>
                                     <div class="col-md-8">
-                                        <input type="email" id="user-settings-email" name="email" class="form-control" value="<?php echo $donnee_user['email']; ?>">
+                                        <input type="text" id="user-settings-email" name="email" class="form-control" value="<?php echo $donnee_user['email']; ?>">
                                     </div>
                                 </div>
 
