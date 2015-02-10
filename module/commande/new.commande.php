@@ -139,7 +139,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                 <td class="text-center">Semaine <?php echo $donnee_menu['semaine']; ?></td>
                                                 <td class="text-center"><?php echo $donnee_menu['date_menu']; ?></td>
                                                 <td>
-                                                    <a class="btn btn-primary btn-xs" href="menu.php?idmenu=<?php echo $donnee_menu['idmenu']; ?>"><i class="gi gi-eye_open"></i> Voir le menu du jour</a>
+                                                    <a class="btn btn-primary" href="commande.php?idmenu=<?php echo $donnee_menu['idmenu']; ?>&idsalarie=<?php echo $idsalarie; ?>">Passer commande <i class="gi gi-circle_arrow_right"></i></a>
                                                 </td>
                                             </tr>
                                             <?php } ?>
