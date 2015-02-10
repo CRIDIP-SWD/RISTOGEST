@@ -134,7 +134,7 @@ $donnee_menu = mysql_fetch_array($sql_menu);
                                             <strong><?php echo html_entity_decode($donnee_entree_menu['libelle_entre']); ?></strong><br>
                                             <h5 style="color: grey; font-style: italic;"><?php echo html_entity_decode($donnee_entree_menu['descriptif_entre']); ?></h5>
                                         </td>
-                                        <td style="text-align: right;"><?php echo number_format($donnee_entree_menu['prix_entre'], 2, ',', ' ')." €"; ?></td>
+                                        <td style="text-align: right;"><?php echo number_format($donnee_entree_menu['prix_entre'], 2, ',', ' ')." &euro;"; ?></td>
                                     </tr>
                                     <?php } ?>
                                 </table>
