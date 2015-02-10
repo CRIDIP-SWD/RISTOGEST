@@ -72,7 +72,7 @@
                         <div class="sidebar-section">
                             <table>
                                 <tr>
-                                    <td>METRONIC CORE V5</td>
+                                    <td style="width: 50%;">METRONIC CORE V5</td>
                                     <td>5.0.0a</td>
                                 </tr>
                                 <tr>
