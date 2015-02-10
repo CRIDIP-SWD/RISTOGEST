@@ -229,26 +229,18 @@ $donnee_user = mysql_fetch_array($sql_user);
                                     </div>
                                 </div>
 
-                            </fieldset>
-                            <fieldset>
-                                <legend>Password Update</legend>
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label" for="user-settings-password">New Password</label>
-                                    <div class="col-md-8">
-                                        <input type="password" id="user-settings-password" name="user-settings-password" class="form-control" placeholder="Please choose a complex one..">
+                                    <label class="col-md-3 control-label" for="example-file-input">Avatar</label>
+                                    <div class="col-md-9">
+                                        <input type="file" id="example-file-input" name="avatar">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="user-settings-repassword">Confirm New Password</label>
-                                    <div class="col-md-8">
-                                        <input type="password" id="user-settings-repassword" name="user-settings-repassword" class="form-control" placeholder="..and confirm it!">
-                                    </div>
-                                </div>
+
                             </fieldset>
                             <div class="form-group form-actions">
                                 <div class="col-xs-12 text-right">
-                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-sm btn-primary">Save Changes</button>
+                                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Fermer la fenêtre</button>
+                                    <button type="submit" class="btn btn-sm btn-success">Modifier les information de compte</button>
                                 </div>
                             </div>
                         </form>
@@ -275,10 +267,12 @@ $donnee_user = mysql_fetch_array($sql_user);
         <!-- Load and execute javascript code used only in this page -->
         <script src="<?php echo SITE, FOLDER,ASSETS; ?>js/pages/readyProfile.js"></script>
         <script src="<?php echo SITE, FOLDER,ASSETS; ?>js/pages/formsValidation.js"></script>
+        <script src="<?php echo SITE, FOLDER,ASSETS; ?>js/pages/formsGeneral.js"></script>
         <script>
             $(function(){ 
                 ReadyProfile.init(); 
                 FormsValidation.init();
+                FormsGeneral.init();
             });
 
         </script>
