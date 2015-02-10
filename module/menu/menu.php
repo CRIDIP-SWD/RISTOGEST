@@ -153,10 +153,10 @@ $donnee_menu = mysql_fetch_array($sql_menu);
                                     ?>
                                     <tr>
                                         <td>
-                                            <strong><?php echo html_entity_decode($donnee_plat_menu['libelle_entre']); ?></strong><br>
-                                            <h5 style="color: grey; font-style: italic;"><?php echo html_entity_decode($donnee_plat_menu['descriptif_entre']); ?></h5>
+                                            <strong><?php echo html_entity_decode($donnee_plat_menu['libelle_plat']); ?></strong><br>
+                                            <h5 style="color: grey; font-style: italic;"><?php echo html_entity_decode($donnee_plat_menu['descriptif_plat']); ?></h5>
                                         </td>
-                                        <td style="text-align: right;"><?php echo number_format($donnee_plat_menu['prix_entre'], 2, ',', ' ')." &euro;"; ?></td>
+                                        <td style="text-align: right;"><?php echo number_format($donnee_plat_menu['prix_plat'], 2, ',', ' ')." &euro;"; ?></td>
                                     </tr>
                                     <?php } ?>
                                 </table>
