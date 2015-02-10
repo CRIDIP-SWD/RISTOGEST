@@ -274,6 +274,13 @@ $donnee_user = mysql_fetch_array($sql_user);
 
         <!-- Load and execute javascript code used only in this page -->
         <script src="<?php echo SITE, FOLDER,ASSETS; ?>js/pages/readyProfile.js"></script>
-        <script>$(function(){ ReadyProfile.init(); });</script>
+        <script src="<?php echo SITE, FOLDER,ASSETS; ?>js/pages/formsValidation.js"></script>
+        <script>
+            $(function(){ 
+                ReadyProfile.init(); 
+                FormsValidation.init();
+            });
+
+        </script>
     </body>
 </html>
