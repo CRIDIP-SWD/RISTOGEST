@@ -1,5 +1,8 @@
 <?php include ('../../inc/header.php'); ?>
 <?php
+$idsalarie = $_GET['idsalarie'];
+?>
+<?php
 define("TITLE_PAGE", "COMMANDE");
 define("SUBTITLE_PAGE", "LISTE DES COMMANDES");
 //Breadcumb
@@ -116,29 +119,34 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         <div class="col-md-12">
                             <div class="block">
                                 <div class="block-title">
-                                    <h2><strong>LISTE DES</strong> MENUS</h2>
+                                    <h2><strong>LISTE DES</strong> COMMANDES</h2>
                                 </div>
                                 <div class="table-responsive">
                                     <table id="table-menu" class="table table-vcenter table-condensed table-bordered">
                                         <thead>
                                             <tr>
-                                                <th class="text-center">SEMAINE</th>
-                                                <th>DATE</th>
+                                                <th class="text-center">DATE DE LA COMMANDE</th>
+                                                <th>DATE DU MENU</th>
+                                                <th>MONTANT A PAYER</th>
+                                                <th>ETAT DE LA COMMANDE</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $sql_menu = mysql_query("SELECT * FROM menu");
-                                            while($donnee_menu = mysql_fetch_array($sql_menu))
+                                            $sql_commande = mysql_query("SELECT commande, menu, salarie WHERE commande.idmenu = menu.idmenu
+                                                AND salarie.idsalarie = '$idsalarie'")or die(mysql_error());
+                                            while($donnee_commande = mysql_fetch_array($sql_commande))4
                                             {
                                             ?>
                                             <tr>
-                                                <td class="text-center">Semaine <?php echo $donnee_menu['semaine']; ?></td>
-                                                <td class="text-center"><?php echo $donnee_menu['date_menu']; ?></td>
+                                                <td><?php echo $donnee_commande['date_commande']; ?></td>
                                                 <td>
-                                                    <a class="btn btn-primary btn-xs" href="menu.php?idmenu=<?php echo $donnee_menu['idmenu']; ?>"><i class="gi gi-eye_open"></i> Voir le menu du jour</a>
+                                                    <strong><?php echo $donnee_commande['date_menu']; ?></strong><br>
+                                                    <h5 style="color: grey; font-style: italic;"><?php echo $donnee_commande['semaine']; ?></h5>
                                                 </td>
+                                                <td><?php echo number_format($donnee_commande['montant_total'], 2, ',', ' '). " €"; ?></td>
+                                                <td><a class="btn btn-primary" href=""><i class="gi gi-eye_open"></i></a></td> 
                                             </tr>
                                             <?php } ?>
                                         </tbody>
