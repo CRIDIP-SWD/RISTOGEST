@@ -151,7 +151,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             </div>
                     	</div>
 
-                        <div class="col-sm-2" data-placement="top" data-toggle="tooltip" data-original-title="Votre commande est validé et prise en charge par le centre de Gestion !">
+                        <div class="col-sm-2">
                             <div class="block">
                                 <div class="block-title" style="background-color: grey; font-size: 18px; padding-top: 10px; padding-bottom: 10px;">
                                     <div style="color: white; font-weight: bold; text-align: center;"><i class="fa fa-desktop"></i> PRISE EN CHARGE</div>
@@ -160,7 +160,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             </div>
                         </div>
 
-                        <div class="col-sm-2" data-placement="top" data-toggle="tooltip" data-original-title="Votre commande à été transférer au prestataire qui actuellement traite votre commande !">
+                        <div class="col-sm-2">
                             <div class="block">
                                 <div class="block-title" style="background-color: grey; font-size: 18px; padding-top: 10px; padding-bottom: 10px;">
                                     <div style="color: white; font-weight: bold; text-align: center;"><i class="gi gi-cargo"></i> PRESTATAIRE</div>
@@ -169,7 +169,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             </div>
                         </div>
 
-                        <div class="col-sm-3" data-placement="top" data-toggle="tooltip" data-original-title="Votre commande est en attente de livraison">
+                        <div class="col-sm-3">
                             <div class="block">
                                 <div class="block-title" style="background-color: grey; font-size: 18px; padding-top: 10px; padding-bottom: 10px;">
                                     <div style="color: white; font-weight: bold; text-align: center;"><i class="gi gi-truck"></i> LIVRAISON</div>
@@ -178,7 +178,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             </div>
                         </div>
 
-                        <div class="col-sm-3" data-placement="top" data-toggle="tooltip" data-original-title="Votre commande est arrivée à son lieu de livraison et est disponible au retrait !">
+                        <div class="col-sm-3">
                             <div class="block">
                                 <div class="block-title" style="background-color: grey; font-size: 18px; padding-top: 10px; padding-bottom: 10px;">
                                     <div style="color: white; font-weight: bold; text-align: center;"><i class="gi gi-ok_2"></i> DISPONIBLE</div>
