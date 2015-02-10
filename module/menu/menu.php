@@ -1,6 +1,11 @@
 <?php include ('../../inc/header.php'); ?>
 <?php
-define("TITLE_PAGE", "FICHE DU MENU");
+$idmenu = $_GET['idmenu'];
+$sql_menu = mysql_query("SELECT * FROM menu WHERE idmenu = '$idmenu'")or die(mysql_error());
+$donnee_menu = mysql_fetch_array($sql_menu);
+?>
+<?php
+define("TITLE_PAGE", "FICHE DU MENU du ".$donnee_menu['date_menu']);
 define("SUBTITLE_PAGE", "");
 define("TITLE_ICON", "gi gi-cutlery");
 //Breadcumb
@@ -10,11 +15,6 @@ $li2 = "";
 $li3 = "";
 $li4 = "";
 $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
-?>
-<?php
-$idmenu = $_GET['idmenu'];
-$sql_menu = mysql_query("SELECT * FROM menu WHERE idmenu = '$idmenu'")or die(mysql_error());
-$donnee_menu = mysql_fetch_array($sql_menu);
 ?>
     <body>
         <!-- Preloader -->
