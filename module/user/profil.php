@@ -240,7 +240,7 @@ $donnee_user = mysql_fetch_array($sql_user);
                             <div class="form-group form-actions">
                                 <div class="col-xs-12 text-right">
                                     <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Fermer la fenêtre</button>
-                                    <button type="submit" class="btn btn-sm btn-success">Modifier les information de compte</button>
+                                    <button type="submit" class="btn btn-sm btn-success" name="modif-info-profil" value="Valider">Modifier les information de compte</button>
                                 </div>
                             </div>
                         </form>
