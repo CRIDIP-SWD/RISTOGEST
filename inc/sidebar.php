@@ -72,11 +72,11 @@
                         <div class="sidebar-section">
                             <table>
                                 <tr>
-                                    <td style="width: 50%; padding-bottom: 5px;">METRONIC CORE V5</td>
+                                    <td style="width: 50%; padding-bottom: 5px;">METRONIC CORE V5<br><small> <font color="green">A jour</font></small></td>
                                     <td>5.0.0a</td>
                                 </tr>
                                 <tr>
-                                    <td>RISTOGEST</td>
+                                    <td>RISTOGEST<br><small> <font color="green">A jour</font></small></td>
                                     <td>1.0.0</td>
                                 </tr>
                             </table>
