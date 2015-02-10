@@ -154,7 +154,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         <div class="col-sm-2">
                             <div class="block">
                                 <div class="block-title" style="background-color: orange; font-size: 18px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="color: white; font-weight: bold; text-align: center;"><i class=""></i> PRISE EN CHARGE</div>
+                                    <div style="color: white; font-weight: bold; text-align: center;"><i class="fa fa-desktop"></i> PRISE EN CHARGE</div>
                                 </div>
                                 <div class="text-center text-warning" style="position: relative; top: -10px; font-size: 18px; padding-top: 10px; padding-bottom: 10px;"><i class="fa fa-spinner fa-spin text-warning"></i></div>
                             </div>
@@ -163,7 +163,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         <div class="col-sm-2">
                             <div class="block">
                                 <div class="block-title" style="background-color: grey; font-size: 18px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="color: white; font-weight: bold; text-align: center;"><i class=""></i> PRESTATAIRE</div>
+                                    <div style="color: white; font-weight: bold; text-align: center;"><i class="gi gi-cargo"></i> PRESTATAIRE</div>
                                 </div>
                                 <div class="text-center text-muted" style="position: relative; top: -10px; font-size: 18px; padding-top: 10px; padding-bottom: 10px;"><i class="fa fa-ellipsis-h text-muted"></i></div>
                             </div>
@@ -172,7 +172,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         <div class="col-sm-3">
                             <div class="block">
                                 <div class="block-title" style="background-color: grey; font-size: 18px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="color: white; font-weight: bold; text-align: center;"><i class=""></i> LIVRAISON</div>
+                                    <div style="color: white; font-weight: bold; text-align: center;"><i class="gi gi-truck"></i> LIVRAISON</div>
                                 </div>
                                 <div class="text-center text-muted" style="position: relative; top: -10px; font-size: 18px; padding-top: 10px; padding-bottom: 10px;"><i class="fa fa-ellipsis-h text-muted"></i></div>
                             </div>
@@ -181,7 +181,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         <div class="col-sm-3">
                             <div class="block">
                                 <div class="block-title" style="background-color: grey; font-size: 18px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="color: white; font-weight: bold; text-align: center;"><i class=""></i> DISPONIBLE</div>
+                                    <div style="color: white; font-weight: bold; text-align: center;"><i class="gi gi-ok_2"></i> DISPONIBLE</div>
                                 </div>
                                 <div class="text-center text-muted" style="position: relative; top: -10px; font-size: 18px; padding-top: 10px; padding-bottom: 10px;"><i class="fa fa-ellipsis-h text-muted"></i></div>
                             </div>
