@@ -1,4 +1,6 @@
 <?php 
+include ('../db.conf.php');
+BaseConnect();
 if(isset($_POST['modif-info-profil']) && $_POST['modif-info-profil'] = 'Valider'){
 	$idsalarie = $_POST['idsalarie'];
 	$email = $_POST['email'];
