@@ -120,6 +120,9 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             <div class="block">
                                 <div class="block-title">
                                     <h2><strong>LISTE DES</strong> COMMANDES</h2>
+                                    <div class="block-options pull-right">
+                                        <a class="btn btn-sm btn-success" href="new.commande.php?idsalarie=<?php echo $idsalarie; ?>"><i class="fa fa-plus"></i> Nouvelle Commande de repas</a>
+                                    </div>
                                 </div>
                                 <div class="table-responsive">
                                     <table id="table-menu" class="table table-vcenter table-condensed table-bordered">
