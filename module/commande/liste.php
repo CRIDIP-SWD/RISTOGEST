@@ -134,7 +134,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $sql_commande = mysql_query("SELECT commande, menu, salarie WHERE commande.idmenu = menu.idmenu
+                                            $sql_commande = mysql_query("SELECT * FROM commande, menu, salarie WHERE commande.idmenu = menu.idmenu
                                                 AND salarie.idsalarie = '$idsalarie'")or die(mysql_error());
                                             while($donnee_commande = mysql_fetch_array($sql_commande))
                                             {
