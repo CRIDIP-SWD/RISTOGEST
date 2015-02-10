@@ -1,7 +1,7 @@
-<?php include ('inc/header.php'); ?>
+<?php include ('../../inc/header.php'); ?>
 <?php
-define("TITLE_PAGE", "");
-define("SUBTITLE_PAGE", "");
+define("TITLE_PAGE", "COMMANDE");
+define("SUBTITLE_PAGE", "LISTE DES COMMANDES");
 //Breadcumb
 $li_start = "<li>".LOGICIEL."</li>";
 $li1 = "";
@@ -69,7 +69,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
             </div>
             <!-- END Alternative Sidebar -->
 
-            <?php include ('inc/sidebar.php'); ?>
+            <?php include ('../../inc/sidebar.php'); ?>
 
             <!-- Main Container -->
             <div id="main-container">
@@ -87,7 +87,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     'navbar-fixed-bottom'       for a bottom fixed header (fixed sidebars with scroll will be auto initialized, functionality can be found in js/app.js - handleSidebar()))
                         'header-fixed-bottom'   has to be added on #page-container only if the class 'navbar-fixed-bottom' was added
                 -->
-                <?php include ('inc/headerbar.php'); ?>
+                <?php include ('../../inc/headerbar.php'); ?>
 
                 <!-- Page content -->
                 <div id="page-content">
@@ -112,22 +112,46 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <!-- END Blank Header -->
 
                     <!-- Example Block -->
-                    <div class="block">
-                        <!-- Example Title -->
-                        <div class="block-title">
-                            <h2>Block Title</h2>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="block">
+                                <div class="block-title">
+                                    <h2><strong>LISTE DES</strong> MENUS</h2>
+                                </div>
+                                <div class="table-responsive">
+                                    <table id="table-menu" class="table table-vcenter table-condensed table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">SEMAINE</th>
+                                                <th>DATE</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            $sql_menu = mysql_query("SELECT * FROM menu");
+                                            while($donnee_menu = mysql_fetch_array($sql_menu))
+                                            {
+                                            ?>
+                                            <tr>
+                                                <td class="text-center">Semaine <?php echo $donnee_menu['semaine']; ?></td>
+                                                <td class="text-center"><?php echo $donnee_menu['date_menu']; ?></td>
+                                                <td>
+                                                    <a class="btn btn-primary btn-xs" href="menu.php?idmenu=<?php echo $donnee_menu['idmenu']; ?>"><i class="gi gi-eye_open"></i> Voir le menu du jour</a>
+                                                </td>
+                                            </tr>
+                                            <?php } ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>   
                         </div>
-                        <!-- END Example Title -->
-
-                        <!-- Example Content -->
-                        <p>Your content..</p>
-                        <!-- END Example Content -->
                     </div>
                     <!-- END Example Block -->
                 </div>
                 <!-- END Page Content -->
 
-                <?php include ('inc/footer.php'); ?>
+                <?php include ('../../inc/footer.php'); ?>
             </div>
             <!-- END Main Container -->
         </div>
@@ -144,5 +168,8 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
         <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/vendor/bootstrap.min.js"></script>
         <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/plugins.js"></script>
         <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/app.js"></script>
+        
+        <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/pages/tablesDatatables.js"></script>
+        <script>$(function(){ TablesDatatables.init(); });</script>
     </body>
 </html>
