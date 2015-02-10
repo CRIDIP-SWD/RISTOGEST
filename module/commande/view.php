@@ -189,6 +189,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         
                     </div>
                     <?php } ?>
+
                     <?php
                     if($donnee_commande['etat_commande'] == '1')
                     {
@@ -218,6 +219,59 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     <div style="color: white; font-weight: bold; text-align: center;"><i class="gi gi-cargo"></i> PRESTATAIRE</div>
                                 </div>
                                 <div class="text-center text-muted" style="position: relative; top: -10px; font-size: 30px; padding-top: 10px; padding-bottom: 10px;"><i class="fa fa-ellipsis-h text-muted"></i></div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="block">
+                                <div class="block-title" style="background-color: grey; font-size: 18px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="color: white; font-weight: bold; text-align: center;"><i class="gi gi-truck"></i> LIVRAISON</div>
+                                </div>
+                                <div class="text-center text-muted" style="position: relative; top: -10px; font-size: 30px; padding-top: 10px; padding-bottom: 10px;"><i class="fa fa-ellipsis-h text-muted"></i></div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="block">
+                                <div class="block-title" style="background-color: grey; font-size: 18px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="color: white; font-weight: bold; text-align: center;"><i class="gi gi-ok_2"></i> DISPONIBLE</div>
+                                </div>
+                                <div class="text-center text-muted" style="position: relative; top: -10px; font-size: 30px; padding-top: 10px; padding-bottom: 10px;"><i class="fa fa-ellipsis-h text-muted"></i></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <?php } ?>
+
+                    <?php
+                    if($donnee_commande['etat_commande'] == '2')
+                    {
+                    ?>
+                    <div class="row">
+                        <div class="col-sm-2" data-placement="top" data-toggle="tooltip" data-original-title="Votre commande est créer, ajoutez des produits et validez là !">
+                            <div class="block">
+                                <div class="block-title" style="background-color: green; font-size: 18px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="color: white; font-weight: bold; text-align: center;"><i class="fa fa-check"></i> <?php echo $donnee_commande['num_commande']; ?></div>
+                                </div>
+                                <div class="text-center text-success" style="position: relative; top: -10px; font-size: 30px; padding-top: 10px; padding-bottom: 10px;"><?php echo $donnee_commande['date_commande']; ?></div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-2" data-placement="top" data-toggle="tooltip" data-original-title="Votre commande est prise en charge par le centre de gestion !">
+                            <div class="block">
+                                <div class="block-title" style="background-color: green; font-size: 18px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="color: white; font-weight: bold; text-align: center;"><i class="fa fa-check"></i> PRISE EN CHARGE</div>
+                                </div>
+                                <div class="text-center text-success" style="position: relative; top: -10px; font-size: 30px; padding-top: 10px; padding-bottom: 10px;"><?php echo $donnee_commande['date_pris_charge']; ?></div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-2">
+                            <div class="block">
+                                <div class="block-title" style="background-color: orange; font-size: 18px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="color: white; font-weight: bold; text-align: center;"><i class="gi gi-cargo"></i> PRESTATAIRE</div>
+                                </div>
+                                <div class="text-center text-warning" style="position: relative; top: -10px; font-size: 30px; padding-top: 10px; padding-bottom: 10px;"><i class="fa fa-spinner fa-spin text-warning"></i></div>
                             </div>
                         </div>
 
