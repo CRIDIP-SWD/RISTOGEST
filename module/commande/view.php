@@ -142,189 +142,55 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     {
                     ?>
                     <div class="row">
-                    	<div class="col-md-3">
-                    		<div class="widget">
-								<div class="widget-extra themed-background-success">
-									<h4 class="widget-content-light"><strong><?php echo $donnee_commande['num_commande']; ?></strong></h4>
-								</div>
-								<div class="widget-extra-full">
-									<span class="h2 text-success animation-expandOpen"><?php echo $donnee_commande['date_commande']; ?></span>
-								</div>
-							</div>
-                    	</div>
-                    	<div class="col-md-3">
-                    		<div class="widget">
-                                <div class="widget-extra themed-background-muted">
-                                    <h4 class="widget-content-light"><i class="fa fa-truck"></i> <strong>COMMANDE</strong></h4>
+                    	<div class="col-sm-2">
+                    		<div class="block">
+                                <div class="block-title" style="background-color: green;">
+                                    <div style="color: white; font-weight: bold; text-align: center;"><?php echo $donnee_commande['num_commande']; ?></div>
                                 </div>
-                                <div class="widget-extra-full">
-                                    <span class="h2 text-muted animation-pulse"><i class="fa fa-ellipsis-h"></i></span>
-                                </div>
+                                <div class="text-center text-success"><?php echo $donnee_commande['date_commande']; ?></div>
                             </div>
                     	</div>
-                        <div class="col-md-3">
-                            <div class="widget">
-                                <div class="widget-extra themed-background-muted">
-                                    <h4 class="widget-content-light"><i class="fa fa-truck"></i> <strong>LIVRAISON</strong></h4>
+
+                        <div class="col-sm-2">
+                            <div class="block">
+                                <div class="block-title" style="background-color: orange;">
+                                    <div style="color: white; font-weight: bold; text-align: center;"><i class=""></i> PRISE EN CHARGE</div>
                                 </div>
-                                <div class="widget-extra-full">
-                                    <span class="h2 text-muted animation-pulse"><i class="fa fa-ellipsis-h"></i></span>
-                                </div>
+                                <div class="text-center text-warning"><i class="fa fa-spinner fa-spin text-warning"></i></div>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="widget">
-                                <div class="widget-extra themed-background-muted">
-                                    <h4 class="widget-content-light"><i class="fa fa-truck"></i> <strong>DISPONIBLE</strong></h4>
+
+                        <div class="col-sm-2">
+                            <div class="block">
+                                <div class="block-title" style="background-color: grey;">
+                                    <div style="color: white; font-weight: bold; text-align: center;"><i class=""></i> PRESTATAIRE</div>
                                 </div>
-                                <div class="widget-extra-full">
-                                    <span class="h2 text-muted animation-pulse"><i class="fa fa-ellipsis-h"></i></span>
-                                </div>
+                                <div class="text-center text-muted"><i class="fa fa-ellipsis-h text-muted"></i></div>
                             </div>
                         </div>
+
+                        <div class="col-sm-3">
+                            <div class="block">
+                                <div class="block-title" style="background-color: grey;">
+                                    <div style="color: white; font-weight: bold; text-align: center;"><i class=""></i> LIVRAISON</div>
+                                </div>
+                                <div class="text-center text-muted"><i class="fa fa-ellipsis-h text-muted"></i></div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="block">
+                                <div class="block-title" style="background-color: grey;">
+                                    <div style="color: white; font-weight: bold; text-align: center;"><i class=""></i> DISPONIBLE</div>
+                                </div>
+                                <div class="text-center text-muted"><i class="fa fa-ellipsis-h text-muted"></i></div>
+                            </div>
+                        </div>
+                        
                     </div>
                     <?php } ?>
-                    <?php
-                    if($donnee_commande['etat_commande'] == '2' AND $donnee_commande['etat_commande'] == '3')
-                    {
-                    ?>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="widget">
-                                <div class="widget-extra themed-background-success">
-                                    <h4 class="widget-content-light"><strong><?php echo $donnee_commande['num_commande']; ?></strong></h4>
-                                </div>
-                                <div class="widget-extra-full">
-                                    <span class="h2 text-success animation-expandOpen"><?php echo $donnee_commande['date_commande']; ?></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="widget">
-                                <div class="widget-extra themed-background-warning">
-                                    <h4 class="widget-content-light"><i class="gi gi-cargo"></i> <strong>COMMANDE</strong></h4>
-                                </div>
-                                <div class="widget-extra-full">
-                                    <span class="h2 text-warning animation-pulse"><i class="fa fa-refresh fa-spin"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="widget">
-                                <div class="widget-extra themed-background-muted">
-                                    <h4 class="widget-content-light"><i class="gi gi-truck"></i> <strong>LIVRAISON</strong></h4>
-                                </div>
-                                <div class="widget-extra-full">
-                                    <span class="h2 text-muted animation-pulse"><i class="fa fa-ellipsis-h"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="widget">
-                                <div class="widget-extra themed-background-muted">
-                                    <h4 class="widget-content-light"><i class="gi gi-ok_2"></i> <strong>DISPONIBLE</strong></h4>
-                                </div>
-                                <div class="widget-extra-full">
-                                    <span class="h2 text-muted animation-pulse"><i class="fa fa-ellipsis-h"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <?php } ?>
-                    <?php
-                    if($donnee_commande['etat_commande'] == '4')
-                    {
-                    ?>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="widget">
-                                <div class="widget-extra themed-background-success">
-                                    <h4 class="widget-content-light"><strong><?php echo $donnee_commande['num_commande']; ?></strong></h4>
-                                </div>
-                                <div class="widget-extra-full">
-                                    <span class="h2 text-success"><?php echo $donnee_commande['date_commande']; ?></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="widget">
-                                <div class="widget-extra themed-background-success">
-                                    <h4 class="widget-content-light"><i class="gi gi-cargo"></i> <strong>COMMANDE</strong></h4>
-                                </div>
-                                <div class="widget-extra-full">
-                                    <span class="h2 text-success"><?php echo $donnee_commande['date_cmd_prestataire']; ?></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="widget">
-                                <div class="widget-extra themed-background-warning">
-                                    <h4 class="widget-content-light"><i class="gi gi-truck"></i> <strong>LIVRAISON</strong></h4>
-                                </div>
-                                <div class="widget-extra-full">
-                                    <span class="h2 text-muted animation-pulse"><i class="gi gi-roundabout"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="widget">
-                                <div class="widget-extra themed-background-muted">
-                                    <h4 class="widget-content-light"><i class="gi gi-ok_2"></i> <strong>DISPONIBLE</strong></h4>
-                                </div>
-                                <div class="widget-extra-full">
-                                    <span class="h2 text-muted animation-pulse"><i class="fa fa-ellipsis-h"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <?php } ?>
-                    <?php
-                    if($donnee_commande['etat_commande'] == '5')
-                    {
-                    ?>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="widget">
-                                <div class="widget-extra themed-background-success">
-                                    <h4 class="widget-content-light"><strong><?php echo $donnee_commande['num_commande']; ?></strong></h4>
-                                </div>
-                                <div class="widget-extra-full">
-                                    <span class="h2 text-success"><?php echo $donnee_commande['date_commande']; ?></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="widget">
-                                <div class="widget-extra themed-background-success">
-                                    <h4 class="widget-content-light"><i class="gi gi-cargo"></i> <strong>COMMANDE</strong></h4>
-                                </div>
-                                <div class="widget-extra-full">
-                                    <span class="h2 text-success"><?php echo $donnee_commande['date_cmd_prestataire']; ?></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="widget">
-                                <div class="widget-extra themed-background-success">
-                                    <h4 class="widget-content-light"><i class="gi gi-truck"></i> <strong>LIVRAISON</strong></h4>
-                                </div>
-                                <div class="widget-extra-full">
-                                    <span class="h2 text-muted"><?php echo $donnee_commande['date_liv_prestataire']; ?></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="widget">
-                                <div class="widget-extra themed-background-success">
-                                    <h4 class="widget-content-light"><i class="gi gi-ok_2"></i> <strong>DISPONIBLE</strong></h4>
-                                </div>
-                                <div class="widget-extra-full">
-                                    <span class="h2 text-muted animation-pulse"><?php echo $donnee_commande['date_disponible']; ?></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <?php } ?>
+
+                   
 
                     <!-- END Example Block -->
                 </div>
