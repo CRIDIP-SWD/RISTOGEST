@@ -501,7 +501,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <div class="block-title" style="background-color: red; font-size: 18px; padding-top: 10px; padding-bottom: 10px;">
                                     <div style="color: white; font-weight: bold; text-align: center;"><i class="gi gi-ok_2"></i> DISPONIBLE</div>
                                 </div>
-                                <div class="text-center text-error" style="position: relative; top: -10px; font-size: 30px; padding-top: 10px; padding-bottom: 10px;"><i class="gi gi-remove_2"></i></div>
+                                <div class="text-center text-danger" style="position: relative; top: -10px; font-size: 30px; padding-top: 10px; padding-bottom: 10px;"><i class="gi gi-remove_2 text-danger"></i></div>
                             </div>
                         </div>
                         
