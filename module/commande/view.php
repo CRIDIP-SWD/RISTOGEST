@@ -147,7 +147,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <div class="block-title" style="background-color: green; font-size: 18px; padding-top: 10px; padding-bottom: 10px;">
                                     <div style="color: white; font-weight: bold; text-align: center;"><?php echo $donnee_commande['num_commande']; ?></div>
                                 </div>
-                                <div class="text-center text-success" style="position: relative; top: -10px; font-size: 18px; padding-top: 10px; padding-bottom: 10px;"><?php echo $donnee_commande['date_commande']; ?></div>
+                                <div class="text-center text-success" style="position: relative; top: -10px; font-size: 30px; padding-top: 10px; padding-bottom: 10px;"><?php echo $donnee_commande['date_commande']; ?></div>
                             </div>
                     	</div>
 
@@ -156,7 +156,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <div class="block-title" style="background-color: orange; font-size: 18px; padding-top: 10px; padding-bottom: 10px;">
                                     <div style="color: white; font-weight: bold; text-align: center;"><i class="fa fa-desktop"></i> PRISE EN CHARGE</div>
                                 </div>
-                                <div class="text-center text-warning" style="position: relative; top: -10px; font-size: 18px; padding-top: 10px; padding-bottom: 10px;"><i class="fa fa-spinner fa-spin text-warning"></i></div>
+                                <div class="text-center text-warning" style="position: relative; top: -10px; font-size: 30px; padding-top: 10px; padding-bottom: 10px;"><i class="fa fa-spinner fa-spin text-warning"></i></div>
                             </div>
                         </div>
 
@@ -165,7 +165,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <div class="block-title" style="background-color: grey; font-size: 18px; padding-top: 10px; padding-bottom: 10px;">
                                     <div style="color: white; font-weight: bold; text-align: center;"><i class="gi gi-cargo"></i> PRESTATAIRE</div>
                                 </div>
-                                <div class="text-center text-muted" style="position: relative; top: -10px; font-size: 18px; padding-top: 10px; padding-bottom: 10px;"><i class="fa fa-ellipsis-h text-muted"></i></div>
+                                <div class="text-center text-muted" style="position: relative; top: -10px; font-size: 30px; padding-top: 10px; padding-bottom: 10px;"><i class="fa fa-ellipsis-h text-muted"></i></div>
                             </div>
                         </div>
 
@@ -174,7 +174,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <div class="block-title" style="background-color: grey; font-size: 18px; padding-top: 10px; padding-bottom: 10px;">
                                     <div style="color: white; font-weight: bold; text-align: center;"><i class="gi gi-truck"></i> LIVRAISON</div>
                                 </div>
-                                <div class="text-center text-muted" style="position: relative; top: -10px; font-size: 18px; padding-top: 10px; padding-bottom: 10px;"><i class="fa fa-ellipsis-h text-muted"></i></div>
+                                <div class="text-center text-muted" style="position: relative; top: -10px; font-size: 30px; padding-top: 10px; padding-bottom: 10px;"><i class="fa fa-ellipsis-h text-muted"></i></div>
                             </div>
                         </div>
 
@@ -183,7 +183,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <div class="block-title" style="background-color: grey; font-size: 18px; padding-top: 10px; padding-bottom: 10px;">
                                     <div style="color: white; font-weight: bold; text-align: center;"><i class="gi gi-ok_2"></i> DISPONIBLE</div>
                                 </div>
-                                <div class="text-center text-muted" style="position: relative; top: -10px; font-size: 18px; padding-top: 10px; padding-bottom: 10px;"><i class="fa fa-ellipsis-h text-muted"></i></div>
+                                <div class="text-center text-muted" style="position: relative; top: -10px; font-size: 30px; padding-top: 10px; padding-bottom: 10px;"><i class="fa fa-ellipsis-h text-muted"></i></div>
                             </div>
                         </div>
                         
