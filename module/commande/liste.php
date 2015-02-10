@@ -117,6 +117,32 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <!-- Example Block -->
                     <div class="row">
                         <div class="col-md-12">
+                            <?php
+                                if(isset($_GET['new_commande']) && $_GET['new_commande'] == 'success')
+                                {
+                            ?>
+                                <div class="alert alert-success alert-dismissable">
+                                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                    <h4><i class="fa fa-check-circle"></i> Succès</h4> La commande à bien été crée !<br>
+                                    Veuillez ouvrir la commande et rentrer les produits voulus et la validée.
+                                </div>
+                            <?php } ?>
+                            <?php
+                                if(isset($_GET['new_commande']) && $_GET['new_commande'] == 'error')
+                                {
+                            ?>
+                                <div class="alert alert-danger alert-dismissable">
+                                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                    <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur innatendue c'est produit.<br>
+                                    Information sql: <i><?php echo $_GET['error_sql']; ?></i><br>
+                                    Debug: <i><?php echo mysql_error(); ?></i><br>
+                                    <strong>Veuillez contactez l'administrateur.</strong>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
                             <div class="block">
                                 <div class="block-title">
                                     <h2><strong>LISTE DES</strong> COMMANDES</h2>
