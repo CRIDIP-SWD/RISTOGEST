@@ -140,13 +140,44 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             {
                                             ?>
                                             <tr>
-                                                <td><?php echo $donnee_commande['date_commande']; ?></td>
-                                                <td>
+                                                <td class="text-center"><?php echo $donnee_commande['date_commande']; ?></td>
+                                                <td class="text-center">
                                                     <strong><?php echo $donnee_commande['date_menu']; ?></strong><br>
-                                                    <h5 style="color: grey; font-style: italic;"><?php echo $donnee_commande['semaine']; ?></h5>
+                                                    <h5 style="color: grey; font-style: italic;">Semaine <?php echo $donnee_commande['semaine']; ?></h5>
                                                 </td>
-                                                <td><?php echo number_format($donnee_commande['montant_total'], 2, ',', ' '). " €"; ?></td>
-                                                <td><a class="btn btn-primary" href=""><i class="gi gi-eye_open"></i></a></td> 
+                                                <td class="text-right"><?php echo number_format($donnee_commande['montant_total'], 2, ',', ' '). " €"; ?></td>
+                                                <td class="text-center">
+                                                    <?php
+                                                        switch ($donnee_commande['etat_commande']) {
+                                                            case '1':
+                                                                echo '<div class="progress progress-striped active" data-placement="top" data-toggle="tooltip" data-original-title="Votre commande est transmis !"><div style="width: 20%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="20" role="progressbar" class="progress-bar progress-bar-danger">20%</div></div>';
+                                                                break;
+
+                                                            case '2':
+                                                                echo '<div class="progress progress-striped active" data-placement="top" data-toggle="tooltip" data-original-title="Pris en compte par la société !"><div style="width: 40%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">40%</div></div>';
+                                                                break;
+
+                                                            case '3':
+                                                                echo '<div class="progress progress-striped active" data-placement="top" data-toggle="tooltip" data-original-title="Commande passer chez le prestataire !"><div style="width: 60%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="60" role="progressbar" class="progress-bar progress-bar-warning">60%</div></div>';
+                                                                break;
+
+                                                            case '4':
+                                                                echo '<div class="progress progress-striped active" data-placement="top" data-toggle="tooltip" data-original-title="En attente de livraison !"><div style="width: 80%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" role="progressbar" class="progress-bar progress-bar-info">80%</div></div>';
+                                                                break;
+
+                                                            case '5':
+                                                                echo '<div class="progress progress-striped active" data-placement="top" data-toggle="tooltip" data-original-title="Votre repas est disponible dans sur le lieu de livraison !"><div style="width: 100%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" role="progressbar" class="progress-bar progress-bar-info">100%</div></div>';
+                                                                break;
+                                                            
+                                                            default:
+                                                                # code...
+                                                                break;
+                                                        }
+                                                    ?>
+                                                </td>
+                                                <td class="text-center">
+
+                                                </td> 
                                             </tr>
                                             <?php } ?>
                                         </tbody>
