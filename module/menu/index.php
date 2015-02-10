@@ -1,7 +1,8 @@
 <?php include ('../../inc/header.php'); ?>
 <?php
-define("TITLE_PAGE", "");
+define("TITLE_PAGE", "MENU");
 define("SUBTITLE_PAGE", "");
+define("TITLE_ICON", "gi gi-cutlery");
 //Breadcumb
 $li_start = "<li>".LOGICIEL."</li>";
 $li1 = "<li>MENU</li>";
@@ -95,7 +96,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <div class="content-header">
                         <div class="header-section">
                             <h1>
-                                <i class="gi gi-brush"></i><?php echo TITLE_PAGE; ?><br><small><?php echo SUBTITLE_PAGE; ?></small>
+                                <i class="<?php echo TITLE_ICON; ?>"></i><?php echo TITLE_PAGE; ?><br><small><?php echo SUBTITLE_PAGE; ?></small>
                             </h1>
                         </div>
                     </div>
