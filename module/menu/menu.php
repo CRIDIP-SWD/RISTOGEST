@@ -119,7 +119,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
 
                     <div class="row">
                         <div class="col-md-3">
-                            <div class="block">
+                            <div class="block animation-slideRight">
                                 <div class="block-title">
                                 <h2>LES ENTREES</h2>
                                 </div>
@@ -144,7 +144,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <div class="block">
+                            <div class="block animation-slideRight">
                                 <div class="block-title">
                                 <h2>LES PLATS</h2>
                                 </div>
@@ -169,7 +169,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <div class="block">
+                            <div class="block animation-slideRight">
                                 <div class="block-title">
                                 <h2>LES DESSERTS</h2>
                                 </div>
@@ -194,7 +194,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <div class="block">
+                            <div class="block animation-slideRight">
                                 <div class="block-title">
                                 <h2>LES BOISSONS</h2>
                                 </div>
