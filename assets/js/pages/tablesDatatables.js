@@ -13,7 +13,7 @@ var TablesDatatables = function() {
 
             /* Initialize Datatables */
             $('#table-menu').dataTable({
-                "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 1, 5 ] } ],
+                "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 1, 3 ] } ],
                 "iDisplayLength": 10,
                 "aLengthMenu": [[10, 20, 30, -1], [10, 20, 30, "All"]]
             });
