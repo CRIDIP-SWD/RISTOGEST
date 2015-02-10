@@ -128,13 +128,19 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php
+                                            $sql_menu = mysql_query("SELECT * FROM menu");
+                                            while($donnee_menu = mysql_fetch_array($sql_menu))
+                                            {
+                                            ?>
                                             <tr>
-                                                <td class="text-center">8</td>
-                                                <td class="text-center">16 Février</td>
+                                                <td class="text-center">Semaine <?php echo $donnee_menu['semaine']; ?></td>
+                                                <td class="text-center"><?php echo $donnee_menu['date_menu']; ?></td>
                                                 <td>
-                                                    <a class="btn btn-primary btn-xs"><i class="gi gi-eye_open"></i> Voir le menu du jour</a>
+                                                    <a class="btn btn-primary btn-xs" href="menu.php?idmenu=<?php echo $donnee_menu['idmenu']; ?>"><i class="gi gi-eye_open"></i> Voir le menu du jour</a>
                                                 </td>
                                             </tr>
+                                            <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>
