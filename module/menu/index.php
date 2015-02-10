@@ -119,7 +119,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     <h2><strong>LISTE DES</strong> MENUS</h2>
                                 </div>
                                 <div class="table-responsive">
-                                    <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+                                    <table id="table-menu" class="table table-vcenter table-condensed table-bordered">
                                         <thead>
                                             <tr>
                                                 <th class="text-center">SEMAINE</th>
