@@ -1,8 +1,5 @@
 
 <?php
-include ('../config.php');
-include ('../db.conf.php');
-BaseConnect();
 
 //Vérification si le menu n'a pas dépasser la date
 $sql_menu = mysql_query("SELECT * FROM menu");

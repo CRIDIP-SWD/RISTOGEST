@@ -1,6 +1,7 @@
 <?php
 session_start();
 include ('db.conf.php');
+BaseConnect();
 include ('config.php');
 include ('control/meteo-api.php');
 include ('control/charge.php');
@@ -9,7 +10,6 @@ header ("Location: ".SITE."".FOLDER."login.php");
 exit();
 }
 $login = $_SESSION['login'];
-BaseConnect();
 $sql_user = mysql_query("SELECT idsalarie, login, nom, prenom, last_connect, connect FROM salarie WHERE login = '$login'")or die(mysql_error());
 $donnee_user = mysql_fetch_array($sql_user);
 ?>
