@@ -175,7 +175,7 @@ $donnee_user = mysql_fetch_array($sql_user);
                                             <tr>
                                                 <td><strong>Adresse</strong></td>
                                                 <td>
-                                                    <?php echo $donnee_user['adresse']; ?>
+                                                    <?php echo $donnee_user['adresse']; ?><br>
                                                     <?php echo $donnee_user['code_postal']; ?> <?php echo $donnee_user['ville']; ?>
                                                 </td>
                                             </tr>
