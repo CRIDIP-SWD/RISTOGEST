@@ -6,7 +6,7 @@ $idsalarie = $_GET['idsalarie'];
 define("TITLE_PAGE", "COMMANDE");
 define("SUBTITLE_PAGE", "LISTE DES COMMANDES");
 //Breadcumb
-$li_start = "<li>".LOGICIEL."</li>";
+$li_start = "<li>".$logiciel."</li>";
 $li1 = "";
 $li2 = "";
 $li3 = "";
@@ -179,7 +179,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                     ?>
                                                 </td>
                                                 <td class="text-center">
-
+                                                    <a class="btn btn-info" href=""><i class="gi gi-eye_open"></i> Voir la commande</a>
                                                 </td> 
                                             </tr>
                                             <?php } ?>
