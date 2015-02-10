@@ -1,4 +1,4 @@
-<?php include ('inc/header.php'); ?>
+<?php include ('../../inc/header.php'); ?>
 <?php
 define("TITLE_PAGE", "");
 define("SUBTITLE_PAGE", "");
@@ -59,9 +59,9 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <div class="sidebar-content">
                         <?php //include ('inc/chat.php'); ?>
 
-                        <?php include ('inc/activity.php'); ?>
+                        <?php include ('../../inc/activity.php'); ?>
 
-                        <?php include ('inc/message_ui.php'); ?>
+                        <?php include ('../../inc/message_ui.php'); ?>
                     </div>
                     <!-- END Sidebar Content -->
                 </div>
@@ -69,7 +69,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
             </div>
             <!-- END Alternative Sidebar -->
 
-            <?php include ('inc/sidebar.php'); ?>
+            <?php include ('../../inc/sidebar.php'); ?>
 
             <!-- Main Container -->
             <div id="main-container">
@@ -87,7 +87,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     'navbar-fixed-bottom'       for a bottom fixed header (fixed sidebars with scroll will be auto initialized, functionality can be found in js/app.js - handleSidebar()))
                         'header-fixed-bottom'   has to be added on #page-container only if the class 'navbar-fixed-bottom' was added
                 -->
-                <?php include ('inc/headerbar.php'); ?>
+                <?php include ('../../inc/headerbar.php'); ?>
 
                 <!-- Page content -->
                 <div id="page-content">
@@ -95,7 +95,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <div class="content-header">
                         <div class="header-section">
                             <h1>
-                                <i class="gi gi-brush"></i>Blank<br><small>A clean page to help you start!</small>
+                                <i class="gi gi-brush"></i><?php echo TITLE_PAGE; ?><br><small><?php echo SUBTITLE_PAGE; ?></small>
                             </h1>
                         </div>
                     </div>
@@ -127,7 +127,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                 </div>
                 <!-- END Page Content -->
 
-                <?php include ('inc/footer.php'); ?>
+                <?php include ('../../inc/footer.php'); ?>
             </div>
             <!-- END Main Container -->
         </div>
@@ -141,8 +141,8 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
         <script>!window.jQuery && document.write(decodeURI('%3Cscript src="js/vendor/jquery-1.11.1.min.js"%3E%3C/script%3E'));</script>
 
         <!-- Bootstrap.js, Jquery plugins and Custom JS code -->
-        <script src="<?php SITE,FOLDER,ASSETS; ?>js/vendor/bootstrap.min.js"></script>
-        <script src="<?php SITE,FOLDER,ASSETS; ?>js/plugins.js"></script>
-        <script src="<?php SITE,FOLDER,ASSETS; ?>js/app.js"></script>
+        <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/vendor/bootstrap.min.js"></script>
+        <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/plugins.js"></script>
+        <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/app.js"></script>
     </body>
 </html>

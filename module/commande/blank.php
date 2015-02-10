@@ -4,7 +4,7 @@ define("TITLE_PAGE", "");
 define("SUBTITLE_PAGE", "");
 //Breadcumb
 $li_start = "<li>".LOGICIEL."</li>";
-$li1 = "<li>MENU</li>";
+$li1 = "";
 $li2 = "";
 $li3 = "";
 $li4 = "";
@@ -95,7 +95,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <div class="content-header">
                         <div class="header-section">
                             <h1>
-                                <i class="gi gi-brush"></i>Blank<br><small>A clean page to help you start!</small>
+                                <i class="gi gi-brush"></i><?php echo TITLE_PAGE; ?><br><small><?php echo SUBTITLE_PAGE; ?></small>
                             </h1>
                         </div>
                     </div>
@@ -141,8 +141,8 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
         <script>!window.jQuery && document.write(decodeURI('%3Cscript src="js/vendor/jquery-1.11.1.min.js"%3E%3C/script%3E'));</script>
 
         <!-- Bootstrap.js, Jquery plugins and Custom JS code -->
-        <script src="<?php SITE,FOLDER,ASSETS; ?>js/vendor/bootstrap.min.js"></script>
-        <script src="<?php SITE,FOLDER,ASSETS; ?>js/plugins.js"></script>
-        <script src="<?php SITE,FOLDER,ASSETS; ?>js/app.js"></script>
+        <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/vendor/bootstrap.min.js"></script>
+        <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/plugins.js"></script>
+        <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/app.js"></script>
     </body>
 </html>
