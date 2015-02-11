@@ -46,7 +46,7 @@
                                 <a href="<?php echo SITE,FOLDER; ?>module/commande/liste.php?idsalarie=<?php echo $donnee_user['idsalarie']; ?>"><i class="gi gi-stopwatch sidebar-nav-icon"></i>Liste des Commandes</a>
                             </li>
                             <li>
-                                <a href="<?php echo SITE,FOLDER; ?>module/commande/new.php?idsalarie=<?php echo $donnee_user['idsalarie']; ?>"><i class="gi gi-stopwatch sidebar-nav-icon"></i>Nouvelle commande</a>
+                                <a href="<?php echo SITE,FOLDER; ?>module/commande/new.commande.php?idsalarie=<?php echo $donnee_user['idsalarie']; ?>"><i class="gi gi-stopwatch sidebar-nav-icon"></i>Nouvelle commande</a>
                             </li>
                             <li class="sidebar-header">
                                 <span class="sidebar-header-options clearfix">
