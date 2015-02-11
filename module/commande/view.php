@@ -551,8 +551,10 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             <i class="gi gi-earphone"></i> <?php echo $donnee_salarie['telephone']; ?><br>
                                             <i class="gi gi-envelope"></i> <?php echo $donnee_salarie['email']; ?>
                                         </td>
-                                    </tr> 
+                                    </tr>
+                                <?php 
                                 }
+                                ?>
                                 </table>
                             </div>
                         </div>
