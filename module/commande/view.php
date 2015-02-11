@@ -520,7 +520,40 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <div class="block-title">
                                     <h2><i class="fa fa-euro"></i> Montant total de votre commande</h2>
                                 </div>
-                                <div style="height: 120px; font-size: 58px; position: relative; left: 450px; font-weight: bolder;"><?php echo number_format($donnee_commande['montant_total'], 2, ',', ' ')." €"; ?></div>
+                                <div style="font-size: 58px; position: relative; left: 450px; font-weight: bolder;"><?php echo number_format($donnee_commande['montant_total'], 2, ',', ' ')." €"; ?></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="block">
+                                <div class="block-title">
+                                    <h2><i class="fa fa-euro"></i> Vos Informations</h2>
+                                </div>
+                                <table style="width: 100%">
+                                <?php
+                                $sql_salarie = mysql_query("SELECT * FROM salarie WHERE idsalarie = ".$donnee_commande['idsalarie'])or die(mysql_error());
+                                while($donnee_salarie = mysql_fetch_array($sql_salarie))
+                                {
+                                ?>
+                                    <tr>
+                                        <td>Identité</td>
+                                        <td><?php echo $donnee_salarie['nom']; ?> <?php echo $donnee_salarie['prenom']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Adresse</td>
+                                        <td>
+                                            <?php echo $donnee_salarie['adresse']; ?><br>
+                                            <?php echo $donnee_salarie['code_postal']; ?> <?php echo $donnee_salarie['ville']; ?>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Coordonnée</td>
+                                        <td>
+                                            <i class="gi gi-earphone"></i> <?php echo $donnee_salarie['telephone']; ?><br>
+                                            <i class="gi gi-envelope"></i> <?php echo $donnee_salarie['email']; ?>
+                                        </td>
+                                    </tr> 
+                                }
+                                </table>
                             </div>
                         </div>
                     </div>
