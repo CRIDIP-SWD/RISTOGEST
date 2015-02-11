@@ -520,7 +520,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <div class="block-title">
                                     <h2><i class="fa fa-euro"></i> Montant total de votre commande</h2>
                                 </div>
-                                <div style="height: 200px; vertical-align: middle;"><?php echo number_format($donnee_commande['montant_total'], 2, ',', ' ')." €"; ?></div>
+                                <div style="height: 120px; font-size: 58px; position: relative; left: 250px;"><?php echo number_format($donnee_commande['montant_total'], 2, ',', ' ')." €"; ?></div>
                             </div>
                         </div>
                     </div>
