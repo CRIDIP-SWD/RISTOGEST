@@ -193,7 +193,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             <a class="btn btn-success btn-block"><i class="fa fa-check"></i> Valider votre commande</a>
                         </div>
                     </div>
-                    <div class="clearfix"></div>
+                    <div style="padding-bottom: 10px;"></div>
                     <?php } ?>
 
                     <?php
