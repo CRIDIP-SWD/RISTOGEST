@@ -598,7 +598,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <div class="block-title">
                                     <h2><strong>PRODUITS</strong> COMMANDEES</h2>
                                     <div class="block-options pull-right">
-                                        <a href="ajout.produit.php?idcommande=<?php echo $idcommande; ?>" class="btn btn-sm btn-success"><i class="fa fa-plus"></i> Ajouter un produit</a>
+                                        <a href="ajout.produit.php?idcommande=<?php echo $idcommande; ?>&idmenu=<?php echo $donnee_commande['idmenu']; ?>" class="btn btn-sm btn-success"><i class="fa fa-plus"></i> Ajouter un produit</a>
                                     </div>
                                 </div>
                                 <div class="table-responsive">
