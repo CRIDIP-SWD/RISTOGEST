@@ -130,7 +130,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="example-select">Produit</label>
                                 <div class="col-md-9">
-                                    <select id="example-select" name="idproduit" class="form-control" size="1">
+                                    <select id="example-select" name="idproduit" class="select-select2" size="1" data-placeholder="Choisissez un produit...">
                                         <?php
                                         $sql_menu_produit = mysql_query("SELECT * FROM menu, menu_produit, produit, famille_produit WHERE menu_produit.idmenu = menu.idmenu
                                             AND menu_produit.idproduit = produit.idproduit
