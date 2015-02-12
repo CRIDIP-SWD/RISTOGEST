@@ -107,7 +107,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         if(empty($li_end)){echo "";}else{echo $li_end;}
                         ?>
                     </ul>
-                    <a class="btn btn-danger pull-right">TEST</a>
+                    <a class="btn btn-danger btn-block"><i class="fa fa-times"></i> Suppression de la commande</a>
                     <!-- END Blank Header -->
 
                     <!-- Example Block -->
