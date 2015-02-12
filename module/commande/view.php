@@ -610,7 +610,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                     ?>
                                                 </td>
                                                 <td class="text-center">
-                                                    <a class="btn btn-danger btn-xs" href="" data-placement="top" data-toggle="tooltip" data-original-title="Suppression de l'article"><i class="fa fa-times-circle"></i></a>
+                                                    <a class="btn btn-danger btn-xs" href="<?php echo SITE,FOLDER; ?>inc/control/commande.php?suppression_produit=true&idcommandeproduit=<?php echo $donnee_commande_produit['idcommandeproduit']; ?>" data-placement="top" data-toggle="tooltip" data-original-title="Suppression du produit"><i class="fa fa-times-circle"></i></a>
                                                 </td>
                                             </tr>
                                         <?php } ?>
