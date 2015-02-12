@@ -568,7 +568,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <div class="block-title">
                                     <h2><i class="fa fa-euro"></i> Montant total de votre commande</h2>
                                 </div>
-                                <div class="text-center"><?php echo number_format($donnee_commande['montant_total'], 2, ',', ' ')." €"; ?></div>
+                                <div style="font-size: 58px; font-weight: bolder;" class="text-center"><?php echo number_format($donnee_commande['montant_total'], 2, ',', ' ')." €"; ?></div>
                             </div>
                         </div>
                         <div class="col-md-4">
