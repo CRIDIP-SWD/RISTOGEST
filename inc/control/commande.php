@@ -38,28 +38,45 @@ if(isset($_GET['etape']) && $_GET['etape'] == 'step1')
 
 //SUPPRESSION D'UN PRODUIT
 if(isset($_GET['suppression_produit']) && $_GET['suppression_produit'] == 'true')
+	if($_GET['etat_commande'] == '1'){
 
-{
-	$idcommandeproduit = $_GET['idcommandeproduit'];
-	$idcommande = $_GET['idcommande'];
-
-	$sql_delete_produit = mysql_query("DELETE FROM commande_produit WHERE idcommandeproduit = '$idcommandeproduit'");
-
-	if($sql_delete_produit == TRUE){
-
-		mysql_query("INSERT INTO `log_commande`(`idlogcommande`, `idcommande`, `categorie_log`, `desc_log`, `date_log`, `etat_log`) 
-			VALUES (NULL,'$idcommande','1','Un produit à été supprimer de votre commande.','$date_systeme - $heure_systeme','2')")or die(mysql_error());
-
-		header("Location: ../../module/commande/view.php?idcommande=$idcommande&supp_produit=success");
-
-	}else{
-
-		mysql_query("INSERT INTO `log_commande`(`idlogcommande`, `idcommande`, `categorie_log`, `desc_log`, `date_log`, `etat_log`) 
-			VALUES (NULL,'$idcommande','1','Un produit à été supprimer de votre commande.','$date_systeme - $heure_systeme','0')")or die(mysql_error());
-
-		header("Location: ../../module/commande/view.php?idcommande=$idcommande&supp_produit=error");
-
+		header("Location: ../../module/commande/view.php?idcommande=$idcommande&commande_valide=warning");
 	}
-}
+	{
+		$idcommandeproduit = $_GET['idcommandeproduit'];
+		$idcommande = $_GET['idcommande'];
+
+		//Import base
+		$sql_commande_produit = mysql_query("SELECT * FROM commande_produit WHERE idcommandeproduit = '$idcommandeproduit'")or die(mysql_error());
+		$donnee_commande_produit = mysql_fetch_array($sql_commande_produit);
+		$sql_commande = mysql_query("SELECT * FROM commande WHERE idcommande = '$idcommande'")or die(mysql_error());
+		$donnee_commande = mysql_fetch_array($sql_commande);
+
+		//calcul nouveau solde commande
+		$calc_nouv_solde = $donnee_commande['montant_total']-$donnee_commande_produit['prix_total'];
+
+		//sql up solde commande
+		mysql_query("UPDATE commande SET montant_total = '$calc_nouv_solde' WHERE idcommande = '$idcommande'")or die(mysql_error());
+
+		//Suppression du produit
+
+		$sql_delete_produit = mysql_query("DELETE FROM commande_produit WHERE idcommandeproduit = '$idcommandeproduit'");
+
+		if($sql_delete_produit == TRUE){
+
+			mysql_query("INSERT INTO `log_commande`(`idlogcommande`, `idcommande`, `categorie_log`, `desc_log`, `date_log`, `etat_log`) 
+				VALUES (NULL,'$idcommande','1','Un produit à été supprimer de votre commande.','$date_systeme - $heure_systeme','2')")or die(mysql_error());
+
+			header("Location: ../../module/commande/view.php?idcommande=$idcommande&supp_produit=success");
+
+		}else{
+
+			mysql_query("INSERT INTO `log_commande`(`idlogcommande`, `idcommande`, `categorie_log`, `desc_log`, `date_log`, `etat_log`) 
+				VALUES (NULL,'$idcommande','1','Un produit à été supprimer de votre commande.','$date_systeme - $heure_systeme','0')")or die(mysql_error());
+
+			header("Location: ../../module/commande/view.php?idcommande=$idcommande&supp_produit=error");
+
+		}
+	}
 
  ?>

@@ -134,6 +134,37 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     <strong>Veuillez contactez l'administrateur.</strong>
                                 </div>
                             <?php } ?>
+                            <?php
+                                if(isset($_GET['supp_produit']) && $_GET['supp_produit'] == 'success')
+                                {
+                            ?>
+                                <div class="alert alert-success alert-dismissable">
+                                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                    <h4><i class="fa fa-check-circle"></i> Succès</h4> L'article à bien été supprimée !<br>
+                                    Veuillez ouvrir la commande et rentrer les produits voulus et la validée.
+                                </div>
+                            <?php } ?>
+                            <?php
+                                if(isset($_GET['supp_produit']) && $_GET['supp_produit'] == 'error')
+                                {
+                            ?>
+                                <div class="alert alert-danger alert-dismissable">
+                                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                    <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur innatendue c'est produit.<br>
+                                    Information sql: <i><?php echo $_GET['error_sql']; ?></i><br>
+                                    Debug: <i><?php echo mysql_error(); ?></i><br>
+                                    <strong>Veuillez contactez l'administrateur.</strong>
+                                </div>
+                            <?php } ?>
+                            <?php
+                                if(isset($_GET['commande_valide']) && $_GET['commande_valide'] == 'warning')
+                                {
+                            ?>
+                                <div class="alert alert-warning alert-dismissable">
+                                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                    <h4><i class="fa fa-warning"></i> Attention</h4> Votre commande est valider, vous ne pouvez plus supprimer d'article.
+                                </div>
+                            <?php } ?>
                         </div>
                     </div>
 
