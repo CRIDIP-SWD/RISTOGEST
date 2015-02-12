@@ -107,7 +107,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         if(empty($li_end)){echo "";}else{echo $li_end;}
                         ?>
                     </ul>
-                    <a class="btn btn-danger btn-block"><i class="fa fa-times"></i> Suppression de la commande</a>
+                    
                     <!-- END Blank Header -->
 
                     <!-- Example Block -->
@@ -240,11 +240,6 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             </div>
                         </div>
                         
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <a class="btn btn-success btn-block" href="<?php echo SITE, FOLDER; ?>inc/control/commande.php?idcommande=<?php echo $idcommande; ?>&valide_commande=true"><i class="fa fa-check"></i> Valider votre commande</a>
-                        </div>
                     </div>
                     <div style="padding-bottom: 10px;"></div>
                     <?php } ?>
@@ -568,7 +563,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <?php } ?>
 
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-4">
                             <div class="block">
                                 <div class="block-title">
                                     <h2><i class="fa fa-euro"></i> Montant total de votre commande</h2>
@@ -609,6 +604,27 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 }
                                 ?>
                                 </table>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="block">
+                                <div class="block-title">
+                                    <h2><i class="fa fa-euro"></i> Actions</h2>
+                                </div>
+                                <?php
+                                if($donnee_commande['etat_commande'] == '0'){
+                                ?>
+                                <a class="btn btn-success btn-block" href="<?php echo SITE, FOLDER; ?>inc/control/commande.php?idcommande=<?php echo $idcommande; ?>&valide_commande=true"><i class="fa fa-check"></i> Valider votre commande</a>
+                                <?php
+                                }
+                                ?>
+                                <?php
+                                if($donnee_commande['etat_commande'] == '0' AND $donnee_commande['etat_commande'] == '1'){
+                                ?>
+                                <a class="btn btn-danger btn-block"><i class="fa fa-times"></i> Suppression de la commande</a>
+                                <?php
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
