@@ -131,3 +131,11 @@ if(isset($_GET['suppression_produit']) && $_GET['suppression_produit'] == 'true'
  }
 
  ?>
+ <?php
+ if(isset($_GET['valide_commande']) && $_GET['valide_commande'] == 'true'){
+ 	$idcommande = $_GET['idcommande'];
+
+ 	$sql_up_commande = mysql_query("UPDATE commande SET etat_commande = '1' WHERE idcommande = '$idcommande'");
+
+ 	header("Location: ../../module/commande/view.php?idcommande=$idcommande");
+ }

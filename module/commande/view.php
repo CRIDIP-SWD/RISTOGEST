@@ -243,7 +243,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <a class="btn btn-success btn-block"><i class="fa fa-check"></i> Valider votre commande</a>
+                            <a class="btn btn-success btn-block" href="<?php echo SITE, FOLDER; ?>inc/control/commande.php?idcommande=<?php echo $idcommande; ?>&valide_commande=true"><i class="fa fa-check"></i> Valider votre commande</a>
                         </div>
                     </div>
                     <div style="padding-bottom: 10px;"></div>
