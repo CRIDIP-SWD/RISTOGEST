@@ -609,6 +609,9 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                         echo number_format($calc_prix_total, 2, ',', ' ')." €";
                                                     ?>
                                                 </td>
+                                                <td class="text-center">
+                                                    <a class="btn btn-danger btn-xs" href=""><i class="fa fa-times-circle"></i></a>
+                                                </td>
                                             </tr>
                                         <?php } ?>
                                             <tr>
