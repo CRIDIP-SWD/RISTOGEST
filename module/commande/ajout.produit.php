@@ -144,7 +144,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             <table width="100%">
                                                 <tr>
                                                     <td><?php echo $donnee_menu_produit['designation']; ?></td>
-                                                    <td><?php echo $donnee_menu_produit['designation_produit']; ?><br><i><?php echo $donnee_menu_produit['description_produit']; ?></i></td>
+                                                    <td><?php echo $donnee_menu_produit['designation_produit']; ?> | <i><?php echo $donnee_menu_produit['description_produit']; ?></i></td>
                                                     <td><?php echo number_format($donnee_menu_produit['prix_unitaire'], 2, ',', ' ')." €"; ?></td>
                                                 </tr>
                                             </table>
