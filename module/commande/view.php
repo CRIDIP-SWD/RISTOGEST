@@ -167,7 +167,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 </div>
                             <?php } ?>
                             <?php
-                                if(isset($_POST['add_produit']) && $_POST['add_produit'] == 'success')
+                                if(isset($_GET['add_produit']) && $_GET['add_produit'] == 'success')
                                 {
                             ?>
                                 <div class="alert alert-success alert-dismissable">
@@ -176,13 +176,13 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 </div>
                             <?php } ?>
                             <?php
-                                if(isset($_POST['add_produit']) && $_POST['add_produit'] == 'error')
+                                if(isset($_GET['add_produit']) && $_GET['add_produit'] == 'error')
                                 {
                             ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                     <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur innatendue c'est produit.<br>
-                                    Information sql: <i><?php echo $_POST['error_sql']; ?></i><br>
+                                    Information sql: <i><?php echo $_GET['error_sql']; ?></i><br>
                                     Debug: <i><?php echo mysql_error(); ?></i><br>
                                     <strong>Veuillez contactez l'administrateur.</strong>
                                 </div>
