@@ -619,7 +619,13 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <div class="block-title">
                                     <h2><strong>PRODUITS</strong> COMMANDEES</h2>
                                     <div class="block-options pull-right">
+                                        <?php
+                                        if($donnee_commande['etat_commande'] == '0'){
+                                        ?>
                                         <a href="#add-produit" class="btn btn-sm btn-success" data-toggle="modal"><i class="fa fa-plus"></i> Ajouter un produit</a>
+                                        <?php
+                                        }
+                                        ?>
                                     </div>
                                 </div>
                                 <div class="table-responsive">
