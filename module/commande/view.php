@@ -166,6 +166,27 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     <h4><i class="fa fa-warning"></i> Attention</h4> Votre commande est valider, vous ne pouvez plus supprimer d'article.
                                 </div>
                             <?php } ?>
+                            <?php
+                                if(isset($_GET['add_produit']) && $_GET['add_produit'] == 'success')
+                                {
+                            ?>
+                                <div class="alert alert-success alert-dismissable">
+                                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                    <h4><i class="fa fa-check-circle"></i> Succès</h4> Le produit à bien été ajouté !<br>
+                                </div>
+                            <?php } ?>
+                            <?php
+                                if(isset($_GET['add_produit']) && $_GET['add_produit'] == 'error')
+                                {
+                            ?>
+                                <div class="alert alert-danger alert-dismissable">
+                                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                    <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur innatendue c'est produit.<br>
+                                    Information sql: <i><?php echo $_GET['error_sql']; ?></i><br>
+                                    Debug: <i><?php echo mysql_error(); ?></i><br>
+                                    <strong>Veuillez contactez l'administrateur.</strong>
+                                </div>
+                            <?php } ?>
                         </div>
                     </div>
 

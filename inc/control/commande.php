@@ -80,3 +80,54 @@ if(isset($_GET['suppression_produit']) && $_GET['suppression_produit'] == 'true'
 	}
 
  ?>
+
+ <?php
+ if(isset($_GET['ajout_produit']) && $_GET['ajout_produit'] == 'Valider'){
+ 	$idcommande = $_POST['idcommande'];
+ 	$idproduit = $_POST['idproduit'];
+ 	$qte = $_POST['qte'];
+
+ 	// Import famille produit
+ 	$sql_famille = mysql_query("SELECT * FROM produit, famille_produit WHERE produit.idfamilleproduit = famille_produit.idfamilleproduit
+ 		AND idproduit = '$idproduit'")or die(mysql_error());
+ 	$donnee_famille = mysql_fetch_array($sql_famille);
+ 	$idfamilleproduit = $donnee_famille['idfamilleproduit'];
+
+ 	//import info produit
+ 	$sql_produit = mysql_query("SELECT * FROM produit WHERE idproduit = '$idproduit'")or die(mysql_error());
+ 	$donnee_produit = mysql_fetch_array($sql_produit);
+
+ 	//import info commande
+ 	$sql_commande = mysql_query("SELECT * FROM commande WHERE idcommande = '$idcommande'")or die(mysql_error());
+ 	$donnee_commande = mysql_fetch_array($sql_commande);
+
+ 	//calcul total ligne
+ 	$calc_total_ligne = $donnee_produit['prix_unitaire']*$qte;
+
+ 	//calcul total commande
+ 	$calc_total_commande = $donnee_commande['montant_total']+$calc_total_ligne;
+
+ 	//SQL COMMANDE
+ 	$sql_add_produit = mysql_query("INSERT INTO `commande_produit`(`idcommandeproduit`, `idcommande`, `idfamilleproduit`, `idproduit`, `qte`, `prix_total`) 
+ 		VALUES (NULL,'$idcommande','$idfamilleproduit','$idproduit','$qte','$calc_total_ligne')");
+ 	$sql_up_commande = mysql_query("UPDATE commande SET montant_total = '$calc_total_commande' WHERE idcommande = '$idcommande'");
+
+ 	if($sql_add_produit == TRUE)
+ 	{
+
+ 		mysql_query("INSERT INTO `log_commande`(`idlogcommande`, `idcommande`, `categorie_log`, `desc_log`, `date_log`, `etat_log`) 
+				VALUES (NULL,'$idcommande','1','Un produit à été ajouté de votre commande.','$date_systeme - $heure_systeme','2')")or die(mysql_error());
+
+		header("Location: ../../module/commande/view.php?idcommande=$idcommande&add_produit=success");
+
+ 	}else{
+
+ 		mysql_query("INSERT INTO `log_commande`(`idlogcommande`, `idcommande`, `categorie_log`, `desc_log`, `date_log`, `etat_log`) 
+				VALUES (NULL,'$idcommande','1','Un produit à été ajoute de votre commande.','$date_systeme - $heure_systeme','0')")or die(mysql_error());
+
+		header("Location: ../../module/commande/view.php?idcommande=$idcommande&add_produit=error");
+
+ 	}
+ }
+
+ ?>

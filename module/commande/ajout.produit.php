@@ -127,6 +127,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
 
                         <!-- Example Content -->
                         <form action="page_forms_general.html" method="post" class="form-horizontal form-bordered" onsubmit="return false;">
+                            <input type="hidden" name="idcommande" value="<?php echo $idcommande; ?>" />
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="example-select">Produit</label>
                                 <div class="col-md-9">
