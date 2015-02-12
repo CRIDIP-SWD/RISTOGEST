@@ -669,7 +669,13 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                     ?>
                                                 </td>
                                                 <td class="text-center">
+                                                    <?php
+                                                    if($donnee_commande['etat_commande'] == '0'){
+                                                    ?>
                                                     <a class="btn btn-danger btn-xs" href="<?php echo SITE,FOLDER; ?>inc/control/commande.php?suppression_produit=true&idcommandeproduit=<?php echo $donnee_commande_produit['idcommandeproduit']; ?>&idcommande=<?php echo $idcommande; ?>" data-placement="top" data-toggle="tooltip" data-original-title="Suppression du produit"><i class="fa fa-times-circle"></i></a>
+                                                    <?php
+                                                    }
+                                                    ?>
                                                 </td>
                                             </tr>
                                         <?php } ?>
