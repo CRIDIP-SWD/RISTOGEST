@@ -619,7 +619,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <div class="block-title">
                                     <h2><strong>PRODUITS</strong> COMMANDEES</h2>
                                     <div class="block-options pull-right">
-                                        <a href="ajout.produit.php?idcommande=<?php echo $idcommande; ?>&idmenu=<?php echo $donnee_commande['idmenu']; ?>" class="btn btn-sm btn-success"><i class="fa fa-plus"></i> Ajouter un produit</a>
+                                        <a href="#add-produit" class="btn btn-sm btn-success" data-toggle="modal"><i class="fa fa-plus"></i> Ajouter un produit</a>
                                     </div>
                                 </div>
                                 <div class="table-responsive">
@@ -679,6 +679,53 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         </div>
                     </div>
 
+
+                    <!-- MODAL -->
+                    <div id="add-produit" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h3 class="modal-title">Ajout d'un Produit</h3>
+                                </div>
+                                <form class="horizontal-form" action="<?php echo SITE, FOLDER; ?>inc/control/commande.php" method="POST">
+                                    <input type="hidden" name="idcommande" value="<?php echo $donnee_commande['idcommande']; ?>" />
+                                    <div class="modal-body">
+
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="example-select2">Produit</label>
+                                            <div class="col-md-6">
+                                                <select id="example-select2" name="idproduit" class="select-select2" style="width: 100%;" data-placeholder="Choisir un produit...">
+                                                    <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
+                                                    <?php
+                                                    $sql_produit = mysql_query("SELECT * FROM produit, famille_produit, menu WHERE produit.idfamilleproduit = famille_produit.idfamilleproduit 
+                                                        AND menu =".$donnee_commande['idmenu']);
+                                                    while($donnee_produit = mysql_fetch_array($sql_produit))
+                                                    {
+                                                    ?>
+                                                    <option value="<?php echo $donnee_produit['idproduit']; ?>"><?php echo $donnee_produit['designation']; ?> - <?php echo $donnee_produit['designation_produit']; ?> | <?php echo number_format($donnee_produit['prix_unitaire'], 2, ',', ' ')." €"; ?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-text-input">Quantité</label>
+                                            <div class="col-md-9">
+                                                <input type="text" id="example-text-input" name="qte" class="form-control" placeholder="Quantité à commander">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-sm btn-success" name="ajout_produit" value="Valider">Ajout du Produit</button>
+                                        <button type="reset" class="btn btn-sm btn-danger">Réinitialiser</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END MODAL -->
 
 
                    

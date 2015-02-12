@@ -82,7 +82,7 @@ if(isset($_GET['suppression_produit']) && $_GET['suppression_produit'] == 'true'
  ?>
 
  <?php
- if(isset($_GET['ajout_produit']) && $_GET['ajout_produit'] == 'Valider'){
+ if(isset($_POST['ajout_produit']) && $_POST['ajout_produit'] == 'Valider'){
  	$idcommande = $_POST['idcommande'];
  	$idproduit = $_POST['idproduit'];
  	$qte = $_POST['qte'];
