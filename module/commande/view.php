@@ -708,39 +708,6 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                         <option value="<?php echo $donnee_entree_menu['idproduit']; ?>"><?php echo $donnee_entree_menu['designation']; ?> - <?php echo $donnee_entree_menu['designation_produit']; ?> | <?php echo number_format($donnee_entree_menu['prix_unitaire'], 2, ',', ' ')." €"; ?></option>
                                                         <?php } ?>
                                                     </optgroup>
-                                                    <optgroup label="Plat">
-                                                        <?php
-                                                        $sql_entree_menu = mysql_query("SELECT * FROM produit, famille_produit, menu WHERE produit.idfamilleproduit = famille_produit.idfamilleproduit
-                                                            AND famille_produit = '2'
-                                                            AND idmenu = ".$donnee_commande['idmenu'])or die(mysql_error());
-                                                        while($donnee_entree_menu = mysql_fetch_array($sql_entree_menu))
-                                                        {
-                                                        ?>
-                                                        <option value="<?php echo $donnee_entree_menu['idproduit']; ?>"><?php echo $donnee_entree_menu['designation']; ?> - <?php echo $donnee_entree_menu['designation_produit']; ?> | <?php echo number_format($donnee_entree_menu['prix_unitaire'], 2, ',', ' ')." €"; ?></option>
-                                                        <?php } ?>
-                                                    </optgroup>
-                                                    <optgroup label="Dessert">
-                                                        <?php
-                                                        $sql_entree_menu = mysql_query("SELECT * FROM produit, famille_produit, menu WHERE produit.idfamilleproduit = famille_produit.idfamilleproduit
-                                                            AND famille_produit = '3'
-                                                            AND idmenu = ".$donnee_commande['idmenu'])or die(mysql_error());
-                                                        while($donnee_entree_menu = mysql_fetch_array($sql_entree_menu))
-                                                        {
-                                                        ?>
-                                                        <option value="<?php echo $donnee_entree_menu['idproduit']; ?>"><?php echo $donnee_entree_menu['designation']; ?> - <?php echo $donnee_entree_menu['designation_produit']; ?> | <?php echo number_format($donnee_entree_menu['prix_unitaire'], 2, ',', ' ')." €"; ?></option>
-                                                        <?php } ?>
-                                                    </optgroup>
-                                                    <optgroup label="Boisson">
-                                                        <?php
-                                                        $sql_entree_menu = mysql_query("SELECT * FROM produit, famille_produit, menu WHERE produit.idfamilleproduit = famille_produit.idfamilleproduit
-                                                            AND famille_produit = '4'
-                                                            AND idmenu = ".$donnee_commande['idmenu'])or die(mysql_error());
-                                                        while($donnee_entree_menu = mysql_fetch_array($sql_entree_menu))
-                                                        {
-                                                        ?>
-                                                        <option value="<?php echo $donnee_entree_menu['idproduit']; ?>"><?php echo $donnee_entree_menu['designation']; ?> - <?php echo $donnee_entree_menu['designation_produit']; ?> | <?php echo number_format($donnee_entree_menu['prix_unitaire'], 2, ',', ' ')." €"; ?></option>
-                                                        <?php } ?>
-                                                    </optgroup>
                                                 </select>
                                             </div>
                                         </div>
