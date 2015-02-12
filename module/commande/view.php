@@ -697,14 +697,8 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             <div class="col-md-6">
                                                 <select id="example-select2" name="idproduit" class="select-select2" style="width: 100%;" data-placeholder="Choisir un produit...">
                                                     <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
-                                                    <?php
-                                                    $sql_produit = mysql_query("SELECT * FROM produit, famille_produit, menu WHERE produit.idfamilleproduit = famille_produit.idfamilleproduit 
-                                                        AND idmenu =".$donnee_commande['idmenu']);
-                                                    while($donnee_produit = mysql_fetch_array($sql_produit))
-                                                    {
-                                                    ?>
-                                                    <option value="<?php echo $donnee_produit['idproduit']; ?>"><?php echo $donnee_produit['designation']; ?> - <?php echo $donnee_produit['designation_produit']; ?> | <?php echo number_format($donnee_produit['prix_unitaire'], 2, ',', ' ')." €"; ?></option>
-                                                    <?php } ?>
+                                                    <optgroup>ENTREE</optgroup>
+                                                        <option>ghghjgfjsd</option>
                                                 </select>
                                             </div>
                                         </div>
