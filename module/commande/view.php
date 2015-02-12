@@ -697,17 +697,14 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             <div class="col-md-6">
                                                 <select id="example-select2" name="idproduit" class="select-select2" style="width: 100%;" data-placeholder="Choisir un produit...">
                                                     <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
-                                                    <optgroup label="Entrée">
                                                         <?php
                                                         $sql_entree_menu = mysql_query("SELECT * FROM produit, famille_produit, menu WHERE produit.idfamilleproduit = famille_produit.idfamilleproduit
-                                                            AND famille_produit = '1'
                                                             AND idmenu = ".$donnee_commande['idmenu'])or die(mysql_error());
                                                         while($donnee_entree_menu = mysql_fetch_array($sql_entree_menu))
                                                         {
                                                         ?>
                                                         <option value="<?php echo $donnee_entree_menu['idproduit']; ?>"><?php echo $donnee_entree_menu['designation']; ?> - <?php echo $donnee_entree_menu['designation_produit']; ?> | <?php echo number_format($donnee_entree_menu['prix_unitaire'], 2, ',', ' ')." €"; ?></option>
                                                         <?php } ?>
-                                                    </optgroup>
                                                 </select>
                                             </div>
                                         </div>
