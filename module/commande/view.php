@@ -555,6 +555,10 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <?php 
                                 }
                                 ?>
+                                    <tr>
+                                        <td class="text-right text-uppercase" colspan="4">MONTANT TOTAL</td>
+                                        <td class="text-right"><?php echo number_format($donnee_commande['montant_total'], 2, ',', ' ')." €"; ?></td>
+                                    </tr>
                                 </table>
                             </div>
                         </div>
