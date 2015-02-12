@@ -11,7 +11,7 @@ define("SUBTITLE_PAGE", "COMMANDE ".$donnee_commande['num_commande']);
 //Breadcumb
 $li_start = "<li>".$logiciel."</li>";
 $li1 = "<li>COMMANDE</li>";
-$li2 = "<li>".$donnee_commande['num_commande'];."</li>";
+$li2 = "<li>".$donnee_commande['num_commande']."</li>";
 $li3 = "";
 $li4 = "";
 $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
