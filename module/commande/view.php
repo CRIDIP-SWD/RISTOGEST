@@ -562,7 +562,60 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
 
                     <div class="row">
                         <div class="col-md-12">
+                            <div class="block">
+                                <div class="block-title">
+                                    <h2><strong>PRODUITS</strong> COMMANDEES</h2>
+                                    <div class="block-options pull-right">
+                                        <a href="ajout.produit.php?idcommande=<?php echo $idcommande; ?>" class="btn btn-sm btn-success"><i class="fa fa-plus"></i> Ajouter un produit</a>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table id="general-table" class="table table-striped table-vcenter">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">Nom du Produit</th>
+                                                <th class="text-center">Famille Produit</th>
+                                                <th class="text-center">QTY</th>
+                                                <th class="text-center">PRIX UNITAIRE</th>
+                                                <th class="text-center">PRIX TOTAL</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php
+                                        $sql_commande_produit = mysql_query("SELECT * FROM commande_produit, commande, famille_produit, produit WHERE commande_produit.idcommande = commande.idcommande
+                                            AND commande_produit.idfamilleproduit = famille_produit.idfamilleproduit
+                                            AND commande_produit.idproduit = produit.idproduit
+                                            AND commande_produit.idcommande = '$idcommande'");
+                                        while($donnee_commande_produit = mysql_fetch_array($sql_commande_produit))
+                                        {
+                                        ?>
+                                            <tr>
+                                                <td>
+                                                    <?php echo $donnee_commande_produit['designation_produit']; ?><br>
+                                                    <h5><i><?php echo $donnee_commande_produit['description_produit']; ?></i></h5>
+                                                </td>
+                                                <td class="text-center">
+                                                    <?php echo $donnee_commande_produit['designation']; ?>
+                                                </td>
+                                                <td class="text-center">
+                                                    <?php echo $donnee_commande_produit['qte']; ?>
+                                                </td>
+                                                <td class="text-right">
+                                                    <?php echo number_format($donnee_commande_produit['prix_unitaire'], 2, ',', ' ')." €"; ?>
+                                                </td>
+                                                <td class="text-right">
+                                                    <?php
+                                                        $calc_prix_total = $donnee_commande_produit['prix_unitaire']*$donnee_commande_produit['qte'];
+                                                        echo number_format($calc_prix_total, 2, ',', ' ')." €";
+                                                    ?>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
+                                        </tbody>
+                                    </table>
+                                </div>
 
+                            </div>
                         </div>
                     </div>
 
@@ -592,9 +645,10 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
         <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/plugins.js"></script>
         <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/app.js"></script>
         
-        <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/pages/tablesDatatables.js"></script>
+
         <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/pages/compAnimations.js"></script>
+        <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/pages/tablesGeneral.js"></script>
+        <script>$(function(){ TablesGeneral.init(); });</script>
         <script>$(function(){ CompAnimations.init(); });</script>
-        <script>$(function(){ TablesDatatables.init(); });</script>
     </body>
 </html>
