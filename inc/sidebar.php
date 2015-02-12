@@ -48,17 +48,6 @@
                             <li>
                                 <a href="<?php echo SITE,FOLDER; ?>module/commande/new.commande.php?idsalarie=<?php echo $donnee_user['idsalarie']; ?>"><i class="gi gi-stopwatch sidebar-nav-icon"></i>Nouvelle commande</a>
                             </li>
-                            <li class="sidebar-header">
-                                <span class="sidebar-header-options clearfix">
-                                </span>
-                                <span class="sidebar-header-title">MES RECEPTIONS</span>
-                            </li>
-                            <li>
-                                <a href="<?php echo SITE,FOLDER; ?>module/reception/liste.php?idsalarie=<?php echo $donnee_user['idsalarie']; ?>"><i class="gi gi-stopwatch sidebar-nav-icon"></i>Liste des Récéptions</a>
-                            </li>
-                            <li>
-                                <a href="<?php echo SITE,FOLDER; ?>module/reception/new.php?idsalarie=<?php echo $donnee_user['idsalarie']; ?>"><i class="gi gi-stopwatch sidebar-nav-icon"></i>Nouvelle reception</a>
-                            </li>
                         </ul>
                         <!-- END Sidebar Navigation -->
 
