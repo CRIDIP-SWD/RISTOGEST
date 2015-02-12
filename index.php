@@ -127,7 +127,7 @@
 
                     <!-- Widgets Row -->
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <a class="widget widget-hover-effect1" href="page_ready_article.php">
                                 <div class="widget-simple">
                                     <div class="widget-icon pull-left themed-background animation-fadeIn">
@@ -135,18 +135,6 @@
                                     </div>
                                     <h3 class="widget-content text-right animation-pullDown">
                                         Nouvelle <strong>Commande</strong><br>
-                                    </h3>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a class="widget widget-hover-effect1" href="page_ready_article.php">
-                                <div class="widget-simple">
-                                    <div class="widget-icon pull-left themed-background animation-fadeIn">
-                                        <i class="gi gi-circle_plus"></i>
-                                    </div>
-                                    <h3 class="widget-content text-right animation-pullDown">
-                                        Nouvelle <strong>Récéption</strong><br>
                                     </h3>
                                 </div>
                             </a>
