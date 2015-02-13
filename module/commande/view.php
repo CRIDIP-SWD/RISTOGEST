@@ -625,6 +625,13 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <?php
                                 }
                                 ?>
+                                <?php
+                                if($donnee_commande['etat_commande'] >= '1'){
+                                ?>
+                                <a class="btn btn-primary btn-block" href=""><i class="fi fi-pdf"></i> Imprimer la commande</a>
+                                <?php
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
