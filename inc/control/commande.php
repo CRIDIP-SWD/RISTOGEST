@@ -35,6 +35,8 @@ if(isset($_GET['etape']) && $_GET['etape'] == 'step1')
 
 	}
 }
+?>
+<?php
 
 //SUPPRESSION D'UN PRODUIT
 if(isset($_GET['suppression_produit']) && $_GET['suppression_produit'] == 'true')
