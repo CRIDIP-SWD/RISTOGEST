@@ -2,7 +2,7 @@
 function BaseConnect(){
 	//connexion base de donnée
 	define("HOST", "localhost");
-	define("USER", "root");
+	define("USER", "remote-user");
 	define("PASS", "1992maxime");
 	define("BASE", "ristogest");
 
