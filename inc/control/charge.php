@@ -27,6 +27,6 @@ $etat_programme = $donnee_setting['etat_programme'];
 
 //Verification programme
 if($etat_programme == 0){
-	header("Location: ../../systeme_inacessible.php");
+	header("Location: systeme_inacessible.php");
 }
 ?>
