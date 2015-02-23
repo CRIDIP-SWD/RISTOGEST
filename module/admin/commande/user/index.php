@@ -158,7 +158,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                     echo "
                                                         <span class='label label-danger' >
                                                             <span class='fa-stack'>
-                                                                <i class='fa fa-user fa-stack-2x'></i>
+                                                                <i class='fa fa-user fa-stack-1x'></i>
                                                                 <i class='fa fa-times fa-stack-1x'></i>
                                                             </span> 
                                                             Valider par l'utilisateur, en attente du centre de gestion.
