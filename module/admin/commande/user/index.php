@@ -121,15 +121,51 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     <tr>
                                         <th class="text-center">N° Commande</th>
                                         <th class="text-center">Utilisateur</th>
-                                        <th class="text-right">Montant de la commande</th>
+                                        <th class="text-center">Date de la commande</th>
+                                        <th class="text-center">Montant de la commande</th>
                                         <th class="text-center">Etat de la commande</th>
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <?php
+                                $sql_commande = mysql_query("SELECT * FROM commande, utilisateur WHERE commande.iduser = utilisateur.iduser ORDER BY date_commande ASC")or die(mysql_error());
+                                while($donnee_commande = mysql_fetch_array($sql_commande))
+                                {
+                                ?>
                                     <tr>
-                                        
+                                        <td class="text-center"><?php echo $donnee_commande['num_commande']; ?></td>
+                                        <td class="text-center"><?php echo $donnee_commande['nom_user']; ?> <?php echo $donnee_commande['prenom_user']; ?></td>
+                                        <td class="text-right">
+                                            <?php echo date("d-m-Y", $donnee_commande['date_commande']); ?><br>
+                                            <small>
+                                                Date livraison théorique:
+                                                <?php
+                                                $date_strt_cmd = strtotime($donnee_commande['date_commande']+"7 Day");
+                                                echo date("d-m-Y", $date_strt_cmd);
+                                                ?>
+                                            </small>
+                                        </td>
+                                        <td class="text-right"><?php echo number_format($donnee_commande['montant_total'], 2,',', ' ')." €"; ?></td>
+                                        <td class="text-center">
+                                            <?php
+                                            switch ($donnee_commande['etat_commande']) {
+                                                case '0':
+                                                    echo "<span class='label label-default' title='' data-placement='top' data-toggle='tooltip' data-original-title='La commande est en cours de validation par l\'utilisateur, il ne là pas valider.'>Non valider par l'utilisateur</span>";
+                                                    break;
+
+                                                case '1':
+                                                    echo "<span class='label label-primary' title='' data-placement='top' data-toggle='tooltip' data-original-title='La commande est valider par l\'utilisateur, elle doit etre pris en charge par le centre de gestion.'>Valider par l'utilisateur, en attente du centre de gestion.</span>";
+                                                    break;
+                                                
+                                                default:
+                                                    # code...
+                                                    break;
+                                            }
+                                            ?>
+                                        </td>
                                     </tr>
+                                <?php } ?>
                                 </tbody>
                             </table>
                         </div>
