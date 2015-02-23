@@ -90,7 +90,14 @@
                                     <h1><?php 
                                     if($heure_systeme > "18:00"){echo "Bonsoir";}else{echo "Bonjour";}
                                         ?>
-                                     <strong><?php echo $donnee_utilisateur['prenom_user']; ?> <?php echo $donnee_utilisateur['nom_user']; ?></strong><br><small>Dernière connexion: <?php echo $donnee_utilisateur['last_connect']; ?></small><br><small>Groupe: CRIDIP SAS</small></h1>
+                                     <strong><?php echo $donnee_utilisateur['prenom_user']; ?> <?php echo $donnee_utilisateur['nom_user']; ?></strong><br>
+                                     <small>Dernière connexion: <?php echo $donnee_utilisateur['last_connect']; ?></small><br>
+                                     <small>Groupe: 
+                                        <?php
+                                        if($groupe == 1){echo "Administrateur";}
+                                        if($groupe == 0){echo "Utilisateur";}
+                                        ?>
+                                     </small></h1>
                                 </div>
                                 <!-- END Main Title -->
 
