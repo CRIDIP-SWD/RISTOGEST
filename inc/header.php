@@ -10,7 +10,7 @@ header ("Location: ".SITE."".FOLDER."login.php");
 exit();
 }
 $login = $_SESSION['login'];
-$sql_user = mysql_query("SELECT idsalarie, login, nom, prenom, last_connect, connect FROM salarie WHERE login = '$login'")or die(mysql_error());
+$sql_user = mysql_query("SELECT iduser, login, groupe FROM utilisateur WHERE login = '$login'")or die(mysql_error());
 $donnee_user = mysql_fetch_array($sql_user);
 ?>
 <!DOCTYPE html>
