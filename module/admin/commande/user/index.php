@@ -172,7 +172,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                 Date livraison théorique:
                                                 <?php
                                                 $date_strt_cmd = strtotime($donnee_commande['date_commande']);
-                                                $calc_date_th = $date_strt_cmd+strtotime("+7 days");
+                                                $calc_date_th = $date_strt_cmd+strtotime("+".$donnee_setting['nb_liv_theorique']." days");
                                                 echo date("d-m-Y", $calc_date_th);
                                                 ?>
                                             </small>
