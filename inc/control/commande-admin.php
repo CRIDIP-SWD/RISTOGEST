@@ -4,8 +4,8 @@ if(isset($_GET['supp-cmd']) && $_GET['supp-cmd'] == 'true')
 {
 	$idcommande = $_GET['idcommande'];
 
-	$sql_delete_article_cmd = mysql_query("DELETE FROM article_commande WHERE idcommande = '$idcommande'");
-	$sql_delete_cmd = mysql_query("DELETE FROM commande WHERE idcommande = '$idcommande'");
+	$sql_delete_article_cmd = mysql_query("DELETE FROM article_commande WHERE idcommande = '$idcommande'")or die(mysql_error());
+	$sql_delete_cmd = mysql_query("DELETE FROM commande WHERE idcommande = '$idcommande'")or die(mysql_error());
 
 	if($sql_delete_cmd == TRUE)
 	{
