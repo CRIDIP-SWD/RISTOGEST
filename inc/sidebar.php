@@ -59,7 +59,7 @@
                         <ul class="sidebar-nav">
 
                             <li>
-                                <a href=""><i class=""></i> Accueil</a>
+                                <a href=""><i class="fa fa-dashboard"></i> Accueil</a>
                             </li>
 
                             <li class="sidebar-header">
@@ -68,10 +68,10 @@
                                 <span class="sidebar-header-title">COMMANDE</span>
                             </li>
                             <li>
-                                <a href=""><i class=""></i> Commandes Utilisateurs</a>
+                                <a href=""><i class="fa fa-user"></i> Commandes Utilisateurs</a>
                             </li>
                             <li>
-                                <a href=""><i class=""></i> Commandes prestataires</a>
+                                <a href=""><i class="fa fa-truck"></i> Commandes prestataires</a>
                             </li>
 
                             <li class="sidebar-header">
