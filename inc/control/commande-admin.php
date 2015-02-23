@@ -1,3 +1,6 @@
+<?php
+include ('../db.conf.php');
+?>
 <?php 
 //Suppression de la commande
 if(isset($_GET['supp-cmd']) && $_GET['supp-cmd'] == 'true')
