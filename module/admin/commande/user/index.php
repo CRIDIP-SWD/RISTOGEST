@@ -155,7 +155,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                     break;
 
                                                 case '1':
-                                                    echo "<span class='label label-primary' title='' data-placement='top' data-toggle='tooltip' data-original-title='La commande est valider par l\'utilisateur, elle doit etre pris en charge par le centre de gestion.'>Valider par l'utilisateur, en attente du centre de gestion.</span>";
+                                                    echo "<span class='label label-primary' title='' data-placement='top' data-toggle='tooltip' data-original-title='La commande est valider par l'utilisateur, elle doit etre pris en charge par le centre de gestion.'>Valider par l'utilisateur, en attente du centre de gestion.</span>";
                                                     break;
                                                 
                                                 default:
