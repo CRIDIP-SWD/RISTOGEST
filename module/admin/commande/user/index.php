@@ -110,6 +110,36 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         ?>
                     </ul>
                     <!-- END Blank Header -->
+                    <!-- RESULTAT DES ETATS -->
+                    <?php
+                    if(isset($_GET['supp-cmd']) && $_GET['supp-cmd'] == 'true')
+                    {
+                    ?>
+                        <div class="alert alert-success alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-check-circle"></i> Succès
+                            </h4> 
+                            La commande à été supprimé.
+                        </div>
+                    <?php
+                    }
+                    ?>
+                    <?php
+                    if(isset($_GET['supp-cmd']) && $_GET['supp-cmd'] == 'false')
+                    {
+                    ?>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-times-circle"></i> Erreur
+                            </h4> 
+                            Une erreur à été rencontrer lors de la suppression de la commande.<br>Contactez le support technique.
+                        </div>
+                    <?php
+                    }
+                    ?>
+
 
                     <div class="block">
                         <div class="block-title">
@@ -173,7 +203,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             ?>
                                         </td>
                                         <td class="text-center">
-                                            <a href="" class="btn btn-xs" title="" data-toggle="tooltip" data-original-title="Voir la commande"><i class="hi hi-eye-open"></i></a>
+                                            <a href="<?php echo SITE,FOLDER; ?>inc/control/commande-admin.php?supp-cmd=true&idcommande=<?php echo $donnee_commande['idcommande']; ?>" class="btn btn-xs" title="" data-toggle="tooltip" data-original-title="Voir la commande"><i class="hi hi-eye-open"></i></a>
                                             <a href="" class="btn btn-xs" title="" data-toggle="tooltip" data-original-title="Supprimer la commande"><i class="hi hi-remove-circle"></i></a>
                                         </td>
                                     </tr>
