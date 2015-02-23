@@ -9,9 +9,9 @@ define("TITLE_PAGE", "COMMANDE UTILISATEUR");
 define("SUBTITLE_PAGE", "COMMANDE N° ".$donnee_commande['num_commande']);
 //Breadcumb
 $li_start = "<li>".$logiciel."</li>";
-$li1 = "ADMINISTRATION";
-$li2 = "COMMANDE";
-$li3 = "UTILISATEUR";
+$li1 = "<li>ADMINISTRATION</li>";
+$li2 = "<li>COMMANDE</li>";
+$li3 = "<li>UTILISATEUR</li>";
 $li4 = "";
 $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
 ?>
