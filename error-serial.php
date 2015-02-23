@@ -52,8 +52,8 @@ include ('inc/config.php');
         <div id="error-container">
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2 text-center">
-                    <h1 class="animation-tossing"><i class="fa fa-times text-danger"></i> SERVICE DESACTIVE</h1>
-                    <h2 class="h3">Votre accès au service de RISTOGEST est <b>désactivé</b>.<br>Veuillez contacter le service technique au <b>02 51 23 24 24</b>.</h2>
+                    <h1 class="animation-pulse"><i class="fa fa-times text-danger"></i></h1><h1> ERREUR CLE IDENTIFICATION</h1>
+                    <h2 class="h3">La clé d'activation du logiciel est erroner ou à été bloquer par le support.<br>Veuillez contacter le service technique au <b>02 51 23 24 24</b>.</h2>
                 </div>
             </div>
         </div>
