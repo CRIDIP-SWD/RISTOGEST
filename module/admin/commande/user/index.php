@@ -155,14 +155,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                     break;
 
                                                 case '1':
-                                                    echo "
-                                                        <span class='label label-danger' >
-                                                            <span class='fa-stack'>
-                                                                <i class='fa fa-user fa-stack-1x'></i>
-                                                                <i class='fa fa-times fa-stack-1x'></i>
-                                                            </span> 
-                                                            Valider par l'utilisateur, en attente du centre de gestion.
-                                                        </span>";
+                                                    echo "<span class='label label-danger' ><i class='fa fa-user'></i><i class='fa fa-check'></i> Valider par l'utilisateur, en attente du centre de gestion.</span>";
                                                     break;
 
                                                 case '2':
