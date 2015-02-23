@@ -12,6 +12,10 @@ exit();
 $login = $_SESSION['login'];
 $sql_user = mysql_query("SELECT iduser, login, groupe FROM utilisateur WHERE login = '$login'")or die(mysql_error());
 $donnee_user = mysql_fetch_array($sql_user);
+$iduser = $donnee_user['iduser'];
+$sql_utilisateur = mysql_query("SELECT * FROM utilisateur WHERE iduser = '$iduser'")or die(mysql_error());
+$donnee_utilisateur = mysql_fetch_array($sql_utilisateur);
+$groupe = $donnee_utilisateur['groupe'];
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
