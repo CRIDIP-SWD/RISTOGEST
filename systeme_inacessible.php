@@ -53,7 +53,7 @@ include ('inc/config.php');
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2 text-center">
                     <h1 class="animation-tossing"><i class="fa fa-times text-danger"></i> SERVICE DESACTIVE</h1>
-                    <h2 class="h3">Votre accès au service de RISTOGEST est désactivé.<br>Veuillez contacter le service technique au 02 51 23 24 24.</h2>
+                    <h2 class="h3">Votre accès au service de RISTOGEST est <b>désactivé</b>.<br>Veuillez contacter le service technique au <b>02 51 23 24 24</b>.</h2>
                 </div>
             </div>
         </div>
