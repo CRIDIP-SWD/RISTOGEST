@@ -3,7 +3,7 @@
 	$title = 'RISTOGEST';
 	$logiciel = 'RISTOGEST';
 	$description = '';
-	define('SITE', 'http://cridip.ddns.net/');
+	define('SITE', 'http://vps116895.ovh.net/');
 	define('FOLDER', 'ristogest/');
 	define('ASSETS', 'assets/');
 	$theme = 'fire';
