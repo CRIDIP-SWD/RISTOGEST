@@ -163,7 +163,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                     break;
 
                                                 case '3':
-                                                    echo "<div class='animation-pulse'><span class='label label-success'><i class='fa fa-check'></i> Commande disponible au centre de gestion</span></div>";
+                                                    echo "<div class='animation-floating'><span class='label label-success'><i class='fa fa-check'></i> Commande disponible au centre de gestion</span></div>";
                                                     break;
                                                 
                                                 default:
