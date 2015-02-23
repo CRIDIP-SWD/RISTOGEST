@@ -173,7 +173,8 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             ?>
                                         </td>
                                         <td class="text-center">
-
+                                            <a href="" class="btn btn-xs"><i class="hi hi-eye-open"></i></a>
+                                            <a href="" class="btn btn-xs"><i class="hi hi-remove-circle"></i></a>
                                         </td>
                                     </tr>
                                 <?php } ?>
