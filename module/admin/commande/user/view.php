@@ -3,6 +3,7 @@
 $idcommande = $_GET['idcommande'];
 $sql_commande = mysql_query("SELECT * FROM commande WHERE idcommande = '$idcommande'")or die(mysql_error());
 $donnee_commande = mysql_fetch_array($sql_commande);
+?>
 <?php
 define("TITLE_PAGE", "COMMANDE UTILISATEUR");
 define("SUBTITLE_PAGE", "COMMANDE N° ".$donnee_commande['num_commande']);
