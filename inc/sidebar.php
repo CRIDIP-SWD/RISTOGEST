@@ -5,7 +5,7 @@
                     <!-- Sidebar Content -->
                     <div class="sidebar-content">
                         <!-- Brand -->
-                        <a href="index.html" class="sidebar-brand">
+                        <a href="<?php echo SITE,FOLDER; ?>/index.php" class="sidebar-brand">
                             <i class="gi gi-flash"></i><strong><?php echo $logiciel; ?></strong>
                         </a>
                         <!-- END Brand -->
