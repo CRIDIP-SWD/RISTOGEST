@@ -80,10 +80,10 @@
                                 <span class="sidebar-header-title">MENUS</span>
                             </li>
                             <li>
-                                <a href=""><i class=""></i> Gestion des Articles</a>
+                                <a href=""><i class="fa fa-cubes"></i> Gestion des Articles</a>
                             </li>
                             <li>
-                                <a href=""><i class=""></i> Gestion des Menus</a>
+                                <a href=""><i class="gi gi-shop_window"></i> Gestion des Menus</a>
                             </li>
 
                             <li class="sidebar-header">
@@ -92,13 +92,13 @@
                                 <span class="sidebar-header-title">PARAMETRE</span>
                             </li>
                             <li>
-                                <a href=""><i class=""></i> Gestion des Utilisateurs</a>
+                                <a href=""><i class="fa fa-users"></i> Gestion des Utilisateurs</a>
                             </li>
                             <li>
-                                <a href=""><i class=""></i> Gestion du centre de gestion</a>
+                                <a href=""><i class="fa fa-building"></i> Gestion du centre de gestion</a>
                             </li>
                             <li>
-                                <a href=""><i class=""></i> Gestion des Prestataires</a>
+                                <a href=""><i class="gi gi-vcard"></i> Gestion des Prestataires</a>
                             </li>
 
                         </ul>
