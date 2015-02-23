@@ -151,11 +151,19 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             <?php
                                             switch ($donnee_commande['etat_commande']) {
                                                 case '0':
-                                                    echo "<span class='label label-default' title='' data-placement='top' data-toggle='tooltip' data-original-title='La commande est en cours de validation par l\'utilisateur, il ne là pas valider.'>Non valider par l'utilisateur</span>";
+                                                    echo "<span class='label label-default'><i class='fa fa-user'></i><i class='fa fa-times'></i> Non valider par l'utilisateur</span>";
                                                     break;
 
                                                 case '1':
-                                                    echo "<span class='label label-primary' title='' data-placement='top' data-toggle='tooltip' data-original-title='La commande est valider par l'utilisateur, elle doit etre pris en charge par le centre de gestion.'>Valider par l'utilisateur, en attente du centre de gestion.</span>";
+                                                    echo "<span class='label label-danger' ><i class='fa fa-user'></i><i class='fa fa-check'></i> Valider par l'utilisateur, en attente du centre de gestion.</span>";
+                                                    break;
+
+                                                case '2':
+                                                    echo "<span class='label label-warning'><i class='fa fa-spin fa-refresh'></i> En cours</span>";
+                                                    break;
+
+                                                case '3':
+                                                    echo "<span class='label label-sucess'><i class='fa fa-check'></i> Commande disponible au centre de gestion</span>";
                                                     break;
                                                 
                                                 default:
