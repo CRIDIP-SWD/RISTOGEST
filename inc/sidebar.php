@@ -59,7 +59,7 @@
                         <ul class="sidebar-nav">
 
                             <li>
-                                <a href=""><i class="fa fa-dashboard"></i> Accueil</a>
+                                <a href="<?php echo SITE,FOLDER; ?>index.php"><i class="fa fa-dashboard"></i> Accueil</a>
                             </li>
 
                             <li class="sidebar-header">
@@ -68,10 +68,10 @@
                                 <span class="sidebar-header-title">COMMANDE</span>
                             </li>
                             <li>
-                                <a href=""><i class="fa fa-user"></i> Commandes Utilisateurs</a>
+                                <a href="<?php echo SITE,FOLDER; ?>/admin/commande/user/index.php"><i class="fa fa-user"></i> Commandes Utilisateurs</a>
                             </li>
                             <li>
-                                <a href=""><i class="fa fa-truck"></i> Commandes prestataires</a>
+                                <a href="<?php echo SITE,FOLDER; ?>/admin/commande/presta/index.php"><i class="fa fa-truck"></i> Commandes prestataires</a>
                             </li>
 
                             <li class="sidebar-header">
@@ -80,10 +80,10 @@
                                 <span class="sidebar-header-title">MENUS</span>
                             </li>
                             <li>
-                                <a href=""><i class="fa fa-cubes"></i> Gestion des Articles</a>
+                                <a href="<?php echo SITE,FOLDER; ?>/admin/article/index.php"><i class="fa fa-cubes"></i> Gestion des Articles</a>
                             </li>
                             <li>
-                                <a href=""><i class="gi gi-shop_window"></i> Gestion des Menus</a>
+                                <a href="<?php echo SITE,FOLDER; ?>/admin/menu/index.php"><i class="gi gi-shop_window"></i> Gestion des Menus</a>
                             </li>
 
                             <li class="sidebar-header">
@@ -92,13 +92,13 @@
                                 <span class="sidebar-header-title">PARAMETRE</span>
                             </li>
                             <li>
-                                <a href=""><i class="fa fa-users"></i> Gestion des Utilisateurs</a>
+                                <a href="<?php echo SITE,FOLDER; ?>/admin/user/index.php"><i class="fa fa-users"></i> Gestion des Utilisateurs</a>
                             </li>
                             <li>
-                                <a href=""><i class="fa fa-building"></i> Gestion du centre de gestion</a>
+                                <a href="<?php echo SITE,FOLDER; ?>/admin/setting/index.php"><i class="fa fa-building"></i> Gestion du centre de gestion</a>
                             </li>
                             <li>
-                                <a href=""><i class="gi gi-vcard"></i> Gestion des Prestataires</a>
+                                <a href="<?php echo SITE,FOLDER; ?>/admin/prestataire/index.php"><i class="gi gi-vcard"></i> Gestion des Prestataires</a>
                             </li>
 
                         </ul>
