@@ -173,7 +173,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                 <?php
                                                 $date_strt_cmd = strtotime($donnee_commande['date_commande']);
                                                 $calc_date_th = $date_strt_cmd+strtotime("+".$donnee_setting['nb_liv_theorique']." days");
-                                                echo date("d-m-Y", $calc_date_th);
+                                                if($calc_date_th > $date_strt){echo "<div style='font-weight: bold; color: red;' title='' data-toggle='tooltip' data-original-title='Date Théorique dépassé'>".date("d-m-Y", $calc_date_th)."</div>";}else{echo "<div style='font-weight: bold; color: green;'>".date("d-m-Y", $calc_date_th)."</div>";}
                                                 ?>
                                             </small>
                                         </td>
