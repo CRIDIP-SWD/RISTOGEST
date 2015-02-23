@@ -97,6 +97,7 @@
                                         if($groupe == 1){echo "Administrateur";}
                                         if($groupe == 0){echo "Utilisateur";}
                                         ?>
+                                        - <?php echo $raison_social; ?>
                                      </small></h1>
                                 </div>
                                 <!-- END Main Title -->
