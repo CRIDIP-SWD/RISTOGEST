@@ -57,7 +57,50 @@
                         if($groupe == 1){
                         ?>
                         <ul class="sidebar-nav">
-                            
+
+                            <li>
+                                <a href=""><i class=""></i> Accueil</a>
+                            </li>
+
+                            <li class="sidebar-header">
+                                <span class="sidebar-header-options clearfix">
+                                </span>
+                                <span class="sidebar-header-title">COMMANDE</span>
+                            </li>
+                            <li>
+                                <a href=""><i class=""></i> Commandes Utilisateurs</a>
+                            </li>
+                            <li>
+                                <a href=""><i class=""></i> Commandes prestataires</a>
+                            </li>
+
+                            <li class="sidebar-header">
+                                <span class="sidebar-header-options clearfix">
+                                </span>
+                                <span class="sidebar-header-title">MENUS</span>
+                            </li>
+                            <li>
+                                <a href=""><i class=""></i> Gestion des Articles</a>
+                            </li>
+                            <li>
+                                <a href=""><i class=""></i> Gestion des Menus</a>
+                            </li>
+
+                            <li class="sidebar-header">
+                                <span class="sidebar-header-options clearfix">
+                                </span>
+                                <span class="sidebar-header-title">PARAMETRE</span>
+                            </li>
+                            <li>
+                                <a href=""><i class=""></i> Gestion des Utilisateurs</a>
+                            </li>
+                            <li>
+                                <a href=""><i class=""></i> Gestion du centre de gestion</a>
+                            </li>
+                            <li>
+                                <a href=""><i class=""></i> Gestion des Prestataires</a>
+                            </li>
+
                         </ul>
                         <?php } ?>
                         <!-- END Sidebar Navigation -->
