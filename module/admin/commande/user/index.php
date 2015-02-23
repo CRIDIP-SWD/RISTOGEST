@@ -164,6 +164,9 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             }
                                             ?>
                                         </td>
+                                        <td class="text-center">
+
+                                        </td>
                                     </tr>
                                 <?php } ?>
                                 </tbody>
