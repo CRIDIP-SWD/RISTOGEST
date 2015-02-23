@@ -1,5 +1,6 @@
 <?php
 include ('../db.conf.php');
+BaseConnect();
 ?>
 <?php 
 //Suppression de la commande
