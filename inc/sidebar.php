@@ -13,7 +13,7 @@
                         <!-- User Info -->
                         <div class="sidebar-section sidebar-user clearfix">
                             <div class="sidebar-user-avatar">
-                                <a href="page_ready_user_profile.html">
+                                <a href="<?php echo SITE,FOLDER; ?>/user/profil.php?iduser=<?php echo $iduser; ?>">
                                     <img src="<?php echo SITE,FOLDER,ASSETS; ?>img/placeholders/avatars/avatar2.jpg" alt="avatar">
                                 </a>
                             </div>
