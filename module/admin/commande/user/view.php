@@ -104,6 +104,9 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <i class="gi gi-user"></i><?php echo TITLE_PAGE; ?><br><small><?php echo SUBTITLE_PAGE; ?></small>
                             </h1>
                         </div>
+                        <div class="pull-right">
+                            Salut
+                        </div>
                     </div>
                     <ul class="breadcrumb breadcrumb-top">
                         <?php
@@ -115,9 +118,6 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         if(empty($li_end)){echo "";}else{echo $li_end;}
                         ?>
                     </ul>
-                    <div class="pull-right">
-                        Salut
-                    </div>
                     <!-- END Blank Header -->
                     <!-- ALERT UTILISATEUR -->
                     <?php
