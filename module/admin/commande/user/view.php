@@ -266,7 +266,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                     <?php echo $donnee_reglement_commande['banque_chq']; ?>
                                                 </td>
                                             </tr>
-                                            <div id="paiement-modal" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div id="paiement-commande" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
