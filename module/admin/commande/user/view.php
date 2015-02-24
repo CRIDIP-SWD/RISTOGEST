@@ -249,7 +249,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             <tr>
                                                 <td>
                                                     <?php
-                                                        if($donnee_reglement_commande['type_reglement'] == '1'){echo "<img src='".SITE."".FOLDER."".ASSETS"img/perso/icone-cheque.png' /> Chèque";}
+                                                        if($donnee_reglement_commande['type_reglement'] == '1'){echo "<img src='../../../assets/img/perso/icone-cheque.png' /> Chèque";}
                                                         if($donnee_reglement_commande['type_reglement'] == '2'){echo "<i class='fa fa-euro'></i> Espèce";}
                                                     ?>
                                                 </td>
