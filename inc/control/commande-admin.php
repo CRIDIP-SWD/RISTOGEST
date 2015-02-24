@@ -26,7 +26,7 @@ if(isset($_GET['supp-cmd']) && $_GET['supp-cmd'] == 'true')
  {
  	$idcommande = $_POST['idcommande'];
  	$type_reglement = $_POST['type_reglement'];
- 	$date_reglement = $_POST['date_reglement'];
+ 	$date_reglement = strtotime($_POST['date_reglement']);
  	$montant_reglement = $_POST['montant_reglement'];
  	$porteur_chq = $_POST['porteur_chq'];
  	$num_chq = $_POST['num_chq'];
