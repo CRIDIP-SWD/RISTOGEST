@@ -1,18 +1,17 @@
 <?php include ('../../../../inc/header.php'); ?>
 <?php
-$idcommande = $_GET['idcommande'];
-$sql_commande = mysql_query("SELECT * FROM commande, menu WHERE commande.idmenu = menu.idmenu
-AND idcommande = '$idcommande'")or die(mysql_error());
+$idcomprestataire = $_GET['idcomprestataire'];
+$sql_commande = mysql_query("SELECT * FROM commande_prestataire WHERE idcomprestataire = '$idcomprestataire'")or die(mysql_error());
 $donnee_commande = mysql_fetch_array($sql_commande);
 ?>
 <?php
-define("TITLE_PAGE", "COMMANDE UTILISATEUR");
+define("TITLE_PAGE", "COMMANDE PRESTATAIRE");
 define("SUBTITLE_PAGE", "COMMANDE N° ".$donnee_commande['num_commande']);
 //Breadcumb
 $li_start = "<li>".$logiciel."</li>";
 $li1 = "<li>ADMINISTRATION</li>";
 $li2 = "<li>COMMANDE</li>";
-$li3 = "<li>UTILISATEUR</li>";
+$li3 = "<li>PRESTATAIRE</li>";
 $li4 = "";
 $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
 ?>
@@ -105,18 +104,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             </h1>
                         </div>
                         <div class="pull-right">
-                        <?php
-                        if($donnee_commande['etat_commande'] == 1)
-                        {
-                        ?>
-                            <a class="btn btn-xs btn-success" href=""><i class="fa fa-exchange"></i> Commande Passer chez le prestataire</a>
-                        <?php } ?>
-                        <?php
-                        if($donnee_commande['etat_commande'] == 2)
-                        {
-                        ?>
-                            <a class="btn btn-xs btn-success" href=""><i class="fa fa-truck"></i> Commande </a>
-                        <?php } ?>
+                            <a href="index.php" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Retour à la liste des Commandes</a>
                         </div>
                     </div>
                     <ul class="breadcrumb breadcrumb-top">
@@ -131,35 +119,6 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     </ul>
                     <!-- END Blank Header -->
                     <!-- ALERT UTILISATEUR -->
-                    <?php
-                        if($donnee_commande['etat_commande'] == "0"){
-                    ?>
-                    <div class="alert alert-info alert-dismissable">
-                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                        <h4><i class="fa fa-info-circle"></i> Information</h4> L'utilisateur n'a pas valider sa commande !
-                    </div>
-                    <?php
-                        }
-                    ?>
-                    <?php
-                    if(isset($_GET['add-reglement']) && $_GET['add-reglement'] == 'success')
-                    {
-                    ?>
-                        <div class="alert alert-success alert-dismissable">
-                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                            <h4><i class="fa fa-check-circle"></i> Succès</h4> Le Réglement à bien été ajouté.
-                        </div>
-                    <?php } ?>
-                    <?php
-                    if(isset($_GET['add-reglement']) && $_GET['add-reglement'] == 'error')
-                    {
-                    ?>
-                        <div class="alert alert-danger alert-dismissable">
-                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                            <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur à eu lieu lors de l'ajout du réglement.<br>
-                            Contacter le support technique.
-                        </div>
-                    <?php } ?>
                     <!-- RESULTAT DES ETATS -->
 
                     <!-- BLOCK -->
@@ -181,18 +140,27 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     <?php
                                     if($donnee_commande['etat_commande'] == "0"){
                                     ?>
-                                    <div class="text-muted">
+                                    <div class="text-danger">
                                         <i class="fa fa-times-circle"></i>
-                                        Non Valider par l'utilisateur
+                                        Commande Passer chez le prestataire
                                     </div>
                                     <?php } ?>
                                     <?php
                                     if($donnee_commande['etat_commande'] == "1"){
                                     ?>
-                                    <div class="text-info">
-                                        <i class="fa fa-user"></i>
-                                        Valider par l'utilisateur.<br>
-                                        <h5>Le centre peut passer la commande chez le prestataire.</h5>
+                                    <div class="text-warning">
+                                        <i class="fa fa-truck"></i>
+                                        Commande récéptionner au centre.<br>
+                                        <h5>Veuillez la vérifier.</h5>
+                                    </div>
+                                    <?php } ?>
+                                    <?php
+                                    if($donnee_commande['etat_commande'] == "2"){
+                                    ?>
+                                    <div class="text-success">
+                                        <i class="fa fa-success"></i>
+                                        Commande Vérifier.<br>
+                                        <h5>Article Disponible pour l'utilisateur.</h5>
                                     </div>
                                     <?php } ?>
                                 </div>
@@ -253,172 +221,6 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             </div>
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="block">
-                                <div class="block-title">
-                                    <h2>Reglement de la commande N°<?php echo $donnee_commande['num_commande']; ?></h2>
-                                    <div class="pull-right">
-                                        <a class='btn btn-primary' href='#paiement-commande' data-toggle='modal'><i class='fa fa-credit-card'></i> Paiement de la commande</a>
-                                    </div>
-                                </div>
-                                <div class="table-responsive">
-                                    <table class="table table-vcenter">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-center;">Type de Réglement</th>
-                                                <th class="text-center;">Montant Réglement</th>
-                                                <th>Date du Réglement</th>
-                                                <th>Porteur Chèque</th>
-                                                <th>Numéro de Chèque</th>
-                                                <th>Banque du chèque</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            $sql_reglement_commande = mysql_query("SELECT * FROM reglement_commande, commande WHERE reglement_commande.idcommande = commande.idcommande
-                                            AND commande.idcommande = '$idcommande'")or die(mysql_error());
-                                            while($donnee_reglement_commande = mysql_fetch_array($sql_reglement_commande))
-                                            {
-                                            ?>
-                                            <tr>
-                                                <td>
-                                                    <?php
-                                                        if($donnee_reglement_commande['type_reglement'] == '1'){echo "<img src='../../../assets/img/perso/icone-cheque.png' /> Chèque";}
-                                                        if($donnee_reglement_commande['type_reglement'] == '2'){echo "<i class='fa fa-euro'></i> Espèce";}
-                                                    ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo number_format($donnee_reglement_commande['montant_reglement'], 2, ',', ' ')." €"; ?>
-                                                </td>
-                                                <td>
-                                                    <?php date("d-m-Y", $donnee_reglement_commande['date_reglement']); ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $donnee_reglement_commande['porteur_chq']; ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $donnee_reglement_commande['num_chq']; ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $donnee_reglement_commande['banque_chq']; ?>
-                                                </td>
-                                            </tr>
-                                            <?php } ?>
-                                        </tbody>
-                                        <tfoot>
-                                            <?php
-                                            $sql_calc_total_reglement = mysql_query("SELECT SUM(montant_reglement) FROM reglement_commande WHERE idcommande = '$idcommande'")or die(mysql_error());
-                                            $calc_total_reglement = mysql_result($sql_calc_total_reglement, 0);
-                                            ?>
-                                            <?php
-                                            if(empty($calc_total_reglement)){
-                                            ?>
-                                            <tr>
-                                                <td colspan="6" style="text-align: center; font-weight: bold; color: red"><i class="fa fa-times"></i> Facture non régularisée</td>
-                                            </tr>
-                                            <?php }else{ ?>
-                                            <?php
-                                            if($calc_total_reglement != $donnee_commande['montant_total']){
-                                            ?>
-                                            <tr>
-                                                <td colspan="6" style="text-align: center; font-weight: bold; color: orange"><i class="fa fa-warning"></i> Facture Partiellement régularisée</td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="5" style="text-align: right; font-style: italic;">Montant à régularisée:</td>
-                                                <td style="text-align: right;">
-                                                    <?php
-                                                    $calc_reliquat = $calc_total_reglement-$donnee_commande['montant_total'];
-                                                    echo number_format($calc_reliquat, 2, ',',' ')." €";
-                                                    ?>
-                                                </td>
-                                            </tr>
-                                            <?php } ?>
-                                            <?php
-                                            if($calc_total_reglement == $donnee_commande['montant_total']){
-                                            ?>
-                                            <tr>
-                                                <td colspan="6" style="text-align: center; font-weight: bold; color: green"><i class="fa fa-times"></i> Facture régularisée</td>
-                                            </tr>
-                                            <?php }} ?>
-                                        </tfoot>
-                                    </table>
-                                    <div id="paiement-commande" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                    <h3 class="modal-title">Paiement de la commande N° <?php echo $donnee_commande['num_commande']; ?></h3>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <form class="form-horizontal form-bordered" method="POST" action="<?php echo SITE,FOLDER; ?>inc/control/commande-admin.php">
-                                                        <input type="hidden" name="idcommande" value="<?php echo $idcommande; ?>" />
-
-                                                        <div class="form-group">
-                                                            <label class="col-md-4 control-label" for="example-select2">Type de Réglement</label>
-                                                            <div class="col-md-6">
-                                                                <select id="example-select2" name="type_reglement" class="select-select2" style="width: 100%;" data-placeholder="Choose one..">
-                                                                    <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
-                                                                    <option value="1">Chèque</option>
-                                                                    <option value="2">Espèce</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label class="col-md-3 control-label" for="example-text-input">Date de Réglement</label>
-                                                            <div class="col-md-9">
-                                                                <input type="text" id="example-text-input" name="date_reglement" class="form-control" placeholder="Date du Réglement (jj-mm-aaaa)...">
-                                                                <span class="help-block">Date au format jj-mm-aaaa ou laissez vide pour aujourd'hui.</span>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label class="col-md-3 control-label" for="example-text-input">Montant du réglement</label>
-                                                            <div class="col-md-9">
-                                                                <input type="text" id="example-text-input" name="montant_reglement" class="form-control" placeholder="Montant du Réglement en Euro...">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label class="col-md-3 control-label" for="example-text-input">Porteur du Chèque</label>
-                                                            <div class="col-md-9">
-                                                                <input type="text" id="example-text-input" name="porteur_chq" class="form-control" placeholder="Porteur du chèque...">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label class="col-md-3 control-label" for="example-text-input">Numéro du Chèque</label>
-                                                            <div class="col-md-9">
-                                                                <input type="text" id="example-text-input" name="num_chq" class="form-control" placeholder="Numéro du Chèque...">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label class="col-md-3 control-label" for="example-text-input">Banque du chèque</label>
-                                                            <div class="col-md-9">
-                                                                <input type="text" id="example-text-input" name="banque_chq" class="form-control" placeholder="banque émettrice chèque...">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group form-action">
-                                                            <button type="submit" class="btn btn-success" name="add-reglement" value="valider"><i class="fa fa-check"></i> Soumettre le réglement</button>
-                                                            <button type="reset" class="btn btn-warning"><i class="fa fa-refresh fa-spin"></i> Réinitialiser le formulaire</button>
-                                                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Fermer le formulaire</button>
-                                                        </div>
-
-
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
                 <!-- END Page Content -->
 
