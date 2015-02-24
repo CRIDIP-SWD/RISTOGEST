@@ -105,7 +105,18 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             </h1>
                         </div>
                         <div class="pull-right">
-                            <a class="btn btn-xs btn-success" href=""><i class="fa fa-truck"></i> Commande Passer chez le prestataire</a>
+                        <?php
+                        if($donnee_commande['etat_commande'] == 1)
+                        {
+                        ?>
+                            <a class="btn btn-xs btn-success" href=""><i class="fa fa-exchange"></i> Commande Passer chez le prestataire</a>
+                        <?php } ?>
+                        <?php
+                        if($donnee_commande['etat_commande'] == 2)
+                        {
+                        ?>
+                            <a class="btn btn-xs btn-success" href=""><i class="fa fa-truck"></i> Commande </a>
+                        <?php } ?>
                         </div>
                     </div>
                     <ul class="breadcrumb breadcrumb-top">
@@ -304,28 +315,10 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                 <td style="text-align: right;">
                                                     <?php
                                                     $calc_total_reglement = mysql_query("SELECT SUM(montant_reglement) FROM reglement_commande WHERE idcommande = '$idcommande'")or die(mysql_error());
-                                                    echo number_format(mysql_result($calc_total_reglement, 0), 2, ',', ' ')." €";
+                                                    echo "<div style='font-weight: bold;'>".number_format(mysql_result($calc_total_reglement, 0), 2, ',', ' ')." €</div>";
                                                     ?>
                                                 </td>
                                             </tr>
-                                            <?php
-                                            if($donnee_commande['montant_total'] != $donnee_reglement_commande['montant_reglement'])
-                                            {
-                                            ?>
-                                            <tr>
-                                                <td colspan="5" style="text-align: right;">Montant à régularisée</td>
-                                                <td style="text-align: right;">
-                                                    <?php
-                                                        $calc_diff = $donnee_commande['montant_total']-$donnee_reglement_commande['montant_reglement'];
-                                                        echo "<div style='color: red'>".number_format($calc_diff, 2, ',', ' ')." €</div>";
-                                                    ?>
-                                                </td>
-                                            </tr>
-                                            <?php }else{ ?>
-                                            <tr>
-                                                <td colspan="6" style="text-align: right; color: green; font-weight: bolder;"><i class="fa fa-check"></i> Paiement Effectuer</td>
-                                            </tr>
-                                            <?php } ?>
                                         </tfoot>
                                     </table>
                                     <div id="paiement-commande" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
