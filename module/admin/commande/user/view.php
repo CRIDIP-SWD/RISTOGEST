@@ -115,6 +115,9 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         if(empty($li_end)){echo "";}else{echo $li_end;}
                         ?>
                     </ul>
+                    <div class="pull-right">
+                        Salut
+                    </div>
                     <!-- END Blank Header -->
                     <!-- ALERT UTILISATEUR -->
                     <?php
