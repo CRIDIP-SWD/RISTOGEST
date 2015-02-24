@@ -316,17 +316,17 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             if(empty($calc_total_reglement)){
                                             ?>
                                             <tr>
-                                                <td colspan="7" style="text-align: center; font-weight: bold; color: red"><i class="fa fa-times"></i> Facture non régularisée</td>
+                                                <td colspan="6" style="text-align: center; font-weight: bold; color: red"><i class="fa fa-times"></i> Facture non régularisée</td>
                                             </tr>
-                                            <?php } ?>
+                                            <?php }else{ ?>
                                             <?php
                                             if($calc_total_reglement != $donnee_commande['montant_total']){
                                             ?>
                                             <tr>
-                                                <td colspan="7" style="text-align: center; font-weight: bold; color: orange"><i class="fa fa-warning"></i> Facture Partiellement régularisée</td>
+                                                <td colspan="6" style="text-align: center; font-weight: bold; color: orange"><i class="fa fa-warning"></i> Facture Partiellement régularisée</td>
                                             </tr>
                                             <tr>
-                                                <td colspan="6" style="text-align: right; font-style: italic;">Montant à régularisée:</td>
+                                                <td colspan="5" style="text-align: right; font-style: italic;">Montant à régularisée:</td>
                                                 <td style="text-align: right;">
                                                     <?php
                                                     $calc_reliquat = $calc_total_reglement-$donnee_commande['montant_total'];
@@ -339,9 +339,9 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             if($calc_total_reglement == $donnee_commande['montant_total']){
                                             ?>
                                             <tr>
-                                                <td colspan="7" style="text-align: center; font-weight: bold; color: green"><i class="fa fa-times"></i> Facture régularisée</td>
+                                                <td colspan="6" style="text-align: center; font-weight: bold; color: green"><i class="fa fa-times"></i> Facture régularisée</td>
                                             </tr>
-                                            <?php } ?>
+                                            <?php }} ?>
                                         </tfoot>
                                     </table>
                                     <div id="paiement-commande" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
