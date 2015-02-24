@@ -147,7 +147,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         </div>
                     <?php } ?>
                     <!-- RESULTAT DES ETATS -->
-                    
+
                     <!-- BLOCK -->
                     <div class="row">
                         <div class="col-md-8">
@@ -310,13 +310,17 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             {
                                             ?>
                                             <tr>
-                                                <td colspan="4" style="text-align: right;">Montant à régularisée</td>
+                                                <td colspan="5" style="text-align: right;">Montant à régularisée</td>
                                                 <td style="text-align: right;">
                                                     <?php
                                                         $calc_diff = $donnee_commande['montant_total']-$donnee_reglement_commande['montant_reglement'];
                                                         echo "<div style='color: red'>".number_format($calc_diff, 2, ',', ' ')." €</div>";
                                                     ?>
                                                 </td>
+                                            </tr>
+                                            <?php }else{ ?>
+                                            <tr>
+                                                <td colspan="5" style="text-align: right; color: green; font-weight: bolder;"><i class="fa fa-check"></i> Paiement Effectuer</td>
                                             </tr>
                                             <?php } ?>
                                         </tfoot>
