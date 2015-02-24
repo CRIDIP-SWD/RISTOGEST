@@ -1,7 +1,8 @@
 <?php include ('../../../../inc/header.php'); ?>
 <?php
 $idcommande = $_GET['idcommande'];
-$sql_commande = mysql_query("SELECT * FROM commande WHERE idcommande = '$idcommande'")or die(mysql_error());
+$sql_commande = mysql_query("SELECT * FROM commande, menu WHERE commande.idmenu = menu.idmenu
+AND idcommande = '$idcommande'")or die(mysql_error());
 $donnee_commande = mysql_fetch_array($sql_commande);
 ?>
 <?php
@@ -167,7 +168,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         <div class="col-md-12">
                             <div class="block">
                                 <div class="block-title">
-                                    <h2>Produit Commander</h2>
+                                    <h2>Produit Commander - Menu du <?php echo $donnee_commande['date_menu']; ?> Semaine <?php echo $donnee_commande['semaine']; ?></h2>
                                 </div>
                                 <div class="table-responsive">
                                     <table class="table table-vcenter">
