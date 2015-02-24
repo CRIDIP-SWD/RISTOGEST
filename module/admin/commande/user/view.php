@@ -320,7 +320,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             </tr>
                                             <?php }else{ ?>
                                             <tr>
-                                                <td colspan="5" style="text-align: right; color: green; font-weight: bolder;"><i class="fa fa-check"></i> Paiement Effectuer</td>
+                                                <td colspan="6" style="text-align: right; color: green; font-weight: bolder;"><i class="fa fa-check"></i> Paiement Effectuer</td>
                                             </tr>
                                             <?php } ?>
                                         </tfoot>
