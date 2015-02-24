@@ -307,6 +307,42 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             </tr>
                                             <?php } ?>
                                         </tbody>
+                                        <tfoot>
+                                            <?php
+                                            $sql_calc_total_reglement = mysql_query("SELECT SUM(montant_reglement) FROM reglement_commande WHERE idcommande = '$idcommande'")or die(mysql_error());
+                                            $calc_total_reglement = mysql_result($sql_calc_total_reglement, 0);
+                                            ?>
+                                            <?php
+                                            if(empty($calc_total_reglement)){
+                                            ?>
+                                            <tr>
+                                                <td colspan="7" style="text-align: center; font-weight: bold; color: red"><i class="fa fa-times"></i> Facture non régularisée</td>
+                                            </tr>
+                                            <?php } ?>
+                                            <?php
+                                            if($calc_total_reglement != $donnee_commande['montant_total']){
+                                            ?>
+                                            <tr>
+                                                <td colspan="7" style="text-align: center; font-weight: bold; color: orange"><i class="fa fa-warning"></i> Facture Partiellement régularisée</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="6" style="text-align: right; font-style: italic;">Montant à régularisée:</td>
+                                                <td style="text-align: right;">
+                                                    <?php
+                                                    $calc_reliquat = $calc_total_reglement-$donnee_commande['montant_total'];
+                                                    echo number_format($calc_reliquat, 2, ',',' ')." €";
+                                                    ?>
+                                                </td>
+                                            </tr>
+                                            <?php } ?>
+                                            <?php
+                                            if($calc_total_reglement == $donnee_commande['montant_total']){
+                                            ?>
+                                            <tr>
+                                                <td colspan="7" style="text-align: center; font-weight: bold; color: green"><i class="fa fa-times"></i> Facture régularisée</td>
+                                            </tr>
+                                            <?php } ?>
+                                        </tfoot>
                                     </table>
                                     <div id="paiement-commande" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
                                         <div class="modal-dialog">
@@ -371,6 +407,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                             <button type="reset" class="btn btn-warning"><i class="fa fa-refresh fa-spin"></i> Réinitialiser le formulaire</button>
                                                             <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Fermer le formulaire</button>
                                                         </div>
+
 
                                                     </form>
                                                 </div>
