@@ -140,7 +140,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <div class="block-title">
                                     <h2>Montant de la commande</h2>
                                 </div>
-                                <div style="display: inline;"><?php echo number_format($donnee_commande['montant_total'], 2, ',', ' ')." €"; ?></div>
+                                <div style="display: inline; height: 250px; vertical-align: middle; text-align: center;"><?php echo number_format($donnee_commande['montant_total'], 2, ',', ' ')." €"; ?></div>
                             </div>
                         </div>
                         <div class="col-md-4">
