@@ -170,7 +170,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <div class="block-title">
                                     <h2>Produit Commander - Menu du <?php echo $donnee_commande['date_menu']; ?> / <?php echo $donnee_commande['semaine']; ?></h2>
                                     <div class="pull-right">
-                                        TEST
+                                        <a href="" class="btn btn-primary"><i class="fa fa-print"></i> Imprimer la commande</a>
                                     </div>
                                 </div>
                                 <div class="table-responsive">
