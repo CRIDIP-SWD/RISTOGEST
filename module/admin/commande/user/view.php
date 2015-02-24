@@ -306,7 +306,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                 </td>
                                             </tr>
                                             <?php
-                                            if($donnee_commande['montant_total'] == $donnee_reglement_commande['montant_reglement'])
+                                            if($donnee_commande['montant_total'] != $donnee_reglement_commande['montant_reglement'])
                                             {
                                             ?>
                                             <tr>
