@@ -147,12 +147,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         </div>
                     <?php } ?>
                     <!-- RESULTAT DES ETATS -->
-                    <?php
-                    if($donnee_commande['etat_commande'] == "1")
-                    {
-                        mysql_query("UPDATE commande SET etat_commande = '2' WHERE idcommande = '$idcommande'");
-                    }
-                    ?>
+                    
                     <!-- BLOCK -->
                     <div class="row">
                         <div class="col-md-8">
