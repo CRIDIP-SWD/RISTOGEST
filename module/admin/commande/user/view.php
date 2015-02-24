@@ -350,7 +350,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                         <div class="form-group">
                                                             <label class="col-md-3 control-label" for="example-text-input">Date de Réglement</label>
                                                             <div class="col-md-9">
-                                                                <input type="text" id="masked_date2" name="date_reglement" class="form-control" placeholder="Date du Réglement (jj-mm-aaaa)...">
+                                                                <input type="text" id="example-text-input" name="date_reglement" class="form-control" placeholder="Date du Réglement (jj-mm-aaaa)...">
                                                                 <span class="help-block">Date au format jj-mm-aaaa ou laissez vide pour aujourd'hui.</span>
                                                             </div>
                                                         </div>
