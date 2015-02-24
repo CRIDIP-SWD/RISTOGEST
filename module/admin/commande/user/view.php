@@ -306,7 +306,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                     <h3 class="modal-title">Paiement de la commande N° <?php echo $donnee_commande['num_commande']; ?></h3>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form class="form-bordered" method="POST" action="<?php echo SITE,FOLDER; ?>inc/control/commande-admin.php">
+                                                    <form method="POST" action="<?php echo SITE,FOLDER; ?>inc/control/commande-admin.php">
                                                         <input type="hidden" name="idcommande" value="<?php echo $idcommande; ?>" />
 
                                                         <div class="form-group">
