@@ -182,7 +182,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             <?php
                                             switch ($donnee_commande['etat_commande']) {
                                                 case '0':
-                                                    echo "<span class='label label-danger>Commande passer chez le prestataire</span>";
+                                                    echo "<span class='label label-danger'>Commande passer chez le prestataire</span>";
                                                     break;
 
                                                 case '1':
