@@ -217,6 +217,88 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         </div>
                     </div>
 
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="block">
+                                <div class="block-title">
+                                    <h2>Reglement de la commande N°<?php echo $donnee_commande['num_commande']; ?></h2>
+                                    <div class="pull-right">
+                                        <?php
+                                            if($donnee_commande['regle'] == "0"){echo "<a class='btn btn-primary'><i class='fa fa-credit-card'></i> Paiement de la commande</a>";}
+                                        ?>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-vcenter">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center;">Type de Réglement</th>
+                                                <th class="text-center;">Montant Réglement</th>
+                                                <th>Porteur Chèque</th>
+                                                <th>Numéro de Chèque</th>
+                                                <th>Banque du chèque</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            $sql_reglement_commande = mysql_query("SELECT * FROM reglement_commande, commande WHERE reglement_commande.idcommande = commande.idcommande
+                                            AND commande.idcommande = '$idcommande'")or die(mysql_error());
+                                            while($donnee_reglement_commande = mysql_fetch_array($sql_reglement_commande))
+                                            {
+                                            ?>
+                                            <tr>
+                                                <td>
+                                                    <?php
+                                                        if($donnee_reglement_commande['type_reglement'] == '1'){echo "<img src='".SITE."".FOLDER."".ASSETS"img/perso/icone-cheque.png' /> Chèque";}
+                                                        if($donnee_reglement_commande['type_reglement'] == '2'){echo "<i class='fa fa-euro'></i> Espèce";}
+                                                    ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo number_format($donnee_reglement_commande['montant_reglement'], 2, ',', ' ')." €"; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $donnee_reglement_commande['porteur_chq']; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $donnee_reglement_commande['num_chq']; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $donnee_reglement_commande['banque_chq']; ?>
+                                                </td>
+                                            </tr>
+                                            <?php } ?>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="4" style="text-align: right;">Montant Total Réglé</td>
+                                                <td style="text-align: right;">
+                                                    <?php
+                                                    $calc_total_reglement = mysql_query("SELECT SUM(montant_reglement) FROM reglement_commande WHERE idcommande = '$idcommande'")or die(mysql_error());
+                                                    echo number_format(mysql_result($calc_total_reglement, 0), 2, ',', ' ')." €";
+                                                    ?>
+                                                </td>
+                                            </tr>
+                                            <?php
+                                            if($donnee_commande['montant_total'] != $donnee_reglement_commande['montant_reglement'])
+                                            {
+                                            ?>
+                                            <tr>
+                                                <td colspan="4" style="text-align: right;">Montant à régularisée</td>
+                                                <td style="text-align: right;">
+                                                    <?php
+                                                        $calc_diff = $donnee_commande['montant_total']-$donnee_reglement_commande['montant_reglement'];
+                                                        echo "<div style='color: red'>".number_format($calc_diff, 2, ',', ' ')." €</div>";
+                                                    ?>
+                                                </td>
+                                            </tr>
+                                            <?php } ?>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 <!-- END Page Content -->
 
