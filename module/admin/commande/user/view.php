@@ -234,6 +234,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             <tr>
                                                 <th class="text-center;">Type de Réglement</th>
                                                 <th class="text-center;">Montant Réglement</th>
+                                                <th>Date du Réglement</th>
                                                 <th>Porteur Chèque</th>
                                                 <th>Numéro de Chèque</th>
                                                 <th>Banque du chèque</th>
@@ -255,6 +256,9 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                 </td>
                                                 <td>
                                                     <?php echo number_format($donnee_reglement_commande['montant_reglement'], 2, ',', ' ')." €"; ?>
+                                                </td>
+                                                <td>
+                                                    <?php date("d-m-Y", $donnee_reglement_commande['date_reglement']); ?>
                                                 </td>
                                                 <td>
                                                     <?php echo $donnee_reglement_commande['porteur_chq']; ?>
@@ -302,7 +306,63 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                     <h3 class="modal-title">Paiement de la commande N° <?php echo $donnee_commande['num_commande']; ?></h3>
                                                 </div>
                                                 <div class="modal-body">
-                                                    Modal Content..
+                                                    <form class="form-bordered" method="POST" action="<?php echo SITE,FOLDER; ?>inc/control/commande-admin.php">
+                                                        <input type="hidden" name="idcommande" value="<?php echo $idcommande; ?>" />
+
+                                                        <div class="form-group">
+                                                            <label class="col-md-4 control-label" for="example-select2">Type de Réglement</label>
+                                                            <div class="col-md-6">
+                                                                <select id="example-select2" name="type_reglement" class="select-select2" style="width: 100%;" data-placeholder="Choose one..">
+                                                                    <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
+                                                                    <option value="1">Chèque</option>
+                                                                    <option value="2">Espèce</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label" for="example-text-input">Date de Réglement</label>
+                                                            <div class="col-md-9">
+                                                                <input type="text" id="example-text-input" name="date_reglement" class="form-control" placeholder="Date du Réglement (jj-mm-aaaa)...">
+                                                                <span class="help-block">Date au format jj-mm-aaaa ou laissez vide pour aujourd'hui.</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label" for="example-text-input">Montant du réglement</label>
+                                                            <div class="col-md-9">
+                                                                <input type="text" id="example-text-input" name="montant_reglement" class="form-control" placeholder="Montant du Réglement en Euro...">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label" for="example-text-input">Porteur du Chèque</label>
+                                                            <div class="col-md-9">
+                                                                <input type="text" id="example-text-input" name="porteur_chq" class="form-control" placeholder="Porteur du chèque...">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label" for="example-text-input">Numéro du Chèque</label>
+                                                            <div class="col-md-9">
+                                                                <input type="text" id="example-text-input" name="num_chq" class="form-control" placeholder="Numéro du Chèque...">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label" for="example-text-input">Banque du chèque</label>
+                                                            <div class="col-md-9">
+                                                                <input type="text" id="example-text-input" name="banque_chq" class="form-control" placeholder="banque émettrice chèque...">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group form-action">
+                                                            <button type="submit" class="btn btn-success" name="add-reglement" value="valider"><i class="fa fa-check"></i> Soumettre le réglement</button>
+                                                            <button type="reset" class="btn btn-warning"><i class="fa fa-refresh fa-spin"></i> Réinitialiser le formulaire</button>
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Fermer le formulaire</button>
+                                                        </div>
+
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
