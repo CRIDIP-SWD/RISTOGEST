@@ -137,7 +137,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <div class="block-title">
                                     <h2>Etat de la commande</h2>
                                 </div>
-                                <div style="text-align: center; font-size: 20px; height: 75px;">
+                                <div style="text-align: center; font-size: 20px;">
                                     <?php
                                     if($donnee_commande['etat_commande'] == "0"){
                                     ?>
