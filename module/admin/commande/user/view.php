@@ -295,44 +295,18 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                         </tfoot>
                                     </table>
                                     <div id="paiement-commande" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                            <h3 class="modal-title">Paiement de la commande</h3>
-                                                        </div>
-                                                        <form class="form-bordered" method="POST" action="<?php echo SITE,FOLDER; ?>inc/control/commande-admin.php">
-                                                            <div class="modal-body">
-                                                                <input type="hidden" name="idcommande" value="<?php echo $idcommande; ?>" />
-
-                                                                <div class="form-group">
-                                                                    <label class="col-md-4 control-label" for="example-select2">Type de Réglement</label>
-                                                                    <div class="col-md-6">
-                                                                        <select id="example-select2" name="type_reglement" class="select-select2" style="width: 100%;" data-placeholder="Choisissez un type de reglement...">
-                                                                            <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
-                                                                            <option value="1">Chèque</option>
-                                                                            <option value="2">Espèce</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="form-group">
-                                                                    <label class="col-md-3 control-label" for="example-text-input">Date de réglement</label>
-                                                                    <div class="col-md-9">
-                                                                        <input type="text" id="example-text-input" name="date_reglement" class="form-control" placeholder="Date de Reglement (jj-mm-aaa)">
-                                                                        <span class="help-block">Date au format jj-mm-aaaa ou laissez vide sir date du jour.</span>
-                                                                    </div>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                                                                <button type="button" class="btn btn-sm btn-primary">Save changes</button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                    <h3 class="modal-title">Paiement de la commande N° <?php echo $donnee_commande['num_commande']; ?></h3>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Modal Content..
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
