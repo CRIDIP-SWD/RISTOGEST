@@ -310,6 +310,12 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             <?php } ?>
                                         </tbody>
                                         <tfoot>
+                                            <?php
+                                            $sql_reglement_commande = mysql_query("SELECT * FROM reglement_commande, commande WHERE reglement_commande.idcommande = commande.idcommande
+                                            AND commande.idcommande = '$idcommande'")or die(mysql_error());
+                                            while($donnee_reglement_commande = mysql_fetch_array($sql_reglement_commande))
+                                            {
+                                            ?>
                                             <tr>
                                                 <td colspan="5" style="text-align: right;">Montant Total Réglé</td>
                                                 <td style="text-align: right;">
@@ -319,6 +325,31 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                     ?>
                                                 </td>
                                             </tr>
+                                            <?php
+                                            if($donnee_reglement_commande['montant_reglement'] == '0')
+                                            {
+                                            ?>
+                                            <tr>
+                                                <td colspan="7" style="text-align: center; font-weight: bold; color: red"><i class="fa fa-times"></i> Non Régularisée</td>
+                                            </tr>
+                                            <?php } ?>
+                                            <?php
+                                            if($donnee_reglement_commande['montant_reglement'] != $donnee_commande['montant_total'])
+                                            {
+                                            ?>
+                                            <tr>
+                                                <td colspan="7" style="text-align: center; font-weight: bold; color: orange"><i class="fa fa-warning"></i> Partiellement régularisée</td>
+                                            </tr>
+                                            <?php } ?>
+                                            <?php
+                                            if($donnee_reglement_commande['montant_reglement'] == $donnee_commande['montant_total'])
+                                            {
+                                            ?>
+                                            <tr>
+                                                <td colspan="7" style="text-align: center; font-weight: bold; color: green"><i class="fa fa-check"></i> Facture régularisée</td>
+                                            </tr>
+                                            <?php } ?>
+                                            <?php } ?>
                                         </tfoot>
                                     </table>
                                     <div id="paiement-commande" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
