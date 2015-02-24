@@ -168,7 +168,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         <div class="col-md-12">
                             <div class="block">
                                 <div class="block-title">
-                                    <h2>Produit Commander - Menu du <?php echo $donnee_commande['date_menu']; ?> Semaine <?php echo $donnee_commande['semaine']; ?></h2>
+                                    <h2>Produit Commander - Menu du <?php echo $donnee_commande['date_menu']; ?> / <?php echo $donnee_commande['semaine']; ?></h2>
                                 </div>
                                 <div class="table-responsive">
                                     <table class="table table-vcenter">
