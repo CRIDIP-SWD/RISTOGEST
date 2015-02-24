@@ -127,6 +127,25 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <?php
                         }
                     ?>
+                    <?php
+                    if(isset($_GET['add-reglement']) && $_GET['add-reglement'] == 'success')
+                    {
+                    ?>
+                        <div class="alert alert-success alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4><i class="fa fa-check-circle"></i> Succès</h4> Le Réglement à bien été ajouté.
+                        </div>
+                    <?php } ?>
+                    <?php
+                    if(isset($_GET['add-reglement']) && $_GET['add-reglement'] == 'error')
+                    {
+                    ?>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur à eu lieu lors de l'ajout du réglement.<br>
+                            Contacter le support technique.
+                        </div>
+                    <?php } ?>
                     <!-- RESULTAT DES ETATS -->
                     <?php
                     if($donnee_commande['etat_commande'] == "1")

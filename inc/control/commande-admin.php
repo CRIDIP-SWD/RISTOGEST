@@ -20,3 +20,30 @@ if(isset($_GET['supp-cmd']) && $_GET['supp-cmd'] == 'true')
 }
 
  ?>
+
+ <?php
+ if(isset($_POST['add-reglement']) && $_POST['add-reglement'] == 'valider')
+ {
+ 	$idcommande = $_POST['idcommande'];
+ 	$type_reglement = $_POST['type_reglement'];
+ 	$date_reglement = $_POST['date_reglement'];
+ 	$montant_reglement = $_POST['montant_reglement'];
+ 	$porteur_chq = $_POST['porteur_chq'];
+ 	$num_chq = $_POST['num_chq'];
+ 	$banque_chq = $_POST['banque_chq'];
+
+ 	$sql_add_reglement = mysql_query("INSERT INTO `reglement_commande`(`idreglement`, `idcommande`, `type_reglement`, `date_reglement`, `montant_reglement`, `porteur_chq`, `num_chq`, `banque_chq`) 
+ 		VALUES (NULL,'$idcommande','$type_reglement','$date_reglement','$montant_reglement','$porteur_chq','$num_chq','$banque_chq')")or die(mysql_error());
+
+ 	$sql_up_cmd = mysql_query("UPDATE commande SET regle = '1' WHERE idcommande = '$idcommande'")or die(mysql_error());
+
+ 	if($sql_add_reglement == TRUE)
+ 	{
+ 		header("Location: ../../module/admin/commande/user/view.php?idcommande=$idcommande&add-reglement=success");
+ 	}else{
+ 		header("Location: ../../module/admin/commande/user/view.php?idcommande=$idcommande&add-reglement=error");
+ 	}
+ }
+
+
+ ?>
