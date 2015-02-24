@@ -183,7 +183,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     <div class="text-info">
                                         <i class="fa fa-user"></i>
                                         Valider par l'utilisateur.<br>
-                                        Le centre peut passer la commande chez le prestataire.
+                                        <h5>Le centre peut passer la commande chez le prestataire.</h5>
                                     </div>
                                     <?php } ?>
                                 </div>
