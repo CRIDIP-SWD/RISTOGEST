@@ -148,7 +148,16 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <div class="block-title">
                                     <h2>Etat de la commande</h2>
                                 </div>
-                                <p>Example content..</p>
+                                <div style="text-align: center; font-size: 35px;">
+                                    <?php
+                                    if($donnee_commande['etat_commande'] == "0"){
+                                    ?>
+                                    <div class="text-muted">
+                                        <i class="fa fa-times-circle"></i>
+                                        Non Valider par l'utilisateur
+                                    </div>
+                                    <?php } ?>
+                                </div>
                             </div>
                         </div>
                     </div>
