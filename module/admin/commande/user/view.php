@@ -181,7 +181,25 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             </tr>
                                         </thead>
                                         <tbody>
-
+                                            <?php
+                                            $sql_article_commande = mysql_query("SELECT * FROM article_commande, commande, article, famille_article WHERE article_commande.idcommande = commande.idcommande
+                                                AND article_commande.idfamillearticle = famille_article.idfamillearticle
+                                                AND article_commande.idarticle = article.idarticle
+                                                AND article_commande.idcommande = '$idcommande'")or die(mysql_error());
+                                            while($donnee_article_commande = mysql_fetch_array($sql_article_commande))
+                                            {
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $donnee_article_commande['designation']; ?></td>
+                                                <td>
+                                                    <strong><?php echo $donnee_article_commande['designation_article']; ?></strong>
+                                                    <h5><i><?php echo $donnee_article_commande['description_article']; ?></i></h5>
+                                                </td>
+                                                <td><?php echo number_format($donnee_article_commande['prix_unitaire'], 2, ',', ' ')." €"; ?></td>
+                                                <td><?php echo $donnee_article_commande['qte']; ?></td>
+                                                <td><?php echo number_format($donnee_article_commande['prix_total_commande'], 2, ',', ' ')." €"; ?></td>
+                                            </tr>
+                                            <?php } ?>
                                         </tbody>
                                         <tfoot>
                                             <tr>
