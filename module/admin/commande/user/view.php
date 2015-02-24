@@ -297,7 +297,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <td colspan="4" style="text-align: right;">Montant Total Réglé</td>
+                                                <td colspan="5" style="text-align: right;">Montant Total Réglé</td>
                                                 <td style="text-align: right;">
                                                     <?php
                                                     $calc_total_reglement = mysql_query("SELECT SUM(montant_reglement) FROM reglement_commande WHERE idcommande = '$idcommande'")or die(mysql_error());
@@ -306,7 +306,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                 </td>
                                             </tr>
                                             <?php
-                                            if($donnee_commande['montant_total'] != $donnee_reglement_commande['montant_reglement'])
+                                            if($donnee_commande['montant_total'] == $donnee_reglement_commande['montant_reglement'])
                                             {
                                             ?>
                                             <tr>
