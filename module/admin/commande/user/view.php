@@ -199,16 +199,16 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                     <strong><?php echo $donnee_article_commande['designation_article']; ?></strong>
                                                     <h5><i><?php echo $donnee_article_commande['description_article']; ?></i></h5>
                                                 </td>
-                                                <td><?php echo number_format($donnee_article_commande['prix_unitaire'], 2, ',', ' ')." €"; ?></td>
-                                                <td><?php echo $donnee_article_commande['qte']; ?></td>
-                                                <td><?php echo number_format($donnee_article_commande['prix_total_commande'], 2, ',', ' ')." €"; ?></td>
+                                                <td style="text-align: right;"><?php echo number_format($donnee_article_commande['prix_unitaire'], 2, ',', ' ')." €"; ?></td>
+                                                <td class="text-center"><?php echo $donnee_article_commande['qte']; ?></td>
+                                                <td style="text-align: right;"><?php echo number_format($donnee_article_commande['prix_total_commande'], 2, ',', ' ')." €"; ?></td>
                                             </tr>
                                             <?php } ?>
                                         </tbody>
                                         <tfoot>
                                             <tr>
                                                 <td colspan="4" style="text-align: right;">Montant Total de la Commande</td>
-                                                <td style="text-align: right;">0,00 €</td>
+                                                <td style="text-align: right;"><?php echo number_format($donnee_commande['montant_total'], 2, ',', ' ')." €"; ?></td>
                                             </tr>
                                         </tfoot>
                                     </table>
