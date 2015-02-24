@@ -311,9 +311,8 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                         </tbody>
                                         <tfoot>
                                             <?php
-                                            $sql_reglement_commande = mysql_query("SELECT * FROM reglement_commande, commande WHERE reglement_commande.idcommande = commande.idcommande
-                                            AND commande.idcommande = '$idcommande'")or die(mysql_error());
-                                            while($donnee_reglement_commande = mysql_fetch_array($sql_reglement_commande))
+                                            $sql_subtitle_reglement = mysql_query("SELECT * FROM reglement_commande WHERE idcommande = '$idcommande'")or die(mysql_error());
+                                            while($subtitle_reglement = mysql_fetch_array($sql_subtitle_reglement))
                                             {
                                             ?>
                                             <tr>
@@ -334,7 +333,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             </tr>
                                             <?php } ?>
                                             <?php
-                                            if($donnee_reglement_commande['montant_reglement'] != $donnee_commande['montant_total'])
+                                            if($subtitle_reglement['montant_reglement'] != $donnee_commande['montant_total'])
                                             {
                                             ?>
                                             <tr>
@@ -342,7 +341,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             </tr>
                                             <?php } ?>
                                             <?php
-                                            if($donnee_reglement_commande['montant_reglement'] == $donnee_commande['montant_total'])
+                                            if($subtitle_reglement['montant_reglement'] == $donnee_commande['montant_total'])
                                             {
                                             ?>
                                             <tr>
