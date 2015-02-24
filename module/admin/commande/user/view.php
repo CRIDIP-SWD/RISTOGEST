@@ -105,7 +105,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             </h1>
                         </div>
                         <div class="pull-right">
-                            Salut
+                            <a class="btn btn-lg btn-success" href=""><i class="fa fa-truck"></i>Commande Passer chez le prestataire</a>
                         </div>
                     </div>
                     <ul class="breadcrumb breadcrumb-top">
