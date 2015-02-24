@@ -266,7 +266,35 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                     <?php echo $donnee_reglement_commande['banque_chq']; ?>
                                                 </td>
                                             </tr>
-                                            <div id="paiement-commande" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <?php } ?>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="4" style="text-align: right;">Montant Total Réglé</td>
+                                                <td style="text-align: right;">
+                                                    <?php
+                                                    $calc_total_reglement = mysql_query("SELECT SUM(montant_reglement) FROM reglement_commande WHERE idcommande = '$idcommande'")or die(mysql_error());
+                                                    echo number_format(mysql_result($calc_total_reglement, 0), 2, ',', ' ')." €";
+                                                    ?>
+                                                </td>
+                                            </tr>
+                                            <?php
+                                            if($donnee_commande['montant_total'] != $donnee_reglement_commande['montant_reglement'])
+                                            {
+                                            ?>
+                                            <tr>
+                                                <td colspan="4" style="text-align: right;">Montant à régularisée</td>
+                                                <td style="text-align: right;">
+                                                    <?php
+                                                        $calc_diff = $donnee_commande['montant_total']-$donnee_reglement_commande['montant_reglement'];
+                                                        echo "<div style='color: red'>".number_format($calc_diff, 2, ',', ' ')." €</div>";
+                                                    ?>
+                                                </td>
+                                            </tr>
+                                            <?php } ?>
+                                        </tfoot>
+                                    </table>
+                                    <div id="paiement-commande" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
@@ -305,34 +333,6 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                     </div>
                                                 </div>
                                             </div>
-                                            <?php } ?>
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <td colspan="4" style="text-align: right;">Montant Total Réglé</td>
-                                                <td style="text-align: right;">
-                                                    <?php
-                                                    $calc_total_reglement = mysql_query("SELECT SUM(montant_reglement) FROM reglement_commande WHERE idcommande = '$idcommande'")or die(mysql_error());
-                                                    echo number_format(mysql_result($calc_total_reglement, 0), 2, ',', ' ')." €";
-                                                    ?>
-                                                </td>
-                                            </tr>
-                                            <?php
-                                            if($donnee_commande['montant_total'] != $donnee_reglement_commande['montant_reglement'])
-                                            {
-                                            ?>
-                                            <tr>
-                                                <td colspan="4" style="text-align: right;">Montant à régularisée</td>
-                                                <td style="text-align: right;">
-                                                    <?php
-                                                        $calc_diff = $donnee_commande['montant_total']-$donnee_reglement_commande['montant_reglement'];
-                                                        echo "<div style='color: red'>".number_format($calc_diff, 2, ',', ' ')." €</div>";
-                                                    ?>
-                                                </td>
-                                            </tr>
-                                            <?php } ?>
-                                        </tfoot>
-                                    </table>
                                 </div>
                             </div>
                         </div>
