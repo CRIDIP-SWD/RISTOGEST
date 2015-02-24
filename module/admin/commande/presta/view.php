@@ -104,7 +104,8 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             </h1>
                         </div>
                         <div class="pull-right">
-                            <a href="index.php" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Retour à la liste des Commandes</a>
+                            <a href="index.php" class="btn btn-xs btn-primary"><i class="fa fa-arrow-left"></i> Retour à la liste des Commandes</a>
+                            <a href="" class="btn btn-xs btn-default"><i class="fa fa-print"></i> Imprimmer la commande</a>
                         </div>
                     </div>
                     <ul class="breadcrumb breadcrumb-top">
@@ -144,6 +145,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                         <i class="fa fa-times-circle"></i>
                                         Commande Passer chez le prestataire
                                     </div>
+                                    <a href="" class="btn btn-block btn-primary"><i class="gi gi-roundabout"></i> Commande transmise au prestataire</a>
                                     <?php } ?>
                                     <?php
                                     if($donnee_commande['etat_commande'] == "1"){
@@ -152,6 +154,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                         <i class="fa fa-truck"></i>
                                         Commande récéptionner au centre.<br>
                                         <h5>Veuillez la vérifier.</h5>
+                                        <a href="" class="btn btn-block btn-primary"><i class="fa fa-check"></i> Valider la vérification</a>
                                     </div>
                                     <?php } ?>
                                     <?php
