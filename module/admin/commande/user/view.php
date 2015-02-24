@@ -260,9 +260,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <div class="block-title">
                                     <h2>Reglement de la commande N°<?php echo $donnee_commande['num_commande']; ?></h2>
                                     <div class="pull-right">
-                                        <?php
-                                            if($donnee_commande['regle'] == "0"){echo "<a class='btn btn-primary' href='#paiement-commande' data-toggle='modal'><i class='fa fa-credit-card'></i> Paiement de la commande</a>";}
-                                        ?>
+                                        <a class='btn btn-primary' href='#paiement-commande' data-toggle='modal'><i class='fa fa-credit-card'></i> Paiement de la commande</a>
                                     </div>
                                 </div>
                                 <div class="table-responsive">
