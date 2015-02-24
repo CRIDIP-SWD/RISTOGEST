@@ -181,7 +181,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     if($donnee_commande['etat_commande'] == "1"){
                                     ?>
                                     <div class="text-info">
-                                        <i class="fa fa-user fa-check"></i>
+                                        <i class="fa fa-user"></i>
                                         Valider par l'utilisateur.<br>
                                         Le centre peut passer la commande chez le prestataire.
                                     </div>
