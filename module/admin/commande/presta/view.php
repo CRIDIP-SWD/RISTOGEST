@@ -173,7 +173,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         <div class="col-md-12">
                             <div class="block">
                                 <div class="block-title">
-                                    <h2>Produit Commander - Menu du <?php echo $donnee_commande['date_menu']; ?> / <?php echo $donnee_commande['semaine']; ?></h2>
+                                    <h2>Produit Commander</h2>
                                     <div class="pull-right">
                                         <a href="" class="btn btn-primary"><i class="fa fa-print"></i> Imprimer la commande</a>
                                     </div>
@@ -191,10 +191,10 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $sql_article_commande = mysql_query("SELECT * FROM article_commande, commande, article, famille_article WHERE article_commande.idcommande = commande.idcommande
-                                                AND article_commande.idfamillearticle = famille_article.idfamillearticle
-                                                AND article_commande.idarticle = article.idarticle
-                                                AND article_commande.idcommande = '$idcommande'")or die(mysql_error());
+                                            $sql_article_commande = mysql_query("SELECT * FROM article_commande_prestataire, commande_prestataire, article, famille_article WHERE article_commande_prestataire.idcomprestataire = commande_prestataire.idcomprestataire
+                                                AND article_commande_prestataire.idfamillearticle = famille_article.idfamillearticle
+                                                AND article_commande_prestataire.idarticle = article.idarticle
+                                                AND article_commande_prestataire.idcomprestataire = '$idcomprestataire'")or die(mysql_error());
                                             while($donnee_article_commande = mysql_fetch_array($sql_article_commande))
                                             {
                                             ?>
