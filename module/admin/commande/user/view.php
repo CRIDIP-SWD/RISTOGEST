@@ -183,6 +183,12 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                         <tbody>
 
                                         </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="4" style="text-align: right;">Montant Total de la Commande</td>
+                                                <td style="text-align: right;">0,00 €</td>
+                                            </tr>
+                                        </tfoot>
                                     </table>
                                 </div>
                             </div>
