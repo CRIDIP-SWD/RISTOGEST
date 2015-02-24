@@ -116,9 +116,42 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     </ul>
                     <!-- END Blank Header -->
                     <!-- ALERT UTILISATEUR -->
+                    <?php
+                        if($donnee_commande['etat_commande'] == "0"){
+                    ?>
+                    <div class="alert alert-info alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <h4><i class="fa fa-info-circle"></i> Information</h4> L'utilisateur n'a pas valider sa commande !
+                    </div>
+                    <?php
+                        }
+                    ?>
                     <!-- RESULTAT DES ETATS -->
-
+                    <?php
+                    if($donnee_commande['etat_commande'] == "1")
+                    {
+                        mysql_query("UPDATE commande SET etat_commande = '2' WHERE idcommande = '$idcommande'");
+                    }
+                    ?>
                     <!-- BLOCK -->
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="block">
+                                <div class="block-title">
+                                    <h2>Montant de la commande</h2>
+                                </div>
+                                <p>Example content..</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="block">
+                                <div class="block-title">
+                                    <h2>Etat de la commande</h2>
+                                </div>
+                                <p>Example content..</p>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
                 <!-- END Page Content -->
