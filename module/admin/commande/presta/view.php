@@ -225,6 +225,37 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         </div>
                     </div>
                 </div>
+                <div id="add-article" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h3 class="modal-title">Ajout d'un article</h3>
+                            </div>
+                            <div class="modal-body">
+                                <form class="form-horizontal form-bordered" action="<?php echo SITE, FOLDER; ?>inc/control/commande-admin.php" method="POST">
+                                    <input type="hidden" name="idcomprestataire" value="<?php echo $idcomprestataire; ?>" />
+
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="example-select2">Article à commander</label>
+                                        <div class="col-md-6">
+                                            <select id="example-select2" name="idarticle" class="select-select2" style="width: 100%;" data-placeholder="Choose one..">
+                                                <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
+                                                <?php
+                                                $sql_article = mysql_query("SELECT * FROM article, famille_article WHERE article.idfamillearticle = famille_article.idfamillearticle")or die(mysql_error());
+                                                while($donnee_article == mysql_fetch_array($sql_article))
+                                                {
+                                                ?>
+                                                <option value="<?php echo $donnee_article['idarticle']; ?>"><?php echo $donnee_article['designation']; ?> - <?php echo $donnee_article['designation_article']; ?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- END Page Content -->
 
                 <?php include ('../../../../inc/footer.php'); ?>
