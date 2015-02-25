@@ -178,7 +178,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <div class="block-title">
                                     <h2>Produit Commander</h2>
                                     <div class="pull-right">
-                                        <a href="" class="btn btn-primary"><i class="gi gi-cart_in"></i> Ajouter un article</a>
+                                        <a href="#add-article" class="btn btn-primary" data-toggle="modal"><i class="gi gi-cart_in"></i> Ajouter un article</a>
                                     </div>
                                 </div>
                                 <div class="table-responsive">
