@@ -246,7 +246,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                 while($donnee_article == mysql_fetch_array($sql_article))
                                                 {
                                                 ?>
-                                                <option value="<?php echo $donnee_article['idarticle']; ?>"><?php echo $donnee_article['designation']; ?> - <?php echo $donnee_article['designation_article']; ?></option>
+                                                <option value="<?php echo $donnee_article['idarticle']; ?>"><?php echo $donnee_article['designation_article']; ?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
