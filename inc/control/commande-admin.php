@@ -175,7 +175,7 @@ if(isset($_GET['change-etat']) && $_GET['change-etat'] == '3')
 if(isset($_GET['change-etat']) && $_GET['change-etat'] == '4')
 {
 	$idcomprestataire = $_GET['idcomprestataire'];
-
+	
 	$sql_up_etat_4 = mysql_query("UPDATE commande_prestataire SET etat_commande = '4' WHERE idcomprestataire = '$idcomprestataire'")or die(mysql_error());
 
 	if($sql_up_etat_4 == TRUE)
