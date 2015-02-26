@@ -267,6 +267,33 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <?php
                     }
                     ?>
+
+                    <?php
+                    if(isset($_GET['supp-article']) && $_GET['supp-article'] == 'true')
+                    {
+                    ?>
+                        <div class="alert alert-success alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-check-circle"></i> Succès
+                            </h4> 
+                            L'article de la commande à bien été supprimée
+                        </div>
+                    <?php } ?>
+                    <?php
+                    if(isset($_GET['supp-article']) && $_GET['supp-article'] == 'false')
+                    {
+                    ?>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-times-circle"></i> Erreur
+                            </h4> 
+                            Une erreur à été rencontrer lors de la suppression d'un article dans la commande.<br>Contactez le support technique.
+                        </div>
+                    <?php
+                    }
+                    ?>
                     <!-- BLOCK -->
                     <div class="row">
                         <div class="col-md-8">
@@ -379,7 +406,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                 <td class="text-center"><?php echo $donnee_article_commande['qte']; ?></td>
                                                 <td style="text-align: right;"><?php echo number_format($donnee_article_commande['prix_total_commande'], 2, ',', ' ')." €"; ?></td>
                                                 <td class="text-center">
-                                                    <a href="<?php echo SITE, FOLDER; ?>inc/control/commande-admin.php?idcomprestataire=<?php echo $idcomprestataire; ?>&idarticlecompresta=<?php echo $donnee_article_commande['idarticlecompresta']; ?>&supp-art-cmd-presta=valider" class="btn btn-danger"><i class="fa fa-times"></i></a>
+                                                    <a href="<?php echo SITE, FOLDER; ?>inc/control/commande-admin.php?idcomprestataire=<?php echo $idcomprestataire; ?>&prix_total_commande=<?php echo $donnee_article_commande['prix_total_commande']; ?>&montant_total=<?php echo $donnee_commande['montant_total']; ?>&idarticlecompresta=<?php echo $donnee_article_commande['idarticlecompresta']; ?>&supp-art-cmd-presta=valider" class="btn btn-danger"><i class="fa fa-times"></i></a>
                                                 </a>
                                             </tr>
                                             <?php } ?>

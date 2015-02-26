@@ -261,3 +261,28 @@ if(isset($_GET['change-etat']) && $_GET['change-etat'] == '4')
 	}
 }
 ?>
+<?php
+//Suppression ligne article commande Prestataire
+if(isset($_GET['supp-art-cmd-presta']) && $_GET['supp-art-cmd-presta'] == 'valider')
+{
+	$idcomprestataire = $_GET['idcomprestataire'];
+	$prix_total_commande = $_GET['prix_total_commande'];
+	$montant_total = $_GET['montant_total'];
+	$idarticlecompresta = $_GET['idarticlecompresta'];
+
+	//calcul nouveau total commande
+	$calc_montant_total = $montant_total-$prix_total_commande;
+
+	$sql_up_commande = mysql_query("UPDATE commande_prestataire SET montant_total = '$calc_montant_total' WHERE idcomprestataire = '$idcomprestataire'")or die(mysql_error());
+	$sql_delete_article = mysql_query("DELETE FROM article_commande_prestataire WHERE idarticlecompresta = '$idarticlecompresta'")or die(mysql_error());
+
+	if($sql_delete_article == TRUE)
+	{
+		header("Location: ../../module/admin/commande/presta/view.php?idcomprestataire=$idcomprestataire&supp-article=true");
+	}else{
+		header("Location: ../../module/admin/commande/presta/view.php?idcomprestataire=$idcomprestataire&supp-article=false");
+	}
+
+}
+
+?>
