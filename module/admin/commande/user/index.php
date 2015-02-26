@@ -182,20 +182,21 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             <?php
                                             switch ($donnee_commande['etat_commande']) {
                                                 case '0':
-                                                    echo "<span class='label label-default'><i class='fa fa-user'></i><i class='fa fa-times'></i> Non valider par l'utilisateur</span>";
+                                                    echo "<span class='label label-default'><i class='fa fa-times-circle'></i> Commande créer, non valider</span>";
                                                     break;
 
                                                 case '1':
-                                                    echo "<span class='label label-danger' ><i class='fa fa-user'></i><i class='fa fa-check'></i> Valider par l'utilisateur, en attente du centre de gestion.</span>";
+                                                    echo "<span class='label label-danger'><i class='fa fa-check-circle'></i> Commande Valider</span>";
                                                     break;
 
                                                 case '2':
-                                                    echo "<span class='label label-warning'><i class='fa fa-spin fa-refresh'></i> En cours</span>";
+                                                    echo "<span class='label label-warning'><i class='fa fa-refresh fa-spin'></i> Traitement en cour...</span>";
                                                     break;
 
                                                 case '3':
-                                                    echo "<div class='animation-floating'><span class='label label-success'><i class='fa fa-check'></i> Commande disponible au centre de gestion</span></div>";
+                                                    echo "<span class='label label-success'><i class='fa fa-check-circle'></i> Article disponible au retrait</span>";
                                                     break;
+
                                                 
                                                 default:
                                                     # code...
