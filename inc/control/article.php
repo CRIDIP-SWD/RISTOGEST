@@ -11,9 +11,6 @@ if(isset($_GET['supp-article']) && $_GET['supp-article'] == 'valider')
 	//Verification de l'utilite de l'articles
 	$sql_verif_util_art = mysql_query("SELECT SUM(idarticle) FROM article_menu")or die(mysql_error());
 	$verif_util_art = mysql_result($sql_verif_util_art, 0);
-
-	if($verif_util_art == 0)
-	{
 		$sql_delete_article = mysql_query("DELETE FROM article WHERE idarticle = '$idarticle'")or die(mysql_error());
 
 		if($sql_delete_article == TRUE)
@@ -22,9 +19,6 @@ if(isset($_GET['supp-article']) && $_GET['supp-article'] == 'valider')
 		}else{
 			header("Location: ../../module/admin/article/index.php?supp-article=false");
 		}
-	}else{
-		header("Location: ../../module/admin/article/index.php?supp-article=util");
-	}
 }
 
 ?>
