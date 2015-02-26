@@ -221,6 +221,47 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         </div>
                     </div>
                 </div>
+                <div id="add-cmd-presta" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h3 class="modal-title">Nouvelle Commande</h3>
+                            </div>
+                            <div class="modal-body">
+                                <form class="form-horizontal form-bordered" action="<?php echo SITE, FOLDER; ?>inc/control/commande-admin.php" method="POST">
+
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="example-select2">Prestataire</label>
+                                        <div class="col-md-6">
+                                            <select id="example-select2" name="idprestataire" class="select-select2" style="width: 100%;" data-placeholder="Choose one..">
+                                                <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
+                                                <?php
+                                                $sql_prestataire = mysql_query("SELECT * FROM prestataire");
+                                                while($donnee_prestataire = mysql_fetch_array($sql_prestataire))
+                                                {
+                                                ?>
+                                                <option value="<?php echo $donnee_prestataire['idprestataire']; ?>"><?php echo $donnee_prestataire['raison_social']; ?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="masked_date2">Date de la commande</label>
+                                        <div class="col-md-6">
+                                            <input type="text" id="masked_date2" name="date_commande" class="form-control" placeholder="dd-mm-yyyy">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group form-action">
+                                        <button type="submit" class="btn btn-success" name="add-cmd-presta" value="valider"><i class="fa fa-check"></i> Nouvelle Commande</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- END Page Content -->
 
                 <?php include ('../../../../inc/footer.php'); ?>
@@ -242,6 +283,8 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
         <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/app.js"></script>
         <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/pages/tablesDatatables.js"></script>
         <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/pages/compAnimations.js"></script>
+        <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/pages/formsValidation.js"></script>
+        <script>$(function(){ FormsValidation.init(); });</script>
         <script>$(function(){ CompAnimations.init(); });</script>
         <script>$(function(){ TablesDatatables.init(); });</script>
     </body>
