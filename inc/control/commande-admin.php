@@ -3,7 +3,7 @@ include ('../db.conf.php');
 BaseConnect();
 ?>
 <?php 
-//Suppression de la commande
+//Suppression de la commande utilisateur
 if(isset($_GET['supp-cmd']) && $_GET['supp-cmd'] == 'true')
 {
 	$idcommande = $_GET['idcommande'];
@@ -22,6 +22,7 @@ if(isset($_GET['supp-cmd']) && $_GET['supp-cmd'] == 'true')
  ?>
 
  <?php
+ //Ajout du reglement utilisateur
  if(isset($_POST['add-reglement']) && $_POST['add-reglement'] == 'valider')
  {
  	$idcommande = $_POST['idcommande'];
@@ -47,3 +48,20 @@ if(isset($_GET['supp-cmd']) && $_GET['supp-cmd'] == 'true')
 
 
  ?>
+<?php
+//Suppression de la commande Prestataire
+if(isset($_GET['supp-cmd-presta']) && $_GET['supp-cmd-presta'] == 'true')
+{
+	$idcomprestataire = $_GET['idcomprestataire'];
+
+	$sql_delete_cmd_article_presta = mysql_query("DELETE FROM article_commande_prestataire WHERE idcomprestataire = '$idcomprestataire'")or die(mysql_error());
+	$sql_delete_cmd_presta = mysql_query("DELETE FROM commande_prestataire WHERE idcomprestataire = '$idcomprestataire'")or die(mysql_error());
+
+	if($sql_delete_cmd_presta == TRUE)
+	{
+		header("Location: ../../module/admin/commande/presta/index.php?supp-cmd-presta=true");
+	}else{
+		header("Location: ../../module/admin/commande/presta/index.php?supp-cmd-presta=false");
+	}
+}
+?>

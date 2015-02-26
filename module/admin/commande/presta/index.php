@@ -144,6 +144,9 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <div class="block">
                         <div class="block-title">
                             <h2>Commande</h2>
+                            <div class="pull-right">
+                                <a href="#add-cmd-presta" class="btn btn-success btn-xs" data-toggle="modal"><i class="gi gi-circle_plus"></i> Nouvelle Commande</a>
+                            </div>
                         </div>
                         <div class="table-responsive">
                             <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
