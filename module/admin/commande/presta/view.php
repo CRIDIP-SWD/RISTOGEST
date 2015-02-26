@@ -340,7 +340,12 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <div class="block-title">
                                     <h2>Produit Commander</h2>
                                     <div class="pull-right">
+                                    <?php
+                                    if($donnee_commande == 0)
+                                    {
+                                    ?>
                                         <a href="#add-article" class="btn btn-primary" data-toggle="modal"><i class="gi gi-cart_in"></i> Ajouter un article</a>
+                                    <?php } ?>
                                     </div>
                                 </div>
                                 <div class="table-responsive">
