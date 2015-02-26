@@ -145,7 +145,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                         <i class="fa fa-times-circle"></i>
                                         Commande Créer
                                     </div>
-                                    <a href="" class="btn btn-block btn-primary"><i class="gi gi-check"></i> Valider la commande</a>
+                                    <a href="<?php echo SITE,FOLDER; ?>inc/control/commande-admin.php?idcomprestataire=<?php echo $idcomprestataire; ?>&change-etat=1" class="btn btn-block btn-primary"><i class="gi gi-check"></i> Valider la commande</a>
                                     <?php } ?>
                                     <?php
                                     if($donnee_commande['etat_commande'] == "1"){
@@ -153,7 +153,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     <div class="text-danger">
                                         <i class="fa fa-check"></i>
                                         Commande Valider
-                                        <a href="" class="btn btn-block btn-primary"><i class="fa fa-check"></i> Commande envoyer chez le prestataire</a>
+                                        <a href="<?php echo SITE,FOLDER; ?>inc/control/commande-admin.php?idcomprestataire=<?php echo $idcomprestataire; ?>&change-etat=2" class="btn btn-block btn-primary"><i class="fa fa-check"></i> Commande envoyer chez le prestataire</a>
                                     </div>
                                     <?php } ?>
                                     <?php
@@ -163,6 +163,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                         <i class="fa fa-refresh fa-spin"></i>
                                         Commande envoyer chez le prestataire
                                     </div>
+                                    <a href="<?php echo SITE,FOLDER; ?>inc/control/commande-admin.php?idcomprestataire=<?php echo $idcomprestataire; ?>&change-etat=3" class="btn btn-block btn-primary"><i class="fa fa-check"></i> Réception de la commande</a>
                                     <?php } ?>
                                     <?php
                                     if($donnee_commande['etat_commande'] == "3"){
@@ -172,6 +173,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                         Commande Arrivé à destination<br>
                                         <h5>Vérifier les articles</h5>
                                     </div>
+                                    <a href="<?php echo SITE,FOLDER; ?>inc/control/commande-admin.php?idcomprestataire=<?php echo $idcomprestataire; ?>&change-etat=4" class="btn btn-block btn-primary"><i class="fa fa-check"></i> Article Vérifier et rendre disponible</a>
                                     <?php } ?>
                                     <?php
                                     if($donnee_commande['etat_commande'] == "4"){
