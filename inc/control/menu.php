@@ -48,3 +48,6 @@ if(isset($_POST['add-article']) && $_POST['add-article'] == 'Valider')
 
 }
 ?>
+<?php
+//Suppression de l'article dans le menu
+?>

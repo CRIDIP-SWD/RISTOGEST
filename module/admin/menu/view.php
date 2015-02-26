@@ -192,6 +192,9 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             <td style="text-align: right; width: 25%; border-bottom: solid 1px;">
                                                 <?php echo number_format($article_menu['prix_unitaire'], 2, ',', ' ')." €"; ?>
                                             </td>
+                                            <td>
+                                                <a href="<?php echo SITE,FOLDER; ?>inc/control/menu.php?idarticlemenu=<?php echo $article_menu['idarticlemenu']; ?>&idmenu=<?php echo $idmenu; ?>&supp-article=valider" class="btn btn-link" style="color: red"><i class="fa fa-times"></i></a>
+                                            </td>
                                         </tr>
                                         <?php } ?>
                                     </table>
