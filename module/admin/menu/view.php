@@ -127,12 +127,12 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         <!-- END Block Title -->
 
                         <!-- Block Content -->
+                        <div class="row">
                         <?php
                         $sql_fam_menu = mysql_query("SELECT * FROM famille_article")or die(mysql_error());
                         while($fam_menu = mysql_fetch_array($sql_fam_menu))
                         {
                         ?>
-                        <div class="row">
                             <div class="col-md-4">
                                 <div class="block">
                                     <!-- Block Title -->
@@ -149,10 +149,8 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     <!-- END Block Content -->
                                 </div>
                             </div>
+                        <?php } ?>
                         </div>
-                        <?php
-                        }
-                        ?>
                         <!-- END Block Content -->
                     </div>
 
