@@ -139,7 +139,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                         <td><?php echo $donnee_menu['semaine']; ?></td>
                                         <td><?php echo date("d-m-Y", $donnee_menu['date_menu']); ?></td>
                                         <td>
-                                            <a href="" class="btn btn-primary">Voir le menu <i class="fa fa-arrow-right"></i></a>
+                                            <a href="view.php?idmenu=<?php echo $donnee_menu['idmenu']; ?>" class="btn btn-primary">Voir le menu <i class="fa fa-arrow-right"></i></a>
                                         </td>
                                     </tr>   
                                     <?php } ?>
