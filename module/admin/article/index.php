@@ -200,7 +200,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                         </td>
                                         <td style="text-align: right;"><?php echo number_format($donnee_article['prix_unitaire'], 2, ',', ' ')." €"; ?></td>
                                         <td>
-                                            <a href="#modif-article" class="btn btn-info"><i class="gi gi-edit"></i></a>
+                                            <a href="#modif-article" data-toggle="modal" class="btn btn-info"><i class="gi gi-edit"></i></a>
                                             <a href="<?php echo SITE, FOLDER; ?>inc/control/article.php?idarticle=<?php echo $donnee_article['idarticle']; ?>&supp-article=valider" class="btn btn-danger"><i class="fa fa-times"></i></a>
                                         </td>
                                     </tr>
