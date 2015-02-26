@@ -117,6 +117,9 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <div class="block">
                         <div class="block-title">
                             <h2>Liste des Familles D'article</h2>
+                            <div class="pull-right">
+                                <a href="#add-famille-article" data-toggle="modal" class="btn btn-primary"><i class="fa fa-plus"></i> Ajouter une famille d'article</a>
+                            </div>
                         </div>
                         <div class="table-responsive">
                             <table id="famille-article" class="table table-vcenter table-condensed table-bordered">
@@ -172,9 +175,13 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             </table>
                         </div>
                     </div>
+
                     <div class="block">
                         <div class="block-title">
                             <h2>Liste des Articles</h2>
+                            <div class="pull-right">
+                                <a href="#add-article" data-toggle="modal" class="btn btn-primary"><i class="fa fa-plus"></i> Ajouter un article</a>
+                            </div>
                         </div>
                         <div class="table-responsive">
                             <table id="article" class="table table-vcenter table-condensed table-bordered">
@@ -269,6 +276,93 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <?php } ?>
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="add-famille-article" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h3 class="modal-title">Ajout d'une famille d'article</h3>
+                            </div>
+                            <div class="modal-body">
+                                <form class="form-horizontal form-bordered" action="<?php echo SITE, FOLDER; ?>inc/control/famille-article.php" method="POST">
+
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" for="example-text-input">Designation de la famille</label>
+                                        <div class="col-md-9">
+                                            <input type="text" id="example-text-input" name="designation" class="form-control" placeholder="Designation">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group form-actions">
+                                        <button type="submit" class="btn btn-success" name="add-famille-article" value="Valider"><i class="fa fa-check"></i> Ajout de la famille d'article</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="add-article" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h3 class="modal-title">Ajout d'un article</h3>
+                            </div>
+                            <div class="modal-body">
+                                <form class="form-horizontal form-bordered" action="<?php echo SITE, FOLDER; ?>inc/control/article.php" method="POST">
+
+                                    <div class="form-group">
+                                                            <label class="col-md-4 control-label" for="example-select2">Famille d'article</label>
+                                                            <div class="col-md-6">
+                                                                <select id="example-select2" name="idfamillearticle" class="select-select2" style="width: 100%;" data-placeholder="Choose one..">
+                                                                    <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
+                                                                    <?php
+                                                                    $sql_famille_article_show = mysql_query("SELECT * FROM famille_article")or die(mysql_error());
+                                                                    while($famille_article_show = mysql_fetch_array($sql_famille_article_show))
+                                                                    {
+                                                                    ?>
+                                                                    <option value="<?php echo $famille_article_show['idfamillearticle']; ?>"><?php echo $famille_article_show['designation']; ?></option>
+                                                                    <?php } ?>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="form-group">
+                                                            <label class="col-md-4 control-label" for="example-text-input">Désignation de l'article</label>
+                                                            <div class="col-md-6">
+                                                                <input type="text" id="example-text-input" name="designation_article" class="form-control">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-md-4 control-label" for="example-textarea-input">Description de l'article</label>
+                                                            <div class="col-md-6">
+                                                                <textarea id="example-textarea-input" name="description_article" rows="4" class="form-control"></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-md-4 control-label" for="val_number">Prix Unitaire </label>
+                                                            <div class="col-md-6">
+                                                                <div class="input-group">
+                                                                    <input type="text" id="val_number" name="prix_unitaire" class="form-control">
+                                                                    <span class="input-group-addon"><i class="gi gi-euro"></i></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group form-actions">
+                                                            <button type="submit" class="btn btn-success" name="modif-article" value="Valider"><i class="fa fa-check"></i> Ajouter l'article</button>
+                                                        </div>
+
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
