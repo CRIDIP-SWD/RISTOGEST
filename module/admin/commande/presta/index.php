@@ -182,15 +182,23 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             <?php
                                             switch ($donnee_commande['etat_commande']) {
                                                 case '0':
-                                                    echo "<span class='label label-danger'>Commande passer chez le prestataire</span>";
+                                                    echo "<span class='label label-muted'>Commande Créer</span>";
                                                     break;
 
                                                 case '1':
-                                                    echo "<span class='label label-warning'> Commande Récéptionner au centre</span>";
+                                                    echo "<span class='label label-danger'> Commande Valider</span>";
                                                     break;
 
                                                 case '2':
-                                                    echo "<span class='label label-success'> Commande vérifier par le centre</span>";
+                                                    echo "<span class='label label-warning'> Envoyer chez le prestataire</span>";
+                                                    break;
+
+                                                case '3':
+                                                    echo "<span class='label label-info'> Arrivé à destination, vérification nécéssaire</span>";
+                                                    break;
+
+                                                case '4':
+                                                    echo "<span class='label label-success'> Article Vérifier et Disponible</span>";
                                                     break;
                                                 
                                                 default:

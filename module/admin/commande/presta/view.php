@@ -141,29 +141,44 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     <?php
                                     if($donnee_commande['etat_commande'] == "0"){
                                     ?>
-                                    <div class="text-danger">
+                                    <div class="text-muted">
                                         <i class="fa fa-times-circle"></i>
-                                        Commande Passer chez le prestataire
+                                        Commande Créer
                                     </div>
-                                    <a href="" class="btn btn-block btn-primary"><i class="gi gi-roundabout"></i> Commande transmise au prestataire</a>
+                                    <a href="" class="btn btn-block btn-primary"><i class="gi gi-check"></i> Valider la commande</a>
                                     <?php } ?>
                                     <?php
                                     if($donnee_commande['etat_commande'] == "1"){
                                     ?>
-                                    <div class="text-warning">
-                                        <i class="fa fa-truck"></i>
-                                        Commande récéptionner au centre.<br>
-                                        <h5>Veuillez la vérifier.</h5>
-                                        <a href="" class="btn btn-block btn-primary"><i class="fa fa-check"></i> Valider la vérification</a>
+                                    <div class="text-danger">
+                                        <i class="fa fa-check"></i>
+                                        Commande Valider
+                                        <a href="" class="btn btn-block btn-primary"><i class="fa fa-check"></i> Commande envoyer chez le prestataire</a>
                                     </div>
                                     <?php } ?>
                                     <?php
                                     if($donnee_commande['etat_commande'] == "2"){
                                     ?>
+                                    <div class="text-warning">
+                                        <i class="fa fa-refresh fa-spin"></i>
+                                        Commande envoyer chez le prestataire
+                                    </div>
+                                    <?php } ?>
+                                    <?php
+                                    if($donnee_commande['etat_commande'] == "3"){
+                                    ?>
+                                    <div class="text-info">
+                                        <i class="fa fa-truck"></i>
+                                        Commande Arrivé à destination<br>
+                                        <h5>Vérifier les articles</h5>
+                                    </div>
+                                    <?php } ?>
+                                    <?php
+                                    if($donnee_commande['etat_commande'] == "4"){
+                                    ?>
                                     <div class="text-success">
-                                        <i class="fa fa-success"></i>
-                                        Commande Vérifier.<br>
-                                        <h5>Article Disponible pour l'utilisateur.</h5>
+                                        <i class="fa fa-check-circle"></i>
+                                        Article Vérifier et disponible
                                     </div>
                                     <?php } ?>
                                 </div>
