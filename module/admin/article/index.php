@@ -234,15 +234,15 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
 
 
                                                         <div class="form-group">
-                                                            <label class="col-md-3 control-label" for="example-text-input">Désignation de l'article</label>
-                                                            <div class="col-md-9">
+                                                            <label class="col-md-4 control-label" for="example-text-input">Désignation de l'article</label>
+                                                            <div class="col-md-6">
                                                                 <input type="text" id="example-text-input" name="designation_article" class="form-control" value="<?php echo $donnee_article['designation_article']; ?>">
                                                             </div>
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label class="col-md-3 control-label" for="example-textarea-input">Description de l'article</label>
-                                                            <div class="col-md-9">
+                                                            <label class="col-md-4 control-label" for="example-textarea-input">Description de l'article</label>
+                                                            <div class="col-md-6">
                                                                 <textarea id="example-textarea-input" name="description_article" rows="4" class="form-control"><?php echo $donnee_article['description_article']; ?></textarea>
                                                             </div>
                                                         </div>
