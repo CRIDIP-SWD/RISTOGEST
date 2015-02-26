@@ -160,6 +160,113 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <?php
                     }
                     ?>
+                    <?php
+                    if(isset($_GET['change-etat-1']) && $_GET['change-etat-1'] == 'true')
+                    {
+                    ?>
+                        <div class="alert alert-success alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-check-circle"></i> Succès
+                            </h4> 
+                            Vous avez bien valider la commande.
+                            <h5>Veuillez envoyer la commande au prestataire.</h5>
+                        </div>
+                    <?php } ?>
+                    <?php
+                    if(isset($_GET['change-etat-1']) && $_GET['change-etat-1'] == 'false')
+                    {
+                    ?>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-times-circle"></i> Erreur
+                            </h4> 
+                            Une erreur à été rencontrer lors de la mise à jour de la commande.<br>Contactez le support technique.
+                        </div>
+                    <?php
+                    }
+                    ?>
+                    <?php
+                    if(isset($_GET['change-etat-2']) && $_GET['change-etat-2'] == 'true')
+                    {
+                    ?>
+                        <div class="alert alert-success alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-check-circle"></i> Succès
+                            </h4> 
+                            La commande est en cours de traitement par le prestataire.
+                        </div>
+                    <?php } ?>
+                    <?php
+                    if(isset($_GET['change-etat-2']) && $_GET['change-etat-2'] == 'false')
+                    {
+                    ?>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-times-circle"></i> Erreur
+                            </h4> 
+                            Une erreur à été rencontrer lors de la mise à jour de la commande.<br>Contactez le support technique.
+                        </div>
+                    <?php
+                    }
+                    ?>
+                    <?php
+                    if(isset($_GET['change-etat-3']) && $_GET['change-etat-3'] == 'true')
+                    {
+                    ?>
+                        <div class="alert alert-success alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-check-circle"></i> Succès
+                            </h4> 
+                            La commande est arrivée à destination dans votre centre.<br>
+                            <h5>Veuillez la vérifier avant de continuer.</h5>
+                        </div>
+                    <?php } ?>
+                    <?php
+                    if(isset($_GET['change-etat-3']) && $_GET['change-etat-3'] == 'false')
+                    {
+                    ?>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-times-circle"></i> Erreur
+                            </h4> 
+                            Une erreur à été rencontrer lors de la mise à jour de la commande.<br>Contactez le support technique.
+                        </div>
+                    <?php
+                    }
+                    ?>
+                    <?php
+                    if(isset($_GET['change-etat-4']) && $_GET['change-etat-4'] == 'true')
+                    {
+                    ?>
+                        <div class="alert alert-success alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-check-circle"></i> Succès
+                            </h4> 
+                            La commande à été vérifier.<br>
+                            <h5>Veuillez mettre à jour la commande des clients.</h5>
+                        </div>
+                    <?php } ?>
+                    <?php
+                    if(isset($_GET['change-etat-4']) && $_GET['change-etat-4'] == 'false')
+                    {
+                    ?>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-times-circle"></i> Erreur
+                            </h4> 
+                            Une erreur à été rencontrer lors de la mise à jour de la commande.<br>Contactez le support technique.
+                        </div>
+                    <?php
+                    }
+                    ?>
                     <!-- BLOCK -->
                     <div class="row">
                         <div class="col-md-8">

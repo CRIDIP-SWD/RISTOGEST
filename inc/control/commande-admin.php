@@ -126,3 +126,62 @@ if(isset($_POST['add-article']) && $_POST['add-article'] == 'valider')
 		header("Location: ../../module/admin/commande/presta/view.php?idcomprestataire=$idcomprestataire$add-article=false");
 	}
 }
+?>
+
+<?php
+//change etat commande prestataire 1
+if(isset($_GET['change-etat']) && $_GET['change-etat'] == '1')
+{
+	$idcomprestataire = $_GET['idcomprestataire'];
+
+	$sql_up_etat_1 = mysql_query("UPDATE commande_prestataire SET etat_commande = '1' WHERE idcomprestataire = '$idcomprestataire'")or die(mysql_error());
+
+	if($sql_up_etat_1 == TRUE)
+	{
+		header("Location: ../../module/admin/commande/presta/view.php?idcomprestataire=$idcomprestataire&change-etat-1=true");
+	}else{
+		header("Location: ../../module/admin/commande/presta/view.php?idcomprestataire=$idcomprestataire&change-etat-1=false");
+	}
+}
+//change etat commande prestataire 2
+if(isset($_GET['change-etat']) && $_GET['change-etat'] == '2')
+{
+	$idcomprestataire = $_GET['idcomprestataire'];
+
+	$sql_up_etat_2 = mysql_query("UPDATE commande_prestataire SET etat_commande = '2' WHERE idcomprestataire = '$idcomprestataire'")or die(mysql_error());
+
+	if($sql_up_etat_2 == TRUE)
+	{
+		header("Location: ../../module/admin/commande/presta/view.php?idcomprestataire=$idcomprestataire&change-etat-2=true");
+	}else{
+		header("Location: ../../module/admin/commande/presta/view.php?idcomprestataire=$idcomprestataire&change-etat-2=false");
+	}
+}
+//change etat commande prestataire 3
+if(isset($_GET['change-etat']) && $_GET['change-etat'] == '3')
+{
+	$idcomprestataire = $_GET['idcomprestataire'];
+
+	$sql_up_etat_3 = mysql_query("UPDATE commande_prestataire SET etat_commande = '3' WHERE idcomprestataire = '$idcomprestataire'")or die(mysql_error());
+
+	if($sql_up_etat_3 == TRUE)
+	{
+		header("Location: ../../module/admin/commande/presta/view.php?idcomprestataire=$idcomprestataire&change-etat-3=true");
+	}else{
+		header("Location: ../../module/admin/commande/presta/view.php?idcomprestataire=$idcomprestataire&change-etat-3=false");
+	}
+}
+//change etat commande prestataire 4
+if(isset($_GET['change-etat']) && $_GET['change-etat'] == '4')
+{
+	$idcomprestataire = $_GET['idcomprestataire'];
+
+	$sql_up_etat_4 = mysql_query("UPDATE commande_prestataire SET etat_commande = '4' WHERE idcomprestataire = '$idcomprestataire'")or die(mysql_error());
+
+	if($sql_up_etat_4 == TRUE)
+	{
+		header("Location: ../../module/admin/commande/presta/view.php?idcomprestataire=$idcomprestataire&change-etat-4=true");
+	}else{
+		header("Location: ../../module/admin/commande/presta/view.php?idcomprestataire=$idcomprestataire&change-etat-4=false");
+	}
+}
