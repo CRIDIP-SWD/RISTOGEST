@@ -182,7 +182,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             <?php
                                             switch ($donnee_commande['etat_commande']) {
                                                 case '0':
-                                                    echo "<span class='label label-muted'>Commande Créer</span>";
+                                                    echo "<span class='label label-default'>Commande Créer</span>";
                                                     break;
 
                                                 case '1':
