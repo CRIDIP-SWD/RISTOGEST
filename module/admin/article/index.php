@@ -135,10 +135,38 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     <tr>
                                         <td><?php echo $donnee_famille_article['designation']; ?></td>
                                         <td>
-                                            <a href="" class="btn btn-info"><i class="gi gi-edit"></i></a>
-                                            <a href="" class="btn btn-danger"><i class="fa fa-times"></i></a>
+                                            <a href="#modif-famille-article" data-toggle="modal" class="btn btn-info"><i class="gi gi-edit"></i></a>
+                                            <a href="<?php echo SITE, FOLDER; ?>inc/control/famille-article.php?idfamillearticle=<?php echo $donnee_famille_article['idfamillearticle']; ?>&supp-famille-article=valider" class="btn btn-danger"><i class="fa fa-times"></i></a>
                                         </td>
                                     </tr>
+                                    <div id="modif-famille-article" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                    <h3 class="modal-title">Modification de la famille d'article</h3>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="form-horizontal form-bordered" action="<?php echo SITE, FOLDER; ?>inc/control/famille-article.php" method="POST">
+                                                        
+                                                        <input type="hidden" name="idfamillearticle" value="<?php echo $donnee_famille_article['idfamillearticle']; ?>" />
+
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label" for="example-text-input">Designation de la famille</label>
+                                                            <div class="col-md-9">
+                                                                <input type="text" id="example-text-input" name="designation" class="form-control" value="<?php echo $donnee_famille_article['designation']; ?>">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group form-actions">
+                                                            <button type="submit" class="btn btn-success" name="modif-famille-article" value="Valider"><i class="fa fa-check"></i> Modifier la famille d'article</button>
+                                                        </div>
+
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 <?php } ?>
                                 </tbody>
                             </table>
@@ -172,8 +200,8 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                         </td>
                                         <td style="text-align: right;"><?php echo number_format($donnee_article['prix_unitaire'], 2, ',', ' ')." €"; ?></td>
                                         <td>
-                                            <a href="" class="btn btn-info"><i class="gi gi-edit"></i></a>
-                                            <a href="" class="btn btn-danger"><i class="fa fa-times"></i></a>
+                                            <a href="#modif-article" class="btn btn-info"><i class="gi gi-edit"></i></a>
+                                            <a href="<?php echo SITE, FOLDER; ?>inc/control/article.php?idarticle=<?php echo $donnee_article['idarticle']; ?>&supp-article=valider" class="btn btn-danger"><i class="fa fa-times"></i></a>
                                         </td>
                                     </tr>
                                 <?php } ?>
