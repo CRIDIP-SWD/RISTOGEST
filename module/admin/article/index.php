@@ -359,7 +359,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                         </div>
 
                                                         <div class="form-group form-actions">
-                                                            <button type="submit" class="btn btn-success" name="modif-article" value="Valider"><i class="fa fa-check"></i> Ajouter l'article</button>
+                                                            <button type="submit" class="btn btn-success" name="add-article" value="Valider"><i class="fa fa-check"></i> Ajouter l'article</button>
                                                         </div>
 
                                 </form>
