@@ -134,7 +134,32 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         </div>
                     <?php } ?>
                     <!-- RESULTAT DES ETATS -->
-
+                    <?php
+                    if(isset($_GET['add-article']) && $_GET['add-article'] == 'true')
+                    {
+                    ?>
+                        <div class="alert alert-success alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-check-circle"></i> Succès
+                            </h4> 
+                            Le Produit à bien été ajouter.
+                        </div>
+                    <?php } ?>
+                    <?php
+                    if(isset($_GET['add-article']) && $_GET['add-article'] == 'false')
+                    {
+                    ?>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-times-circle"></i> Erreur
+                            </h4> 
+                            Une erreur à été rencontrer lors de l'ajout du produit dans la commande.<br>Contactez le support technique.
+                        </div>
+                    <?php
+                    }
+                    ?>
                     <!-- BLOCK -->
                     <div class="row">
                         <div class="col-md-8">
