@@ -29,6 +29,12 @@ var TablesDatatables = function() {
                 "iDisplayLength": 10,
                 "aLengthMenu": [[10, 20, 30, -1], [10, 20, 30, "All"]]
             });
+            /* Initialize Datatables */
+            $('#menu').dataTable({
+                "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 1, 2 ] } ],
+                "iDisplayLength": 10,
+                "aLengthMenu": [[10, 20, 30, -1], [10, 20, 30, "All"]]
+            });
 
             /* Add placeholder attribute to the search input */
             $('.dataTables_filter input').attr('placeholder', 'Rechercher');
