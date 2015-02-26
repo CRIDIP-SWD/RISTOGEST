@@ -122,7 +122,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <div class="block">
                         <!-- Block Title -->
                         <div class="block-title">
-                            <h2>Menu du <strong><?php echo date("d-m-Y", $donnee_menu['date_menu']; ?></strong></h2>
+                            <h2>Menu du <strong><?php echo date("d-m-Y", $donnee_menu['date_menu']); ?></strong></h2>
                         </div>
                         <!-- END Block Title -->
 
