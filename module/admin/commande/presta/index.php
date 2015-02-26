@@ -139,6 +139,20 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <?php
                     }
                     ?>
+                    <?php
+                    if(isset($_GET['add-cmd-presta']) && $_GET['add-cmd-presta'] == 'false')
+                    {
+                    ?>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-times-circle"></i> Erreur
+                            </h4> 
+                            Une erreur à été rencontrer lors de la création de la commande.<br>Contactez le support technique.
+                        </div>
+                    <?php
+                    }
+                    ?>
 
 
                     <div class="block">

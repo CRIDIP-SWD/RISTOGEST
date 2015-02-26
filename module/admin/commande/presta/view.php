@@ -120,6 +120,19 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     </ul>
                     <!-- END Blank Header -->
                     <!-- ALERT UTILISATEUR -->
+                    <?php
+                    if(isset($_GET['add-cmd-presta']) && $_GET['add-cmd-presta'] == 'true')
+                    {
+                    ?>
+                        <div class="alert alert-success alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-check-circle"></i> Succès
+                            </h4> 
+                            La commande à bien été créer<br>
+                            <h5>Veuillez renseigner les articles à commander et valider la commande.</h5>
+                        </div>
+                    <?php } ?>
                     <!-- RESULTAT DES ETATS -->
 
                     <!-- BLOCK -->

@@ -65,3 +65,27 @@ if(isset($_GET['supp-cmd-presta']) && $_GET['supp-cmd-presta'] == 'true')
 	}
 }
 ?>
+
+<?php
+// Nouvelle Commande Prestataire
+if(isset($_POST['add-cmd-presta']) && $_POST['add-cmd-presta'] == 'valider')
+{
+	$num_commande = "ORD.PR.".rand(100,9999);
+	$idprestataire = $_POST['idprestataire'];
+	$date_commande = strtotime($_POST['date_commande']);
+
+	$sql_add_cmd_presta = mysql_query("INSERT INTO `commande_prestataire`(`idcomprestataire`, `num_commande`, `idprestataire`, `date_commande`, `montant_total`, `etat_commande`) 
+		VALUES (NULL,'$num_commande','$idprestataire','$date_commande','0','0')");
+
+	$sql_import_cmd_presta = mysql_query("SELECT * FROM commande_prestataire WHERE num_commande = '$num_commande'")or die(mysql_error());
+	$import_cmd_presta = mysql_fetch_array($sql_import_cmd_presta);
+	$idcomprestataire = $import_cmd_presta['idcomprestataire'];
+
+	if($sql_add_cmd_presta == TRUE)
+	{
+		header("Location: ../../module/admin/commande/presta/view.php?idcomprestataire=$idcomprestataire&add-cmd-presta=true");
+	}else{
+		header("Location: ../../module/admin/commande/presta/index.php?add-cmd-presta=false");
+	}
+}
+?>
