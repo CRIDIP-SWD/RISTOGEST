@@ -99,7 +99,8 @@ if(isset($_POST['add-article']) && $_POST['add-article'] == 'valider')
 	$qte = $_POST['qte'];
 
 	//Import base article et famille article
-	$sql_import_article = mysql_query("SELECT * FROM article")or die(mysql_error());
+	$sql_import_article = mysql_query("SELECT * FROM article WHERE article.idfamillearticle = famille_article.idfamillearticle
+		AND article.idarticle = '$idarticle'")or die(mysql_error());
 	$import_article = mysql_fetch_array($sql_import_article);
 	$idfamillearticle = $import_article['idfamillearticle'];
 	$prix_unitaire = $import_article['prix_unitaire'];
