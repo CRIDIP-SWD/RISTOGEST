@@ -1,7 +1,13 @@
 <?php include ('../../../inc/header.php'); ?>
 <?php
-define("TITLE_PAGE", "MENU");
-define("SUBTITLE_PAGE", "GESTION DES MENUS");
+$idmenu = $_GET['idmenu'];
+$sql_menu = mysql_query("SELECT * FROM menu WHERE idmenu = '$idmenu'")or die(mysql_error());
+$donnee_menu = mysql_fetch_array($sql_menu);
+
+?>
+<?php
+define("TITLE_PAGE", "Menu du ".$donnee_menu['date_menu']);
+define("SUBTITLE_PAGE", "SEMAINE".$donnee_menu['seamine']);
 //Breadcumb
 $li_start = "<li>".$logiciel."</li>";
 $li1 = "";
@@ -114,72 +120,40 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
 
 
                     <div class="block">
+                        <!-- Block Title -->
                         <div class="block-title">
-                            <h2>Liste des Menus</h2>
-                            <div class="pull-right">
-                                <a href="#add-menu" data-toggle="modal" class="btn btn-primary"><i class="fa fa-plus"></i> Ajouter un menu</a>
-                            </div>
+                            <h2>Menu du <strong><?php echo $donnee_menu['date_menu']; ?></strong></h2>
                         </div>
-                        <div class="table-responsive">
-                            <table id="menu" class="table table-vcenter table-condensed table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center">Semaine</th>
-                                        <th class="text-center">Date</th>
-                                        <th class="text-center">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    $sql_menu = mysql_query("SELECT * FROM menu ORDER BY date_menu ASC")or die(mysql_error());
-                                    while($donnee_menu = mysql_fetch_array($sql_menu))
-                                    {
-                                    ?>
-                                    <tr>
-                                        <td><?php echo $donnee_menu['semaine']; ?></td>
-                                        <td><?php echo date("d-m-Y", $donnee_menu['date_menu']); ?></td>
-                                        <td>
-                                            <a href="view.php?idmenu=<?php echo $donnee_menu['idmenu']; ?>" class="btn btn-primary">Voir le menu <i class="fa fa-arrow-right"></i></a>
-                                        </td>
-                                    </tr>   
-                                    <?php } ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                        <!-- END Block Title -->
 
-                    <div id="add-menu" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h3 class="modal-title">Nouveau Menu</h3>
-                                </div>
-                                <div class="modal-body">
-                                    <form class="form-horizontal form-bordered" action="<?php echo SITE,FOLDER; ?>inc/control/menu.php" action="POST">
-
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label" for="example-text-input">Semaine</label>
-                                            <div class="col-md-9">
-                                                <input type="text" id="example-text-input" name="semaine" class="form-control" placeholder="Taper le numéro de la semaine">
-                                            </div>
+                        <!-- Block Content -->
+                        <?php
+                        $sql_fam_menu = mysql_query("SELECT * FROM famille_article")or die(mysql_error());
+                        while($fam_menu = mysql_fetch_array($sql_fam_menu))
+                        {
+                        ?>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="block">
+                                    <!-- Block Title -->
+                                    <div class="block-title">
+                                        <h2><?php echo $fam_menu['designation']; ?></h2>
+                                        <div class="pull-right">
+                                            <a href="<?php echo SITE,FOLDER; ?>inc/control/menu.php?idfamillearticle=<?php echo $fam_menu['idfamillearticle']; ?>&idmenu=<?php echo $idmenu; ?>&add-article=valider" class="btn btn-primary"><i class="fa fa-plus"></i> Ajouter un article</a>
                                         </div>
+                                    </div>
+                                    <!-- END Block Title -->
 
-                                        <div class="form-group">
-                                            <label class="col-md-4 control-label" for="masked_date2">Date du menu</label>
-                                            <div class="col-md-6">
-                                                <input type="text" id="masked_date2" name="date_menu" class="form-control" placeholder="dd-mm-yyyy">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group form-actions">
-                                            <button type="submit" class="btn btn-success" name="add-menu" value="Valider"><i class="fa fa-check"></i> Ajouter le menu</button>
-                                        </div>
-
-                                    </form>
+                                    <!-- Block Content -->
+                                    <p>Example content..</p>
+                                    <!-- END Block Content -->
                                 </div>
                             </div>
                         </div>
+                        <?php
+                        }
+                        ?>
+                        <!-- END Block Content -->
                     </div>
 
                 </div>
