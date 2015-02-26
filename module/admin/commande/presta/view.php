@@ -259,7 +259,9 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                         </div>
                                     </div>
 
-                                    <button type="submit" class="btn btn-success" name="add-article" value="valider"><i class="fa fa-check"></i> Ajout du produit</button>
+                                    <div class="form-group form-action">
+                                        <button type="submit" class="btn btn-success" name="add-article" value="valider"><i class="fa fa-check"></i> Ajout du produit</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>
