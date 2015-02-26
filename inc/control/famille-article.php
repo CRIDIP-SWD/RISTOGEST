@@ -1,4 +1,8 @@
 <?php
+include('../db.conf.php');
+BaseConnect();
+?>
+<?php
 //Suppression de la famille
 if(isset($_GET['supp-famille-article']) && $_GET['supp-famille-article'] == 'valider')
 {

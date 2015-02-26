@@ -1,4 +1,8 @@
 <?php
+include('../db.conf.php');
+BaseConnect();
+?>
+<?php
 //Suppression de l'article
 if(isset($_GET['supp-article']) && $_GET['supp-article'] == 'valider')
 {
