@@ -1,20 +1,3 @@
-<?php 
-//Modification de la famille
-if(isset($_POST['modif-famille-article']) && $_POST['modif-famille-article'] == 'Valider')
-{
-	$idfamillearticle = $_POST['idfamillearticle'];
-	$designation = htmlentities(addslashes($_POST['designation']));
-
-	$sql_update_famille = mysql_query("UPDATE famille_article SET designation = '$designation' WHERE idfamillearticle = '$idfamillearticle'")or die(mysql_error());
-
-	if($sql_update_famille == TRUE)
-	{
-		header("Location: ../../module/admin/article/index.php?modif-famille-article=true");
-	}else{
-		header("Location: ../../module/admin/article/index.php?modif-famille-article=false");
-	}
-}
-?>
 <?php
 //Suppression de la famille
 if(isset($_GET['supp-famille-article']) && $_GET['supp-famille-article'] == 'valider')

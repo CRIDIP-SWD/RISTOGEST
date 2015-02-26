@@ -112,24 +112,6 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <!-- END Blank Header -->
                     <!-- RESULTAT DES ETATS -->
                     <?php
-                    if(isset($_GET['modif-famille-article']) && $_GET['modif-famille-article'] == 'true')
-                    {
-                    ?>
-                    <div class="alert alert-success alert-dismissable">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <h4><i class="fa fa-check-circle"></i> Succès</h4> La famille d'article à bien été modifier
-                    </div>
-                    <?php } ?>
-                    <?php
-                    if(isset($_GET['modif-famille-article']) && $_GET['modif-famille-article'] == 'false')
-                    {
-                    ?>
-                    <div class="alert alert-danger alert-dismissable">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur à été detectée lors de la mise à jour de la famille d'article.<br>Contactez le support technique.
-                    </div>
-                    <?php } ?>
-                    <?php
                     if(isset($_GET['supp-famille-article']) && $_GET['supp-famille-article'] == 'true')
                     {
                     ?>
@@ -184,38 +166,9 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     <tr>
                                         <td><?php echo $donnee_famille_article['designation']; ?></td>
                                         <td>
-                                            <a href="#modif-famille-article" data-toggle="modal" class="btn btn-info"><i class="gi gi-edit"></i></a>
                                             <a href="<?php echo SITE, FOLDER; ?>inc/control/famille-article.php?idfamillearticle=<?php echo $donnee_famille_article['idfamillearticle']; ?>&supp-famille-article=valider" class="btn btn-danger"><i class="fa fa-times"></i></a>
                                         </td>
                                     </tr>
-                                    <div id="modif-famille-article" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                    <h3 class="modal-title">Modification de la famille d'article</h3>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <form class="form-horizontal form-bordered" action="<?php echo SITE, FOLDER; ?>inc/control/famille-article.php" method="POST">
-                                                        
-                                                        <input type="hidden" name="idfamillearticle" value="<?php echo $donnee_famille_article['idfamillearticle']; ?>" />
-
-                                                        <div class="form-group">
-                                                            <label class="col-md-3 control-label" for="example-text-input">Designation de la famille</label>
-                                                            <div class="col-md-9">
-                                                                <input type="text" id="example-text-input" name="designation" class="form-control" value="<?php echo $donnee_famille_article['designation']; ?>">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group form-actions">
-                                                            <button type="submit" class="btn btn-success" name="modif-famille-article" value="Valider"><i class="fa fa-check"></i> Modifier la famille d'article</button>
-                                                        </div>
-
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 <?php } ?>
                                 </tbody>
                             </table>
@@ -253,55 +206,9 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                         </td>
                                         <td style="text-align: right;"><?php echo number_format($donnee_article['prix_unitaire'], 2, ',', ' ')." €"; ?></td>
                                         <td>
-                                            <a href="#modif-article" data-toggle="modal" class="btn btn-info"><i class="gi gi-edit"></i></a>
                                             <a href="<?php echo SITE, FOLDER; ?>inc/control/article.php?idarticle=<?php echo $donnee_article['idarticle']; ?>&supp-article=valider" class="btn btn-danger"><i class="fa fa-times"></i></a>
                                         </td>
                                     </tr>
-                                    <div id="modif-article" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                    <h3 class="modal-title">Modification de l'article</h3>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <form class="form-horizontal form-bordered" action="<?php echo SITE, FOLDER; ?>inc/control/article.php" method="POST">
-                                                        
-                                                        <input type="hidden" name="idarticle" value="<?php echo $donnee_article['idarticle']; ?>" />
-
-                                                        <div class="form-group">
-                                                            <label class="col-md-4 control-label" for="example-text-input">Désignation de l'article</label>
-                                                            <div class="col-md-6">
-                                                                <input type="text" id="example-text-input" name="designation_article" class="form-control" value="<?php echo $donnee_article['designation_article']; ?>">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label class="col-md-4 control-label" for="example-textarea-input">Description de l'article</label>
-                                                            <div class="col-md-6">
-                                                                <textarea id="example-textarea-input" name="description_article" rows="4" class="form-control"><?php echo $donnee_article['description_article']; ?></textarea>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label class="col-md-4 control-label" for="val_number">Prix Unitaire </label>
-                                                            <div class="col-md-6">
-                                                                <div class="input-group">
-                                                                    <input type="text" id="val_number" name="prix_unitaire" class="form-control" value="<?php echo $donnee_article['prix_unitaire']; ?>">
-                                                                    <span class="input-group-addon"><i class="gi gi-euro"></i></span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group form-actions">
-                                                            <button type="submit" class="btn btn-success" name="modif-article" value="Valider"><i class="fa fa-check"></i> Modifier l'article</button>
-                                                        </div>
-
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 <?php } ?>
                                 </tbody>
                             </table>
