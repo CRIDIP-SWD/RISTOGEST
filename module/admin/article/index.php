@@ -224,23 +224,6 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                         <input type="hidden" name="idarticle" value="<?php echo $donnee_article['idarticle']; ?>" />
 
                                                         <div class="form-group">
-                                                            <label class="col-md-4 control-label" for="example-select2">Famille d'article</label>
-                                                            <div class="col-md-6">
-                                                                <select id="example-select2" name="idfamillearticle" class="select-select2" style="width: 100%;" data-placeholder="Choose one..">
-                                                                    <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
-                                                                    <?php
-                                                                    $sql_famille_article_show = mysql_query("SELECT * FROM famille_article")or die(mysql_error());
-                                                                    while($famille_article_show = mysql_fetch_array($sql_famille_article_show))
-                                                                    {
-                                                                    ?>
-                                                                    <option value="<?php echo $famille_article_show['idfamillearticle']; ?>"><?php echo $famille_article_show['designation']; ?></option>
-                                                                    <?php } ?>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-
-
-                                                        <div class="form-group">
                                                             <label class="col-md-4 control-label" for="example-text-input">Désignation de l'article</label>
                                                             <div class="col-md-6">
                                                                 <input type="text" id="example-text-input" name="designation_article" class="form-control" value="<?php echo $donnee_article['designation_article']; ?>">
