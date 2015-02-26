@@ -341,7 +341,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     <h2>Produit Commander</h2>
                                     <div class="pull-right">
                                     <?php
-                                    if($donnee_commande == 0)
+                                    if($donnee_commande['etat_commande'] == 0)
                                     {
                                     ?>
                                         <a href="#add-article" class="btn btn-primary" data-toggle="modal"><i class="gi gi-cart_in"></i> Ajouter un article</a>
