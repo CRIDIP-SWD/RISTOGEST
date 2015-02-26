@@ -1,5 +1,5 @@
 <?php
-include ('../db.conf.php');
+include('../db.conf.php');
 BaseConnect();
 ?>
 <?php 
@@ -36,7 +36,7 @@ if(isset($_POST['add-article']) && $_POST['add-article'] == 'Valider')
 		$sql_add_article_menu = mysql_query("INSERT INTO `article_menu`(`idarticlemenu`, `idmenu`, `idarticle`) 
 		VALUES (NULL,'$idmenu','$idarticle')")or die(mysql_error());
 
-		if($sql_add_menu == TRUE)
+		if($sql_add_article_menu == TRUE)
 		{
 			header("Location: ../../module/admin/menu/view.php?idmenu=$idmenu&add-article=true");
 		}else{
