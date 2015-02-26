@@ -139,7 +139,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     <div class="block-title">
                                         <h2><?php echo $fam_menu['designation']; ?></h2>
                                         <div class="pull-right">
-                                            <a href="<?php echo SITE,FOLDER; ?>inc/control/menu.php?idfamillearticle=<?php echo $fam_menu['idfamillearticle']; ?>&idmenu=<?php echo $idmenu; ?>&add-article=valider" class="btn btn-primary"><i class="fa fa-plus"></i> Ajouter un article</a>
+                                            <a href="#add-article" data-toggle="modal" class="btn btn-primary"><i class="fa fa-plus"></i> Ajouter un article</a>
                                         </div>
                                     </div>
                                     <!-- END Block Title -->
@@ -147,6 +147,39 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     <!-- Block Content -->
                                     <p>Example content..</p>
                                     <!-- END Block Content -->
+                                </div>
+                            </div>
+                            <div id="add-article" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h3 class="modal-title">Ajout de l'article</h3>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form class="form-horizontal form-bordered" action="<?php echo SITE,FOLDER; ?>inc/control/menu.php" method="POST">
+                                                <input type="hidden" name="idmenu" value="<?php echo $idmenu; ?>" />
+
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label" for="example-select2">Article</label>
+                                                    <div class="col-md-6">
+                                                        <select id="example-select2" name="idarticle" class="select-select2" style="width: 100%;" data-placeholder="Choisissez l'article à ajoutée...">
+                                                            <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
+                                                            <?php
+                                                            $sql_article = mysql_query("SELECT * FROM article, famille_article WHERE article.idfamillearticle = famille_article.idfamillearticle 
+                                                                AND famille_article.idfamillearticle =".$fam_menu['idfamillearticle'])or die(mysql_error());
+                                                            while($donnee_article = mysql_fetch_array($sql_article))
+                                                            {
+                                                            ?>
+                                                            <option value="<?php echo $donnee_article['idarticle']; ?>"><?php echo $donnee_article['designation']; ?> - <?php echo $donnee_article['designation-article']; ?></option>
+                                                            <?php } ?>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         <?php } ?>
