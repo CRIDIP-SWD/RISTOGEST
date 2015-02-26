@@ -232,8 +232,33 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                             </div>
                                                         </div>
 
+
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label" for="example-text-input">Désignation de l'article</label>
+                                                            <div class="col-md-9">
+                                                                <input type="text" id="example-text-input" name="designation_article" class="form-control" value="<?php echo $donnee_article['designation_article']; ?>">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label" for="example-textarea-input">Description de l'article</label>
+                                                            <div class="col-md-9">
+                                                                <textarea id="example-textarea-input" name="description_article" rows="4" class="form-control"><?php echo $donnee_article['description_article']; ?></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-md-4 control-label" for="val_number">Prix Unitaire </label>
+                                                            <div class="col-md-6">
+                                                                <div class="input-group">
+                                                                    <input type="text" id="val_number" name="prix_unitaire" class="form-control" value="<?php echo $donnee_article['prix_unitaire']; ?>">
+                                                                    <span class="input-group-addon"><i class="gi gi-euro"></i></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
                                                         <div class="form-group form-actions">
-                                                            <button type="submit" class="btn btn-success" name="modif-article" value="Valider"><i class="fa fa-check"></i> Modifier la famille d'article</button>
+                                                            <button type="submit" class="btn btn-success" name="modif-article" value="Valider"><i class="fa fa-check"></i> Modifier l'article</button>
                                                         </div>
 
                                                     </form>
@@ -268,6 +293,8 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
         <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/app.js"></script>
         <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/pages/tablesDatatables.js"></script>
         <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/pages/compAnimations.js"></script>
+        <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/pages/formsValidation.js"></script>
+        <script>$(function(){ FormsValidation.init(); });</script>
         <script>$(function(){ CompAnimations.init(); });</script>
         <script>$(function(){ TablesDatatables.init(); });</script>
     </body>
