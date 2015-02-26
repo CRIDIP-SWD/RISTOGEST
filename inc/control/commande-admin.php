@@ -84,7 +84,15 @@ if(isset($_GET['supp-article']) && $_GET['supp-article'] == 'valider')
 {
 	$idarticlecommande = $_GET['idarticlecommande'];
 	$idcommande = $_GET['idcommande'];
+	$prix_total_commande = $_GET['prix_total_commande'];
+	$montant_total = $_GET['montant_total'];
 
+
+	//calcul
+	$calc_montant_total = $montant_total-$prix_total_commande;
+
+
+	$sql_up_commande = mysql_query("UPDATE commande SET montant_total = '$calc_montant_total' WHERE idcommande = '$idcommande'")or die(mysql_error());
 	$sql_delete_article = mysql_query("DELETE FROM article_commande WHERE idarticlecommande = '$idarticlecommande'")or die(mysql_error());
 
 	if($sql_delete_article == TRUE)
