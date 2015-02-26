@@ -119,7 +119,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             <h2>Liste des Familles D'article</h2>
                         </div>
                         <div class="table-responsive">
-                            <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+                            <table id="famille-article" class="table table-vcenter table-condensed table-bordered">
                                 <thead>
                                     <tr>
                                         <th class="text-center">Désignation</th>
@@ -149,7 +149,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             <h2>Liste des Articles</h2>
                         </div>
                         <div class="table-responsive">
-                            <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+                            <table id="article" class="table table-vcenter table-condensed table-bordered">
                                 <thead>
                                     <tr>
                                         <th class="text-center">Famille d'article</th>
