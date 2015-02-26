@@ -107,17 +107,18 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         <div class="pull-right">
                             <a href="index.php" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Retour à la liste des Commandes</a>
                             <?php
-                            if($donnee_commande['etat_commande'] == 1)
+                            if($donnee_commande['etat_commande'] == '1')
                             {
                             ?>
-                                <a class="btn btn-xs btn-success" href=""><i class="fa fa-exchange"></i> Commande Passer chez le prestataire</a>
+                            <a href="<?php echo SITE, FOLDER; ?>inc/control/commande-admin.php?idcommande=<?php echo $idcommande; ?>&envoie-prestataire=valider" class="btn btn-success"><i class="fa fa-check"></i> Commande passer chez le prestataire</a>
                             <?php } ?>
                             <?php
-                            if($donnee_commande['etat_commande'] == 2)
+                            if($donnee_commande['etat_commande'] == '2')
                             {
                             ?>
-                                <a class="btn btn-xs btn-success" href=""><i class="fa fa-truck"></i> Commande </a>
+                            <a href="<?php echo SITE, FOLDER; ?>inc/control/commande-admin.php?idcommande=<?php echo $idcommande; ?>&disponible=valider" class="btn btn-success"><i class="fa fa-check"></i> Rendre la commande disponible</a>
                             <?php } ?>
+
                         </div>
                     </div>
                     <ul class="breadcrumb breadcrumb-top">
@@ -162,6 +163,46 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         </div>
                     <?php } ?>
                     <!-- RESULTAT DES ETATS -->
+
+                    <?php
+                    if(isset($_GET['envoie-prestataire']) && $_GET['envoie-prestataire'] == 'true')
+                    {
+                    ?>
+                        <div class="alert alert-success alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4><i class="fa fa-check-circle"></i> Succès</h4> L'état de la commande à bien été mise à jours.
+                        </div>
+                    <?php } ?>
+                    <?php
+                    if(isset($_GET['envoie-prestataire']) && $_GET['envoie-prestataire'] == 'false')
+                    {
+                    ?>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur à eu lieu lors de la mise à jour de la commande.<br>
+                            Contacter le support technique.
+                        </div>
+                    <?php } ?>
+
+                    <?php
+                    if(isset($_GET['disponible']) && $_GET['disponible'] == 'true')
+                    {
+                    ?>
+                        <div class="alert alert-success alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4><i class="fa fa-check-circle"></i> Succès</h4> L'état de la commande à bien été mise à jours.
+                        </div>
+                    <?php } ?>
+                    <?php
+                    if(isset($_GET['disponible']) && $_GET['disponible'] == 'false')
+                    {
+                    ?>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur à eu lieu lors de la mise à jour de la commande.<br>
+                            Contacter le support technique.
+                        </div>
+                    <?php } ?>
 
                     <!-- BLOCK -->
                     <div class="row">

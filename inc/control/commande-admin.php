@@ -49,6 +49,36 @@ if(isset($_GET['supp-cmd']) && $_GET['supp-cmd'] == 'true')
 
  ?>
 <?php
+//change etat commande user = envoie prestataire
+if(isset($_GET['envoie-prestataire']) && $_GET['envoie-prestataire'] == 'valider')
+{
+	$idcommande = $_GET['idcommande'];
+
+	$sql_etat_commande = mysql_query("UPDATE commande SET etat_commande = '2' WHERE idcommande = '$idcommande'")or die(mysql_error());
+
+	if($sql_etat_commande == TRUE)
+	{
+		header("Location: ../../module/admin/commande/user/view.php?idcommande=$idcommande&envoie-prestataire=true");
+	}else{
+		header("Location: ../../module/admin/commande/user/view.php?idcommande=$idcommande&envoie-prestataire=false");
+	}
+}
+if(isset($_GET['disponible']) && $_GET['disponible'] == 'valider')
+{
+	$idcommande = $_GET['idcommande'];
+
+	$sql_etat_commande = mysql_query("UPDATE commande SET etat_commande = '3' WHERE idcommande = '$idcommande'")or die(mysql_error());
+
+	if($sql_etat_commande == TRUE)
+	{
+		header("Location: ../../module/admin/commande/user/view.php?idcommande=$idcommande&disponible=true");
+	}else{
+		header("Location: ../../module/admin/commande/user/view.php?idcommande=$idcommande&disponible=false");
+	}
+
+}
+?>
+<?php
 //Suppression de la commande Prestataire
 if(isset($_GET['supp-cmd-presta']) && $_GET['supp-cmd-presta'] == 'true')
 {
@@ -186,3 +216,4 @@ if(isset($_GET['change-etat']) && $_GET['change-etat'] == '4')
 		header("Location: ../../module/admin/commande/presta/view.php?idcomprestataire=$idcomprestataire&change-etat-4=false");
 	}
 }
+?>
