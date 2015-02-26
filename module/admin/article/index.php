@@ -111,6 +111,52 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     </ul>
                     <!-- END Blank Header -->
                     <!-- RESULTAT DES ETATS -->
+                    <?php
+                    if(isset($_GET['modif-famille-article']) && $_GET['modif-famille-article'] == 'true')
+                    {
+                    ?>
+                    <div class="alert alert-success alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h4><i class="fa fa-check-circle"></i> Succès</h4> La famille d'article à bien été modifier
+                    </div>
+                    <?php } ?>
+                    <?php
+                    if(isset($_GET['modif-famille-article']) && $_GET['modif-famille-article'] == 'false')
+                    {
+                    ?>
+                    <div class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur à été detectée lors de la mise à jour de la famille d'article.<br>Contactez le support technique.
+                    </div>
+                    <?php } ?>
+                    <?php
+                    if(isset($_GET['supp-famille-article']) && $_GET['supp-famille-article'] == 'true')
+                    {
+                    ?>
+                    <div class="alert alert-success alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h4><i class="fa fa-check-circle"></i> Succès</h4> La famille d'article à bien été supprimer
+                    </div>
+                    <?php } ?>
+                    <?php
+                    if(isset($_GET['supp-famille-article']) && $_GET['supp-famille-article'] == 'false')
+                    {
+                    ?>
+                    <div class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur à été detectée lors de la suppression de la famille d'article.<br>Contactez le support technique.
+                    </div>
+                    <?php } ?>
+                    <?php
+                    if(isset($_GET['supp-famille-article']) && $_GET['supp-famille-article'] == 'util')
+                    {
+                    ?>
+                    <div class="alert alert-warning alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h4><i class="fa fa-warning"></i> Attention</h4> Cette famille d'article est utilisée dans un ou plusieurs article.<br>Veuillez supprimer les articles avant de supprimer la famille qui lui correspond.
+                    </div>
+                    <?php } ?>
+                    
                     
 
 
