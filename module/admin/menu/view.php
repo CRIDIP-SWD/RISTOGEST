@@ -155,11 +155,11 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                         {
                                         ?>
                                         <tr>
-                                            <td style="width: 75%;">
+                                            <td style="width: 75%; border-bottom: solid 1px;">
                                                 <strong><?php echo $article_menu['designation_article']; ?></strong><br>
                                                 <h5><em><?php echo $article_menu['description_article']; ?></em></h5>
                                             </td>
-                                            <td style="text-align: right; width: 25%;">
+                                            <td style="text-align: right; width: 25%; border-bottom: solid 1px;">
                                                 <?php echo number_format($article_menu['prix_unitaire'], 2, ',', ' ')." €"; ?>
                                             </td>
                                         </tr>
