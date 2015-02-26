@@ -225,7 +225,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     ?>
                                     <div class="text-muted">
                                         <i class="fa fa-times-circle"></i>
-                                        Non Valider par l'utilisateur
+                                        Commande créer, Non valider par l'utilisateur
                                     </div>
                                     <?php } ?>
                                     <?php
@@ -233,8 +233,23 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     ?>
                                     <div class="text-info">
                                         <i class="fa fa-user"></i>
-                                        Valider par l'utilisateur.<br>
-                                        <h5>Le centre peut passer la commande chez le prestataire.</h5>
+                                        Commande Valider
+                                    </div>
+                                    <?php } ?>
+                                    <?php
+                                    if($donnee_commande['etat_commande'] == "2"){
+                                    ?>
+                                    <div class="text-warning">
+                                        <i class="fa fa-refresh fa-spin"></i>
+                                        Traitement en cours...
+                                    </div>
+                                    <?php } ?>
+                                    <?php
+                                    if($donnee_commande['etat_commande'] == "3"){
+                                    ?>
+                                    <div class="text-success">
+                                        <i class="fa fa-check"></i>
+                                        Commande Disponible pour l'utilisateur
                                     </div>
                                     <?php } ?>
                                 </div>
