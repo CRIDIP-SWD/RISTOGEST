@@ -79,6 +79,42 @@ if(isset($_GET['disponible']) && $_GET['disponible'] == 'valider')
 }
 ?>
 <?php
+//Suppression ligne article commande user
+if(isset($_GET['supp-article']) && $_GET['supp-article'] == 'valider')
+{
+	$idarticlecommande = $_GET['idarticlecommande'];
+	$idcommande = $_GET['idcommande'];
+
+	$sql_delete_article = mysql_query("DELETE FROM article_commande WHERE idarticlecommande = '$idarticlecommande'")or die(mysql_error());
+
+	if($sql_delete_article == TRUE)
+	{
+		header("Location: ../../module/admin/commande/user/view.php?idcommande=$idcommande&supp-article=true");
+	}else{
+		header("Location: ../../module/admin/commande/user/view.php?idcommande=$idcommande&supp-article=false");
+	}
+}
+
+?>
+<?php
+//Suppression de la ligne de reglement commande user
+if(isset($_GET['supp-reglement']) && $_GET['supp-reglement'] == 'valider')
+{
+	$idcommande = $_GET['idcommande'];
+	$idreglement = $_GET['idreglement'];
+
+	$sql_delete_reglement = mysql_query("DELETE FROM reglement_commande WHERE idreglement = '$idreglement'")or die(mysql_error());
+
+	if($sql_delete_reglement == TRUE)
+	{
+		header("Location: ../../module/admin/commande/user/view.php?idcommande=$idcommande&supp-reglement=true");
+	}else{
+		header("Location: ../../module/admin/commande/user/view.php?idcommande=$idcommande&supp-reglement=false");
+	}
+}
+
+?>
+<?php
 //Suppression de la commande Prestataire
 if(isset($_GET['supp-cmd-presta']) && $_GET['supp-cmd-presta'] == 'true')
 {

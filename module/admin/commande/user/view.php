@@ -204,6 +204,46 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         </div>
                     <?php } ?>
 
+                    <?php
+                    if(isset($_GET['supp-article']) && $_GET['supp-article'] == 'true')
+                    {
+                    ?>
+                        <div class="alert alert-success alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4><i class="fa fa-check-circle"></i> Succès</h4> L'article à bien été supprimée de la commande.
+                        </div>
+                    <?php } ?>
+                    <?php
+                    if(isset($_GET['supp-article']) && $_GET['supp-article'] == 'false')
+                    {
+                    ?>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur à eu lieu lors dde la suppression d'un article dans la commande.<br>
+                            Contacter le support technique.
+                        </div>
+                    <?php } ?>
+
+                    <?php
+                    if(isset($_GET['supp-reglement']) && $_GET['supp-reglement'] == 'true')
+                    {
+                    ?>
+                        <div class="alert alert-success alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4><i class="fa fa-check-circle"></i> Succès</h4> Le reglement à bien été supprimée.
+                        </div>
+                    <?php } ?>
+                    <?php
+                    if(isset($_GET['supp-reglement']) && $_GET['supp-reglement'] == 'false')
+                    {
+                    ?>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur à eu lieu lors de la suppression d'un reglement.<br>
+                            Contacter le support technique.
+                        </div>
+                    <?php } ?>
+
                     <!-- BLOCK -->
                     <div class="row">
                         <div class="col-md-8">
@@ -276,6 +316,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                 <th style="text-align: right;">Prix Unitaire</th>
                                                 <th class="text-center;">Quantité</th>
                                                 <th style="text-align: right;">Prix Total</th>
+                                                <th class="text-center">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -296,6 +337,9 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                 <td style="text-align: right;"><?php echo number_format($donnee_article_commande['prix_unitaire'], 2, ',', ' ')." €"; ?></td>
                                                 <td class="text-center"><?php echo $donnee_article_commande['qte']; ?></td>
                                                 <td style="text-align: right;"><?php echo number_format($donnee_article_commande['prix_total_commande'], 2, ',', ' ')." €"; ?></td>
+                                                <td>
+                                                    <a href="<?php echo SITE, FOLDER; ?>inc/control/commande-admin.php?idcommande=$idcommande&idarticlecommande=<?php echo $donnee_article_commande['idarticlecommande']; ?>&supp-article=valider" class="btn btn-danger"><i class="fa fa-times"></i></a>
+                                                </td>
                                             </tr>
                                             <?php } ?>
                                         </tbody>
@@ -330,6 +374,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                 <th>Porteur Chèque</th>
                                                 <th>Numéro de Chèque</th>
                                                 <th>Banque du chèque</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -360,6 +405,9 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                 </td>
                                                 <td>
                                                     <?php echo $donnee_reglement_commande['banque_chq']; ?>
+                                                </td>
+                                                <td>
+                                                    <a href="<?php echo SITE, FOLDER; ?>inc/control/commande-admin.php?idcommande=$idcommande&idreglement=<?php echo $donnee_reglement_commande['idreglement']; ?>&supp-reglement=valider" class="btn btn-danger"><i class="fa fa-times"></i></a>
                                                 </td>
                                             </tr>
                                             <?php } ?>
