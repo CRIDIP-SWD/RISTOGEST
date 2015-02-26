@@ -149,7 +149,8 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                         <?php
                                         $sql_article_menu = mysql_query("SELECT * FROM article_menu, article, famille_article WHERE article_menu.idarticle = article.idarticle
                                             AND article.idfamillearticle = famille_article.idfamillearticle
-                                            AND article_menu.idmenu = '$idmenu'")or die(mysql_error());
+                                            AND article_menu.idmenu = '$idmenu'
+                                            AND famille_article.idfamillearticle = ".$fam_menu['idfamillearticle'])or die(mysql_error());
                                         while($article_menu = mysql_fetch_array($sql_article_menu))
                                         {
                                         ?>
