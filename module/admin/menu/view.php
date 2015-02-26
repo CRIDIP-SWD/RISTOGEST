@@ -145,7 +145,25 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     <!-- END Block Title -->
 
                                     <!-- Block Content -->
-                                    <p>Example content..</p>
+                                    <table style="width: 100%;">
+                                        <?php
+                                        $sql_article_menu = mysql_query("SELECT * FROM article_menu, article, famille_article WHERE article_menu.idarticle = article.idarticle
+                                            AND article.idfamillearticle = famille_article.idfamillearticle
+                                            AND article_menu.idmenu = '$idmenu'")or die(mysql_error());
+                                        while($article_menu = mysql_fetch_array($sql_article_menu))
+                                        {
+                                        ?>
+                                        <tr>
+                                            <td>
+                                                <strong><?php echo $article_menu['designation_article']; ?></strong><br>
+                                                <h5><em><?php echo $article_menu['description_article']; ?></em></h5>
+                                            </td>
+                                            <td style="text-align: right;">
+                                                <?php echo number_format($article_menu['prix_unitaire'], 2, ',', ' ')." €"; ?>
+                                            </td>
+                                        </tr>
+                                        <?php } ?>
+                                    </table>
                                     <!-- END Block Content -->
                                 </div>
                             </div>
@@ -174,6 +192,10 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                             <?php } ?>
                                                         </select>
                                                     </div>
+                                                </div>
+
+                                                <div class="form-group form-actions">
+                                                    <button type="submit" class="btn btn-success" name="add-article" value="Valider"><i class="fa fa-check"></i> Ajouter l'article</button>
                                                 </div>
 
                                             </form>
