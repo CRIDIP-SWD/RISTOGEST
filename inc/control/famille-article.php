@@ -24,3 +24,18 @@ if(isset($_GET['supp-famille-article']) && $_GET['supp-famille-article'] == 'val
 }
 
 ?>
+<?php
+//Ajout d'une famille
+if(isset($_POST['add-famille-article']) && $_POST['add-famille-article'] == 'Valider')
+{
+	$designation = htmlentities(addslashes($_POST['designation']));
+
+	$sql_add_famille = mysql_query("INSERT INTO `famille_article`(`idfamillearticle`, `designation`) VALUES (NULL,'$designation')")or die(mysql_error());
+	if($sql_add_famille == TRUE)
+		{
+			header("Location: ../../module/admin/article/index.php?add-famille-article=true");
+		}else{
+			header("Location: ../../module/admin/article/index.php?add-famille-article=false");
+		}
+}
+?>
