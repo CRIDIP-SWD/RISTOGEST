@@ -119,6 +119,36 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <!-- RESULTAT DES ETATS -->
 
 
+                    <?php
+                    if(isset($_GET['add-article']) && $_GET['add-article'] == 'true')
+                    {
+                    ?>
+                    <div class="alert alert-success alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h4><i class="fa fa-check-circle"></i> Succès</h4> L'article à bien été ajouter.
+                    </div>
+                    <?php } ?>
+                    <?php
+                    if(isset($_GET['add-article']) && $_GET['add-article'] == 'false')
+                    {
+                    ?>
+                    <div class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur à été detectée lors de l'ajout de l'article.<br>Contactez le support technique.
+                    </div>
+                    <?php } ?>
+                    <?php
+                    if(isset($_GET['add-article']) && $_GET['add-article'] == 'insert')
+                    {
+                    ?>
+                    <div class="alert alert-warning alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h4><i class="fa fa-warning"></i> Attention</h4> Impossible d'ajouter un article déja existant dans le menu.
+                    </div>
+                    <?php } ?>
+
+
+
                     <div class="block">
                         <!-- Block Title -->
                         <div class="block-title">

@@ -111,6 +111,24 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     </ul>
                     <!-- END Blank Header -->
                     <!-- RESULTAT DES ETATS -->
+                    <?php
+                    if(isset($_GET['add-menu']) && $_GET['add-menu'] == 'true')
+                    {
+                    ?>
+                    <div class="alert alert-success alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h4><i class="fa fa-check-circle"></i> Succès</h4> Le Menu à bien été ajouter
+                    </div>
+                    <?php } ?>
+                    <?php
+                    if(isset($_GET['add-menu']) && $_GET['add-menu'] == 'false')
+                    {
+                    ?>
+                    <div class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur à été detectée lors de l'ajout du menu.<br>Contactez le support technique.
+                    </div>
+                    <?php } ?>
 
 
                     <div class="block">
