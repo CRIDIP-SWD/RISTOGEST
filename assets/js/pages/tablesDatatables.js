@@ -17,28 +17,12 @@ var TablesDatatables = function() {
                 "iDisplayLength": 10,
                 "aLengthMenu": [[10, 20, 30, -1], [10, 20, 30, "All"]]
             });
-
-            /* Add placeholder attribute to the search input */
-            $('.dataTables_filter input').attr('placeholder', 'Rechercher');
-        }
-        init: function() {
-            /* Initialize Bootstrap Datatables Integration */
-            App.datatables();
-
             /* Initialize Datatables */
             $('#famille-article').dataTable({
                 "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 1, 2 ] } ],
                 "iDisplayLength": 10,
                 "aLengthMenu": [[10, 20, 30, -1], [10, 20, 30, "All"]]
             });
-
-            /* Add placeholder attribute to the search input */
-            $('.dataTables_filter input').attr('placeholder', 'Rechercher');
-        }
-        init: function() {
-            /* Initialize Bootstrap Datatables Integration */
-            App.datatables();
-
             /* Initialize Datatables */
             $('#article').dataTable({
                 "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 1, 2 ] } ],
@@ -49,5 +33,6 @@ var TablesDatatables = function() {
             /* Add placeholder attribute to the search input */
             $('.dataTables_filter input').attr('placeholder', 'Rechercher');
         }
+
     };
 }();
