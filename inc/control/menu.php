@@ -1,3 +1,7 @@
+<?php
+include ('../db.conf.php');
+BaseConnect();
+?>
 <?php 
 //Ajout du Menu
 if(isset($_POST['add-menu']) && $_POST['add-menu'] == 'Valider')
