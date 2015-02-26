@@ -6,8 +6,8 @@ $donnee_menu = mysql_fetch_array($sql_menu);
 
 ?>
 <?php
-define("TITLE_PAGE", "Menu du ".$donnee_menu['date_menu']);
-define("SUBTITLE_PAGE", "SEMAINE".$donnee_menu['seamine']);
+define("TITLE_PAGE", "Menu du ".date("d-m-Y", $donnee_menu['date_menu']));
+define("SUBTITLE_PAGE", "SEMAINE".$donnee_menu['semaine']);
 //Breadcumb
 $li_start = "<li>".$logiciel."</li>";
 $li1 = "";
@@ -122,7 +122,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <div class="block">
                         <!-- Block Title -->
                         <div class="block-title">
-                            <h2>Menu du <strong><?php echo $donnee_menu['date_menu']; ?></strong></h2>
+                            <h2>Menu du <strong><?php echo date("d-m-Y", $donnee_menu['date_menu']; ?></strong></h2>
                         </div>
                         <!-- END Block Title -->
 
