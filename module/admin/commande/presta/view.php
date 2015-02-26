@@ -352,11 +352,12 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     <table class="table table-vcenter">
                                         <thead>
                                             <tr>
-                                                <th class="text-center;">Famille d'article</th>
-                                                <th class="text-center;">Designation Article</th>
+                                                <th class="text-center">Famille d'article</th>
+                                                <th class="text-center">Designation Article</th>
                                                 <th style="text-align: right;">Prix Unitaire</th>
-                                                <th class="text-center;">Quantité</th>
+                                                <th class="text-center">Quantité</th>
                                                 <th style="text-align: right;">Prix Total</th>
+                                                <th class="text-center">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -377,6 +378,9 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                 <td style="text-align: right;"><?php echo number_format($donnee_article_commande['prix_unitaire'], 2, ',', ' ')." €"; ?></td>
                                                 <td class="text-center"><?php echo $donnee_article_commande['qte']; ?></td>
                                                 <td style="text-align: right;"><?php echo number_format($donnee_article_commande['prix_total_commande'], 2, ',', ' ')." €"; ?></td>
+                                                <td class="text-center">
+                                                    <a href="<?php echo SITE, FOLDER; ?>inc/control/commande-admin.php?idcomprestataire=<?php echo $idcomprestataire; ?>&idarticlecompresta=<?php echo $donnee_article_commande['idarticlecompresta']; ?>&supp-art-cmd-presta=valider" class="btn btn-danger"><i class="fa fa-times"></i></a>
+                                                </a>
                                             </tr>
                                             <?php } ?>
                                         </tbody>

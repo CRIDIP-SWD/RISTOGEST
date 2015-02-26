@@ -338,7 +338,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                 <td class="text-center"><?php echo $donnee_article_commande['qte']; ?></td>
                                                 <td style="text-align: right;"><?php echo number_format($donnee_article_commande['prix_total_commande'], 2, ',', ' ')." €"; ?></td>
                                                 <td>
-                                                    <a href="<?php echo SITE, FOLDER; ?>inc/control/commande-admin.php?idcommande=$idcommande&idarticlecommande=<?php echo $donnee_article_commande['idarticlecommande']; ?>&supp-article=valider" class="btn btn-danger"><i class="fa fa-times"></i></a>
+                                                    <a href="<?php echo SITE, FOLDER; ?>inc/control/commande-admin.php?idcommande=<?php echo $idcommande; ?>&prix_total_commande=<?php echo $donnee_article_commande['prix_total_commande']; ?>&montant_total=<?php echo $donnee_commande['montant_total']; ?>&idarticlecommande=<?php echo $donnee_article_commande['idarticlecommande']; ?>&supp-article=valider" class="btn btn-danger"><i class="fa fa-times"></i></a>
                                                 </td>
                                             </tr>
                                             <?php } ?>
@@ -407,7 +407,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                     <?php echo $donnee_reglement_commande['banque_chq']; ?>
                                                 </td>
                                                 <td>
-                                                    <a href="<?php echo SITE, FOLDER; ?>inc/control/commande-admin.php?idcommande=$idcommande&idreglement=<?php echo $donnee_reglement_commande['idreglement']; ?>&supp-reglement=valider" class="btn btn-danger"><i class="fa fa-times"></i></a>
+                                                    <a href="<?php echo SITE, FOLDER; ?>inc/control/commande-admin.php?idcommande=<?php echo $idcommande; ?>&idreglement=<?php echo $donnee_reglement_commande['idreglement']; ?>&supp-reglement=valider" class="btn btn-danger"><i class="fa fa-times"></i></a>
                                                 </td>
                                             </tr>
                                             <?php } ?>
