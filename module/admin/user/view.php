@@ -235,7 +235,38 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <div class="block-title">
                                     <h2>Commande de L'utilisateur</h2>
                                 </div>
-                                
+                                <div class="table-responsive">
+                                    <table id="general-table" class="table table-striped table-vcenter">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">Numéro de la commande</th>
+                                                <th class="text-center">Date de la commande</th>
+                                                <th style="text-align: right;">Montant de la commande</th>
+                                                <th class="text-center">Etat de la commande</th>  
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            $sql_commande = mysql_query("SELECT * FROM commande WHERE iduser = '$iduser'")or die(mysql_error());
+                                            while($donnee_commande = mysql_fetch_array($sql_commande))
+                                            {
+                                            ?>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <?php } ?>                                           
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="3" style="text-align: right;">Total des Commandes</td>
+                                                <td style="text-align: right;">0,00 €</td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
 
                             </div>
                         </div>
