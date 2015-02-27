@@ -125,7 +125,9 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <!-- END Block Title -->
 
                                 <!-- Block Content -->
-                                
+                                <div style="text-align: center;">
+                                    <i class="fa fa-building" style="font-size: 45px;"></i>
+                                </div>
                                 <!-- END Block Content -->
                             </div>
                         </div>
@@ -139,20 +141,6 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
 
                                 <!-- Block Content -->
                                         
-                                        <div class="col-md-4" style="text-align: center;">
-                                            <strong style="font-size: 35px;">2 300,00 €</strong><br>
-                                            <small style="font-size: 20px;">de Commandes</small>
-                                        </div>
-
-                                        <div class="col-md-4" style="text-align: center;">
-                                            <strong style="font-size: 35px;">50</strong><br>
-                                            <small style="font-size: 20px;">Commandes utilisateurs</small>
-                                        </div>
-
-                                        <div class="col-md-4" style="text-align: center;">
-                                            <strong style="font-size: 35px;">50</strong><br>
-                                            <small style="font-size: 20px;">Commandes Prestataire</small>
-                                        </div>
 
                                 <!-- END Block Content -->
                             </div>
