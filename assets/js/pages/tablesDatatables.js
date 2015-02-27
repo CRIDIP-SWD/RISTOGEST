@@ -28,6 +28,7 @@ var TablesDatatables = function() {
                 "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 1, 2 ] } ],
                 "iDisplayLength": 10,
                 "aLengthMenu": [[10, 20, 30, -1], [10, 20, 30, "All"]]
+                "order": [[ 3, "desc" ]]
             });
             /* Initialize Datatables */
             $('#menu').dataTable({
