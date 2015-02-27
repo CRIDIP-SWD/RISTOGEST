@@ -155,19 +155,6 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 </div>
 
                             </div>
-                            <div class="col-md-6">
-
-                                <div class="widget">
-                                    <div class="widget-extra themed-background-dark-night text-center">
-                                        <h3 class="widget-content-light">Weekly <strong>Sales</strong></h3>
-                                    </div>
-                                    <div class="widget-extra-full text-center">
-                                        <!-- Jquery Sparkline (initialized in js/pages/widgetsStats.js), for more examples you can check out http://omnipotent.net/jquery.sparkline/#s-about -->
-                                        <span id="mini-chart-bar1">0,10,5,6,7,10,2</span>
-                                    </div>
-                                </div>
-                                
-                            </div>
                         </div>
                         <!-- END Block Content -->
                     </div>
