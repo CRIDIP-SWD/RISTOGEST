@@ -1,3 +1,7 @@
+<?php
+include('../db.conf.php');
+BaseConnect();
+?>
 <?php 
 //Ajout Utilisateur par l'administration
 if(isset($_POST['add-user-valid']) && $_POST['add-user-valid'] == 'Valider')
