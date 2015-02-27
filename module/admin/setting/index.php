@@ -131,6 +131,28 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     </div>
 
                                     <div style=""><?php echo $donnee_center['raison_social']; ?></div>
+                                    <div class="table-responsive animation-fadeIn" style="padding-top: 30px;">
+                                        <table id="general-table" class="table table-striped table-vcenter">
+                                            <tbody>
+
+                                                <tr>
+                                                    <td>Adresse:</td>
+                                                    <td>
+                                                        <?php echo $donnee_center['adresse']; ?><br>
+                                                        <?php echo $donnee_center['code_postal']; ?> <?php echo $donnee_center['ville']; ?>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Coordonnée:</td>
+                                                    <td>
+                                                        <strong>Téléphone:</strong> <em><?php echo $donnee_center['telephone']; ?></em><br>
+                                                        <strong>Adresse Mail:</strong> <em><?php echo $donnee_center['email']; ?></em><br>
+                                                        <strong>Nb jour/Liv. Théorique:</strong> <em><?php echo $donnee_center['nb_liv_theorique']; ?></em>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                                 <!-- END Block Content -->
                             </div>
@@ -144,7 +166,15 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <!-- END Block Title -->
 
                                 <!-- Block Content -->
-                                        
+                                <div class="col-sm-4">
+                                    
+                                </div> 
+                                <div class="col-sm-4">
+                                    
+                                </div> 
+                                <div class="col-sm-4">
+                                    
+                                </div> 
 
                                 <!-- END Block Content -->
                             </div>
