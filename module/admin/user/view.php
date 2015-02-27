@@ -253,7 +253,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             ?>
                                             <tr>
                                                 <td><?php echo $donnee_commande['num_commande']; ?></td>
-                                                <td><?php echo date("d-m-Y", $donnee_commande['date_commande']; ?></td>
+                                                <td><?php echo date("d-m-Y", $donnee_commande['date_commande']); ?></td>
                                                 <td style="text-align: right;"><?php echo number_format($donnee_commande['montant_total'], 2, ',', ' ')." €"; ?></td>
                                                 <td class="text-center">
                                                     <?php
