@@ -115,41 +115,53 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     </ul>
                     <!-- END Blank Header -->
                     <!-- RESULTAT DES ETATS -->
-                    <div class="block">
-                        <!-- Block Title -->
-                        <div class="block-title">
-                            <h2>Statistique</h2>
-                        </div>
-                        <!-- END Block Title -->
-
-                        <!-- Block Content -->
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div style="text-align: center;">
-                                    <i class="fa fa-building fa-4x"></i>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="block">
+                                <!-- Block Title -->
+                                <div class="block-title">
+                                    <h2>Centre de Gestion</h2>
                                 </div>
-                            </div>
-                            <div class="col-md-8">
+                                <!-- END Block Title -->
+
+                                <!-- Block Content -->
                                 
-                                <div class="col-md-4" style="text-align: center;">
-                                    <strong style="font-size: 35px;">2 300,00 €</strong><br>
-                                    <small style="font-size: 20px;">de Commandes</small>
-                                </div>
-
-                                <div class="col-md-4" style="text-align: center;">
-                                    <strong style="font-size: 35px;">50</strong><br>
-                                    <small style="font-size: 20px;">Commandes utilisateurs</small>
-                                </div>
-
-                                <div class="col-md-4" style="text-align: center;">
-                                    <strong style="font-size: 35px;">50</strong><br>
-                                    <small style="font-size: 20px;">Commandes Prestataire</small>
-                                </div>
-
+                                <!-- END Block Content -->
                             </div>
-                            
                         </div>
-                        <!-- END Block Content -->
+                        <div class="col-md-8">
+                            <div class="block">
+                                <!-- Block Title -->
+                                <div class="block-title">
+                                    <h2>Statistique</h2>
+                                </div>
+                                <!-- END Block Title -->
+
+                                <!-- Block Content -->
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        
+                                        <div class="col-md-4" style="text-align: center;">
+                                            <strong style="font-size: 35px;">2 300,00 €</strong><br>
+                                            <small style="font-size: 20px;">de Commandes</small>
+                                        </div>
+
+                                        <div class="col-md-4" style="text-align: center;">
+                                            <strong style="font-size: 35px;">50</strong><br>
+                                            <small style="font-size: 20px;">Commandes utilisateurs</small>
+                                        </div>
+
+                                        <div class="col-md-4" style="text-align: center;">
+                                            <strong style="font-size: 35px;">50</strong><br>
+                                            <small style="font-size: 20px;">Commandes Prestataire</small>
+                                        </div>
+
+                                    </div>
+                                    
+                                </div>
+                                <!-- END Block Content -->
+                            </div>
+                        </div>
                     </div>
 
                 </div>
