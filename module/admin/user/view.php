@@ -227,6 +227,32 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
 
 
                         </div>
+                        <?php
+                        if($donnee_user['groupe'] == 0){
+                        ?>
+                        <div class="col-md-7 animation-fadeInLeft">
+                            <div class="block">
+                                <div class="block-title">
+                                    <h2>Commande de L'utilisateur</h2>
+                                </div>
+                                
+
+                            </div>
+                        </div>
+                        <?php } ?>
+                        <?php
+                        if($donnee_user['groupe'] == 1){
+                        ?>
+                        <div class="col-md-7 animation-fadeInLeft">
+                            <div class="block">
+                                <div class="block-title">
+                                    <h2>Commande effectuer par l'administrateur</h2>
+                                </div>
+                                
+
+                            </div>
+                        </div>
+                        <?php } ?>
                     </div>
 
                     
