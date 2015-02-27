@@ -21,7 +21,7 @@
                             </a>
                             <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
                                 <li>
-                                    <a href="<?php echo SITE,FOLDER; ?>logout.php"><i class="fa fa-ban fa-fw pull-right"></i> Déconnexion</a>
+                                    <a href="<?php echo SITE,FOLDER; ?>logout.php?iduser=<?php echo $iduser; ?>"><i class="fa fa-ban fa-fw pull-right"></i> Déconnexion</a>
                                 </li>
                                 <!-- <li class="dropdown-header text-center">Activity</li>
                                 <li>
