@@ -153,7 +153,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     
                                     <img src="<?php echo SITE,FOLDER,ASSETS; ?>img/placeholders/avatars/avatar15@2x.jpg" alt="avatar" class="img-circle">
                                     
-                                    <span><?php echo $donnee_user['nom_user']; ?> <?php echo $donnee_user['prenom_user']; ?></span><br>
+                                    <?php echo $donnee_user['nom_user']; ?> <?php echo $donnee_user['prenom_user']; ?> - 
                                     <?php
                                         if($donnee_user['connect'] == 0){echo "<i class='fa fa-circle text-danger'></i> <span class='text-danger'>Déconnecter</span>";}
                                         if($donnee_user['connect'] == 1){echo "<i class='fa fa-circle text-success'></i> <span class='text-success'>Connecter</span>";}
