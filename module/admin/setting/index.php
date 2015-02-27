@@ -186,12 +186,13 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                 <th class="text-center">Numéro de la commande</th>
                                                 <th class="text-center">Date de la commande</th>
                                                 <th style="text-align: right;">Montant de la commande</th>
-                                                <th class="text-center">Etat de la commande</th>  
+                                                <th class="text-center">Etat de la commande</th>
+                                                <th class="text-center">Action</th>    
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $sql_commande = mysql_query("SELECT * FROM commande WHERE iduser = '$iduser' ORDER BY date_commande DESC")or die(mysql_error());
+                                            $sql_commande = mysql_query("SELECT * FROM commande ORDER BY date_commande LIMIT 5 DESC")or die(mysql_error());
                                             while($donnee_commande = mysql_fetch_array($sql_commande))
                                             {
                                             ?>
@@ -225,19 +226,81 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
 
                                                     ?>
                                                 </td>
+                                                <td>
+                                                    <a href="<?php echo SITE, FOLDER; ?>module/admin/commande/user/view.php?idcommande=<?php echo $donnee_commande['idcommande']; ?>" class="btn btn-info"><i class="fa fa-eye"></i></a>
+                                                </td>
                                             </tr>
                                             <?php } ?>                                           
                                         </tbody>
-                                        <tfoot>
+                                    </table>
+                                </div>
+                                <!-- END Block Content -->
+                            </div>
+                            <div class="block">
+                                <!-- Block Title -->
+                                <div class="block-title">
+                                    <h2>Dernières commandes Prestataire</h2>
+                                </div>
+                                <!-- END Block Title -->
+
+                                <!-- Block Content -->
+                                <div class="table-responsive">
+                                    <table id="general-table" class="table table-striped table-vcenter">
+                                        <thead>
                                             <tr>
-                                                <td colspan="3" style="text-align: right;">Total des Commandes</td>
-                                                <td style="text-align: right;">
+                                                <th class="text-center">Numéro de la commande</th>
+                                                <th class="text-center">Date de la commande</th>
+                                                <th style="text-align: right;">Montant de la commande</th>
+                                                <th class="text-center">Etat de la commande</th>
+                                                <th class="text-center">Action</th>    
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            $sql_commande = mysql_query("SELECT * FROM commande_prestataire ORDER BY date_commande LIMIT 5 DESC")or die(mysql_error());
+                                            while($donnee_commande = mysql_fetch_array($sql_commande))
+                                            {
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $donnee_commande['num_commande']; ?></td>
+                                                <td><?php echo date("d-m-Y", $donnee_commande['date_commande']); ?></td>
+                                                <td style="text-align: right;"><?php echo number_format($donnee_commande['montant_total'], 2, ',', ' ')." €"; ?></td>
+                                                <td class="text-center">
                                                     <?php
-                                                    echo number_format(mysql_result($sql_sum_cmd, 0), 2, ',', ' ')." €";
+                                                    switch ($donnee_commande['etat_commande']) {
+                                                        case '0':
+                                                            echo "<span class='label label-default'><i class='fa fa-times'></i> Commande créer</span>";
+                                                            break;
+
+                                                        case '1':
+                                                            echo "<span class='label label-danger'><i class='fa fa-check'></i> Commande Valider</span>";
+                                                            break;
+
+                                                        case '2':
+                                                            echo "<span class='label label-warning'><i class='fa fa-refresh fa-spin'></i> Envoyer chez le prestataire, en attente...</span>";
+                                                            break;
+
+                                                        case '3':
+                                                            echo "<span class='label label-info'><i class='fa fa-check'></i> Arrivée à destination</span>";
+                                                            break;
+
+                                                        case '4':
+                                                            echo "<span class='label label-success'><i class='fa fa-check-circle'></i> Article Vérifier et disponible</span>";
+                                                            break;
+                                                        
+                                                        default:
+                                                            # code...
+                                                            break;
+                                                    }
+
                                                     ?>
                                                 </td>
+                                                <td>
+                                                    <a href="<?php echo SITE, FOLDER; ?>module/admin/commande/presta/view.php?idcomprestataire=<?php echo $donnee_commande['idcomprestataire']; ?>" class="btn btn-info"><i class="fa fa-eye"></i></a>
+                                                </td>
                                             </tr>
-                                        </tfoot>
+                                            <?php } ?>                                           
+                                        </tbody>
                                     </table>
                                 </div>
                                 <!-- END Block Content -->
