@@ -139,7 +139,7 @@
                     ?>
                     <div class="row">
                         <div class="col-md-12">
-                            <a class="widget widget-hover-effect1" href="<?php echo SITE, FOLDER; ?>/module/commande/index.php#add-cmd" data-toggle="modal">
+                            <a class="widget widget-hover-effect1" href="<?php echo SITE, FOLDER; ?>/module/commande/index.php#add-cmd">
                                 <div class="widget-simple">
                                     <div class="widget-icon pull-left themed-background animation-fadeIn">
                                         <i class="gi gi-circle_plus"></i>
@@ -157,7 +157,7 @@
                     ?>
                     <div class="row">
                         <div class="col-md-4">
-                            <a class="widget widget-hover-effect1" href="<?php echo SITE, FOLDER; ?>/module/admin/menu/index.php#add-menu" data-toggle="modal">
+                            <a class="widget widget-hover-effect1" href="<?php echo SITE, FOLDER; ?>/module/admin/menu/index.php#add-menu">
                                 <div class="widget-simple">
                                     <div class="widget-icon pull-left themed-background animation-fadeIn">
                                         <i class="gi gi-circle_plus"></i>
@@ -169,7 +169,7 @@
                             </a>
                         </div>
                         <div class="col-md-4">
-                            <a class="widget widget-hover-effect1" href="<?php echo SITE, FOLDER; ?>/module/admin/article/index.php#add-article" data-toggle="modal">
+                            <a class="widget widget-hover-effect1" href="<?php echo SITE, FOLDER; ?>/module/admin/article/index.php#add-article">
                                 <div class="widget-simple">
                                     <div class="widget-icon pull-left themed-background animation-fadeIn">
                                         <i class="gi gi-circle_plus"></i>
@@ -181,7 +181,7 @@
                             </a>
                         </div>
                         <div class="col-md-4">
-                            <a class="widget widget-hover-effect1" href="<?php echo SITE, FOLDER; ?>/module/admin/commande/presta/index.php#add-cmd-presta" data-toggle="modal">
+                            <a class="widget widget-hover-effect1" href="<?php echo SITE, FOLDER; ?>/module/admin/commande/presta/index.php#add-cmd-presta">
                                 <div class="widget-simple">
                                     <div class="widget-icon pull-left themed-background animation-fadeIn">
                                         <i class="gi gi-circle_plus"></i>
