@@ -181,13 +181,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <!-- Block Content -->
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div>
-                                            <i class="fa fa-euro" style="font-size: 45px;"></i>
-                                            <span style="font-size: 45px; text-align: right;">
-                                                5 520,45 €<br>
-                                                <span style="font-size: 25px;">CA réalisée par le centre</span>
-                                            </span>
-                                        </div>
+                                        <div style="font-size: 45px; background-color: #4A2E2B; border: solid 1px; border-radius: 100%;"><i class="fa fa-euro"></i></div>
                                     </div>
                                 </div>
                                 <!-- END Block Content -->
