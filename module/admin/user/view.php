@@ -151,13 +151,16 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 </div>
                                 <div style="text-align: center;">
                                     
-                                    <img src="<?php echo SITE,FOLDER,ASSETS; ?>img/placeholders/avatars/avatar15@2x.jpg" alt="avatar" class="img-circle">
+                                    <img src="<?php echo SITE,FOLDER,ASSETS; ?>img/placeholders/avatars/avatar15@2x.jpg" alt="avatar" class="img-circle"><br>
+
                                     
-                                    <?php echo $donnee_user['nom_user']; ?> <?php echo $donnee_user['prenom_user']; ?> - 
-                                    <?php
+                                    <div style=""><?php echo $donnee_user['nom_user']; ?> <?php echo $donnee_user['prenom_user']; ?></div> 
+                                    <div style="">
+                                        <?php
                                         if($donnee_user['connect'] == 0){echo "<i class='fa fa-circle text-danger'></i> <span class='text-danger'>Déconnecter</span>";}
                                         if($donnee_user['connect'] == 1){echo "<i class='fa fa-circle text-success'></i> <span class='text-success'>Connecter</span>";}
-                                    ?>
+                                        ?>
+                                    </div>
                                 </div>
                             </div>
 
