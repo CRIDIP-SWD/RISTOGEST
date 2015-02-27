@@ -124,7 +124,12 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
 
                         <!-- Block Content -->
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-4">
+                                <div style="text-align: center;">
+                                    <i class="fa fa-building fa-4x"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
                                 
                                 <div class="col-md-4" style="text-align: center;">
                                     <strong style="font-size: 35px;">2 300,00 €</strong><br>
@@ -142,19 +147,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 </div>
 
                             </div>
-                            <div class="col-md-6">
-
-                                <div class="widget">
-                                    <div class="widget-extra themed-background-dark-night text-center">
-                                        <h3 class="widget-content-light">Evolution des commandes (par mois)</h3>
-                                    </div>
-                                    <div class="widget-extra-full text-center">
-                                        <!-- Jquery Sparkline (initialized in js/pages/widgetsStats.js), for more examples you can check out http://omnipotent.net/jquery.sparkline/#s-about -->
-                                        <span id="mini-chart-bar1">0,10,5,6,7,10,0</span>
-                                    </div>
-                                </div>
-
-                            </div>
+                            
                         </div>
                         <!-- END Block Content -->
                     </div>
