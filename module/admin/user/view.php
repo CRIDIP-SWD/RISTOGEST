@@ -9,7 +9,7 @@ define("TITLE_PAGE", "UTILISATEUR");
 define("SUBTITLE_PAGE", "Fiche de l'utilisateur ".$donnee_user['nom_user']." ".$donnee_user['prenom_user']);
 //Breadcumb
 $li_start = "<li>".$logiciel."</li>";
-$li1 = "UTILISATEUR";
+$li1 = "<li>UTILISATEUR</li>";
 $li2 = "";
 $li3 = "";
 $li4 = "";
@@ -142,7 +142,35 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     </div>
                     <?php } ?>
 
+                    <div class="row">
+                        <div class="col-md-5">
 
+                            <div class="block">
+                                <div class="block-title">
+                                    <h2>Information sur l'utilisateur</h2>
+                                </div>
+                                <div style="">
+                                    <?php
+                                    if($donnee_user['connect'] == 0){
+                                    ?>
+                                    <div class="chat-user-busy">
+                                        <span></span>
+                                        <img src="img/placeholders/avatars/avatar15@2x.jpg" alt="avatar" class="img-circle">
+                                    </div>
+                                    <?php } ?>
+                                    <?php
+                                    if($donnee_user['connect'] == 1){
+                                    ?>
+                                    <div class="chat-user-online">
+                                        <span></span>
+                                        <img src="img/placeholders/avatars/avatar15@2x.jpg" alt="avatar" class="img-circle">
+                                    </div>
+                                    <?php } ?>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
 
                     
 
