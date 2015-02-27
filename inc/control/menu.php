@@ -55,6 +55,13 @@ if(isset($_GET['supp-article']) && $_GET['supp-article'] == 'valider')
 	$idarticlemenu = $_GET['idarticlemenu'];
 	$idmenu = $_GET['idmenu'];
 
-	$sql_delete_article_menu = 
+	$sql_delete_article_menu = mysql_query("DELETE FROM article_menu WHERE idarticlemenu = '$idarticlemenu'")or die(mysql_error());
+
+	if($sql_delete_article_menu == TRUE)
+	{
+		header("Location: ../../module/admin/menu/view.php?idmenu=$idmenu&supp-article=true");
+	}else{
+		header("Location: ../../module/admin/menu/view.php?idmenu=$idmenu&supp-article=false");
+	}
 }
 ?>
