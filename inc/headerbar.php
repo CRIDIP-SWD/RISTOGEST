@@ -14,8 +14,10 @@
                     <!-- Right Header Navigation -->
                     <ul class="nav navbar-nav-custom pull-right">
                         <li class="dropdown">
-                            <i class="gi gi-cart_in"></i>
-                            <span class="label label-primary label-indicator animation-floating">4</span>
+                            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="gi gi-cart_in"></i>
+                                <span class="label label-warning label-indicator animation-floating">4</span>
+                            </a>
                             <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
                                 <li class="dropdown-header text-center">Activity</li>
                                 <li>
