@@ -115,6 +115,9 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         if(empty($li_end)){echo "";}else{echo $li_end;}
                         ?>
                     </ul>
+                    <div class="pull-right">
+                        <a href="" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Retour à la liste des menus</a>
+                    </div>
                     <!-- END Blank Header -->
                     <!-- RESULTAT DES ETATS -->
 
