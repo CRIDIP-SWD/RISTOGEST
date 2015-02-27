@@ -163,17 +163,60 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     </div>
                                 </div>
                                 <!-- Tableau Statistique -->
+                                <h2>Chiffres de cette Utilisateur</h2>
                                 <div class="table-responsive" style="padding-top: 30px;">
                                     <table id="general-table" class="table table-striped table-vcenter">
                                         <tbody>
 
                                             <tr>
-                                                <td>Nb d'article Commander:</td>
-                                                <td style="text-align: right; font-weight: bold;">25</td>
+                                                <td>Nombre de Commande:</td>
+                                                <td style="text-align: right; font-weight: bold;">
+                                                    <?php
+                                                    $sql_count_cmd = mysql_query("SELECT COUNT(idcommande) FROM commande WHERE iduser = '$iduser'")or die(mysql_error());
+                                                    echo mysql_result($sql_count_cmd, 0);
+                                                    ?>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td>Montant total des Commandes:</td>
-                                                <td style="text-align: right; font-weight: bold;">489,58 €</td>
+                                                <td style="text-align: right; font-weight: bold;">
+                                                    <?php
+                                                    $sql_sum_cmd = mysql_query("SELECT SUM(montant_total) FROM commande WHERE iduser = '$iduser'")or die(mysql_error());
+                                                    echo number_format(mysql_result($sql_sum_cmd, 0), 2, ',', ' ')." €";
+                                                    ?>
+                                                </td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <h2>Informations et coordonnées de l'utilisateur</h2>
+
+                                <div class="table-responsive" style="padding-top: 30px;">
+                                    <table id="general-table" class="table table-striped table-vcenter">
+                                        <tbody>
+
+                                            <tr>
+                                                <td>Groupe:</td>
+                                                <td style="text-align: right; font-weight: bold;">
+                                                    <?php
+                                                    if($donnee_user['groupe'] == 0){echo "<span class='label label-info'>Utilisateur</span>";}
+                                                    if($donnee_user['groupe'] == 1){echo "<span class='label label-danger'>Administrateur</span>";}
+                                                    ?>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Numéro de Téléphone Fixe:</td>
+                                                <td style="text-align: right; font-weight: bold;"><?php echo $donnee_user['tel_user']; ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Numéro de Téléphone Portable:</td>
+                                                <td style="text-align: right; font-weight: bold;"><?php echo $donnee_user['port_user']; ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Date de dernière connexion:</td>
+                                                <td style="text-align: right; font-weight: bold;"><?php echo $donnee_user['last_connect']; ?></td>
                                             </tr>
                                             
                                         </tbody>
