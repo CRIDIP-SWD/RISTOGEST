@@ -19,7 +19,7 @@
                         <li class="dropdown">
                             <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="gi gi-cart_in"></i>
-                                <span class="label label-warning label-indicator animation-floating">4</span>
+                                <span class="label label-warning label-indicator animation-floating"><?php echo $count_commande; ?></span>
                             </a>
                             <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
                                 <li class="dropdown-header text-center">Nouvelle Commande</li>
