@@ -216,7 +216,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                         </td>
                                         <td>
                                             <a href="view.php?iduser=<?php echo $donnee_user['iduser']; ?>" class="btn btn-primary">Voir la fiche de l'utilisateur <i class="fa fa-arrow-right"></i></a>
-                                            <a href="<?php echo SITE,FOLDER; ?>inc/control/user.php?iduser=<?php echo $iduser; ?>&supp-user=valider" class="btn btn-danger"><i class="fa fa-times"></i></a>
+                                            <a href="<?php echo SITE,FOLDER; ?>inc/control/user.php?iduser=<?php echo $donnee_user['iduser']; ?>&supp-user=valider" class="btn btn-danger"><i class="fa fa-times"></i></a>
                                         </td>
                                     </tr>   
                                     <?php } ?>
