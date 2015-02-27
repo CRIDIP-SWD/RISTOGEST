@@ -180,14 +180,47 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
 
                                 <!-- Block Content -->
                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <div style="font-size: 45px;"><i class="fa fa-euro"></i></div>
-                                        <div style="text-align: right">
-                                            <div style="font-size: 20px; font-weight: bold;">25 870,00 €</div>
-                                            <div style="font-size: 18px;">Ca réalisée par le Centre</div>
-                                        </div>
-                                    </div>
-                                </div>
+<div class="col-sm-6 col-lg-3">
+<div class="widget">
+<div class="widget-simple">
+<a class="widget-icon pull-left themed-background" href="javascript:void(0)">
+<i class="gi gi-package"></i>
+</a>
+<h3 class="text-right animation-stretchRight">+ <strong>50%</strong></h3>
+</div>
+</div>
+</div>
+<div class="col-sm-6 col-lg-3">
+<div class="widget">
+<div class="widget-simple">
+<a class="widget-icon pull-right themed-background-amethyst" href="javascript:void(0)">
+<i class="gi gi-wallet"></i>
+</a>
+<h3 class="animation-stretchLeft">$ <strong>3.595</strong></h3>
+</div>
+</div>
+</div>
+<div class="col-sm-6 col-lg-3">
+<div class="widget">
+<div class="widget-simple">
+<a class="widget-icon pull-left themed-background-night" href="javascript:void(0)">
+<i class="gi gi-bug animation-tossing"></i>
+</a>
+<h3 class="text-right animation-stretchRight">3 <strong>Bugs</strong></h3>
+</div>
+</div>
+</div>
+<div class="col-sm-6 col-lg-3">
+<div class="widget">
+<div class="widget-simple">
+<a class="widget-icon pull-right themed-background-fire" href="javascript:void(0)">
+<i class="gi gi-fire animation-floating"></i>
+</a>
+<h3 class="animation-stretchLeft">1 <strong>Crash</strong></h3>
+</div>
+</div>
+</div>
+</div>
                                 <!-- END Block Content -->
                             </div>
                         </div>
