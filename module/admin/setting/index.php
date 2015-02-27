@@ -102,6 +102,9 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <i class="fa fa-building"></i><?php echo TITLE_PAGE; ?><br><small><?php echo SUBTITLE_PAGE; ?></small>
                             </h1>
                         </div>
+                        <div class="pull-right">
+                            <a href="" class="btn btn-info"><i class="gi gi-edit"></i> Modifier les informations du centre</a>
+                        </div>
                     </div>
                     <ul class="breadcrumb breadcrumb-top">
                         <?php
@@ -147,7 +150,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                     <td style="text-align: left;">
                                                         <strong>Téléphone:</strong> <em><?php echo $donnee_center['telephone']; ?></em><br>
                                                         <strong>Adresse Mail:</strong> <em><?php echo $donnee_center['email']; ?></em><br>
-                                                        <strong>Nb jour/Liv. Théorique:</strong> <em><?php echo $donnee_center['nb_liv_theorique']; ?></em>
+                                                        <strong>Nb jour/Liv. Théorique:</strong> <em><?php echo $donnee_center['nb_liv_theorique']; ?> jours</em>
                                                     </td>
                                                 </tr>
                                             </tbody>
