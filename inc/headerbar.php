@@ -13,7 +13,31 @@
 
                     <!-- Right Header Navigation -->
                     <ul class="nav navbar-nav-custom pull-right">
-
+                        <li class="dropdown">
+                            <i class="gi gi-cart_in"></i>
+                            <span class="label label-primary label-indicator animation-floating">4</span>
+                            <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
+                                <li class="dropdown-header text-center">Activity</li>
+                                <li>
+                                    <div class="alert alert-success alert-alt">
+                                        <small>5 min ago</small><br>
+                                        <i class="fa fa-thumbs-up fa-fw"></i> You had a new sale ($10)
+                                    </div>
+                                    <div class="alert alert-info alert-alt">
+                                        <small>10 min ago</small><br>
+                                        <i class="fa fa-arrow-up fa-fw"></i> Upgraded to Pro plan
+                                    </div>
+                                    <div class="alert alert-warning alert-alt">
+                                        <small>3 hours ago</small><br>
+                                        <i class="fa fa-exclamation fa-fw"></i> Running low on space<br><strong>18GB in use</strong> 2GB left
+                                    </div>
+                                    <div class="alert alert-danger alert-alt">
+                                        <small>Yesterday</small><br>
+                                        <i class="fa fa-bug fa-fw"></i> <a href="javascript:void(0)" class="alert-link">New bug submitted</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
                         <!-- User Dropdown -->
                         <li class="dropdown">
                             <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
