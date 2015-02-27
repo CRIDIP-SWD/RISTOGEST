@@ -5,10 +5,10 @@ BaseConnect();
 <?php
 if(isset($_POST['modif-centre-valid']) && $_POST['modif-centre-valid'] == 'Valider')
 {
-	$raison_social = $_POST['raison_social'];
-	$adresse = $_POST['adresse'];
+	$raison_social = htmlentities(addslashes($_POST['raison_social']));
+	$adresse = htmlentities(addslashes($_POST['adresse']));
 	$code_postal = $_POST['code_postal'];
-	$ville = $_POST['ville'];
+	$ville = htmlentities(addslashes($_POST['ville']));
 	$telephone = $_POST['telephone'];
 	$email = $_POST['email'];
 	$nb_liv_theorique = $_POST['nb_liv_theorique'];
