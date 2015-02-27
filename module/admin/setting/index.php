@@ -118,6 +118,36 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     </ul>
                     <!-- END Blank Header -->
                     <!-- RESULTAT DES ETATS -->
+
+                    <?php
+                    if(isset($_GET['modif-centre']) && $_GET['modif-centre'] == 'true')
+                    {
+                    ?>
+                        <div class="alert alert-success alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-check-circle"></i> Succès
+                            </h4> 
+                            Les Informations du centre ont bien été modifier
+                        </div>
+                    <?php
+                    }
+                    ?>
+                    <?php
+                    if(isset($_GET['modif-centre']) && $_GET['modif-centre'] == 'false')
+                    {
+                    ?>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-times-circle"></i> Erreur
+                            </h4> 
+                            Une erreur à été rencontrer lors de la modification du centre.<br>Contactez le support technique.
+                        </div>
+                    <?php
+                    }
+                    ?>
+
                     <div class="row">
                         <div class="col-md-4">
                             <div class="block">
@@ -344,10 +374,29 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             </div>
                                         </div>
 
-                                        
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="masked_phone">Téléphone</label>
+                                            <div class="col-md-9">
+                                                <input type="text" id="masked_phone" name="telephone" class="form-control" value="<?php echo $donnee_center['telephone']; ?>">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="user-settings-email">Adresse Mail</label>
+                                            <div class="col-md-8">
+                                                <input type="email" id="user-settings-email" name="email" class="form-control" value="<?php echo $donnee_center['email']; ?>">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-text-input">Nb jours livraison théorique</label>
+                                            <div class="col-md-9">
+                                                <input type="text" id="example-text-input" name="nb_liv_theorique" class="form-control" value="<?php echo $donnee_center['nb_liv_theorique']; ?>">
+                                            </div>
+                                        </div>
 
                                         <div class="form-group form-actions">
-                                            <button type="submit" class="btn btn-success" name="modif-user-valid" value="Valider"><i class="fa fa-check"></i> Modification de l'utilisateur</button>
+                                            <button type="submit" class="btn btn-success" name="modif-centre-valid" value="Valider"><i class="fa fa-check"></i> Modification du centre</button>
                                         </div>
 
                                     </form>

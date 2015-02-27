@@ -95,7 +95,7 @@
                                 <a href="<?php echo SITE,FOLDER; ?>module/admin/user/index.php"><i class="fa fa-users"></i> Gestion des Utilisateurs</a>
                             </li>
                             <li>
-                                <a href="<?php echo SITE,FOLDER; ?>module/admin/setting/index.php"><i class="fa fa-building"></i> Gestion du centre de gestion</a>
+                                <a href="<?php echo SITE,FOLDER; ?>module/admin/setting/index.php?idsetting=1"><i class="fa fa-building"></i> Gestion du centre de gestion</a>
                             </li>
                             <li>
                                 <a href="<?php echo SITE,FOLDER; ?>module/admin/prestataire/index.php"><i class="gi gi-vcard"></i> Gestion des Prestataires</a>
