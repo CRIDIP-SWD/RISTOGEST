@@ -133,7 +133,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                         <i class="fa fa-building" style="font-size: 75px;"></i>
                                     </div>
 
-                                    <div style=""><?php echo $donnee_center['raison_social']; ?></div>
+                                    <div style="font-size: 35px; font-weight: bold;"><?php echo $donnee_center['raison_social']; ?></div>
                                     <div class="table-responsive animation-fadeIn" style="padding-top: 30px;">
                                         <table id="general-table" class="table table-striped table-vcenter">
                                             <tbody>
