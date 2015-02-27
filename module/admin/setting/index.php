@@ -126,7 +126,11 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
 
                                 <!-- Block Content -->
                                 <div style="text-align: center;">
-                                    <i class="fa fa-building img-circle" style="font-size: 75px;"></i>
+                                    <div class="img-circle">
+                                        <i class="fa fa-building" style="font-size: 75px;"></i>
+                                    </div>
+
+                                    <div style=""><?php echo $donnee_center['raison_social']; ?></div>
                                 </div>
                                 <!-- END Block Content -->
                             </div>
