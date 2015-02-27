@@ -127,18 +127,18 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             <div class="col-md-12">
                                 
                                 <div class="col-md-4" style="text-align: center;">
-                                    <strong style="font-size: 25px;">€</strong> 2 300,00<br>
-                                    <small>de Commandes</small>
+                                    <strong style="font-size: 35px;">2 300,00 €</strong><br>
+                                    <small style="font-size: 20px;">de Commandes</small>
                                 </div>
 
                                 <div class="col-md-4" style="text-align: center;">
-                                    <strong style="font-size: 25px;">50</strong><br>
-                                    <small>Commandes utilisateurs</small>
+                                    <strong style="font-size: 35px;">50</strong><br>
+                                    <small style="font-size: 20px;">Commandes utilisateurs</small>
                                 </div>
 
                                 <div class="col-md-4" style="text-align: center;">
-                                    <strong style="font-size: 25px;">50</strong><br>
-                                    <small>Commandes Prestataire</small>
+                                    <strong style="font-size: 35px;">50</strong><br>
+                                    <small style="font-size: 20px;">Commandes Prestataire</small>
                                 </div>
 
                             </div>
