@@ -146,7 +146,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             ?>
                                             <?php echo $donnee_user['login']; ?>
                                         </td>
-                                        <td>
+                                        <td class="text-center">
                                             <?php
                                             if($donnee_user['groupe'] == 0){echo "<span class='label label-info'>Utilisateur</span>";}
                                             if($donnee_user['groupe'] == 1){echo "<span class='label label-danger'>Administrateur</span>";}
@@ -160,7 +160,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             <strong>Portable:</strong> <?php echo $donnee_user['port_user']; ?>
                                         </td>
                                         <td>
-                                            <a href="view.php?idmenu=<?php echo $donnee_menu['idmenu']; ?>" class="btn btn-primary">Voir le menu <i class="fa fa-arrow-right"></i></a>
+                                            <a href="view.php?iduser=<?php echo $donnee_user['iduser']; ?>" class="btn btn-primary">Voir la fiche de l'utilisateur <i class="fa fa-arrow-right"></i></a>
                                         </td>
                                     </tr>   
                                     <?php } ?>
@@ -169,32 +169,87 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         </div>
                     </div>
 
-                    <div id="add-menu" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div id="add-user" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h3 class="modal-title">Nouveau Menu</h3>
+                                    <h3 class="modal-title">Nouvel Utilisateur</h3>
                                 </div>
                                 <div class="modal-body">
-                                    <form class="form-horizontal form-bordered" action="<?php echo SITE,FOLDER; ?>inc/control/menu.php" method="POST">
+                                    <form class="form-horizontal form-bordered" action="<?php echo SITE,FOLDER; ?>inc/control/user.php" method="POST">
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="example-text-input">Semaine</label>
-                                            <div class="col-md-9">
-                                                <input type="text" id="example-text-input" name="semaine" class="form-control" placeholder="Taper le numéro de la semaine">
+                                            <label class="col-md-4 control-label" for="val_email">Adresse Mail <span class="text-danger">*</span></label>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <input type="text" id="val_email" name="login" class="form-control" placeholder="test@example.com">
+                                                    <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
+                                                </div>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label" for="masked_date2">Date du menu</label>
+                                            <label class="col-md-4 control-label" for="val_password">Mot de Passe <span class="text-danger">*</span></label>
                                             <div class="col-md-6">
-                                                <input type="text" id="masked_date2" name="date_menu" class="form-control" placeholder="dd-mm-yyyy">
+                                                <div class="input-group">
+                                                    <input type="password" id="val_password" name="pass_md5" class="form-control" placeholder="Choose a crazy one..">
+                                                    <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="val_confirm_password">Confirm Password <span class="text-danger">*</span></label>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <input type="password" id="val_confirm_password" name="confirm_pass" class="form-control" placeholder="..and confirm it!">
+                                                    <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="example-select2">Groupe</label>
+                                            <div class="col-md-6">
+                                                <select id="example-select2" name="example-select2" class="select-select2" style="width: 100%;" data-placeholder="Choose one..">
+                                                    <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
+                                                    <option value="0">Utilisateur</option>
+                                                    <option value="1">Administrateur</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-text-input">Nom de l'utilisateur</label>
+                                            <div class="col-md-9">
+                                                <input type="text" id="example-text-input" name="nom_user" class="form-control" placeholder="Nom de l'utilisateur en Majuscule...">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-text-input">Prénom de l'utilisateur</label>
+                                            <div class="col-md-9">
+                                                <input type="text" id="example-text-input" name="prenom_user" class="form-control" placeholder="Prénom de l'utilisateur">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="masked_phone">Numéro de Téléphone fixe</label>
+                                            <div class="col-md-6">
+                                                <input type="text" id="masked_phone" name="tel_user" class="form-control" placeholder="XX.XX.XX.XX.XX">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="masked_phone">Numéro de Téléphone Portable</label>
+                                            <div class="col-md-6">
+                                                <input type="text" id="masked_phone" name="port_user" class="form-control" placeholder="XX.XX.XX.XX.XX">
                                             </div>
                                         </div>
 
                                         <div class="form-group form-actions">
-                                            <button type="submit" class="btn btn-success" name="add-menu-valid" value="Valider"><i class="fa fa-check"></i> Ajouter le menu</button>
+                                            <button type="submit" class="btn btn-success" name="add-user-valid" value="Valider"><i class="fa fa-check"></i> Ajout de l'utilisateur</button>
                                         </div>
 
                                     </form>

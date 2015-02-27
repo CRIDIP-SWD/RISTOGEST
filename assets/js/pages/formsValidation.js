@@ -81,15 +81,15 @@ var FormsValidation = function() {
                         required: 'Please enter a username',
                         minlength: 'Your username must consist of at least 3 characters'
                     },
-                    val_email: 'Please enter a valid email address',
+                    val_email: 'Entrez une adresse mail valide',
                     val_password: {
-                        required: 'Please provide a password',
-                        minlength: 'Your password must be at least 5 characters long'
+                        required: 'Mot de passe requis',
+                        minlength: 'Le mot de pass doit faire au minimum 5 caractères.'
                     },
                     val_confirm_password: {
-                        required: 'Please provide a password',
-                        minlength: 'Your password must be at least 5 characters long',
-                        equalTo: 'Please enter the same password as above'
+                        required: 'Mot de passe Requis',
+                        minlength: 'Le mot de pass doit faire au minimum 5 caractères.',
+                        equalTo: 'Mot de passe ne correspond pas au mot de passe entrer précédement'
                     },
                     val_bio: 'Don\'t be shy, share something with us :-)',
                     val_skill: 'Please select a skill!',
