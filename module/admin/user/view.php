@@ -106,6 +106,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         </div>
                         <div class="pull-right">
                             <a href="index.php" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Retour à la liste des utilisateurs</a>
+                            <a href="#modif-user" data-toggle="modal" class="btn btn-info"><i class="gi gi-edit"></i> Modifier l'utilisateur</a>
                         </div>
                     </div>
                     <ul class="breadcrumb breadcrumb-top">
@@ -124,23 +125,33 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
 
 
                     <?php
-                    if(isset($_GET['add-article']) && $_GET['add-article'] == 'true')
+                    if(isset($_GET['modif-user']) && $_GET['modif-user'] == 'true')
                     {
                     ?>
-                    <div class="alert alert-success alert-dismissable">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <h4><i class="fa fa-check-circle"></i> Succès</h4> L'article à bien été ajouter.
-                    </div>
-                    <?php } ?>
+                        <div class="alert alert-success alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-check-circle"></i> Succès
+                            </h4> 
+                            L'utilisateur à été Modifié
+                        </div>
                     <?php
-                    if(isset($_GET['add-article']) && $_GET['add-article'] == 'false')
+                    }
+                    ?>
+                    <?php
+                    if(isset($_GET['modif-user']) && $_GET['modif-user'] == 'false')
                     {
                     ?>
-                    <div class="alert alert-danger alert-dismissable">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur à été detectée lors de l'ajout de l'article.<br>Contactez le support technique.
-                    </div>
-                    <?php } ?>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-times-circle"></i> Erreur
+                            </h4> 
+                            Une erreur à été rencontrer lors de la modification de l'utilisateur.<br>Contactez le support technique.
+                        </div>
+                    <?php
+                    }
+                    ?>
 
                     <div class="row">
                         <div class="col-md-4 animation-fadeInRight">
@@ -306,7 +317,63 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         
                         <?php } ?>
                     </div>
+                    <div id="add-user" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h3 class="modal-title">Modification de l'utilisateur</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-horizontal form-bordered" action="<?php echo SITE,FOLDER; ?>inc/control/user.php" method="POST">
 
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="val_email">Adresse Mail <span class="text-danger">*</span></label>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <input type="text" id="val_email" name="login" class="form-control" value="<?php echo $donnee_user['login']; ?>">
+                                                    <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-text-input">Nom de l'utilisateur</label>
+                                            <div class="col-md-9">
+                                                <input type="text" id="example-text-input" name="nom_user" class="form-control" value="<?php echo $donnee_user['nom_user']; ?>">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-text-input">Prénom de l'utilisateur</label>
+                                            <div class="col-md-9">
+                                                <input type="text" id="example-text-input" name="prenom_user" class="form-control" value="<?php echo $donnee_user['prenom_user']; ?>">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="masked_phone">Numéro de Téléphone fixe</label>
+                                            <div class="col-md-6">
+                                                <input type="text" id="masked_phone" name="tel_user" class="form-control" value="<?php echo $donnee_user['tel_user']; ?>">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="masked_phone">Numéro de Téléphone Portable</label>
+                                            <div class="col-md-6">
+                                                <input type="text" id="masked_phone" name="port_user" class="form-control" value="<?php echo $donnee_user['port_user']; ?>">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group form-actions">
+                                            <button type="submit" class="btn btn-success" name="modif-user-valid" value="Valider"><i class="fa fa-check"></i> Modification de l'utilisateur</button>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     
 
                 </div>

@@ -139,6 +139,34 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <?php
                     }
                     ?>
+                    <?php
+                    if(isset($_GET['supp-user']) && $_GET['supp-user'] == 'true')
+                    {
+                    ?>
+                        <div class="alert alert-success alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-check-circle"></i> Succès
+                            </h4> 
+                            L'utilisateur à été Supprimer
+                        </div>
+                    <?php
+                    }
+                    ?>
+                    <?php
+                    if(isset($_GET['supp-user']) && $_GET['supp-user'] == 'false')
+                    {
+                    ?>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-times-circle"></i> Erreur
+                            </h4> 
+                            Une erreur à été rencontrer lors de la suppression de l'utilisateur.<br>Contactez le support technique.
+                        </div>
+                    <?php
+                    }
+                    ?>
 
 
                     <div class="block">
@@ -188,6 +216,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                         </td>
                                         <td>
                                             <a href="view.php?iduser=<?php echo $donnee_user['iduser']; ?>" class="btn btn-primary">Voir la fiche de l'utilisateur <i class="fa fa-arrow-right"></i></a>
+                                            <a href="<?php echo SITE,FOLDER; ?>inc/control/user.php?iduser=<?php echo $iduser; ?>&supp-user=valider" class="btn btn-danger"><i class="fa fa-times"></i></a>
                                         </td>
                                     </tr>   
                                     <?php } ?>
@@ -205,6 +234,8 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 </div>
                                 <div class="modal-body">
                                     <form class="form-horizontal form-bordered" action="<?php echo SITE,FOLDER; ?>inc/control/user.php" method="POST">
+
+                                        <input type="hidden" name="iduser" value="<?php echo $iduser; ?>" />
 
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="val_email">Adresse Mail <span class="text-danger">*</span></label>
