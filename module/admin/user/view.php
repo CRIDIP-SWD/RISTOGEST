@@ -163,7 +163,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     ?>
                                     <div class="chat-user-online">
                                         <span></span>
-                                        <img src="img/placeholders/avatars/avatar15@2x.jpg" alt="avatar" class="img-circle">
+                                        <img src="<?php echo SITE,FOLDER,ASSETS; ?>img/placeholders/avatars/avatar15@2x.jpg" alt="avatar" class="img-circle">
                                     </div>
                                     <?php } ?>
                                 </div>
