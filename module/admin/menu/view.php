@@ -163,7 +163,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         while($fam_menu = mysql_fetch_array($sql_fam_menu))
                         {
                         ?>
-                            <div class="col-md-4">
+                            <div class="col-md-12">
                                 <div class="block">
                                     <!-- Block Title -->
                                     <div class="block-title">
