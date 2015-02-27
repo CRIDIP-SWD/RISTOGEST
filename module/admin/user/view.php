@@ -149,23 +149,15 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <div class="block-title">
                                     <h2>Information sur l'utilisateur</h2>
                                 </div>
-                                <div style="">
+                                <div style="text-align: center;">
+                                    
+                                    <img src="<?php echo SITE,FOLDER,ASSETS; ?>img/placeholders/avatars/avatar15@2x.jpg" alt="avatar" class="img-circle">
+                                    
+                                    <span><?php echo $donnee_user['nom_user']; ?> <?php echo $donnee_user['prenom_user']; ?></span><br>
                                     <?php
-                                    if($donnee_user['connect'] == 0){
+                                        if($donnee_user['connect'] == 0){echo "<i class='fa fa-circle text-danger'></i> <span class='text-danger'>Déconnecter</span>";}
+                                        if($donnee_user['connect'] == 1){echo "<i class='fa fa-circle text-success'></i> <span class='text-success'>Connecter</span>";}
                                     ?>
-                                    <div class="chat-user-busy">
-                                        <span></span>
-                                        <img src="img/placeholders/avatars/avatar15@2x.jpg" alt="avatar" class="img-circle">
-                                    </div>
-                                    <?php } ?>
-                                    <?php
-                                    if($donnee_user['connect'] == 1){
-                                    ?>
-                                    <div class="chat-user-online">
-                                        <span></span>
-                                        <img src="<?php echo SITE,FOLDER,ASSETS; ?>img/placeholders/avatars/avatar15@2x.jpg" alt="avatar" class="img-circle">
-                                    </div>
-                                    <?php } ?>
                                 </div>
                             </div>
 
