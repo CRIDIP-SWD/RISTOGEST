@@ -146,11 +146,21 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align: left;">Coordonnée:</td>
+                                                    <td style="text-align: left;">Numéro de Téléphone:</td>
                                                     <td style="text-align: left;">
-                                                        <strong>Téléphone:</strong> <em><?php echo $donnee_center['telephone']; ?></em><br>
-                                                        <strong>Adresse Mail:</strong> <em><?php echo $donnee_center['email']; ?></em><br>
-                                                        <strong>Nb jour/Liv. Théorique:</strong> <em><?php echo $donnee_center['nb_liv_theorique']; ?> jours</em>
+                                                        <em><?php echo $donnee_center['telephone']; ?></em>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left;">Adresse Mail:</td>
+                                                    <td style="text-align: left;">
+                                                        <em><?php echo $donnee_center['email']; ?></em>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left;">Nombre de jour pour livraison Théorique:</td>
+                                                    <td style="text-align: left;">
+                                                        <em><?php echo $donnee_center['nb_liv_theorique']; ?></em>
                                                     </td>
                                                 </tr>
                                             </tbody>
