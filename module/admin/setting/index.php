@@ -181,11 +181,10 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <!-- Block Content -->
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <i class="fa fa-euro" style="font-size: 45px;"></i>
-                                        <span class="pull-right">
-                                            <div style="font-size: 45px; font-weight: bold;">2 300,00 €</div>
-                                            <div style="font-size: 25px;">CA réalisée</div>
-                                        </span>
+                                        <div>
+                                            <i class="fa fa-euro"></i>
+                                            <span>Test</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- END Block Content -->
