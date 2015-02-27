@@ -143,7 +143,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <?php } ?>
 
                     <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-md-5 animation-fadeInRight">
 
                             <div class="block">
                                 <div class="block-title">
