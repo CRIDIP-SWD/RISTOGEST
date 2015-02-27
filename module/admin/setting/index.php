@@ -132,12 +132,12 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 </div>
 
                                 <div class="col-md-4" style="text-align: center;">
-                                    <strong>50</strong>
+                                    <strong>50</strong><br>
                                     <small>Commandes utilisateurs</small>
                                 </div>
 
                                 <div class="col-md-4" style="text-align: center;">
-                                    <strong>50</strong>
+                                    <strong>50</strong><br>
                                     <small>Commandes Prestataire</small>
                                 </div>
 
