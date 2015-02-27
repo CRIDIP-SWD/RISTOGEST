@@ -153,7 +153,7 @@
                     </div>
                     <?php } ?>
                     <?php
-                    if($donnee_utilisateur['groupe'] == 0){
+                    if($donnee_utilisateur['groupe'] == 1){
                     ?>
                     <div class="row">
                         <div class="col-md-4">
