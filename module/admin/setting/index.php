@@ -179,44 +179,29 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <!-- END Block Title -->
 
                                 <!-- Block Content -->
-                                <div class="row">
-<div class="col-sm-6 col-lg-3">
-<div class="widget">
-<div class="widget-simple">
-<a class="widget-icon pull-left themed-background" href="javascript:void(0)">
-<i class="gi gi-package"></i>
+                                <div class="widget">
+<div class="widget-extra text-center themed-background-flatie">
+<h3 class="widget-content-light"><i class="fa fa-chevron-up animation-floating"></i> Monthly <strong>Stats</strong></h3>
+</div>
+<div class="widget-simple themed-background-dark-flatie">
+<div class="row text-center">
+<div class="col-xs-4">
+<a class="widget-icon themed-background-flatie" href="javascript:void(0)">
+<i class="gi gi-coins"></i>
 </a>
-<h3 class="text-right animation-stretchRight">+ <strong>50%</strong></h3>
+<h3 class="widget-content-light remove-margin-bottom">+ <strong>10%</strong><br><small>Earnings</small></h3>
 </div>
-</div>
-</div>
-<div class="col-sm-6 col-lg-3">
-<div class="widget">
-<div class="widget-simple">
-<a class="widget-icon pull-right themed-background-amethyst" href="javascript:void(0)">
-<i class="gi gi-wallet"></i>
+<div class="col-xs-4">
+<a class="widget-icon themed-background-flatie" href="javascript:void(0)">
+<i class="gi gi-thumbs_up"></i>
 </a>
-<h3 class="animation-stretchLeft">$ <strong>3.595</strong></h3>
+<h3 class="widget-content-light remove-margin-bottom">+ <strong>20%</strong><br><small>Sales</small></h3>
 </div>
-</div>
-</div>
-<div class="col-sm-6 col-lg-3">
-<div class="widget">
-<div class="widget-simple">
-<a class="widget-icon pull-left themed-background-night" href="javascript:void(0)">
-<i class="gi gi-bug animation-tossing"></i>
+<div class="col-xs-4">
+<a class="widget-icon themed-background-night" href="javascript:void(0)">
+<i class="fa fa-ticket"></i>
 </a>
-<h3 class="text-right animation-stretchRight">3 <strong>Bugs</strong></h3>
-</div>
-</div>
-</div>
-<div class="col-sm-6 col-lg-3">
-<div class="widget">
-<div class="widget-simple">
-<a class="widget-icon pull-right themed-background-fire" href="javascript:void(0)">
-<i class="gi gi-fire animation-floating"></i>
-</a>
-<h3 class="animation-stretchLeft">1 <strong>Crash</strong></h3>
+<h3 class="widget-content-light remove-margin-bottom">- <strong>10%</strong><br><small>Tickets</small></h3>
 </div>
 </div>
 </div>
