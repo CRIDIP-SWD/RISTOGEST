@@ -126,26 +126,19 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         <div class="row">
                             <div class="col-md-12">
                                 
-                                <div class="widget">
-                                    <div class="widget-extra text-center themed-background-dark-night">
-                                        <h3 class="widget-content-light"><i class="fa fa-arrow-up animation-floating"></i><strong>Statistique</strong> du centre de Gestion</h3>
-                                    </div>
-                                    <div class="widget-simple">
-                                        <div class="row text-center">
-                                            <div class="col-xs-6">
-                                                <a href="javascript:void(0)" class="widget-icon themed-background-spring">
-                                                    <i class="fa fa-euro"></i>
-                                                </a>
-                                                <h3 class="remove-margin-bottom">€ <strong>2 350,00</strong><br><small>de commande</small></h3>
-                                            </div>
-                                            <div class="col-xs-6">
-                                                <a href="javascript:void(0)" class="widget-icon themed-background-spring">
-                                                    <i class="fa fa-user"></i>
-                                                </a>
-                                                <h3 class="remove-margin-bottom"><strong>50</strong><br><small>Commande</small></h3>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="col-md-4" style="text-align: center;">
+                                    <strong>€</strong> 2 300,00<br>
+                                    <small>de Commandes</small>
+                                </div>
+
+                                <div class="col-md-4" style="text-align: center;">
+                                    <strong>50</strong>
+                                    <small>Commandes utilisateurs</small>
+                                </div>
+
+                                <div class="col-md-4" style="text-align: center;">
+                                    <strong>50</strong>
+                                    <small>Commandes Prestataire</small>
                                 </div>
 
                             </div>
