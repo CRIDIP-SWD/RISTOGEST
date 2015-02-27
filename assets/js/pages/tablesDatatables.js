@@ -25,7 +25,7 @@ var TablesDatatables = function() {
             });
             /* Initialize Datatables */
             $('#article').dataTable({
-                "iDisplayLength": 10,
+                "aoColumnDefs": [ { "bSortable": false, "aTargets": [ 1, 2 ] } ],
                 "aLengthMenu": [[10, 20, 30, -1], [10, 20, 30, "All"]]
             });
             /* Initialize Datatables */
