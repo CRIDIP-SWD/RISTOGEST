@@ -118,7 +118,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <div class="block">
                         <!-- Block Title -->
                         <div class="block-title">
-                            <h2>Votre Centre de Gestion</h2>
+                            <h2>Statistique</h2>
                         </div>
                         <!-- END Block Title -->
 
@@ -141,6 +141,32 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     <small style="font-size: 20px;">Commandes Prestataire</small>
                                 </div>
 
+                            </div>
+                            <div class="col-md-6">
+
+                                <div class="widget">
+                                    <div class="widget-extra themed-background-dark-night text-center">
+                                        <h3 class="widget-content-light">Evolution des commandes (par mois)</h3>
+                                    </div>
+                                    <div class="widget-extra-full text-center">
+                                        <!-- Jquery Sparkline (initialized in js/pages/widgetsStats.js), for more examples you can check out http://omnipotent.net/jquery.sparkline/#s-about -->
+                                        <span id="mini-chart-bar1">0,10,5,6,7,10,3</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+
+                                <div class="widget">
+                                    <div class="widget-extra themed-background-dark-night text-center">
+                                        <h3 class="widget-content-light">Weekly <strong>Sales</strong></h3>
+                                    </div>
+                                    <div class="widget-extra-full text-center">
+                                        <!-- Jquery Sparkline (initialized in js/pages/widgetsStats.js), for more examples you can check out http://omnipotent.net/jquery.sparkline/#s-about -->
+                                        <span id="mini-chart-bar1">0,10,5,6,7,10,3</span>
+                                    </div>
+                                </div>
+                                
                             </div>
                         </div>
                         <!-- END Block Content -->
