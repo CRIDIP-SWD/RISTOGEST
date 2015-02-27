@@ -103,7 +103,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             </h1>
                         </div>
                         <div class="pull-right">
-                            <a href="" class="btn btn-info"><i class="gi gi-edit"></i> Modifier les informations du centre</a>
+                            <a href="#modif-centre" data-toggle="modal" class="btn btn-info"><i class="gi gi-edit"></i> Modifier les informations du centre</a>
                         </div>
                     </div>
                     <ul class="breadcrumb breadcrumb-top">
@@ -309,6 +309,52 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     </div>
 
                 </div>
+                <div id="modif-centre" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h3 class="modal-title">Modification de l'utilisateur</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-horizontal form-bordered" action="<?php echo SITE,FOLDER; ?>inc/control/centre.php" method="POST">
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-text-input">Raison Social</label>
+                                            <div class="col-md-9">
+                                                <input type="text" id="example-text-input" name="raison_social" class="form-control" value="<?php echo $donnee_center['raison_social']; ?>">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-text-input">Adresse Postal</label>
+                                            <div class="col-md-9">
+                                                <input type="text" id="example-text-input" name="adresse" class="form-control" value="<?php echo $donnee_center['adresse']; ?>">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label" for="example-text-input">Code Postal</label>
+                                            <div class="col-md-3">
+                                                <input type="text" id="example-text-input" name="code_postal" class="form-control" value="<?php echo $donnee_center['code_postal']; ?>">
+                                            </div>
+                                            <label class="col-md-2 control-label" for="example-text-input">Ville</label>
+                                            <div class="col-md-5">
+                                                <input type="text" id="example-text-input" name="ville" class="form-control" value="<?php echo $donnee_center['ville']; ?>">
+                                            </div>
+                                        </div>
+
+                                        
+
+                                        <div class="form-group form-actions">
+                                            <button type="submit" class="btn btn-success" name="modif-user-valid" value="Valider"><i class="fa fa-check"></i> Modification de l'utilisateur</button>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 <!-- END Page Content -->
 
                 <?php include ('../../../inc/footer.php'); ?>
@@ -332,6 +378,8 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
         <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/pages/compAnimations.js"></script>
         <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/pages/formsValidation.js"></script>
         <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/pages/widgetsStats.js"></script>
+        <script src="<?php echo SITE,FOLDER,ASSETS; ?>js/pages/formsGeneral.js"></script>
+        <script>$(function(){ FormsGeneral.init(); });</script>
         <script>$(function(){ WidgetsStats.init(); });</script>
         <script>$(function(){ FormsValidation.init(); });</script>
         <script>$(function(){ CompAnimations.init(); });</script>
