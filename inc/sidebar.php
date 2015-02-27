@@ -100,6 +100,8 @@
                             <li>
                                 <a href="<?php echo SITE,FOLDER; ?>module/admin/prestataire/index.php"><i class="gi gi-vcard"></i> Gestion des Prestataires</a>
                             </li>
+                            <li>
+                                <a href="<?php echo SITE,FOLDER; ?>module/admin/setting/purge.php"><i class="fa fa-refresh fa-spin"></i> Purge de la base de donnée</a>
 
                         </ul>
                         <?php } ?>
