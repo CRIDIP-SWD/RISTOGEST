@@ -133,13 +133,13 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     <div class="widget-simple">
                                         <div class="row text-center">
                                             <div class="col-xs-6">
-                                                <a href="javascript:void(0)" class="widget-icon themed-background-fire">
+                                                <a href="javascript:void(0)" class="widget-icon themed-background-spring">
                                                     <i class="fa fa-euro"></i>
                                                 </a>
                                                 <h3 class="remove-margin-bottom">€ <strong>2 350,00</strong><br><small>de commande</small></h3>
                                             </div>
                                             <div class="col-xs-6">
-                                                <a href="javascript:void(0)" class="widget-icon themed-background-fire">
+                                                <a href="javascript:void(0)" class="widget-icon themed-background-spring">
                                                     <i class="fa fa-user"></i>
                                                 </a>
                                                 <h3 class="remove-margin-bottom"><strong>50</strong><br><small>Commande</small></h3>
