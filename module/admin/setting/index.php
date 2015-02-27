@@ -126,7 +126,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
 
                                 <!-- Block Content -->
                                 <div style="text-align: center;">
-                                    <i class="fa fa-building" style="font-size: 45px;"></i>
+                                    <i class="fa fa-building img-circle" style="font-size: 75px;"></i>
                                 </div>
                                 <!-- END Block Content -->
                             </div>
