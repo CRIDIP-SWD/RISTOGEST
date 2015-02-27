@@ -139,27 +139,27 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             <tbody>
 
                                                 <tr>
-                                                    <td style="text-align: left;">Adresse:</td>
-                                                    <td style="text-align: left;">
+                                                    <td style="text-align: left; width: 75%;">Adresse:</td>
+                                                    <td style="text-align: left; width: 25%;">
                                                         <?php echo $donnee_center['adresse']; ?><br>
                                                         <?php echo $donnee_center['code_postal']; ?> <?php echo $donnee_center['ville']; ?>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align: left;">Numéro de Téléphone:</td>
-                                                    <td style="text-align: left;">
+                                                    <td style="text-align: left; width: 75%;">Numéro de Téléphone:</td>
+                                                    <td style="text-align: left; width: 25%;">
                                                         <em><?php echo $donnee_center['telephone']; ?></em>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align: left;">Adresse Mail:</td>
-                                                    <td style="text-align: left;">
+                                                    <td style="text-align: left; width: 75%;">Adresse Mail:</td>
+                                                    <td style="text-align: left; width: 25%;">
                                                         <em><?php echo $donnee_center['email']; ?></em>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align: left;">Nombre de jour pour livraison Théorique:</td>
-                                                    <td style="text-align: left;">
+                                                    <td style="text-align: left; width: 75%;">Nombre de jour pour livraison Théorique:</td>
+                                                    <td style="text-align: left; width: 25%;">
                                                         <em><?php echo $donnee_center['nb_liv_theorique']; ?></em>
                                                     </td>
                                                 </tr>
