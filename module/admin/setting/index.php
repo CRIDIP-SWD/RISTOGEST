@@ -192,7 +192,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $sql_commande = mysql_query("SELECT * FROM commande ORDER BY date_commande LIMIT 5 DESC")or die(mysql_error());
+                                            $sql_commande = mysql_query("SELECT * FROM commande ORDER BY date_commande DESC LIMIT 5")or die(mysql_error());
                                             while($donnee_commande = mysql_fetch_array($sql_commande))
                                             {
                                             ?>
