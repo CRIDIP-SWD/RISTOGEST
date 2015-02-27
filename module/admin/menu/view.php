@@ -146,6 +146,24 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         <h4><i class="fa fa-warning"></i> Attention</h4> Impossible d'ajouter un article déja existant dans le menu.
                     </div>
                     <?php } ?>
+                    <?php
+                    if(isset($_GET['supp-article']) && $_GET['supp-article'] == 'true')
+                    {
+                    ?>
+                    <div class="alert alert-success alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h4><i class="fa fa-check-circle"></i> Succès</h4> L'article à bien été supprimer.
+                    </div>
+                    <?php } ?>
+                    <?php
+                    if(isset($_GET['supp-article']) && $_GET['supp-article'] == 'false')
+                    {
+                    ?>
+                    <div class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur à été detectée lors de la suppression de l'article.<br>Contactez le support technique.
+                    </div>
+                    <?php } ?>
 
 
 
