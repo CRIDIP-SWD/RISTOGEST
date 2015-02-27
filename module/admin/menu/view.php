@@ -106,7 +106,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             
                         </div>
                         <div class="pull-right">
-                            <a href="" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Retour à la liste des menus</a>
+                            <a href="index.php" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Retour à la liste des menus</a>
                         </div>
                     </div>
                     <ul class="breadcrumb breadcrumb-top">
