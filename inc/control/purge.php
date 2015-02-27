@@ -1,7 +1,7 @@
 <?php 
 include('../db.conf.php');
 BaseConnect();
- ?>
+?>
 
 <?php
 if(isset($_GET['purge']) && $_GET['purge'] == 'valider')
