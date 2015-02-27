@@ -179,43 +179,13 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <!-- END Block Title -->
 
                                 <!-- Block Content -->
-                                <div style="text-align: center;">
-                                    <div class="img-circle">
-                                        <i class="fa fa-building" style="font-size: 75px;"></i>
-                                    </div>
-
-                                    <div style="font-size: 35px; font-weight: bold;"><?php echo $donnee_center['raison_social']; ?></div>
-                                    <div class="table-responsive animation-fadeIn" style="padding-top: 30px;">
-                                        <table id="general-table" class="table table-striped table-vcenter">
-                                            <tbody>
-
-                                                <tr>
-                                                    <td style="text-align: left; width: 75%;">Adresse:</td>
-                                                    <td style="text-align: left; width: 25%;">
-                                                        <?php echo $donnee_center['adresse']; ?><br>
-                                                        <?php echo $donnee_center['code_postal']; ?> <?php echo $donnee_center['ville']; ?>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: left; width: 75%;">Numéro de Téléphone:</td>
-                                                    <td style="text-align: left; width: 25%;">
-                                                        <em><?php echo $donnee_center['telephone']; ?></em>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: left; width: 75%;">Adresse Mail:</td>
-                                                    <td style="text-align: left; width: 25%;">
-                                                        <em><?php echo $donnee_center['email']; ?></em>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: left; width: 75%;">Nombre de jour pour livraison Théorique:</td>
-                                                    <td style="text-align: left; width: 25%;">
-                                                        <em><?php echo $donnee_center['nb_liv_theorique']; ?> jours</em>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <i class="fa fa-euro" style="font-size: 45px;"></i>
+                                        <span class="pull-right">
+                                            <div style="font-size: 45px; font-weight: bold;">2 300,00 €</div>
+                                            <div style="font-size: 25px;">CA réalisée</div>
+                                        </span>
                                     </div>
                                 </div>
                                 <!-- END Block Content -->
