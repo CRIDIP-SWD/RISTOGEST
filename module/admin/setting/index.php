@@ -1,5 +1,8 @@
 <?php include ('../../../inc/header.php'); ?>
-
+<?php
+$sql_center = mysql_query("SELECT * FROM setting WHERE idsetting = '1'")or die(mysql_error());
+$donnee_center = mysql_fetch_array($sql_center);
+?>
 <?php
 define("TITLE_PAGE", "CENTRE DE GESTION");
 define("SUBTITLE_PAGE", "CONFIGURATION");
