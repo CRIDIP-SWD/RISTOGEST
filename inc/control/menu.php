@@ -28,7 +28,7 @@ if(isset($_POST['add-article']) && $_POST['add-article'] == 'Valider')
 	$idarticle = $_POST['idarticle'];
 
 	//Verification que le produit ne soit pas déja insérer
-	$sql_verif_article = mysql_query("SELECT SUM(idarticle) FROM article_menu WHERE idarticle = '$idarticle'");
+	$sql_verif_article = mysql_query("SELECT SUM(idarticle) FROM article_menu WHERE idarticle = '$idarticle' AND idmenu = '$idmenu'");
 	$verif_article = mysql_result($sql_verif_article, 0);
 
 	if($verif_article == 0)
