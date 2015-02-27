@@ -180,7 +180,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
 
                                 <!-- Block Content -->
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-12">
                                         <div>
                                             <i class="fa fa-euro" style="font-size: 45px;"></i>
                                             <span style="font-size: 45px; text-align: right;">
