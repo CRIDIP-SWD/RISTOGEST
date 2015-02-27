@@ -149,7 +149,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <div class="block-title">
                                     <h2>Information sur l'utilisateur</h2>
                                 </div>
-                                <div style="text-align: center;">
+                                <div style="text-align: center;" class="animation-fadeIn">
                                     
                                     <img src="<?php echo SITE,FOLDER,ASSETS; ?>img/placeholders/avatars/avatar15@2x.jpg" alt="avatar" class="img-circle"><br>
 
@@ -164,7 +164,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 </div>
                                 <!-- Tableau Statistique -->
                                 <h2>Chiffres de cette Utilisateur</h2>
-                                <div class="table-responsive" style="padding-top: 30px;">
+                                <div class="table-responsive animation-fadeIn" style="padding-top: 30px;">
                                     <table id="general-table" class="table table-striped table-vcenter">
                                         <tbody>
 
@@ -193,7 +193,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
 
                                 <h2>Informations et coordonnées de l'utilisateur</h2>
 
-                                <div class="table-responsive" style="padding-top: 30px;">
+                                <div class="table-responsive animation-fadeIn" style="padding-top: 30px;">
                                     <table id="general-table" class="table table-striped table-vcenter">
                                         <tbody>
 
