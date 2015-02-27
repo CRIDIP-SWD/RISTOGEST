@@ -134,9 +134,12 @@
                     <!-- END Dashboard Header -->
 
                     <!-- Widgets Row -->
+                    <?php
+                    if($donnee_user['groupe'] == 0){
+                    ?>
                     <div class="row">
                         <div class="col-md-12">
-                            <a class="widget widget-hover-effect1" href="page_ready_article.php">
+                            <a class="widget widget-hover-effect1" href="<?php echo SITE, FOLDER; ?>/module/commande/index.php#add-cmd" data-toggle="modal">
                                 <div class="widget-simple">
                                     <div class="widget-icon pull-left themed-background animation-fadeIn">
                                         <i class="gi gi-circle_plus"></i>
@@ -148,6 +151,49 @@
                             </a>
                         </div>
                     </div>
+                    <?php } ?>
+                    <?php
+                    if($donnee_user['groupe'] == 0){
+                    ?>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a class="widget widget-hover-effect1" href="<?php echo SITE, FOLDER; ?>/module/admin/menu/index.php#add-menu" data-toggle="modal">
+                                <div class="widget-simple">
+                                    <div class="widget-icon pull-left themed-background animation-fadeIn">
+                                        <i class="gi gi-circle_plus"></i>
+                                    </div>
+                                    <h3 class="widget-content text-right animation-pullDown">
+                                        Nouveau <strong>Menu</strong><br>
+                                    </h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a class="widget widget-hover-effect1" href="<?php echo SITE, FOLDER; ?>/module/admin/article/index.php#add-article" data-toggle="modal">
+                                <div class="widget-simple">
+                                    <div class="widget-icon pull-left themed-background animation-fadeIn">
+                                        <i class="gi gi-circle_plus"></i>
+                                    </div>
+                                    <h3 class="widget-content text-right animation-pullDown">
+                                        Nouvel <strong>Article</strong><br>
+                                    </h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a class="widget widget-hover-effect1" href="<?php echo SITE, FOLDER; ?>/module/admin/commande/presta/index.php#add-cmd-presta" data-toggle="modal">
+                                <div class="widget-simple">
+                                    <div class="widget-icon pull-left themed-background animation-fadeIn">
+                                        <i class="gi gi-circle_plus"></i>
+                                    </div>
+                                    <h3 class="widget-content text-right animation-pullDown">
+                                        Nouvelle <strong>Commande prestataire</strong><br>
+                                    </h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <?php } ?>
                     <div class="row">
                         <div class="col-md-12">
 
