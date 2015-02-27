@@ -160,7 +160,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                 <tr>
                                                     <td style="text-align: left; width: 75%;">Nombre de jour pour livraison Théorique:</td>
                                                     <td style="text-align: left; width: 25%;">
-                                                        <em><?php echo $donnee_center['nb_liv_theorique']; ?></em>
+                                                        <em><?php echo $donnee_center['nb_liv_theorique']; ?> jours</em>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -180,14 +180,15 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
 
                                 <!-- Block Content -->
                                 <div class="col-sm-4">
-
+                                    <div class="pull-left">
+                                        <i class="fa fa-euro" style="font-size: 45px;"></i>
+                                    </diV>
+                                    <div class="pull-right">
+                                        <div style="font-size: 45px; font-weight: bold;">2 300,95 €</div>
+                                        <div style="font-size: 25px;">CA réalisée</div>
+                                    </div>
                                 </div> 
-                                <div class="col-sm-4">
-
-                                </div> 
-                                <div class="col-sm-4">
-
-                                </div> 
+                                
 
                                 <!-- END Block Content -->
                             </div>
