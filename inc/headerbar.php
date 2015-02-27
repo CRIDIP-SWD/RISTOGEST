@@ -29,13 +29,15 @@
                                     while($donnee_commande = mysql_fetch_array($sql_commande))
                                     {
                                     ?>
-                                    <div class="alert alert-info alert-alt">
-                                        <small>
-                                            Num CMD: <?php echo $donnee_commande['num_commande']; ?><br>
-                                            Identité: <?php echo $donnee_commande['nom_user']; ?> <?php echo $donnee_commande['prenom_user']; ?><br>
-                                            Montant: <?php echo number_format($donnee_commande['montant_total'], 2, ',', ' ')." €"; ?>
-                                        </small>
-                                    </div>
+                                    <a href="<?php echo SITE,FOLDER; ?>module/admin/commande/user/view.php?idcommande=<?php echo $donnee_commande['idcommande']; ?>">
+                                        <div class="alert alert-info alert-alt">
+                                            <small>
+                                                Num CMD: <?php echo $donnee_commande['num_commande']; ?><br>
+                                                Identité: <?php echo $donnee_commande['nom_user']; ?> <?php echo $donnee_commande['prenom_user']; ?><br>
+                                                Montant: <?php echo number_format($donnee_commande['montant_total'], 2, ',', ' ')." €"; ?>
+                                            </small>
+                                        </div>
+                                    </a>
                                     <?php } ?>
                                 </li>
                             </ul>
