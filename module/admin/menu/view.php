@@ -7,7 +7,7 @@ $donnee_menu = mysql_fetch_array($sql_menu);
 ?>
 <?php
 define("TITLE_PAGE", "Menu du ".date("d-m-Y", $donnee_menu['date_menu']));
-define("SUBTITLE_PAGE", "SEMAINE".$donnee_menu['semaine']);
+define("SUBTITLE_PAGE", "SEMAINE ".$donnee_menu['semaine']);
 //Breadcumb
 $li_start = "<li>".$logiciel."</li>";
 $li1 = "";
