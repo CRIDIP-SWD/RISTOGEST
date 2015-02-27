@@ -174,7 +174,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     <h3 class="modal-title">Nouveau Menu</h3>
                                 </div>
                                 <div class="modal-body">
-                                    <form class="form-horizontal form-bordered" action="<?php echo SITE,FOLDER; ?>inc/control/menu.php" action="POST">
+                                    <form class="form-horizontal form-bordered" action="<?php echo SITE,FOLDER; ?>inc/control/menu.php" method="POST">
 
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-text-input">Semaine</label>
