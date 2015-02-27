@@ -247,7 +247,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $sql_commande = mysql_query("SELECT * FROM commande WHERE iduser = '$iduser'")or die(mysql_error());
+                                            $sql_commande = mysql_query("SELECT * FROM commande WHERE iduser = '$iduser' ORDER BY date_commande DESC")or die(mysql_error());
                                             while($donnee_commande = mysql_fetch_array($sql_commande))
                                             {
                                             ?>
