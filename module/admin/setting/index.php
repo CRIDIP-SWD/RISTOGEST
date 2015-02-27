@@ -163,7 +163,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     </div>
                                     <div class="widget-extra-full text-center">
                                         <!-- Jquery Sparkline (initialized in js/pages/widgetsStats.js), for more examples you can check out http://omnipotent.net/jquery.sparkline/#s-about -->
-                                        <span id="mini-chart-bar1">0,10,5,6,7,10,3</span>
+                                        <span id="mini-chart-bar1">0,10,5,6,7,10,2</span>
                                     </div>
                                 </div>
                                 
