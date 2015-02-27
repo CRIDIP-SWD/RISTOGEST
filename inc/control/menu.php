@@ -4,7 +4,7 @@ BaseConnect();
 ?>
 <?php 
 //Ajout du Menu
-if(isset($_POST['add-menu']) && $_POST['add-menu'] == 'Valider')
+if(isset($_POST['add-menu-valid']) && $_POST['add-menu-valid'] == 'Valider')
 {
 	$semaine = $_POST['semaine'];
 	$date_menu = strtotime($_POST['date_menu']);
@@ -50,4 +50,11 @@ if(isset($_POST['add-article']) && $_POST['add-article'] == 'Valider')
 ?>
 <?php
 //Suppression de l'article dans le menu
+if(isset($_GET['supp-article']) && $_GET['supp-article'] == 'valider')
+{
+	$idarticlemenu = $_GET['idarticlemenu'];
+	$idmenu = $_GET['idmenu'];
+
+	$sql_delete_article_menu = 
+}
 ?>

@@ -191,7 +191,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                         </div>
 
                                         <div class="form-group form-actions">
-                                            <button type="submit" class="btn btn-success" name="add-menu" value="Valider"><i class="fa fa-check"></i> Ajouter le menu</button>
+                                            <button type="submit" class="btn btn-success" name="add-menu-valid" value="Valider"><i class="fa fa-check"></i> Ajouter le menu</button>
                                         </div>
 
                                     </form>
