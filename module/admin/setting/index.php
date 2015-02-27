@@ -174,38 +174,72 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             <div class="block">
                                 <!-- Block Title -->
                                 <div class="block-title">
-                                    <h2>Centre de Gestion</h2>
+                                    <h2>Dernières commandes utilisateur</h2>
                                 </div>
                                 <!-- END Block Title -->
 
                                 <!-- Block Content -->
-                                <div class="widget">
-<div class="widget-extra text-center themed-background-flatie">
-<h3 class="widget-content-light"><i class="fa fa-chevron-up animation-floating"></i> Monthly <strong>Stats</strong></h3>
-</div>
-<div class="widget-simple themed-background-dark-flatie">
-<div class="row text-center">
-<div class="col-xs-4">
-<a class="widget-icon themed-background-flatie" href="javascript:void(0)">
-<i class="gi gi-coins"></i>
-</a>
-<h3 class="widget-content-light remove-margin-bottom">+ <strong>10%</strong><br><small>Earnings</small></h3>
-</div>
-<div class="col-xs-4">
-<a class="widget-icon themed-background-flatie" href="javascript:void(0)">
-<i class="gi gi-thumbs_up"></i>
-</a>
-<h3 class="widget-content-light remove-margin-bottom">+ <strong>20%</strong><br><small>Sales</small></h3>
-</div>
-<div class="col-xs-4">
-<a class="widget-icon themed-background-night" href="javascript:void(0)">
-<i class="fa fa-ticket"></i>
-</a>
-<h3 class="widget-content-light remove-margin-bottom">- <strong>10%</strong><br><small>Tickets</small></h3>
-</div>
-</div>
-</div>
-</div>
+                                <div class="table-responsive">
+                                    <table id="general-table" class="table table-striped table-vcenter">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">Numéro de la commande</th>
+                                                <th class="text-center">Date de la commande</th>
+                                                <th style="text-align: right;">Montant de la commande</th>
+                                                <th class="text-center">Etat de la commande</th>  
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            $sql_commande = mysql_query("SELECT * FROM commande WHERE iduser = '$iduser' ORDER BY date_commande DESC")or die(mysql_error());
+                                            while($donnee_commande = mysql_fetch_array($sql_commande))
+                                            {
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $donnee_commande['num_commande']; ?></td>
+                                                <td><?php echo date("d-m-Y", $donnee_commande['date_commande']); ?></td>
+                                                <td style="text-align: right;"><?php echo number_format($donnee_commande['montant_total'], 2, ',', ' ')." €"; ?></td>
+                                                <td class="text-center">
+                                                    <?php
+                                                    switch ($donnee_commande['etat_commande']) {
+                                                        case '0':
+                                                            echo "<span class='label label-default'><i class='fa fa-times'></i> Commande créer, non valider par l'utilisateur</span>";
+                                                            break;
+
+                                                        case '1':
+                                                            echo "<span class='label label-danger'><i class='fa fa-check'></i> Commande Valider</span>";
+                                                            break;
+
+                                                        case '2':
+                                                            echo "<span class='label label-warning'><i class='fa fa-refresh fa-spin'></i> Traitement en cours...</span>";
+                                                            break;
+
+                                                        case '3':
+                                                            echo "<span class='label label-success'><i class='fa fa-times'></i> Commande Disponible au centre</span>";
+                                                            break;
+                                                        
+                                                        default:
+                                                            # code...
+                                                            break;
+                                                    }
+
+                                                    ?>
+                                                </td>
+                                            </tr>
+                                            <?php } ?>                                           
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="3" style="text-align: right;">Total des Commandes</td>
+                                                <td style="text-align: right;">
+                                                    <?php
+                                                    echo number_format(mysql_result($sql_sum_cmd, 0), 2, ',', ' ')." €";
+                                                    ?>
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
                                 <!-- END Block Content -->
                             </div>
                         </div>
