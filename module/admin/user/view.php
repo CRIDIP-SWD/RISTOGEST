@@ -143,7 +143,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <?php } ?>
 
                     <div class="row">
-                        <div class="col-md-5 animation-fadeInRight">
+                        <div class="col-md-4 animation-fadeInRight">
 
                             <div class="block">
                                 <div class="block-title">
@@ -230,7 +230,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         <?php
                         if($donnee_user['groupe'] == 0){
                         ?>
-                        <div class="col-md-7 animation-fadeInLeft">
+                        <div class="col-md-8 animation-fadeInLeft">
                             <div class="block">
                                 <div class="block-title">
                                     <h2>Commande de L'utilisateur</h2>
@@ -243,7 +243,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         <?php
                         if($donnee_user['groupe'] == 1){
                         ?>
-                        <div class="col-md-7 animation-fadeInLeft">
+                        <div class="col-md-8 animation-fadeInLeft">
                             <div class="block">
                                 <div class="block-title">
                                     <h2>Commande effectuer par l'administrateur</h2>
