@@ -13,33 +13,34 @@
 
                     <!-- Right Header Navigation -->
                     <ul class="nav navbar-nav-custom pull-right">
+                    <?php
+                    if($count_commande > 0){
+                    ?>
                         <li class="dropdown">
                             <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="gi gi-cart_in"></i>
                                 <span class="label label-warning label-indicator animation-floating">4</span>
                             </a>
                             <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
-                                <li class="dropdown-header text-center">Activity</li>
+                                <li class="dropdown-header text-center">Nouvelle Commande</li>
                                 <li>
-                                    <div class="alert alert-success alert-alt">
-                                        <small>5 min ago</small><br>
-                                        <i class="fa fa-thumbs-up fa-fw"></i> You had a new sale ($10)
-                                    </div>
+                                    <?php
+                                    $sql_commande = mysql_query("SELECT * FROM commande, utilisateur WHERE commande.iduser = utilisateur.iduser AND etat_commande = '1'")or die(mysql_error());
+                                    while($donnee_commande = mysql_fetch_array($sql_commande))
+                                    {
+                                    ?>
                                     <div class="alert alert-info alert-alt">
-                                        <small>10 min ago</small><br>
-                                        <i class="fa fa-arrow-up fa-fw"></i> Upgraded to Pro plan
+                                        <small>
+                                            Num CMD: <?php echo $donnee_commande['num_commande']; ?><br>
+                                            Identité: <?php echo $donnee_commande['nom_user']; ?> <?php echo $donnee_commande['prenom_user']; ?><br>
+                                            Montant: <?php echo number_format($donnee_commande['montant_total'], 2, ',', ' ')." €"; ?>
+                                        </small>
                                     </div>
-                                    <div class="alert alert-warning alert-alt">
-                                        <small>3 hours ago</small><br>
-                                        <i class="fa fa-exclamation fa-fw"></i> Running low on space<br><strong>18GB in use</strong> 2GB left
-                                    </div>
-                                    <div class="alert alert-danger alert-alt">
-                                        <small>Yesterday</small><br>
-                                        <i class="fa fa-bug fa-fw"></i> <a href="javascript:void(0)" class="alert-link">New bug submitted</a>
-                                    </div>
+                                    <?php } ?>
                                 </li>
                             </ul>
                         </li>
+                    <?php } ?>
                         <!-- User Dropdown -->
                         <li class="dropdown">
                             <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">

@@ -45,3 +45,8 @@ if($etat_programme == 0){
 	header("Location: systeme_inacessible.php");
 }
 ?>
+<?php
+$sql_count_commande = mysql_query("SELECT COUNT(idcommande) FROM commande WHERE etat_commande = '1'");
+$count_commande = mysql_result($sql_count_commande, 0);
+
+?>
