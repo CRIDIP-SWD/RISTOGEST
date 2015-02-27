@@ -117,11 +117,11 @@ if(isset($_POST['modif-user-valid']) && $_POST['modif-user-valid'] == 'Valider')
      		//ENVOIE
      		mail($to, $subject, $message);
 
-     header("Location: ../../module/admin/user/view.php?iduser=$iduser&modif-user=true");
+     header("Location: ../../module/admin/user/view.php?iduser=".$iduser."&modif-user=true");
 
 
 	}else{
-		header("Location: ../../module/admin/user/view.php?iduser=$iduser&modif-user=false");
+		header("Location: ../../module/admin/user/view.php?iduser=".$iduser."&modif-user=false");
 	}
 }
 
