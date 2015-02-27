@@ -136,15 +136,15 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             <tbody>
 
                                                 <tr>
-                                                    <td>Adresse:</td>
-                                                    <td>
+                                                    <td style="text-align: left;">Adresse:</td>
+                                                    <td style="text-align: left;">
                                                         <?php echo $donnee_center['adresse']; ?><br>
                                                         <?php echo $donnee_center['code_postal']; ?> <?php echo $donnee_center['ville']; ?>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Coordonnée:</td>
-                                                    <td>
+                                                    <td style="text-align: left;">Coordonnée:</td>
+                                                    <td style="text-align: left;">
                                                         <strong>Téléphone:</strong> <em><?php echo $donnee_center['telephone']; ?></em><br>
                                                         <strong>Adresse Mail:</strong> <em><?php echo $donnee_center['email']; ?></em><br>
                                                         <strong>Nb jour/Liv. Théorique:</strong> <em><?php echo $donnee_center['nb_liv_theorique']; ?></em>
@@ -167,13 +167,13 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
 
                                 <!-- Block Content -->
                                 <div class="col-sm-4">
-                                    
+
                                 </div> 
                                 <div class="col-sm-4">
-                                    
+
                                 </div> 
                                 <div class="col-sm-4">
-                                    
+
                                 </div> 
 
                                 <!-- END Block Content -->
