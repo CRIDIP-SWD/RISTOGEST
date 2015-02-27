@@ -163,7 +163,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     </div>
                                 </div>
                                 <!-- Tableau Statistique -->
-                                <div class="table-responsive">
+                                <div class="table-responsive" style="padding-top: 30px;">
                                     <table id="general-table" class="table table-striped table-vcenter">
                                         <tbody>
 
