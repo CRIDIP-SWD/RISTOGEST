@@ -252,17 +252,46 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             {
                                             ?>
                                             <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td><?php echo $donnee_commande['num_commande']; ?></td>
+                                                <td><?php echo date("d-m-Y", $donnee_commande['date_commande']; ?></td>
+                                                <td style="text-align: right;"><?php echo number_format($donnee_commande['montant_total'], 2, ',', ' ')." €"; ?></td>
+                                                <td class="text-center">
+                                                    <?php
+                                                    switch ($donnee_commande['etat_commande']) {
+                                                        case '0':
+                                                            echo "<span class='label label-default'><i class='fa fa-times'></i> Commande créer, non valider par l'utilisateur</span>";
+                                                            break;
+
+                                                        case '1':
+                                                            echo "<span class='label label-danger'><i class='fa fa-check'></i> Commande Valider</span>";
+                                                            break;
+
+                                                        case '2':
+                                                            echo "<span class='label label-warning'><i class='fa fa-refresh fa-spin'></i> Traitement en cours...</span>";
+                                                            break;
+
+                                                        case '3':
+                                                            echo "<span class='label label-success'><i class='fa fa-times'></i> Commande Disponible au centre</span>";
+                                                            break;
+                                                        
+                                                        default:
+                                                            # code...
+                                                            break;
+                                                    }
+
+                                                    ?>
+                                                </td>
                                             </tr>
                                             <?php } ?>                                           
                                         </tbody>
                                         <tfoot>
                                             <tr>
                                                 <td colspan="3" style="text-align: right;">Total des Commandes</td>
-                                                <td style="text-align: right;">0,00 €</td>
+                                                <td style="text-align: right;">
+                                                    <?php
+                                                    echo number_format(mysql_result($sql_sum_cmd, 0), 2, ',', ' ')." €";
+                                                    ?>
+                                                </td>
                                             </tr>
                                         </tfoot>
                                     </table>
