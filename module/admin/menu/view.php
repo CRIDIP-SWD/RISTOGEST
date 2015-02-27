@@ -103,6 +103,9 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             <h1>
                                 <i class="gi gi-user"></i><?php echo TITLE_PAGE; ?><br><small><?php echo SUBTITLE_PAGE; ?></small>
                             </h1>
+                            <div class="pull-right">
+                                <a href="" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Retour à la liste des menus</a>
+                            </div>
                         </div>
                     </div>
                     <ul class="breadcrumb breadcrumb-top">
@@ -115,9 +118,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         if(empty($li_end)){echo "";}else{echo $li_end;}
                         ?>
                     </ul>
-                    <div class="pull-right">
-                        <a href="" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Retour à la liste des menus</a>
-                    </div>
+
                     <!-- END Blank Header -->
                     <!-- RESULTAT DES ETATS -->
 
