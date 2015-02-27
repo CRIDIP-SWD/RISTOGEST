@@ -303,15 +303,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         <?php
                         if($donnee_user['groupe'] == 1){
                         ?>
-                        <div class="col-md-8 animation-fadeInLeft">
-                            <div class="block">
-                                <div class="block-title">
-                                    <h2>Commande effectuer par l'administrateur</h2>
-                                </div>
-                                
-
-                            </div>
-                        </div>
+                        
                         <?php } ?>
                     </div>
 
