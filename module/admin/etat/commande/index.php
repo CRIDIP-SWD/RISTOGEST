@@ -119,6 +119,8 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <a href="commande-general.php" class="btn btn-block btn-info"><i class="fi fi-pdf"></i> Listing des Commandes (Général)</a>
                     <a href="commande-presta.php" class="btn btn-block btn-info"><i class="fi fi-pdf"></i> Listing des Commandes (A commander au prestataire)</a>
                     <a href="#choix-user" data-toggle="modal" class="btn btn-block btn-info"><i class="fi fi-pdf"></i> Listing des Commandes (par utilisateur)</a>
+                    <hr>
+                    <a href="#date-presta" data-toggle="modal" class="btn btn-block btn-info"><i class="fi fi-pdf"></i> Liste des Articles à commander au prestataire (par date)</a>
 
 
                     <div id="choix-user" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -144,6 +146,36 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                                 <option value="<?php echo $donnee_user['iduser']; ?>"><?php echo $donnee_user['nom_user']; ?> <?php echo $donnee_user['prenom_user']; ?></option>
                                                                 <?php } ?>
                                                             </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group form-actions">
+                                                        <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Voir l'état par utilisateur</button>
+                                                    </div>
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="date-presta" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h3 class="modal-title">Choix de l'utilisateur</h3>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form class="form-horizontal form-bordered" action="commande-prestataire.php" method="POST">
+
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label" for="example-daterange1">Date</label>
+                                                        <div class="col-md-8">
+                                                            <div class="input-group input-daterange" data-date-format="mm-dd-yyyy">
+                                                                <input type="text" id="example-daterange1" name="date_commande1" class="form-control text-center" placeholder="De">
+                                                                <span class="input-group-addon"><i class="fa fa-angle-right"></i></span>
+                                                                <input type="text" id="example-daterange2" name="date_commande2" class="form-control text-center" placeholder="au">
+                                                            </div>
                                                         </div>
                                                     </div>
 
