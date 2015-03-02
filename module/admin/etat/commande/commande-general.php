@@ -75,16 +75,16 @@ $import_centre = mysql_fetch_array($sql_import_centre);
             </td>
             <td style="padding-left: 5px; border: solid 1px; padding-top: 10px; padding-bottom: 10px; text-align: center;">
                 <?php
-                if($donnee_commande['etat_commande'] == 0){echo "<div style='color: grey;'>Non Valider par l'utilisateur</div>";}
-                if($donnee_commande['etat_commande'] == 1){echo "<div style='color: red;'>Commande Valider</div>";}
-                if($donnee_commande['etat_commande'] == 2){echo "<div style='color: orange;'>Traitement en cour...</div>";}
-                if($donnee_commande['etat_commande'] == 3){echo "<div style='color: green;'>Commande Disponible</div>";}
+                if($donnee_commande['etat_commande'] == 0){echo "<span style='color: grey;'>Non Valider par l'utilisateur</span>";}
+                if($donnee_commande['etat_commande'] == 1){echo "<span style='color: red;'>Commande Valider</span>";}
+                if($donnee_commande['etat_commande'] == 2){echo "<span style='color: orange;'>Traitement en cour...</span>";}
+                if($donnee_commande['etat_commande'] == 3){echo "<span style='color: green;'>Commande Disponible</span>";}
                 ?>
             </td>
             <td style="padding-left: 5px; border: solid 1px; padding-top: 10px; padding-bottom: 10px; text-align: center;">
                 <?php
-                    if($donnee_commande['regle'] == 0){echo "<div style='color: red;'>Non Réglé</div>";}
-                    if($donnee_commande['regle'] == 1){echo "<div style='color: red;'>Réglé</div>";}
+                    if($donnee_commande['regle'] == 0){echo "<span style='color: red;'>Non Réglé</span>";}
+                    if($donnee_commande['regle'] == 1){echo "<span style='color: red;'>Réglé</span>";}
                  ?>
             </td>
         </tr>
