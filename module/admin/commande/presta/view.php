@@ -108,7 +108,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         </div>
                         <div class="pull-right">
                             <a href="index.php" class="btn btn-xs btn-primary"><i class="fa fa-arrow-left"></i> Retour à la liste des Commandes</a>
-                            <a href="" class="btn btn-xs btn-default"><i class="fa fa-print"></i> Imprimmer la commande</a>
+                            <a href="imp.php?idcomprestataire=<?php echo $idcomprestataire; ?>" class="btn btn-xs btn-default"><i class="fa fa-print"></i> Imprimmer la commande</a>
                         </div>
                     </div>
                     <ul class="breadcrumb breadcrumb-top">
