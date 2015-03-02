@@ -262,7 +262,11 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     <h2>Produit Commander - Menu du <?php echo date("d-m-Y", $donnee_commande['date_menu']); ?> / Semaine <?php echo $donnee_commande['semaine']; ?></h2>
                                     <div class="pull-right">
                                         <a href="" class="btn btn-primary"><i class="fa fa-print"></i> Imprimer la commande</a>
+                                        <?php
+                                        if($donnee_commande['etat_commande'] == 0){
+                                        ?>
                                         <a href="#add-article" data-toggle="modal" class="btn btn-info"><i class="fa fa-plus-circle"></i> Ajouter un article à la commande</a>
+                                        <?php } ?>
                                     </div>
                                 </div>
                                 <div class="table-responsive">
@@ -274,7 +278,11 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                 <th style="text-align: right;">Prix Unitaire</th>
                                                 <th class="text-center;">Quantité</th>
                                                 <th style="text-align: right;">Prix Total</th>
+                                                <?php
+                                                if($donnee_commande['etat_commande'] == 0){
+                                                ?>
                                                 <th class="text-center">Action</th>
+                                                <?php } ?>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -295,9 +303,13 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                 <td style="text-align: right;"><?php echo number_format($donnee_article_commande['prix_unitaire'], 2, ',', ' ')." €"; ?></td>
                                                 <td class="text-center"><?php echo $donnee_article_commande['qte']; ?></td>
                                                 <td style="text-align: right;"><?php echo number_format($donnee_article_commande['prix_total_commande'], 2, ',', ' ')." €"; ?></td>
+                                                <?php
+                                                if($donnee_commande['etat_commande'] == 0){
+                                                ?>
                                                 <td>
                                                     <a href="<?php echo SITE, FOLDER; ?>inc/control/commande.php?idcommande=<?php echo $idcommande; ?>&prix_total_commande=<?php echo $donnee_article_commande['prix_total_commande']; ?>&montant_total=<?php echo $donnee_commande['montant_total']; ?>&idarticlecommande=<?php echo $donnee_article_commande['idarticlecommande']; ?>&supp-article=valider" class="btn btn-danger"><i class="fa fa-times"></i></a>
                                                 </td>
+                                                <?php } ?>
                                             </tr>
                                             <?php } ?>
                                         </tbody>
