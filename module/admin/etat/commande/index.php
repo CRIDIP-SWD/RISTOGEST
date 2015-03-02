@@ -171,7 +171,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                     <div class="form-group">
                                                         <label class="col-md-4 control-label" for="example-daterange1">Date</label>
                                                         <div class="col-md-8">
-                                                            <div class="input-group input-daterange" data-date-format="mm-dd-yyyy">
+                                                            <div class="input-group input-daterange" data-date-format="dd-mm-yyyy">
                                                                 <input type="text" id="example-daterange1" name="date_commande1" class="form-control text-center" placeholder="De">
                                                                 <span class="input-group-addon"><i class="fa fa-angle-right"></i></span>
                                                                 <input type="text" id="example-daterange2" name="date_commande2" class="form-control text-center" placeholder="au">
