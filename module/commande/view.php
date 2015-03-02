@@ -104,22 +104,6 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <i class="gi gi-user"></i><?php echo TITLE_PAGE; ?><br><small><?php echo SUBTITLE_PAGE; ?></small>
                             </h1>
                         </div>
-                        <div class="pull-right">
-                            <a href="index.php" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Retour à la liste des Commandes</a>
-                            <?php
-                            if($donnee_commande['etat_commande'] == '1')
-                            {
-                            ?>
-                            <a href="<?php echo SITE, FOLDER; ?>inc/control/commande-admin.php?idcommande=<?php echo $idcommande; ?>&envoie-prestataire=valider" class="btn btn-success"><i class="fa fa-check"></i> Commande passer chez le prestataire</a>
-                            <?php } ?>
-                            <?php
-                            if($donnee_commande['etat_commande'] == '2')
-                            {
-                            ?>
-                            <a href="<?php echo SITE, FOLDER; ?>inc/control/commande-admin.php?idcommande=<?php echo $idcommande; ?>&disponible=valider" class="btn btn-success"><i class="fa fa-check"></i> Rendre la commande disponible</a>
-                            <?php } ?>
-
-                        </div>
                     </div>
                     <ul class="breadcrumb breadcrumb-top">
                         <?php
@@ -138,7 +122,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     ?>
                     <div class="alert alert-info alert-dismissable">
                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                        <h4><i class="fa fa-info-circle"></i> Information</h4> L'utilisateur n'a pas valider sa commande !
+                        <h4><i class="fa fa-info-circle"></i> Information</h4> Veuillez insérer des articles et valider votre commande !
                     </div>
                     <?php
                         }
@@ -175,7 +159,8 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     ?>
                                     <div class="text-muted">
                                         <i class="fa fa-times-circle"></i>
-                                        Commande créer, Non valider par l'utilisateur
+                                        Commande créer, Non valider.
+                                        <a href="" class="btn btn-block btn-success"><i class="fa fa-check"></i> Valider la commande</a>
                                     </div>
                                     <?php } ?>
                                     <?php
@@ -199,7 +184,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     ?>
                                     <div class="text-success">
                                         <i class="fa fa-check"></i>
-                                        Commande Disponible pour l'utilisateur
+                                        Commande Disponible
                                     </div>
                                     <?php } ?>
                                 </div>
@@ -212,9 +197,10 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         <div class="col-md-12">
                             <div class="block">
                                 <div class="block-title">
-                                    <h2>Produit Commander - Menu du <?php echo $donnee_commande['date_menu']; ?> / <?php echo $donnee_commande['semaine']; ?></h2>
+                                    <h2>Produit Commander - Menu du <?php echo date("d-m-Y", $donnee_commande['date_menu']); ?> / Semaine <?php echo $donnee_commande['semaine']; ?></h2>
                                     <div class="pull-right">
                                         <a href="" class="btn btn-primary"><i class="fa fa-print"></i> Imprimer la commande</a>
+                                        <a href="#add-article" data-toggle="modal" class="btn btn-info"><i class="fa fa-plus-circle"></i> Ajouter un article à la commande</a>
                                     </div>
                                 </div>
                                 <div class="table-responsive">
@@ -248,7 +234,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                 <td class="text-center"><?php echo $donnee_article_commande['qte']; ?></td>
                                                 <td style="text-align: right;"><?php echo number_format($donnee_article_commande['prix_total_commande'], 2, ',', ' ')." €"; ?></td>
                                                 <td>
-                                                    <a href="<?php echo SITE, FOLDER; ?>inc/control/commande-admin.php?idcommande=<?php echo $idcommande; ?>&prix_total_commande=<?php echo $donnee_article_commande['prix_total_commande']; ?>&montant_total=<?php echo $donnee_commande['montant_total']; ?>&idarticlecommande=<?php echo $donnee_article_commande['idarticlecommande']; ?>&supp-article=valider" class="btn btn-danger"><i class="fa fa-times"></i></a>
+                                                    <a href="<?php echo SITE, FOLDER; ?>inc/control/commande.php?idcommande=<?php echo $idcommande; ?>&prix_total_commande=<?php echo $donnee_article_commande['prix_total_commande']; ?>&montant_total=<?php echo $donnee_commande['montant_total']; ?>&idarticlecommande=<?php echo $donnee_article_commande['idarticlecommande']; ?>&supp-article=valider" class="btn btn-danger"><i class="fa fa-times"></i></a>
                                                 </td>
                                             </tr>
                                             <?php } ?>
@@ -270,9 +256,6 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             <div class="block">
                                 <div class="block-title">
                                     <h2>Reglement de la commande N°<?php echo $donnee_commande['num_commande']; ?></h2>
-                                    <div class="pull-right">
-                                        <a class='btn btn-primary' href='#paiement-commande' data-toggle='modal'><i class='fa fa-credit-card'></i> Paiement de la commande</a>
-                                    </div>
                                 </div>
                                 <div class="table-responsive">
                                     <table class="table table-vcenter">
@@ -284,7 +267,6 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                 <th>Porteur Chèque</th>
                                                 <th>Numéro de Chèque</th>
                                                 <th>Banque du chèque</th>
-                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -315,9 +297,6 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                 </td>
                                                 <td>
                                                     <?php echo $donnee_reglement_commande['banque_chq']; ?>
-                                                </td>
-                                                <td>
-                                                    <a href="<?php echo SITE, FOLDER; ?>inc/control/commande-admin.php?idcommande=<?php echo $idcommande; ?>&idreglement=<?php echo $donnee_reglement_commande['idreglement']; ?>&supp-reglement=valider" class="btn btn-danger"><i class="fa fa-times"></i></a>
                                                 </td>
                                             </tr>
                                             <?php } ?>
@@ -359,76 +338,6 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             <?php }} ?>
                                         </tfoot>
                                     </table>
-                                    <div id="paiement-commande" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                    <h3 class="modal-title">Paiement de la commande N° <?php echo $donnee_commande['num_commande']; ?></h3>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <form class="form-horizontal form-bordered" method="POST" action="<?php echo SITE,FOLDER; ?>inc/control/commande-admin.php">
-                                                        <input type="hidden" name="idcommande" value="<?php echo $idcommande; ?>" />
-
-                                                        <div class="form-group">
-                                                            <label class="col-md-4 control-label" for="example-select2">Type de Réglement</label>
-                                                            <div class="col-md-6">
-                                                                <select id="example-select2" name="type_reglement" class="select-select2" style="width: 100%;" data-placeholder="Choose one..">
-                                                                    <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
-                                                                    <option value="1">Chèque</option>
-                                                                    <option value="2">Espèce</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label class="col-md-3 control-label" for="example-text-input">Date de Réglement</label>
-                                                            <div class="col-md-9">
-                                                                <input type="text" id="example-text-input" name="date_reglement" class="form-control" placeholder="Date du Réglement (jj-mm-aaaa)...">
-                                                                <span class="help-block">Date au format jj-mm-aaaa ou laissez vide pour aujourd'hui.</span>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label class="col-md-3 control-label" for="example-text-input">Montant du réglement</label>
-                                                            <div class="col-md-9">
-                                                                <input type="text" id="example-text-input" name="montant_reglement" class="form-control" placeholder="Montant du Réglement en Euro...">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label class="col-md-3 control-label" for="example-text-input">Porteur du Chèque</label>
-                                                            <div class="col-md-9">
-                                                                <input type="text" id="example-text-input" name="porteur_chq" class="form-control" placeholder="Porteur du chèque...">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label class="col-md-3 control-label" for="example-text-input">Numéro du Chèque</label>
-                                                            <div class="col-md-9">
-                                                                <input type="text" id="example-text-input" name="num_chq" class="form-control" placeholder="Numéro du Chèque...">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label class="col-md-3 control-label" for="example-text-input">Banque du chèque</label>
-                                                            <div class="col-md-9">
-                                                                <input type="text" id="example-text-input" name="banque_chq" class="form-control" placeholder="banque émettrice chèque...">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group form-action">
-                                                            <button type="submit" class="btn btn-success" name="add-reglement" value="valider"><i class="fa fa-check"></i> Soumettre le réglement</button>
-                                                            <button type="reset" class="btn btn-warning"><i class="fa fa-refresh fa-spin"></i> Réinitialiser le formulaire</button>
-                                                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Fermer le formulaire</button>
-                                                        </div>
-
-
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
