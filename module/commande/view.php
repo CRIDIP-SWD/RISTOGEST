@@ -176,6 +176,25 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     </div>
                     <?php } ?>
 
+                    <?php
+                    if(isset($_GET['supp-article']) && $_GET['supp-article'] == 'true')
+                    {
+                    ?>
+                    <div class="alert alert-success alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <h4><i class="fa fa-check-circle"></i> Succès</h4> L'article à été supprimer à la commande.
+                    </div>
+                    <?php } ?>
+                    <?php
+                    if(isset($_GET['supp-article']) && $_GET['supp-article'] == 'false')
+                    {
+                    ?>
+                    <div class="alert alert-danger alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur à eu lieu lors de la suppression de l'article dans la commande.<br>Veuillez contacter le support technique.
+                    </div>
+                    <?php } ?>
+
                     <!-- BLOCK -->
                     <div class="row">
                         <div class="col-md-8">

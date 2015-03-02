@@ -84,3 +84,27 @@ if(isset($_POST['add-article-valid']) && $_POST['add-article-valid'] == 'Valider
 
 }
 ?>
+
+<?php
+//suppression de l'article
+if(isset($_GET['supp-article']) && $_GET['supp-article'] == 'valider')
+{
+	$idcommande = $_GET['idcommande'];
+	$prix_total_commande = $_GET['prix_total_commande'];
+	$montant_total = $_GET['montant_total'];
+	$idarticlecommande = $_GET['idarticlecommande'];
+
+	//Update du solde de la commande
+	$calc_up_total = $montant_total-$prix_total_commande;
+
+	$sql_up_commande = mysql_query("UPDATE commande SET montant_total = '$calc_up_total' WHERE idcommande = '$idcommande'")or die(mysql_error());
+
+	$sql_del_article_cmd = mysql_query("DELETE FROM article_commande WHERE idarticlecommande = '$idarticlecommande'")or die(mysql_error());
+
+	if($sql_del_article_cmd == TRUE)
+	{
+		header("Location: ../../module/commande/view.php?idcommande=$idcommande&supp-article=true");
+	}else{
+		header("Location: ../../module/commande/view.php?idcommande=$idcommande&supp-article=false");
+	}
+}
