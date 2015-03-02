@@ -52,7 +52,7 @@ $import_centre = mysql_fetch_array($sql_import_centre);
             <th style="width: 25%; text-align: center; border: solid 1px; height: 25px;">Nombre de Commande</th>
         </tr>
         <?php
-        $sql_user = mysql_query("SELECT * FROM utilisateur ORDER BY nom_user ASC")or die(mysql_error());
+        $sql_user = mysql_query("SELECT * FROM utilisateur WHERE groupe = '0' ORDER BY nom_user ASC")or die(mysql_error());
         while($donnee_user = mysql_fetch_array($sql_user))
         {
         ?>
@@ -60,11 +60,6 @@ $import_centre = mysql_fetch_array($sql_import_centre);
             <td style="padding-left: 5px; border: solid 1px; padding-top: 10px; padding-bottom: 10px;">
                 <strong><?php echo $donnee_user['nom_user']; ?> <?php echo $donnee_user['prenom_user']; ?></strong><br>
                 <u>Nom d'utilisateur:</u> <?php echo $donnee_user['login']; ?><br>
-                <u>Groupe:</u>
-                <?php
-                    if($donnee_user['groupe'] == 1){echo "Administrateur";}
-                    if($donnee_user['groupe'] == 0){echo "Utilisateur";}
-                ?>
             </td>
             <td style="padding-left: 5px; border: solid 1px; padding-top: 10px; padding-bottom: 10px;">
                 <strong>Téléphone:</strong> <?php echo $donnee_user['tel_user']; ?><br>
