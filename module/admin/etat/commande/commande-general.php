@@ -70,7 +70,7 @@ $import_centre = mysql_fetch_array($sql_import_centre);
             <td style="padding-left: 5px; border: solid 1px; padding-top: 10px; padding-bottom: 10px; text-align: center;">
                 <?php echo date("d-m-Y", $donnee_commande['date_commande']); ?>
             </td>
-            <td style="padding-left: 5px; border: solid 1px; padding-top: 10px; padding-bottom: 10px; text-align: right;">
+            <td style="padding-left: 5px; border: solid 1px; padding-top: 10px; padding-bottom: 10px; text-align: right; padding-right: 5px;">
                 <?php echo number_format($donnee_commande['montant_total'], 2, ',', ' ')." €"; ?>
             </td>
             <td style="padding-left: 5px; border: solid 1px; padding-top: 10px; padding-bottom: 10px; text-align: center;">
