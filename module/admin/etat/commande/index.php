@@ -147,6 +147,10 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                         </div>
                                                     </div>
 
+                                                    <div class="form-group form-actions">
+                                                        <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Voir l'état par utilisateur</button>
+                                                    </div>
+
                                                 </form>
                                             </div>
                                         </div>
