@@ -131,7 +131,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 </thead>
                                 <tbody>
                                 <?php
-                                $sql_commande = mysql_query("SELECT * FROM commande, utilisateur WHERE commande.iduser = utilisateur.iduser AND iduser = '$iduser' ORDER BY date_commande ASC")or die(mysql_error());
+                                $sql_commande = mysql_query("SELECT * FROM commande, utilisateur WHERE commande.iduser = utilisateur.iduser AND utilisateur.iduser = '$iduser' ORDER BY date_commande ASC")or die(mysql_error());
                                 while($donnee_commande = mysql_fetch_array($sql_commande))
                                 {
                                 ?>
