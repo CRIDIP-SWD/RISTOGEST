@@ -112,7 +112,15 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     </ul>
                     <!-- END Blank Header -->
                     <!-- RESULTAT DES ETATS -->
-
+                    <?php
+                    if(isset($_GET['add-commande']) && $_GET['add-commande'] == 'false')
+                    {
+                    ?>
+                    <div class="alert alert-danger alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur à eu lieu lors de la création de la commande.<br>Veuillez contactez le support technique.
+                    </div>
+                    <?php } ?>
 
                     <div class="block">
                         <div class="block-title">
@@ -196,7 +204,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <h3 class="modal-title">Nouvelle Commande</h3>
                             </div>
                             <div class="modal-body">
-                                <form class="form-horizontal form-bordered" action="" method="POST">
+                                <form class="form-horizontal form-bordered" action="<?php echo SITE,FOLDER; ?>inc/control/commande.php" method="POST">
                                     <input type="hidden" name="iduser" value="<?php echo $iduser; ?>">
 
                                     <div class="form-group">
@@ -213,6 +221,10 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                 <?php } ?>
                                             </select>
                                         </div>
+                                    </div>
+
+                                    <div class="form-group form-actions">
+                                        <button type="submit" class="btn btn-success" name="add-commande-valid" value="Valider"><i class="fa fa-check"></i> Nouvelle Commande</button>
                                     </div>
                                 </form>
                             </div>

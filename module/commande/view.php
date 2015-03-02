@@ -10,9 +10,9 @@ define("TITLE_PAGE", "COMMANDE UTILISATEUR");
 define("SUBTITLE_PAGE", "COMMANDE N° ".$donnee_commande['num_commande']);
 //Breadcumb
 $li_start = "<li>".$logiciel."</li>";
-$li1 = "<li>ADMINISTRATION</li>";
-$li2 = "<li>COMMANDE</li>";
-$li3 = "<li>UTILISATEUR</li>";
+$li1 = "";
+$li2 = "";
+$li3 = "";
 $li4 = "";
 $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
 ?>
@@ -143,105 +143,15 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <?php
                         }
                     ?>
-                    <?php
-                    if(isset($_GET['add-reglement']) && $_GET['add-reglement'] == 'success')
-                    {
-                    ?>
-                        <div class="alert alert-success alert-dismissable">
-                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                            <h4><i class="fa fa-check-circle"></i> Succès</h4> Le Réglement à bien été ajouté.
-                        </div>
-                    <?php } ?>
-                    <?php
-                    if(isset($_GET['add-reglement']) && $_GET['add-reglement'] == 'error')
-                    {
-                    ?>
-                        <div class="alert alert-danger alert-dismissable">
-                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                            <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur à eu lieu lors de l'ajout du réglement.<br>
-                            Contacter le support technique.
-                        </div>
-                    <?php } ?>
                     <!-- RESULTAT DES ETATS -->
-
                     <?php
-                    if(isset($_GET['envoie-prestataire']) && $_GET['envoie-prestataire'] == 'true')
+                    if(isset($_GET['add-commande']) && $_GET['add-commande'] == 'true')
                     {
                     ?>
-                        <div class="alert alert-success alert-dismissable">
-                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                            <h4><i class="fa fa-check-circle"></i> Succès</h4> L'état de la commande à bien été mise à jours.
-                        </div>
-                    <?php } ?>
-                    <?php
-                    if(isset($_GET['envoie-prestataire']) && $_GET['envoie-prestataire'] == 'false')
-                    {
-                    ?>
-                        <div class="alert alert-danger alert-dismissable">
-                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                            <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur à eu lieu lors de la mise à jour de la commande.<br>
-                            Contacter le support technique.
-                        </div>
-                    <?php } ?>
-
-                    <?php
-                    if(isset($_GET['disponible']) && $_GET['disponible'] == 'true')
-                    {
-                    ?>
-                        <div class="alert alert-success alert-dismissable">
-                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                            <h4><i class="fa fa-check-circle"></i> Succès</h4> L'état de la commande à bien été mise à jours.
-                        </div>
-                    <?php } ?>
-                    <?php
-                    if(isset($_GET['disponible']) && $_GET['disponible'] == 'false')
-                    {
-                    ?>
-                        <div class="alert alert-danger alert-dismissable">
-                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                            <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur à eu lieu lors de la mise à jour de la commande.<br>
-                            Contacter le support technique.
-                        </div>
-                    <?php } ?>
-
-                    <?php
-                    if(isset($_GET['supp-article']) && $_GET['supp-article'] == 'true')
-                    {
-                    ?>
-                        <div class="alert alert-success alert-dismissable">
-                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                            <h4><i class="fa fa-check-circle"></i> Succès</h4> L'article à bien été supprimée de la commande.
-                        </div>
-                    <?php } ?>
-                    <?php
-                    if(isset($_GET['supp-article']) && $_GET['supp-article'] == 'false')
-                    {
-                    ?>
-                        <div class="alert alert-danger alert-dismissable">
-                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                            <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur à eu lieu lors dde la suppression d'un article dans la commande.<br>
-                            Contacter le support technique.
-                        </div>
-                    <?php } ?>
-
-                    <?php
-                    if(isset($_GET['supp-reglement']) && $_GET['supp-reglement'] == 'true')
-                    {
-                    ?>
-                        <div class="alert alert-success alert-dismissable">
-                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                            <h4><i class="fa fa-check-circle"></i> Succès</h4> Le reglement à bien été supprimée.
-                        </div>
-                    <?php } ?>
-                    <?php
-                    if(isset($_GET['supp-reglement']) && $_GET['supp-reglement'] == 'false')
-                    {
-                    ?>
-                        <div class="alert alert-danger alert-dismissable">
-                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                            <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur à eu lieu lors de la suppression d'un reglement.<br>
-                            Contacter le support technique.
-                        </div>
+                    <div class="alert alert-success alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <h4><i class="fa fa-check-circle"></i> Succès</h4> La commande à été créer avec succès.
+                    </div>
                     <?php } ?>
 
                     <!-- BLOCK -->
