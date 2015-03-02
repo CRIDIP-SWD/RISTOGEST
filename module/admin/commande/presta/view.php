@@ -93,7 +93,10 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         'header-fixed-bottom'   has to be added on #page-container only if the class 'navbar-fixed-bottom' was added
                 -->
                 <?php include ('../../../../inc/headerbar.php'); ?>
-
+                <?php
+                $sql_commande = mysql_query("SELECT * FROM commande_prestataire WHERE idcomprestataire = '$idcomprestataire'")or die(mysql_error());
+                $donnee_commande = mysql_fetch_array($sql_commande);
+                ?>
                 <!-- Page content -->
                 <div id="page-content">
                     <!-- Blank Header -->
@@ -295,6 +298,11 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     }
                     ?>
                     <!-- BLOCK -->
+
+                    <?php
+                    $sql_commande = mysql_query("SELECT * FROM commande_prestataire WHERE idcomprestataire = '$idcomprestataire'")or die(mysql_error());
+                    $donnee_commande = mysql_fetch_array($sql_commande);
+                    ?>
                     <div class="row">
                         <div class="col-md-8">
                             <div class="block">
