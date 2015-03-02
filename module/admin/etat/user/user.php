@@ -41,6 +41,51 @@ $import_centre = mysql_fetch_array($sql_import_centre);
             </td>
         </tr>
     </table>
+
+    <div style="padding-top: 15px; padding-bottom: 15px;"></div>
+
+    <table cellspacing="0" style="width: 100%;">
+        <tr>
+            <th>Identité</th>
+            <th>Coordonnées</th>
+            <th>Montant total de commande</th>
+            <th>Nombre de Commande</th>
+        </tr>
+        <?php
+        $sql_user = mysql_query("SELECT * FROM utilisateur ORDER BY nom_user ASC")or die(mysql_error());
+        while($donnee_user = mysql_fetch_array($sql_user))
+        {
+        ?>
+        <tr>
+            <td>
+                <strong><?php echo $donnee_user['nom_user']; ?> <?php echo $donnee_user['prenom_user']; ?></strong><br>
+                <u>Nom d'utilisateur:</u> <?php echo $donnee_user['login']; ?><br>
+                <u>Groupe:</u>
+                <?php
+                    if($donnee_user['groupe'] == 1){echo "Administrateur";}
+                    if($donnee_user['groupe'] == 0){echo "Utilisateur";}
+                ?>
+            </td>
+            <td>
+                <strong>Téléphone:</strong> <?php echo $donnee_user['tel_user']; ?><br>
+                <strong>Portable:</strong> <?php echo $donnee_user['port_user']; ?>
+            </td>
+            <td>
+                <?php
+                $sql_sum_cmd = mysql_query("SELECT SUM(montant_total) FROM commande WHERE iduser = ".$donnee_user['iduser'])or die(mysql_error());
+                echo number_format(mysql_result($sql_sum_cmd, 0), 2, ',', ' ')." €";
+                ?>
+            </td>
+            <td>
+                <?php
+                $sql_count_cmd = mysql_query("SELECT COUNT(idcommande) FROM commande WHERE iduser = ".$donnee_user['iduser'])or die(mysql_error());
+                echo mysql_result($sql_count_cmd, 0);
+                ?>
+            </td>
+        </tr>
+        <?php } ?>
+    </table>
+
 </body>
 </html>
 <?php
