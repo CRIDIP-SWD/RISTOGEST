@@ -187,7 +187,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             ?>
                                         </td>
                                         <td class="text-center">
-                                            <a href="<?php echo SITE,FOLDER; ?>module/admin/commande/user/view.php?idcommande=<?php echo $donnee_commande['idcommande']; ?>" class="btn btn-xs" title="" data-toggle="tooltip" data-original-title="Voir la commande"><i class="hi hi-eye-open"></i></a>
+                                            <a href="<?php echo SITE,FOLDER; ?>module/commande/view.php?idcommande=<?php echo $donnee_commande['idcommande']; ?>" class="btn btn-xs" title="" data-toggle="tooltip" data-original-title="Voir la commande"><i class="hi hi-eye-open"></i></a>
                                         </td>
                                     </tr>
                                 <?php } ?>
