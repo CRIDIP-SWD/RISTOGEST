@@ -205,7 +205,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                             <select id="example-select2" name="idmenu" class="select-select2" style="width: 100%;" data-placeholder="Selectionner le menu souhaiter...">
                                                 <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
                                                 <?php
-                                                $sql_menu = mysql_query("SELECT * FROM menu WHERE etat_menu = '0'")or die(mysql_error());
+                                                $sql_menu = mysql_query("SELECT * FROM menu WHERE etat_menu = '1'")or die(mysql_error());
                                                 while($donnee_menu = mysql_fetch_array($sql_menu))
                                                 {
                                                 ?>
