@@ -73,7 +73,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
             </div>
             <!-- END Alternative Sidebar -->
 
-            <?php include ('../../../inc/sidebar.php'); ?>
+            <?php include ('../../../../inc/sidebar.php'); ?>
 
             <!-- Main Container -->
             <div id="main-container">
@@ -91,7 +91,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     'navbar-fixed-bottom'       for a bottom fixed header (fixed sidebars with scroll will be auto initialized, functionality can be found in js/app.js - handleSidebar()))
                         'header-fixed-bottom'   has to be added on #page-container only if the class 'navbar-fixed-bottom' was added
                 -->
-                <?php include ('../../../inc/headerbar.php'); ?>
+                <?php include ('../../../../inc/headerbar.php'); ?>
 
                 <!-- Page content -->
                 <div id="page-content">
@@ -115,118 +115,15 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     </ul>
                     <!-- END Blank Header -->
                     <!-- RESULTAT DES ETATS -->
-                    <?php
-                    if(isset($_GET['purge']))
-                    {
-                    ?>
-                    <?php
-                        if($_GET['purge'] == 'true')
-                        {
-                    ?>
-                        <div class="alert alert-success alert-dismissable">
-                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                            <h4>
-                                <i class="fa fa-check-circle"></i> Succès
-                            </h4> 
-                            La purge à bien été effectuer.
-                        </div>
-                    <?php } ?>
-                    <?php
-                        if($_GET['purge'] == 'false')
-                        {
-                    ?>
-                        <div class="alert alert-danger alert-dismissable">
-                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                            <h4>
-                                <i class="fa fa-times-circle"></i> Erreur
-                            </h4> 
-                            Une erreur à été rencontrer lors de la purge de la base de donnée.<br>Contactez le support technique.
-                        </div>
-                    <?php } ?>
 
-
-                    <?php } else{ ?>
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <a href="<?php echo SITE,FOLDER; ?>inc/control/purge.php?purge=valider" class="btn btn-danger btn-block"><i class="fa fa-refresh fa-spin"></i> Purge de la base de donnée</a><br>
-                            <div class="alert alert-warning alert-dismissable">
-                                <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                                <h4><i class="fa fa-exclamation-circle"></i> Attention</h4>La purge de la base de donnée entraine l'effacement de toutes les données de fonctionnement du programme (menu, article,etc...).<br>Soyez bien sur d'effectuer la purge en tout état de cause.
-                            </div>
-                        </div>
-                    </div>
-                    <?php } ?>
-
+                    <a href="commande-general.php" class="btn btn-block btn-info"><i class="fi fi-pdf"></i> Listing des Commandes (Général)</a>
+                    <a href="" class="btn btn-block btn-info"><i class="fi fi-pdf"></i> Listing des Commandes (A commander au prestataire)</a>
+                    <a href="" class="btn btn-block btn-info"><i class="fi fi-pdf"></i> Listing des Commandes (par utilisateur)</a>
 
                 </div>
-                <div id="modif-centre" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h3 class="modal-title">Modification de l'utilisateur</h3>
-                                </div>
-                                <div class="modal-body">
-                                    <form class="form-horizontal form-bordered" action="<?php echo SITE,FOLDER; ?>inc/control/centre.php" method="POST">
-
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label" for="example-text-input">Raison Social</label>
-                                            <div class="col-md-9">
-                                                <input type="text" id="example-text-input" name="raison_social" class="form-control" value="<?php echo $donnee_center['raison_social']; ?>">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label" for="example-text-input">Adresse Postal</label>
-                                            <div class="col-md-9">
-                                                <input type="text" id="example-text-input" name="adresse" class="form-control" value="<?php echo $donnee_center['adresse']; ?>">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label" for="example-text-input">Code Postal</label>
-                                            <div class="col-md-3">
-                                                <input type="text" id="example-text-input" name="code_postal" class="form-control" value="<?php echo $donnee_center['code_postal']; ?>">
-                                            </div>
-                                            <label class="col-md-2 control-label" for="example-text-input">Ville</label>
-                                            <div class="col-md-5">
-                                                <input type="text" id="example-text-input" name="ville" class="form-control" value="<?php echo $donnee_center['ville']; ?>">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label" for="masked_phone">Téléphone</label>
-                                            <div class="col-md-9">
-                                                <input type="text" id="masked_phone" name="telephone" class="form-control" value="<?php echo $donnee_center['telephone']; ?>">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="col-md-4 control-label" for="user-settings-email">Adresse Mail</label>
-                                            <div class="col-md-8">
-                                                <input type="email" id="user-settings-email" name="email" class="form-control" value="<?php echo $donnee_center['email']; ?>">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label" for="example-text-input">Nb jours livraison théorique</label>
-                                            <div class="col-md-9">
-                                                <input type="text" id="example-text-input" name="nb_liv_theorique" class="form-control" value="<?php echo $donnee_center['nb_liv_theorique']; ?>">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group form-actions">
-                                            <button type="submit" class="btn btn-success" name="modif-centre-valid" value="Valider"><i class="fa fa-check"></i> Modification du centre</button>
-                                        </div>
-
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 <!-- END Page Content -->
 
-                <?php include ('../../../inc/footer.php'); ?>
+                <?php include ('../../../../inc/footer.php'); ?>
             </div>
             <!-- END Main Container -->
         </div>
