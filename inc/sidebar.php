@@ -85,6 +85,12 @@
                                 </span>
                                 <span class="sidebar-header-title">ETAT & IMPRESSION</span>
                             </li>
+                            <li>
+                                <a href="<?php echo SITE,FOLDER; ?>module/admin/etat/user/index.php"><i class="fa fa-users"></i> Utilisateurs</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo SITE,FOLDER; ?>module/admin/etat/commande/"><i class="fa fa-users"></i> Commande</a>
+                            </li>
 
                             <li class="sidebar-header">
                                 <span class="sidebar-header-options clearfix">
