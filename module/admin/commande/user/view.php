@@ -243,6 +243,14 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         </div>
                     <?php } ?>
 
+                    <?php
+                    $sql_commande = mysql_query("SELECT * FROM commande, menu WHERE commande.idmenu = menu.idmenu AND idcommande = '$idcommande'")or die(mysql_error());
+                    $donnee_commande = mysql_fetch_array($sql_commande);
+                    $idmenu = $donnee_commande['idmenu'];
+
+                    ?>
+
+
                     <!-- BLOCK -->
                     <div class="row">
                         <div class="col-md-8">
