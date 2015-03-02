@@ -405,7 +405,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                     <?php echo number_format($donnee_reglement_commande['montant_reglement'], 2, ',', ' ')." €"; ?>
                                                 </td>
                                                 <td>
-                                                    <?php date("d-m-Y", $donnee_reglement_commande['date_reglement']); ?>
+                                                    <?php echo date("d-m-Y", $donnee_reglement_commande['date_reglement']); ?>
                                                 </td>
                                                 <td>
                                                     <?php echo $donnee_reglement_commande['porteur_chq']; ?>
