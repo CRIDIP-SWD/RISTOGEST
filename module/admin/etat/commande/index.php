@@ -117,7 +117,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <!-- RESULTAT DES ETATS -->
 
                     <a href="commande-general.php" class="btn btn-block btn-info"><i class="fi fi-pdf"></i> Listing des Commandes (Général)</a>
-                    <a href="" class="btn btn-block btn-info"><i class="fi fi-pdf"></i> Listing des Commandes (A commander au prestataire)</a>
+                    <a href="commande-presta.php" class="btn btn-block btn-info"><i class="fi fi-pdf"></i> Listing des Commandes (A commander au prestataire)</a>
                     <a href="" class="btn btn-block btn-info"><i class="fi fi-pdf"></i> Listing des Commandes (par utilisateur)</a>
 
                 </div>
