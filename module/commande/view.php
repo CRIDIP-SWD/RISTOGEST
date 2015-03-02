@@ -194,6 +194,12 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     </div>
                     <?php } ?>
 
+
+                    <?php
+                    $sql_commande = mysql_query("SELECT * FROM commande WHERE idcommande = '$idcommande'")or die(mysql_error());
+                    $donnee_commande = mysql_fetch_array($sql_commande);
+
+                    ?>
                     <!-- BLOCK -->
                     <div class="row">
                         <div class="col-md-8">
