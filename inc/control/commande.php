@@ -72,7 +72,7 @@ if(isset($_POST['add-article-valid']) && $_POST['add-article-valid'] == 'Valider
 	$sql_add_article = mysql_query("INSERT INTO `article_commande`(`idarticlecommande`, `idcommande`, `idfamillearticle`, `idarticle`, `qte`, `prix_total_commande`) 
 		VALUES (NULL,'$idcommande','$idfamillearticle','$idarticle','$qte','$calc_ligne_total')")or die(mysql_error());
 
-	$sql_up_commande = mysql_query("UPDATE commande SET montant_total = '$calc_up_total'")or die(mysql_error());
+	$sql_up_commande = mysql_query("UPDATE commande SET montant_total = '$calc_up_total' WHERE idcommande = '$idcommande'")or die(mysql_error());
 
 	if($sql_add_article == TRUE)
 	{
