@@ -55,7 +55,7 @@ $iduser = $_POST['iduser'];
         </tr>
         <?php
         $sql_commande = mysql_query("SELECT * FROM commande, utilisateur WHERE commande.iduser = utilisateur.iduser
-        AND etat_commande = '1' ORDER BY date_commande ASC")or die(mysql_error());
+        ORDER BY date_commande ASC")or die(mysql_error());
         while($donnee_commande = mysql_fetch_array($sql_commande))
         {
         ?>
