@@ -111,7 +111,91 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     </ul>
                     <!-- END Blank Header -->
                     <!-- RESULTAT DES ETATS -->
+                    <?php
+                    if(isset($_GET['add-prestataire']) && $_GET['add-prestataire'] == 'true')
+                    {
+                    ?>
+                        <div class="alert alert-success alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-check-circle"></i> Succès
+                            </h4> 
+                            Le prestataire à été ajouter.
+                        </div>
+                    <?php
+                    }
+                    ?>
+                    <?php
+                    if(isset($_GET['add-prestataire']) && $_GET['add-prestataire'] == 'false')
+                    {
+                    ?>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-times-circle"></i> Erreur
+                            </h4> 
+                            Une erreur à été rencontrer lors de l'ajout du prestataire.<br>Contactez le support technique.
+                        </div>
+                    <?php
+                    }
+                    ?>
+                    <?php
+                    if(isset($_GET['modif-prestataire']) && $_GET['modif-prestataire'] == 'true')
+                    {
+                    ?>
+                        <div class="alert alert-success alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-check-circle"></i> Succès
+                            </h4> 
+                            Le prestataire à été modifier.
+                        </div>
+                    <?php
+                    }
+                    ?>
+                    <?php
+                    if(isset($_GET['modif-prestataire']) && $_GET['modif-prestataire'] == 'false')
+                    {
+                    ?>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-times-circle"></i> Erreur
+                            </h4> 
+                            Une erreur à été rencontrer lors de la modification du prestataire.<br>Contactez le support technique.
+                        </div>
+                    <?php
+                    }
+                    ?>
 
+                    <?php
+                    if(isset($_GET['supp-prestataire']) && $_GET['supp-prestataire'] == 'true')
+                    {
+                    ?>
+                        <div class="alert alert-success alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-check-circle"></i> Succès
+                            </h4> 
+                            Le prestataire à été supprimer.
+                        </div>
+                    <?php
+                    }
+                    ?>
+                    <?php
+                    if(isset($_GET['supp-prestataire']) && $_GET['supp-prestataire'] == 'false')
+                    {
+                    ?>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <h4>
+                                <i class="fa fa-times-circle"></i> Erreur
+                            </h4> 
+                            Une erreur à été rencontrer lors de la suppression du prestataire.<br>Contactez le support technique.
+                        </div>
+                    <?php
+                    }
+                    ?>
 
 
                     <div class="block">
@@ -151,7 +235,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                         </td>
                                         <td>
                                             <a href="#modif-prestataire" data-toggle="modal" class="btn btn-info"><i class="fa fa-edit"></i></a>
-                                            <a href="" class="btn btn-danger"><i class="fa fa-times"></i></a>
+                                            <a href="<?php echo SITE,FOLDER; ?>inc/control/prestataire.php?idprestataire=<?php echo $donnee_prestataire['idprestataire']; ?>&supp-prestataire-valid=Valider" class="btn btn-danger"><i class="fa fa-times"></i></a>
                                         </td>
                                     </tr>
                                         <div id="modif-prestataire" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -206,7 +290,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                             </div>
 
                                                             <div class="form-group form-actions">
-                                                                <button type="submit" class="btn btn-success" name="add-prestataire-valid" value="Valider"><i class="fa fa-check"></i> Ajouter le prestataire</button>
+                                                                <button type="submit" class="btn btn-success" name="modif-prestataire-valid" value="Valider"><i class="fa fa-check"></i> Modifier le prestataire</button>
                                                             </div>
 
                                                         </form>
