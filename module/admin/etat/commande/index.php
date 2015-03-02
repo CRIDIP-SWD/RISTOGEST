@@ -180,7 +180,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                     </div>
 
                                                     <div class="form-group form-actions">
-                                                        <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Voir l'état par utilisateur</button>
+                                                        <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Afficher les résultats</button>
                                                     </div>
 
                                                 </form>
