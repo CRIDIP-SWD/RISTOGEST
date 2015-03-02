@@ -361,7 +361,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             </div>
                         </div>
                     </div>
-                    <div id="modal-regular" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div id="add-article" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
