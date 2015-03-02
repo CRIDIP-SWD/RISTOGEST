@@ -118,8 +118,40 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
 
                     <a href="commande-general.php" class="btn btn-block btn-info"><i class="fi fi-pdf"></i> Listing des Commandes (Général)</a>
                     <a href="commande-presta.php" class="btn btn-block btn-info"><i class="fi fi-pdf"></i> Listing des Commandes (A commander au prestataire)</a>
-                    <a href="" class="btn btn-block btn-info"><i class="fi fi-pdf"></i> Listing des Commandes (par utilisateur)</a>
+                    <a href="#choix-user" data-toggle="modal" class="btn btn-block btn-info"><i class="fi fi-pdf"></i> Listing des Commandes (par utilisateur)</a>
 
+
+                    <div id="choix_user" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h3 class="modal-title">Choix de l'utilisateur</h3>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form class="form-horizontal form-bordered" action="commande-user.php" method="POST">
+
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label" for="example-select2">Select2</label>
+                                                        <div class="col-md-6">
+                                                            <select id="example-select2" name="iduser" class="select-select2" style="width: 100%;" data-placeholder="Choisissez l'utilisateur">
+                                                                <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
+                                                                <?php
+                                                                $sql_user = mysql_query("SELECT * FROM utilisateur WHERE groupe = '0'")or die(mysql_error());
+                                                                while($donnee_user = mysql_fetch_array($sql_user))
+                                                                {
+                                                                ?>
+                                                                <option value="<?php echo $donnee_user['iduser']; ?>"><?php echo $donnee_user['nom_user']; ?> <?php echo $donnee_user['prenom_user']; ?></option>
+                                                                <?php } ?>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                 </div>
                 <!-- END Page Content -->
 
