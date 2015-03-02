@@ -4,7 +4,7 @@ include('../../inc/db.conf.php');
 BaseConnect();
 $sql_import_centre = mysql_query("SELECT * FROM setting WHERE idsetting = 1")or die(mysql_error());
 $import_centre = mysql_fetch_array($sql_import_centre);
-$idcommande = $_POST['idcommande'];
+$idcommande = $_GET['idcommande'];
 $sql_commande = mysql_query("SELECT * FROM commande, utilisateur WHERE commande.iduser = utilisateur.iduser AND idcommande = '$idcommande'")or die(mysql_error());
 $donnee_commande = mysql_fetch_array($sql_commande);
 /**
