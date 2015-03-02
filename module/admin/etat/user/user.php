@@ -46,10 +46,10 @@ $import_centre = mysql_fetch_array($sql_import_centre);
 
     <table cellspacing="0" style="width: 100%; border: solid 2px; border-radius: 5px 5px 5px 5px;">
         <tr>
-            <th style="width: 25%; text-align: center; border: solid 1px;">Identité</th>
-            <th style="width: 25%; text-align: center; border: solid 1px;">Coordonnées</th>
-            <th style="width: 25%; text-align: center; border: solid 1px;">Montant total de commande</th>
-            <th style="width: 25%; text-align: center; border: solid 1px;">Nombre de Commande</th>
+            <th style="width: 25%; text-align: center; border: solid 1px; height: 25px;">Identité</th>
+            <th style="width: 25%; text-align: center; border: solid 1px; height: 25px;">Coordonnées</th>
+            <th style="width: 25%; text-align: center; border: solid 1px; height: 25px;">Montant total de commande</th>
+            <th style="width: 25%; text-align: center; border: solid 1px; height: 25px;">Nombre de Commande</th>
         </tr>
         <?php
         $sql_user = mysql_query("SELECT * FROM utilisateur ORDER BY nom_user ASC")or die(mysql_error());
