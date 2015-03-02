@@ -39,6 +39,7 @@ $import_centre = mysql_fetch_array($sql_import_centre);
             <td style="text-align: right; width: 50%; position: relative; top: -50px; font-size: 35px;">
                 Listing des Utilisateurs
             </td>
+        </tr>
     </table>
 </body>
 </html>
