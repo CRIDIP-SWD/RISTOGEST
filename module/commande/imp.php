@@ -74,27 +74,23 @@ $donnee_commande = mysql_fetch_array($sql_commande);
         ?>
         <tr>
             <td style="padding-left: 5px; border: solid 1px; padding-top: 10px; padding-bottom: 10px;">
-                <strong><?php echo $donnee_user['nom_user']; ?> <?php echo $donnee_user['prenom_user']; ?></strong><br>
-                <u>Nom d'utilisateur:</u> <?php echo $donnee_user['login']; ?><br>
+                <?php echo $donnee_article['designation_article']; ?>
             </td>
             <td style="padding-left: 5px; border: solid 1px; padding-top: 10px; padding-bottom: 10px;">
-                <strong>Téléphone:</strong> <?php echo $donnee_user['tel_user']; ?><br>
-                <strong>Portable:</strong> <?php echo $donnee_user['port_user']; ?>
+                <?php echo number_format($donnee_article['prix_unitaire'], 2, ',', ' ')." €"; ?>
             </td>
             <td style="text-align: right; border: solid 1px; padding-top: 10px; padding-bottom: 10px; padding-right: 10px;">
-                <?php
-                $sql_sum_cmd = mysql_query("SELECT SUM(montant_total) FROM commande WHERE iduser = ".$donnee_user['iduser'])or die(mysql_error());
-                echo number_format(mysql_result($sql_sum_cmd, 0), 2, ',', ' ')." €";
-                ?>
+                <?php echo $donnee_article['qte']; ?>
             </td>
             <td style="text-align: center; border: solid 1px; padding-top: 10px; padding-bottom: 10px;">
-                <?php
-                $sql_count_cmd = mysql_query("SELECT COUNT(idcommande) FROM commande WHERE iduser = ".$donnee_user['iduser'])or die(mysql_error());
-                echo mysql_result($sql_count_cmd, 0);
-                ?>
+                <?php echo number_format($donnee_article['prix_total_commande'], 2, ',', ' ')." €"; ?>
             </td>
         </tr>
         <?php } ?>
+        <tr>
+            <td colspan="3" style="text-align: right; font-style: italic;">Total à payer</td>
+            <td><?php echo number_format($donnee_commande['montant_total'], 2, ',', ' ')." €"; ?></td>
+        </tr>
     </table>
 
 </body>
