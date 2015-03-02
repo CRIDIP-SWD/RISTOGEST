@@ -28,3 +28,18 @@ if(isset($_POST['add-commande-valid']) && $_POST['add-commande-valid'] == 'Valid
 
 }
 ?>
+<?php
+//Validation de la commande
+if(isset($_GET['valid-commande']) && $_GET['valid-commande'] == 'valider')
+{
+	$idcommande = $_GET['idcommande'];
+
+	$sql_up_commande = mysql_query("UPDATE commande SET etat_commande = '1' WHERE idcommande = '$idcommande'")or die(mysql_error());
+
+	if($sql_up_commande == TRUE)
+	{
+		header("Location: ../../module/commande/view.php?idcommande=$idcommande&valid-commande=true");
+	}else{
+		header("Location: ../../module/commande/view.php?idcommande=$idcommande&valid-commande=false");
+	}
+}

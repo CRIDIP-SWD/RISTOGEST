@@ -4,6 +4,7 @@ $idcommande = $_GET['idcommande'];
 $sql_commande = mysql_query("SELECT * FROM commande, menu WHERE commande.idmenu = menu.idmenu
 AND idcommande = '$idcommande'")or die(mysql_error());
 $donnee_commande = mysql_fetch_array($sql_commande);
+$idmenu = $donnee_commande['idmenu'];
 ?>
 <?php
 define("TITLE_PAGE", "COMMANDE UTILISATEUR");
@@ -137,6 +138,24 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                         <h4><i class="fa fa-check-circle"></i> Succès</h4> La commande à été créer avec succès.
                     </div>
                     <?php } ?>
+                    <?php
+                    if(isset($_GET['valid-commande']) && $_GET['valid-commande'] == 'true')
+                    {
+                    ?>
+                    <div class="alert alert-success alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <h4><i class="fa fa-check-circle"></i> Succès</h4> La commande à été Valider avec succès.
+                    </div>
+                    <?php } ?>
+                    <?php
+                    if(isset($_GET['valid-commande']) && $_GET['valid-commande'] == 'false')
+                    {
+                    ?>
+                    <div class="alert alert-danger alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur à eu lieu lors de la validation de la commande.<br>Veuillez contacter le support technique.
+                    </div>
+                    <?php } ?>
 
                     <!-- BLOCK -->
                     <div class="row">
@@ -160,7 +179,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     <div class="text-muted">
                                         <i class="fa fa-times-circle"></i>
                                         Commande créer, Non valider.
-                                        <a href="" class="btn btn-block btn-success"><i class="fa fa-check"></i> Valider la commande</a>
+                                        <a href="<?php echo SITE,FOLDER; ?>inc/control/commande.php?valid-commande=valider" class="btn btn-block btn-success"><i class="fa fa-check"></i> Valider la commande</a>
                                     </div>
                                     <?php } ?>
                                     <?php
@@ -342,6 +361,38 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                             </div>
                         </div>
                     </div>
+                    <div id="modal-regular" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h3 class="modal-title">Modal Title</h3>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form class="form-horizontal form-bordered" action="" method="POST">
+                                                    <input type="hidden" name="idcommande" value="<?php echo $idcommande; ?>" />
+
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label" for="example-select2">Article</label>
+                                                        <div class="col-md-6">
+                                                            <select id="example-select2" name="idarticle" class="select-select2" style="width: 100%;" data-placeholder="Selectionner l'article du menu...">
+                                                                <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
+                                                                <?php
+                                                                $sql_article = mysql_query("SELECT * FROM menu, article, famille_article WHERE article.idfamillearticle = famille_article.idfamillearticle
+                                                                    AND idmenu = '$idmenu'")or die(mysql_error());
+                                                                while($donnee_article = mysql_fetch_array($sql_article))
+                                                                {
+                                                                ?>
+                                                                <option value="<?php echo $donnee_article['idarticle']; ?>"><?php echo $donnee_article['designation']; ?> - <?php echo $donnee_article['designation_article']; ?></option>
+                                                                <?php } ?>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
                 </div>
                 <!-- END Page Content -->
