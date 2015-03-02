@@ -89,7 +89,7 @@ $donnee_commande = mysql_fetch_array($sql_commande);
         <?php } ?>
         <tr>
             <td colspan="3" style="text-align: right; font-style: italic;">Total à payer</td>
-            <td><?php echo number_format($donnee_commande['montant_total'], 2, ',', ' ')." €"; ?></td>
+            <td style="text-align: right; font-weight: bold; font-size: 15px;"><?php echo number_format($donnee_commande['montant_total'], 2, ',', ' ')." €"; ?></td>
         </tr>
     </table>
 
