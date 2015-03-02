@@ -25,20 +25,21 @@ $import_centre = mysql_fetch_array($sql_import_centre);
     <link rel="stylesheet" type="text/css" href="../../../../inc/control/pdf/styles/pdf.css">
 </head>
 <body>
-    <div id="entete">
-        <div class="centre">
-            <div style="font-size: 50px; font-weight: bolder;"><?php echo $import_centre['raison_social']; ?></div>
-            <p>
-                <?php echo $import_centre['adresse']; ?><br>
-                <?php echo $import_centre['code_postal']; ?> <?php echo $import_centre['ville']; ?><br>
-                <strong>Téléphone:</strong> <?php echo $import_centre['telephone']; ?><br>
-                <strong>Adresse Mail:</strong> <?php echo $import_centre['email']; ?>
-            </p>
-        </div>
-        <div class="right">
-            <div class="titre_page">Listing des utilisateurs</div>
-        </div>
-    </div>
+    <table style="width: 100%;">
+        <tr>
+            <td style="width: 50%">
+                <div style="font-size: 45px; font-weight: bold;"><?php echo $import_centre['raison_social']; ?></div>
+                <p>
+                    <?php echo $import_centre['adresse']; ?><br>
+                    <?php echo $import_centre['code_postal']; ?> <?php echo $import_centre['ville']; ?><br>
+                    <strong>Téléphone:</strong> <?php echo $import_centre['telephone']; ?><br>
+                    <strong>Adresse Mail:</strong> <?php echo $import_centre['email']; ?>
+                </p>
+            </td>
+            <td style="text-align: right; width: 50%; position: relative; top: -50px; font-size: 35px;">
+                Listing des Utilisateurs
+            </td>
+    </table>
 </body>
 </html>
 <?php
