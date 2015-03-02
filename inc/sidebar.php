@@ -64,6 +64,9 @@
                                 <span class="sidebar-header-title">COMMANDE</span>
                             </li>
                             <li>
+                                <a href="<?php echo SITE,FOLDER; ?>module/admin/commande/user/index.php"><i class="fa fa-user"></i> Commandes Utilisateurs</a>
+                            </li>
+                            <li>
                                 <a href="<?php echo SITE,FOLDER; ?>module/admin/commande/presta/index.php"><i class="fa fa-truck"></i> Commandes prestataires</a>
                             </li>
 
@@ -88,7 +91,7 @@
                                 <a href="<?php echo SITE,FOLDER; ?>module/admin/etat/user/index.php"><i class="fa fa-users"></i> Utilisateurs</a>
                             </li>
                             <li>
-                                <a href="<?php echo SITE,FOLDER; ?>module/admin/etat/commande/"><i class="fa fa-users"></i> Commande</a>
+                                <a href="<?php echo SITE,FOLDER; ?>module/admin/etat/commande/"><i class="fa fa-cubes"></i> Commande</a>
                             </li>
 
                             <li class="sidebar-header">
