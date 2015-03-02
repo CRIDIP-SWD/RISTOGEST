@@ -35,6 +35,9 @@ $import_centre = mysql_fetch_array($sql_import_centre);
                 <strong>Adresse Mail:</strong> <?php echo $import_centre['email']; ?>
             </p>
         </div>
+        <div class="right">
+            <div class="titre_page">Listing des utilisateurs</div>
+        </div>
     </div>
 </body>
 </html>
