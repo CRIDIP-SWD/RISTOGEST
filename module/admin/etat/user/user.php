@@ -36,7 +36,7 @@ $import_centre = mysql_fetch_array($sql_import_centre);
                     <strong>Adresse Mail:</strong> <?php echo $import_centre['email']; ?>
                 </p>
             </td>
-            <td style="text-align: right; width: 50%; position: relative; top: -50px; font-size: 35px;">
+            <td style="text-align: right; width: 50%; position: relative; top: -50px; font-size: 35px; font-weight: bolder; color: grey;">
                 Listing des Utilisateurs
             </td>
         </tr>
