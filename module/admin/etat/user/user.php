@@ -27,7 +27,13 @@ $import_centre = mysql_fetch_array($sql_import_centre);
 <body>
     <div id="entete">
         <div class="centre">
-            <div style="font-size: 30px; font-weight: bolder;"><?php echo $import_centre['raison_social']; ?></div>
+            <div style="font-size: 50px; font-weight: bolder;"><?php echo $import_centre['raison_social']; ?></div>
+            <p>
+                <?php echo $import_centre['adresse']; ?><br>
+                <?php echo $import_centre['code_postal']; ?> <?php echo $import_centre['ville']; ?><br>
+                <strong>Téléphone:</strong> <?php echo $import_centre['telephone']; ?><br>
+                <strong>Adresse Mail:</strong> <?php echo $import_centre['email']; ?>
+            </p>
         </div>
     </div>
 </body>
