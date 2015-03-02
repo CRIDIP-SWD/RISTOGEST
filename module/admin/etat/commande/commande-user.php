@@ -38,7 +38,7 @@ $iduser = $_POST['iduser'];
                 </p>
             </td>
             <td style="text-align: right; width: 50%; position: relative; top: -50px; font-size: 35px; font-weight: bolder; color: grey;">
-                Commande (A commander au prestataire)
+                Commande (Par utilisateur)
             </td>
         </tr>
     </table>
