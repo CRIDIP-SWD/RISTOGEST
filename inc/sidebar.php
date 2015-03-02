@@ -37,7 +37,6 @@
                                 <a href="<?php echo SITE,FOLDER; ?>index.php" class=" active"><i class="gi gi-stopwatch sidebar-nav-icon"></i>Accueil</a>
                             </li>
                             <li>
-                                <a href="<?php echo SITE,FOLDER; ?>module/user/profil.php?iduser=<?php echo $iduser; ?>"><i class="gi gi-stopwatch sidebar-nav-icon"></i>Mon Profil</a>
                                 <a href="<?php echo SITE,FOLDER; ?>module/menu/index.php"><i class="gi gi-cutlery sidebar-nav-icon"></i>Les menus</a>
                             </li>
                             <li class="sidebar-header">
