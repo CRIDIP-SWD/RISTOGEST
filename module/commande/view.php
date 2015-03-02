@@ -7,7 +7,7 @@ $idmenu = $donnee_commande['idmenu'];
 ?>
 <?php
 define("TITLE_PAGE", "COMMANDE UTILISATEUR");
-define("SUBTITLE_PAGE", "COMMANDE N° ".$donnee_commande['num_commande']);
+define("SUBTITLE_PAGE", "COMMANDE N° ".$donnee_commande['num_commande']."- Total Commande:".$donnee_commande['montant_total']);
 //Breadcumb
 $li_start = "<li>".$logiciel."</li>";
 $li1 = "";
