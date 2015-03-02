@@ -379,7 +379,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                                 <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
                                                                 <?php
                                                                 $sql_article = mysql_query("SELECT * FROM menu, article, famille_article WHERE article.idfamillearticle = famille_article.idfamillearticle
-                                                                    AND idmenu = '$idmenu'")or die(mysql_error());
+                                                                    AND article_menu.idmenu = '$idmenu'")or die(mysql_error());
                                                                 while($donnee_article = mysql_fetch_array($sql_article))
                                                                 {
                                                                 ?>
