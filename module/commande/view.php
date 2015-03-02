@@ -198,7 +198,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <?php
                     $sql_commande = mysql_query("SELECT * FROM commande WHERE idcommande = '$idcommande'")or die(mysql_error());
                     $donnee_commande = mysql_fetch_array($sql_commande);
-
+                    $idmenu = $donnee_commande['idmenu'];
                     ?>
                     <!-- BLOCK -->
                     <div class="row">
