@@ -65,9 +65,6 @@
                                 <span class="sidebar-header-title">COMMANDE</span>
                             </li>
                             <li>
-                                <a href="<?php echo SITE,FOLDER; ?>module/admin/commande/user/index.php"><i class="fa fa-user"></i> Commandes Utilisateurs</a>
-                            </li>
-                            <li>
                                 <a href="<?php echo SITE,FOLDER; ?>module/admin/commande/presta/index.php"><i class="fa fa-truck"></i> Commandes prestataires</a>
                             </li>
 
@@ -81,6 +78,12 @@
                             </li>
                             <li>
                                 <a href="<?php echo SITE,FOLDER; ?>module/admin/menu/index.php"><i class="gi gi-shop_window"></i> Gestion des Menus</a>
+                            </li>
+
+                            <li class="sidebar-header">
+                                <span class="sidebar-header-options clearfix">
+                                </span>
+                                <span class="sidebar-header-title">ETAT & IMPRESSION</span>
                             </li>
 
                             <li class="sidebar-header">
