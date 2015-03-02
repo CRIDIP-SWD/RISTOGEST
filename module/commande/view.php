@@ -217,7 +217,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                     <div class="text-muted">
                                         <i class="fa fa-times-circle"></i>
                                         Commande créer, Non valider.
-                                        <a href="<?php echo SITE,FOLDER; ?>inc/control/commande.php?valid-commande=valider" class="btn btn-block btn-success"><i class="fa fa-check"></i> Valider la commande</a>
+                                        <a href="<?php echo SITE,FOLDER; ?>inc/control/commande.php?idcommande=<?php echo $idcommande; ?>&valid-commande=valider" class="btn btn-block btn-success"><i class="fa fa-check"></i> Valider la commande</a>
                                     </div>
                                     <?php } ?>
                                     <?php
