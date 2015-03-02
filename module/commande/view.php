@@ -261,7 +261,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <div class="block-title">
                                     <h2>Produit Commander - Menu du <?php echo date("d-m-Y", $donnee_commande['date_menu']); ?> / Semaine <?php echo $donnee_commande['semaine']; ?></h2>
                                     <div class="pull-right">
-                                        <a href="" class="btn btn-primary"><i class="fa fa-print"></i> Imprimer la commande</a>
+                                        <a href="imp.php?idcommande=<?php echo $idcommande; ?>" class="btn btn-primary"><i class="fa fa-print"></i> Imprimer la commande</a>
                                         <?php
                                         if($donnee_commande['etat_commande'] == 0){
                                         ?>
