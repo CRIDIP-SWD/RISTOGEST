@@ -46,6 +46,8 @@ $date_commande2 = strtotime($_POST['date_commande2']);
     </table>
 
     <div style="padding-top: 15px; padding-bottom: 15px;"></div>
+    <div style="font-size: 35px;">Du <?php echo date("d-m-Y", $date_commande1); ?> au <?php echo date("d-m-Y", $date_commande2); ?></div>
+    <div style="padding-top: 15px; padding-bottom: 15px;"></div>
 
     <table cellspacing="0" style="width: 100%; border: solid 2px; border-radius: 5px 5px 5px 5px;">
         <tr>
