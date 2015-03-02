@@ -1,7 +1,7 @@
 <?php 
 //Paramétrage Balise Head
-	$title = 'RISTOGEST';
-	$logiciel = 'RISTOGEST';
+	$title = 'RESTOGEST';
+	$logiciel = 'RESTOGEST';
 	$description = '';
 	define('SITE', 'http://vps116895.ovh.net/');
 	define('FOLDER', 'ristogest/');

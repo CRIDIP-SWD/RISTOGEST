@@ -85,7 +85,7 @@ include ('inc/config.php');
             }else{
             ?>
             <div class="login-title text-center">
-                <h1><i class="gi gi-flash"></i> <strong><?php echo $logiciel; ?></strong><br><small>Connecter vous à <?php echo $logiciel; ?></small></h1>
+                <h1><i class="gi gi-flash"></i> <strong><?php echo $logiciel; ?></strong><br><small>Connectez vous à <?php echo $logiciel; ?></small></h1>
             </div>
             <?php } ?>
             <!-- END Login Title -->
@@ -112,11 +112,6 @@ include ('inc/config.php');
                     <div class="form-group form-actions">
                         <div class="col-xs-8 text-right">
                             <button type="submit" class="btn btn-sm btn-primary" name="connexion" value="Connexion"><i class="fa fa-angle-right"></i> Connexion à <?php echo $logiciel; ?></button>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-xs-12 text-center">
-                            <a href="javascript:void(0)" id="link-reminder-login"><small>Mot de passe Perdu ?</small></a>
                         </div>
                     </div>
                 </form>
