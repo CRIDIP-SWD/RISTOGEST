@@ -117,6 +117,9 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <div class="block">
                         <div class="block-title">
                             <h2>Commande</h2>
+                            <div class="pull-right">
+                                <a href="#add-commande" data-toggle="modal" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Nouvelle Commande</a>
+                            </div>
                         </div>
                         <div class="table-responsive">
                             <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
@@ -182,6 +185,37 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                 <?php } ?>
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="add-commande" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h3 class="modal-title">Nouvelle Commande</h3>
+                            </div>
+                            <div class="modal-body">
+                                <form class="form-horizontal form-bordered" action="" method="POST">
+                                    <input type="hidden" name="iduser" value="<?php echo $iduser; ?>">
+
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="example-select2">Menu</label>
+                                        <div class="col-md-6">
+                                            <select id="example-select2" name="idmenu" class="select-select2" style="width: 100%;" data-placeholder="Selectionner le menu souhaiter...">
+                                                <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
+                                                <?php
+                                                $sql_menu = mysql_query("SELECT * FROM menu WHERE etat_menu = '0'")or die(mysql_error());
+                                                while($donnee_menu = mysql_fetch_array($sql_menu))
+                                                {
+                                                ?>
+                                                <option value="<?php echo $donnee_menu['idmenu']; ?>">Semaine <?php echo $donnee_menu['semaine']; ?> - Date: <?php echo date("d-m-Y", $donnee_menu['date_menu']; ?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
