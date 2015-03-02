@@ -43,3 +43,44 @@ if(isset($_GET['valid-commande']) && $_GET['valid-commande'] == 'valider')
 		header("Location: ../../module/commande/view.php?idcommande=$idcommande&valid-commande=false");
 	}
 }
+?>
+
+<?php
+//Ajout d'un article
+if(isset($_POST['add-article-valid']) && $_POST['add-article-valid'] == 'Valider')
+{
+	$idcommande = $_POST['idcommande'];
+	$idarticle = $_POST['idarticle'];
+	$qte = $_POST['qte'];
+
+	//import
+	$sql_article = mysql_query("SELECT * FROM article WHERE idarticle = '$idarticle'")or die(mysql_error());
+	$donnee_article = mysql_fetch_array($sql_article);
+
+	$sql_commande = mysql_query("SELECT * FROM commande WHERE idcommande = '$idcommande'")or die(mysql_error());
+	$donnee_commande = mysql_fetch_array($sql_commande);
+
+	$idfamillearticle = $donnee_article['idfamillearticle'];
+	$prix_unitaire = $donnee_article['prix_unitaire'];
+
+	$montant_total = $donnee_commande['montant_total'];
+
+	//calcul total ligne commande
+	$calc_ligne_total = $prix_unitaire*$qte;
+	$calc_up_total = $montant_total+$calc_ligne_total;
+
+	$sql_add_article = mysql_query("INSERT INTO `article_commande`(`idarticlecommande`, `idcommande`, `idfamillearticle`, `idarticle`, `qte`, `prix_total_commande`) 
+		VALUES (NULL,'$idcommande','$idfamillearticle','$idarticle','$qte','$calc_ligne_total')")or die(mysql_error());
+
+	$sql_up_commande = mysql_query("UPDATE commande SET montant_total = '$calc_up_total'")or die(mysql_error());
+
+	if($sql_add_article == TRUE)
+	{
+		header("Location: ../../module/commande/view.php?idcommande=$idcommande&add-article=true");
+	}else{
+		header("Location: ../../module/commande/view.php?idcommande=$idcommande&add-article=false");
+	}
+
+
+}
+?>

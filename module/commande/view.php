@@ -157,6 +157,25 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     </div>
                     <?php } ?>
 
+                    <?php
+                    if(isset($_GET['add-article']) && $_GET['add-article'] == 'true')
+                    {
+                    ?>
+                    <div class="alert alert-success alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <h4><i class="fa fa-check-circle"></i> Succès</h4> L'article à été ajouter à la commande.
+                    </div>
+                    <?php } ?>
+                    <?php
+                    if(isset($_GET['add-article']) && $_GET['add-article'] == 'false')
+                    {
+                    ?>
+                    <div class="alert alert-danger alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        <h4><i class="fa fa-times-circle"></i> Erreur</h4> Une erreur à eu lieu lors de l'ajout de l'article dans la commande.<br>Veuillez contacter le support technique.
+                    </div>
+                    <?php } ?>
+
                     <!-- BLOCK -->
                     <div class="row">
                         <div class="col-md-8">
@@ -389,6 +408,18 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                             </select>
                                                         </div>
                                                     </div>
+
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 control-label" for="example-text-input">Quantité</label>
+                                                        <div class="col-md-9">
+                                                            <input type="text" id="example-text-input" name="qte" class="form-control" placeholder="Quantité de l'article Selectionner">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group form-actions">
+                                                        <button type="submit" class="btn btn-success" name="add-article-valid" value="Valider"><i class="fa fa-check-circle"></i> Ajout de l'article à la commande</button>
+                                                    </div>
+
                                                 </form>
                                             </div>
                                         </div>
