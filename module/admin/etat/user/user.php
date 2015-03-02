@@ -70,7 +70,7 @@ $import_centre = mysql_fetch_array($sql_import_centre);
                 <strong>Téléphone:</strong> <?php echo $donnee_user['tel_user']; ?><br>
                 <strong>Portable:</strong> <?php echo $donnee_user['port_user']; ?>
             </td>
-            <td style="text-align: right; border: solid 1px; padding-top: 10px; padding-bottom: 10px;">
+            <td style="text-align: right; border: solid 1px; padding-top: 10px; padding-bottom: 10px; padding-right: 10px;">
                 <?php
                 $sql_sum_cmd = mysql_query("SELECT SUM(montant_total) FROM commande WHERE iduser = ".$donnee_user['iduser'])or die(mysql_error());
                 echo number_format(mysql_result($sql_sum_cmd, 0), 2, ',', ' ')." €";
