@@ -1,4 +1,4 @@
-<?php include ('../../../inc/header.php'); ?>
+<?php include ('../../inc/header.php'); ?>
 <?php
 define("TITLE_PAGE", "MENU");
 define("SUBTITLE_PAGE", "LES MENUS");
@@ -59,9 +59,9 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <div class="sidebar-content">
                         <?php //include ('inc/chat.php'); ?>
 
-                        <?php include ('../../../inc/activity.php'); ?>
+                        <?php include ('../../inc/activity.php'); ?>
 
-                        <?php include ('../../../inc/message_ui.php'); ?>
+                        <?php include ('../../inc/message_ui.php'); ?>
                     </div>
                     <!-- END Sidebar Content -->
                 </div>
@@ -69,7 +69,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
             </div>
             <!-- END Alternative Sidebar -->
 
-            <?php include ('../../../inc/sidebar.php'); ?>
+            <?php include ('../../inc/sidebar.php'); ?>
 
             <!-- Main Container -->
             <div id="main-container">
@@ -87,7 +87,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     'navbar-fixed-bottom'       for a bottom fixed header (fixed sidebars with scroll will be auto initialized, functionality can be found in js/app.js - handleSidebar()))
                         'header-fixed-bottom'   has to be added on #page-container only if the class 'navbar-fixed-bottom' was added
                 -->
-                <?php include ('../../../inc/headerbar.php'); ?>
+                <?php include ('../../inc/headerbar.php'); ?>
 
                 <!-- Page content -->
                 <div id="page-content">
@@ -150,7 +150,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                 </div>
                 <!-- END Page Content -->
 
-                <?php include ('../../../inc/footer.php'); ?>
+                <?php include ('../../inc/footer.php'); ?>
             </div>
             <!-- END Main Container -->
         </div>
