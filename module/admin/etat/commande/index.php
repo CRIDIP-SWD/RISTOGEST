@@ -121,7 +121,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                     <a href="#choix-user" data-toggle="modal" class="btn btn-block btn-info"><i class="fi fi-pdf"></i> Listing des Commandes (par utilisateur)</a>
 
 
-                    <div id="choix_user" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div id="choix-user" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -132,7 +132,7 @@ $li_end = "<li><a href='#'>".TITLE_PAGE."</a></li>";
                                                 <form class="form-horizontal form-bordered" action="commande-user.php" method="POST">
 
                                                     <div class="form-group">
-                                                        <label class="col-md-4 control-label" for="example-select2">Select2</label>
+                                                        <label class="col-md-4 control-label" for="example-select2">Selection de l'utilisateur</label>
                                                         <div class="col-md-6">
                                                             <select id="example-select2" name="iduser" class="select-select2" style="width: 100%;" data-placeholder="Choisissez l'utilisateur">
                                                                 <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
