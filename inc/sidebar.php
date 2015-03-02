@@ -46,10 +46,7 @@
                                 <span class="sidebar-header-title">MES COMMANDES</span>
                             </li>
                             <li>
-                                <a href="<?php echo SITE,FOLDER; ?>module/commande/liste.php?iduser=<?php echo $iduser; ?>"><i class="gi gi-stopwatch sidebar-nav-icon"></i>Liste des Commandes</a>
-                            </li>
-                            <li>
-                                <a href="<?php echo SITE,FOLDER; ?>module/commande/new.commande.php?iduser=<?php echo $iduser; ?>"><i class="gi gi-stopwatch sidebar-nav-icon"></i>Nouvelle commande</a>
+                                <a href="<?php echo SITE,FOLDER; ?>module/commande/index.php?iduser=<?php echo $iduser; ?>"><i class="gi gi-stopwatch sidebar-nav-icon"></i>Liste des Commandes</a>
                             </li>
                         </ul>
                         <?php } ?>
